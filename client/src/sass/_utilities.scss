@@ -1,0 +1,10 @@
+.show{
+	opacity:1;
+	visibility:visible;
+	animation:comeLeft .5s ease-out ;
+	transition:animation .4s;
+}
+.hide{
+	opacity:0;
+	visibility:hidden;
+}

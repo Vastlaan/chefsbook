@@ -1,0 +1,222 @@
+.dashboard__recepies{
+	grid-column: col-start 4 / -1;
+	grid-row: 1/span 4;
+	display:flex;
+	flex-direction: column;
+	@include respond(l){
+		grid-column: col-start 1 / -1;
+		}
+	
+
+	&--header{
+		width:100%;
+		color:$color-brown;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: $font-rajdhani;
+		font-weight: 300;
+		font-size: 4rem;
+		text-shadow: .2rem .5rem .5rem rgba($color-brown, .4);
+		border-bottom: .1rem solid rgba($color-brown,.3);
+	}
+	&--content{
+		margin:2rem 0;
+		display:grid;
+		grid-template-columns: repeat(3,1fr);
+		grid-gap: 1rem;
+		height: 40vh;
+		overflow-y:scroll;
+		border-bottom: .1rem solid rgba($color-brown,.3);
+		@include respond(mh){
+			height:100%;
+		}
+
+		&-item{
+			width:100%;
+			padding:1rem;
+			align-self: start;
+			justify-self:center;
+			cursor:pointer;
+			transition:all .2s;
+			border-left: 1px solid rgba($color-brown,.3);
+
+			&:hover{
+				border-left: 1px solid $color-primary;
+			}
+			&:hover > &-name{
+				color:$color-primary;
+			}
+			&-box{
+				width:5rem;
+				height:5rem;
+				margin:0.5rem auto;
+				border-radius: 50%;
+				overflow:hidden;
+				display:flex;
+				justify-content:center;
+				
+			}
+			&-photo{
+				display:block;
+				width:7rem;
+			}
+			&-name{
+				text-align: center;
+				font-size: 2rem;
+				font-family: $font-rajdhani;
+				color:$color-brown;
+				line-height: .7;
+				@include respond(xs){
+					font-size: 1.7rem;
+				}
+				
+			}
+			
+		}
+		&-warning{
+			grid-column: 1/-1;
+			padding: 2rem 0;
+			color:$color-brown;
+			font-size: 3rem;
+			font-family: $font-rajdhani;
+			font-weight: 400;
+			letter-spacing: .1rem;
+			text-align: center;
+		}
+
+	}
+	&--new{
+		margin: 2rem auto;
+		text-decoration: none;
+		padding:1.5rem 4rem;
+		cursor:pointer;
+		background-color: $color-primary;
+		border-radius: .5rem;
+		color:snow;
+		font-family: $font-rajdhani;
+		font-size: 2rem;
+
+		@include btn-shadow;
+		
+	}
+
+	&__hidden{
+
+		position:fixed;
+		top:0;
+		left:0;
+		z-index: 9;
+		width:100vw;
+		height:100vh;
+		background-color: rgba(darken($color-brown,20%),.95);
+		overflow-y:scroll;
+		
+		&-frame{
+			border:1px solid snow;
+			width:70%;
+			margin: 5rem auto;
+			background-color: $color-grey-light;
+			padding:4rem 2rem;
+			display:flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			@include respond(s){
+				width:100%;
+			}
+		}
+		
+		&-close-svg{
+				width:5rem;
+				height:5rem;
+				border:1px solid snow;
+				position:absolute;
+				top:2rem;
+				right:2rem;
+				fill:snow;
+				cursor:pointer;
+				@include respond(s){
+					fill:$color-brown;
+					top:5rem;
+				}
+			}
+
+		
+
+		&-box{
+			width:20rem;
+			height:20rem;
+			margin:0 auto;
+			border-radius: 50%;
+			overflow:hidden;
+			display:flex;
+			justify-content:center;
+
+			@include respond(l){
+				width:15rem;
+				height:15rem;
+			}
+
+			
+		}
+		&-photo{
+			display:block;
+			width:25rem;
+		}
+		&-name{
+			text-align: center;
+			font-size: 5rem;
+			font-family: $font-rajdhani;
+			font-weight: 300;
+			letter-spacing: .2rem;
+			color:$color-brown;
+			line-height: 1.4;
+			@include respond(xs){
+				font-size: 3rem;
+			}
+			
+		}
+		&-ingridients{
+			width:70%;
+			margin-top: 2rem;
+			h6{
+				font-size: 2rem;
+				letter-spacing: .1rem;
+				font-family: $font-courgette;
+				font-weight: 300;
+				color:$color-brown;
+				text-align: center;
+				margin-bottom: 1rem;
+			}
+			p{
+				text-align: center;
+				span{
+					font-size: 1.2rem;
+					font-family: "Courier New", sans-serif;
+					color:$color-brown;
+					text-align: center;
+				}
+			}
+			
+		}
+		&-preparation{
+			width:70%;
+			margin-top: 2rem;
+			h6{
+				font-size: 2rem;
+				letter-spacing: .1rem;
+				font-family: $font-courgette;
+				font-weight: 300;
+				color:$color-brown;
+				text-align: center;
+				margin-bottom: 1rem;
+			}
+			p{
+				font-size: 1.2rem;
+				font-family: "Courier New", sans-serif;
+				color:$color-brown;
+				text-align: center;
+			}
+		}
+	}
+}

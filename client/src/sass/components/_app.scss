@@ -1,0 +1,10 @@
+.container{
+	width:90vw;
+	margin:0 auto;
+	background-color: $color-grey-light;
+
+	@include respond(m){
+		width:100vw;
+		max-width: 100%;
+	}
+}

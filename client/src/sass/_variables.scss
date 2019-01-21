@@ -1,0 +1,19 @@
+//=================================COLORS====================================
+$color-primary: #7CAA5A;			//bud green
+$color-primary-dark: #1B632B;		//cal poly pomona green
+
+$color-secondary:#B57D1F;			//california gold 
+$color-secondary-light:#D9AC0F;			//goldenrod (a bit yellow)
+$color-secondary-light-2:lighten(#D9AC0F,20%);	
+
+$color-brown: #73260D;				//smokey topaz
+$color-brown-dark: darken(#73260D,10%);
+$color-grey-light:#f9f9f9;			//background
+
+//================================FONTS======================================
+
+$font-openSans: 'Open Sans', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-rajdhani: 'Rajdhani', sans-serif;
+$font-courgette: 'Courgette', cursive;
+$font-special: 'Special Elite', cursive;

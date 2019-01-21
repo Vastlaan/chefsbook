@@ -1,0 +1,908 @@
+@keyframes laser {
+  0% {
+    bottom: 0;
+    left: 0; }
+  50% {
+    bottom: 0;
+    left: 40%; }
+  100% {
+    bottom: 0;
+    left: 100%; } }
+
+@keyframes comeOut {
+  0% {
+    opacity: 0;
+    transform: scale(0); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes comeLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%); }
+  25% {
+    opacity: 0;
+    transform: translateX(-120%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+::-webkit-scrollbar {
+  width: 1rem; }
+
+::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+  border-radius: .5rem; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #7CAA5A;
+  border-radius: .5rem; }
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  line-height: 1.6;
+  max-width: 100%; }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (min-width: 100em) {
+    html {
+      font-size: 100%; } }
+
+body {
+  background-color: #f9f9f9; }
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  animation: comeLeft .5s ease-out;
+  transition: animation .4s; }
+
+.hide {
+  opacity: 0;
+  visibility: hidden; }
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  background-color: #f9f9f9; }
+  @media only screen and (max-width: 50em) {
+    .container {
+      width: 100vw;
+      max-width: 100%; } }
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  animation: comeOut .7s ease-out;
+  transition: animation .2s; }
+  .header__logo {
+    cursor: pointer;
+    position: relative;
+    z-index: 3; }
+    .header__logo::before {
+      content: "";
+      display: block;
+      width: 3px;
+      height: 3px;
+      background-color: #638a47;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-radius: 50%;
+      animation: laser 3s cubic-bezier(0.55, 1.32, 0.42, -0.39) infinite;
+      transition: all .3s;
+      z-index: 0; }
+    .header__logo:hover::before {
+      animation: none;
+      transform: scale(43);
+      border-radius: 50%;
+      bottom: 35%;
+      left: 50%;
+      background-color: #638a47;
+      transition: all .6s; }
+      @media only screen and (max-width: 37.5em) {
+        .header__logo:hover::before {
+          transform: scale(33); } }
+      @media only screen and (min-width: 100em) {
+        .header__logo:hover::before {
+          transform: scale(65); } }
+    .header__logo img {
+      height: 8rem;
+      position: relative;
+      z-index: 3; }
+  .header__login {
+    display: block;
+    align-self: center;
+    padding: .8rem 2.5rem;
+    border-radius: .3rem;
+    text-decoration: none;
+    background-color: #73260D;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #f4d15a;
+    letter-spacing: .1rem;
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    transition: transform .2s; }
+    .header__login:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+    .header__login:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+    @media only screen and (max-width: 37.5em) {
+      .header__login {
+        padding: .2rem 1rem; } }
+    .header__login-icon {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 1rem;
+      fill: #f4d15a;
+      transform: translateY(0.4rem); }
+
+.landing {
+  margin-top: 5rem; }
+  .landing__header {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 70%);
+    background-image: linear-gradient(rgba(23, 8, 3, 0.8), rgba(92, 30, 10, 0.8)), url(../img/header-1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 70vh;
+    padding: 10vh 5vw 0 5vw;
+    animation: comeLeft 1s ease-out;
+    transition: animation .5s; }
+    .landing__header--slogan {
+      font-size: 5rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 300;
+      color: #f4d15a;
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      line-height: 1.2; }
+      @media only screen and (max-width: 62.5em) {
+        .landing__header--slogan {
+          font-size: 4.2rem; } }
+      @media only screen and (max-width: 25em) {
+        .landing__header--slogan {
+          font-size: 3rem; } }
+  .landing__chapter {
+    margin: 5rem auto;
+    padding: 2rem 0;
+    text-align: center; }
+    .landing__chapter span {
+      display: block;
+      font-size: 5rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 300;
+      color: #73260D;
+      text-transform: uppercase;
+      letter-spacing: .2rem;
+      line-height: 1.2;
+      text-shadow: 0.2rem 0.5rem 0.5rem rgba(115, 38, 13, 0.8);
+      cursor: pointer;
+      transition: all .2s; }
+      @media only screen and (max-width: 62.5em) {
+        .landing__chapter span {
+          font-size: 4.2rem; } }
+      @media only screen and (max-width: 25em) {
+        .landing__chapter span {
+          font-size: 3rem; } }
+      .landing__chapter span:hover {
+        transform: skew(-20deg);
+        text-shadow: 0.5rem 1rem 0.5rem rgba(115, 38, 13, 0.8); }
+  .landing__features {
+    margin: 10rem 0;
+    padding-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 50vw 1fr;
+    grid-column-gap: 2rem;
+    justify-items: center; }
+    @media only screen and (max-width: 50em) {
+      .landing__features {
+        grid-template-columns: 1fr; } }
+    .landing__features__text {
+      background-image: linear-gradient(rgba(115, 38, 13, 0.4), rgba(115, 38, 13, 0.6)), url(../img/features-1.jpeg);
+      background-position: center;
+      background-size: cover;
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      @media only screen and (max-width: 50em) {
+        .landing__features__text {
+          width: 100%;
+          height: 100%;
+          border-radius: 0;
+          grid-row: 2/3; } }
+      @media only screen and (max-width: 37.5em) {
+        .landing__features__text {
+          width: 100%;
+          height: 100%;
+          border-radius: 0; } }
+      .landing__features__text--p {
+        text-align: center;
+        color: #fff;
+        font-family: "Rajdhani", sans-serif;
+        letter-spacing: .1rem;
+        text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        font-size: 2.5rem;
+        font-weight: 300;
+        padding: 1rem 0; }
+        @media only screen and (max-width: 75em) {
+          .landing__features__text--p {
+            font-size: 2rem; } }
+        @media only screen and (max-width: 62.5em) {
+          .landing__features__text--p {
+            font-size: 1.5rem; } }
+        @media only screen and (max-width: 50em) {
+          .landing__features__text--p {
+            font-size: 2rem; } }
+    .landing__features__mission {
+      width: 100%;
+      padding: 5rem 2rem; }
+      .landing__features__mission--p {
+        color: #73260D;
+        font-family: "Rajdhani", sans-serif;
+        letter-spacing: .1rem;
+        text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        font-size: 2.5rem;
+        font-weight: 400;
+        padding: 1rem 0; }
+        @media only screen and (max-width: 75em) {
+          .landing__features__mission--p {
+            font-size: 2rem; } }
+        @media only screen and (max-width: 62.5em) {
+          .landing__features__mission--p {
+            font-size: 1.5rem; } }
+        @media only screen and (max-width: 50em) {
+          .landing__features__mission--p {
+            font-size: 2rem; } }
+
+.dashboard {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+  grid-template-rows: repeat(8, [row-start] 17vh [row-end]);
+  grid-gap: 2rem; }
+  @media only screen and (max-height: 31.25em) {
+    .dashboard {
+      grid-template-rows: repeat(8, [row-start] 25vh [row-end]); } }
+  .dashboard__news {
+    grid-column: col-start 1 / -1;
+    grid-row: 5/span 4;
+    background-color: pink;
+    margin-top: 10rem; }
+    @media only screen and (max-width: 62.5em) {
+      .dashboard__news {
+        grid-column: col-start 1 / -1;
+        grid-row: 10/span 4; } }
+  .dashboard__menu {
+    grid-column: col-start 1 / -1;
+    grid-row: 10/span 4;
+    background-color: green;
+    margin-top: 10rem; }
+    @media only screen and (max-width: 62.5em) {
+      .dashboard__menu {
+        grid-column: col-start 1 / -1;
+        grid-row: 15/span 4; } }
+  .dashboard__schedule {
+    grid-column: col-start 1 / -1;
+    grid-row: 15/span 4;
+    background-color: orangered;
+    margin-top: 10rem; }
+    @media only screen and (max-width: 62.5em) {
+      .dashboard__schedule {
+        grid-column: col-start 1 / -1;
+        grid-row: 20/span 4; } }
+
+.dashboard__calendar {
+  grid-column: col-start 1 / span 3;
+  grid-row: 1/span 4;
+  display: flex;
+  text-decoration: none;
+  color: inherit; }
+  @media only screen and (max-width: 62.5em) {
+    .dashboard__calendar {
+      grid-column: col-start 2 / -2;
+      grid-row: 5/span 4;
+      margin-bottom: 2rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .dashboard__calendar {
+      grid-column: col-start 1 / -1;
+      grid-row: 5/span 4; } }
+  .dashboard__calendar--flex {
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    cursor: pointer;
+    transition: all .3s; }
+    .dashboard__calendar--flex:hover {
+      transform: scale(1.05); }
+  .dashboard__calendar--year {
+    padding: .5rem 0;
+    font-size: 5rem;
+    font-family: "Rajdhani", sans-serif;
+    letter-spacing: .1rem;
+    text-align: center;
+    background-color: #7CAA5A; }
+  .dashboard__calendar--month {
+    text-align: center;
+    padding: .5rem 0;
+    background-color: #000;
+    color: snow;
+    font-size: 2.5rem;
+    font-family: "Special Elite", cursive; }
+  .dashboard__calendar--day {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 10rem;
+    font-family: "Courgette", cursive;
+    background-color: #f0f0f0; }
+  .dashboard__calendar--dayname {
+    padding: .5rem 0;
+    text-align: center;
+    background-color: #7CAA5A;
+    font-size: 2.5rem;
+    font-family: "Special Elite", cursive; }
+  .dashboard__calendar--time {
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #000;
+    color: snow;
+    font-size: 1.5rem;
+    font-family: "Courier New",sans-serif; }
+
+.dashboard__recepies {
+  grid-column: col-start 4 / -1;
+  grid-row: 1/span 4;
+  display: flex;
+  flex-direction: column; }
+  @media only screen and (max-width: 62.5em) {
+    .dashboard__recepies {
+      grid-column: col-start 1 / -1; } }
+  .dashboard__recepies--header {
+    width: 100%;
+    color: #73260D;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-size: 4rem;
+    text-shadow: 0.2rem 0.5rem 0.5rem rgba(115, 38, 13, 0.4);
+    border-bottom: 0.1rem solid rgba(115, 38, 13, 0.3); }
+  .dashboard__recepies--content {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    height: 40vh;
+    overflow-y: scroll;
+    border-bottom: 0.1rem solid rgba(115, 38, 13, 0.3); }
+    @media only screen and (max-height: 31.25em) {
+      .dashboard__recepies--content {
+        height: 100%; } }
+    .dashboard__recepies--content-item {
+      width: 100%;
+      padding: 1rem;
+      align-self: start;
+      justify-self: center;
+      cursor: pointer;
+      transition: all .2s;
+      border-left: 1px solid rgba(115, 38, 13, 0.3); }
+      .dashboard__recepies--content-item:hover {
+        border-left: 1px solid #7CAA5A; }
+      .dashboard__recepies--content-item:hover > .dashboard__recepies--content-item-name {
+        color: #7CAA5A; }
+      .dashboard__recepies--content-item-box {
+        width: 5rem;
+        height: 5rem;
+        margin: 0.5rem auto;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center; }
+      .dashboard__recepies--content-item-photo {
+        display: block;
+        width: 7rem; }
+      .dashboard__recepies--content-item-name {
+        text-align: center;
+        font-size: 2rem;
+        font-family: "Rajdhani", sans-serif;
+        color: #73260D;
+        line-height: .7; }
+        @media only screen and (max-width: 25em) {
+          .dashboard__recepies--content-item-name {
+            font-size: 1.7rem; } }
+    .dashboard__recepies--content-warning {
+      grid-column: 1/-1;
+      padding: 2rem 0;
+      color: #73260D;
+      font-size: 3rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 400;
+      letter-spacing: .1rem;
+      text-align: center; }
+  .dashboard__recepies--new {
+    margin: 2rem auto;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    cursor: pointer;
+    background-color: #7CAA5A;
+    border-radius: .5rem;
+    color: snow;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    transition: transform .2s; }
+    .dashboard__recepies--new:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+    .dashboard__recepies--new:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+  .dashboard__recepies__hidden {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(23, 8, 3, 0.95);
+    overflow-y: scroll; }
+    .dashboard__recepies__hidden-frame {
+      border: 1px solid snow;
+      width: 70%;
+      margin: 5rem auto;
+      background-color: #f9f9f9;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard__recepies__hidden-frame {
+          width: 100%; } }
+    .dashboard__recepies__hidden-close-svg {
+      width: 5rem;
+      height: 5rem;
+      border: 1px solid snow;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      fill: snow;
+      cursor: pointer; }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard__recepies__hidden-close-svg {
+          fill: #73260D;
+          top: 5rem; } }
+    .dashboard__recepies__hidden-box {
+      width: 20rem;
+      height: 20rem;
+      margin: 0 auto;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center; }
+      @media only screen and (max-width: 62.5em) {
+        .dashboard__recepies__hidden-box {
+          width: 15rem;
+          height: 15rem; } }
+    .dashboard__recepies__hidden-photo {
+      display: block;
+      width: 25rem; }
+    .dashboard__recepies__hidden-name {
+      text-align: center;
+      font-size: 5rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 300;
+      letter-spacing: .2rem;
+      color: #73260D;
+      line-height: 1.4; }
+      @media only screen and (max-width: 25em) {
+        .dashboard__recepies__hidden-name {
+          font-size: 3rem; } }
+    .dashboard__recepies__hidden-ingridients {
+      width: 70%;
+      margin-top: 2rem; }
+      .dashboard__recepies__hidden-ingridients h6 {
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        font-family: "Courgette", cursive;
+        font-weight: 300;
+        color: #73260D;
+        text-align: center;
+        margin-bottom: 1rem; }
+      .dashboard__recepies__hidden-ingridients p {
+        text-align: center; }
+        .dashboard__recepies__hidden-ingridients p span {
+          font-size: 1.2rem;
+          font-family: "Courier New", sans-serif;
+          color: #73260D;
+          text-align: center; }
+    .dashboard__recepies__hidden-preparation {
+      width: 70%;
+      margin-top: 2rem; }
+      .dashboard__recepies__hidden-preparation h6 {
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        font-family: "Courgette", cursive;
+        font-weight: 300;
+        color: #73260D;
+        text-align: center;
+        margin-bottom: 1rem; }
+      .dashboard__recepies__hidden-preparation p {
+        font-size: 1.2rem;
+        font-family: "Courier New", sans-serif;
+        color: #73260D;
+        text-align: center; }
+
+.newRecepie {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .newRecepie__header {
+    font-size: 5rem;
+    color: #73260D;
+    text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300; }
+  .newRecepie__form {
+    margin: 1rem 1rem 5rem 1rem;
+    width: 40%; }
+    @media only screen and (max-width: 50em) {
+      .newRecepie__form {
+        width: 60%; } }
+    .newRecepie__form--area {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem 0; }
+    .newRecepie__form--label {
+      text-align: center;
+      font-size: 2.5rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 300;
+      letter-spacing: .1rem;
+      color: #73260D;
+      text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
+    .newRecepie__form--input {
+      height: 3rem;
+      border: none;
+      background-color: #CFE8BD;
+      box-shadow: 0 1rem 1rem rgba(207, 232, 189, 0.2); }
+      .newRecepie__form--input:focus {
+        outline: none;
+        border-bottom: 1px solid #7CAA5A; }
+    .newRecepie__form--ingridient span {
+      font-family: "Courier New", sans-serif;
+      font-size: 1.2rem;
+      color: #73260D; }
+    .newRecepie__form--ingridient svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: #451708;
+      cursor: pointer;
+      margin-left: 1rem;
+      transform: translateY(0.2rem);
+      transition: all .2s; }
+      .newRecepie__form--ingridient svg:hover {
+        fill: #73260D;
+        transform: translateY(0); }
+    .newRecepie__form--textarea {
+      height: 10rem;
+      width: 120%;
+      transform: translateX(-8%);
+      border: none;
+      background-color: #CFE8BD;
+      box-shadow: 0 1rem 1rem rgba(207, 232, 189, 0.2); }
+      .newRecepie__form--textarea:focus {
+        outline: none;
+        border-bottom: 1px solid #7CAA5A; }
+    .newRecepie__form--photo {
+      display: block;
+      margin: 0 auto;
+      width: .1px;
+      height: .1px;
+      opacity: 0;
+      overflow: hidden;
+      cursor: pointer; }
+      .newRecepie__form--photo-label {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .newRecepie__form--photo-label svg {
+          width: 3.5rem;
+          height: 3.5rem;
+          fill: #451708;
+          transition: all .2s; }
+          .newRecepie__form--photo-label svg:hover {
+            transform: translateY(-0.2rem);
+            fill: #73260D; }
+        .newRecepie__form--photo-label span {
+          font-family: "Courier New", sans-serif;
+          font-size: 1.2rem;
+          color: #73260D;
+          letter-spacing: .1rem; }
+    .newRecepie__form--add {
+      border: none;
+      position: relative; }
+      .newRecepie__form--add-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+        position: absolute;
+        right: -3.5rem;
+        top: -2rem;
+        border-radius: 50%;
+        fill: #451708;
+        cursor: pointer;
+        transition: all .2s; }
+        .newRecepie__form--add-icon:hover {
+          transform: translateY(-0.2rem);
+          fill: #73260D; }
+    .newRecepie__form--submit {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      border: none;
+      background-color: #451708;
+      color: #f4d15a;
+      padding: 1rem 2.5rem;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 2rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 300;
+      letter-spacing: .1rem;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+      transition: transform .2s; }
+      .newRecepie__form--submit:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+      .newRecepie__form--submit:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+  .newRecepie__success {
+    position: fixed;
+    top: 20vh;
+    left: 20vw;
+    width: 60vw;
+    height: 60vh;
+    background-image: linear-gradient(to top, #7caa5a, #1B632B); }
+    .newRecepie__success--icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5rem;
+      height: 5rem;
+      cursor: pointer;
+      fill: black;
+      transition: all 1s; }
+      .newRecepie__success--icon:hover {
+        transform: rotate(360deg);
+        fill: #451708; }
+    .newRecepie__success--header {
+      text-align: center;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 3.5rem;
+      font-weight: 400;
+      letter-spacing: .2rem;
+      margin-top: 20vh;
+      color: #451708;
+      text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
+
+.footer {
+  background-color: #451708;
+  padding: 2rem 5rem;
+  margin-bottom: 2rem;
+  margin-top: 10rem; }
+  .footer__text {
+    color: snow;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    text-align: center; }
+    .footer__text span {
+      display: inline-block;
+      background-color: #000;
+      color: #D9AC0F;
+      padding: .5rem 1rem;
+      border-radius: 2px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s; }
+      .footer__text span:hover {
+        transform: scale(1.05) rotate(3deg); }
+
+.calendar {
+  margin-top: 5rem; }
+  .calendar__header {
+    font-size: 6.5rem;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    color: #73260D;
+    text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(115, 38, 13, 0.3); }
+    @media only screen and (max-width: 37.5em) {
+      .calendar__header {
+        font-size: 4rem; } }
+  .calendar__table {
+    width: 100%;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); }
+    .calendar__table__header {
+      grid-column: 2/-2;
+      text-align: center;
+      font-family: "Rajdhani", sans-serif;
+      letter-spacing: .1rem;
+      font-weight: 300;
+      font-size: 4rem;
+      text-shadow: 0.1rem 0.5rem 1rem rgba(244, 209, 90, 0.2);
+      color: #D9AC0F;
+      background-color: black;
+      border: 1px solid black; }
+      @media only screen and (max-width: 37.5em) {
+        .calendar__table__header {
+          font-size: 2.5rem; } }
+    .calendar__table--icon {
+      fill: #D9AC0F;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      cursor: pointer; }
+      .calendar__table--icon:hover {
+        background-color: #1a1a1a; }
+      .calendar__table--icon__before {
+        grid-column: 1/2; }
+      .calendar__table--icon__next {
+        grid-column: 7/8; }
+    .calendar__table__weekday {
+      padding: 2rem;
+      font-size: 3rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 300;
+      text-align: center;
+      color: snow;
+      border: 1px solid black;
+      background-color: #451708; }
+      @media only screen and (max-width: 37.5em) {
+        .calendar__table__weekday {
+          font-size: 2rem;
+          padding: .5rem; } }
+      .calendar__table__weekday:not(:last-child) {
+        border-right: none; }
+      .calendar__table__weekday--blank {
+        background-color: #f9f9f9; }
+      .calendar__table__weekday--day {
+        cursor: pointer; }
+        .calendar__table__weekday--day:hover {
+          background-color: #a13512; }
+      .calendar__table__weekday--green {
+        background-color: #1B632B; }
+      .calendar__table__weekday--red {
+        background-color: #990000; }
+    .calendar__table__weekday-0 {
+      grid-column: 1/2;
+      background-color: #990000; }
+    .calendar__table__weekday-1 {
+      grid-column: 2/3; }
+    .calendar__table__weekday-2 {
+      grid-column: 3/4; }
+    .calendar__table__weekday-3 {
+      grid-column: 4/5; }
+    .calendar__table__weekday-4 {
+      grid-column: 5/6; }
+    .calendar__table__weekday-5 {
+      grid-column: 6/7; }
+    .calendar__table__weekday-6 {
+      grid-column: 7/8; }
+  .calendar__event {
+    animation: comeOut .5s ease-out;
+    transition: animation .5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(23, 8, 3, 0.9);
+    width: 100vw;
+    height: 100vh;
+    z-index: 9; }
+    .calendar__event__box {
+      position: absolute;
+      top: 5vh;
+      left: 10vw;
+      background-color: rgba(27, 99, 43, 0.9);
+      color: snow;
+      width: 80vw;
+      height: 90vh; }
+      .calendar__event__box h1 {
+        margin-top: 5rem;
+        font-family: "Rajdhani", sans-serif;
+        font-size: 4rem;
+        font-weight: 300;
+        letter-spacing: .2rem;
+        text-align: center;
+        text-shadow: 0.1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4); }
+        @media only screen and (max-width: 37.5em) {
+          .calendar__event__box h1 {
+            font-size: 2.5rem; } }
+      .calendar__event__box p {
+        text-align: center;
+        font-family: "Special Elite", cursive;
+        letter-spacing: .1rem;
+        font-size: 2rem;
+        margin-top: 2rem;
+        color: black; }
+      .calendar__event__box input {
+        border: none;
+        display: block;
+        margin: 0 auto;
+        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+        border-radius: 2px; }
+        .calendar__event__box input:focus {
+          outline: none; }
+      .calendar__event__box--time {
+        width: 15rem;
+        padding: 0 2rem; }
+      .calendar__event__box--description {
+        width: 80%;
+        padding: 1rem 2rem; }
+      .calendar__event__box--add {
+        border: none;
+        background-color: black;
+        padding: 1rem 2.5rem;
+        width: 20%;
+        display: block;
+        margin: 2rem auto;
+        font-size: 2rem;
+        color: #D9AC0F;
+        font-family: "Rajdhani", sans-serif, sans-serif;
+        letter-spacing: .2rem;
+        cursor: pointer;
+        border-radius: 2px;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+        transition: transform .2s; }
+        .calendar__event__box--add:hover {
+          transform: translateY(-0.3rem);
+          box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+        .calendar__event__box--add:active {
+          transform: translateY(-0.1rem);
+          box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+        @media only screen and (max-width: 37.5em) {
+          .calendar__event__box--add {
+            width: 90%; } }
+      .calendar__event__box--icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5rem;
+        height: 5rem;
+        cursor: pointer;
+        fill: #660000;
+        transition: all 1s; }
+        .calendar__event__box--icon:hover {
+          transform: rotate(360deg);
+          fill: black; }

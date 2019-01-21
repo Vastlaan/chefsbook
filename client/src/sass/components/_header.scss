@@ -1,0 +1,79 @@
+.header{
+	width:100%;
+	display: flex;
+	justify-content: space-between;
+	padding:1.5rem;
+	background-color: $color-grey-light;
+	animation: comeOut .7s ease-out;
+	transition: animation .2s;
+	
+	
+	&__logo{
+		cursor:pointer;
+		position:relative;
+		z-index: 3;
+		
+		&::before{
+			content:"";
+			display:block;
+			width:3px;
+			height:3px;
+			background-color: darken($color-primary,10%);
+			position:absolute;
+			bottom:0;
+			left:0;
+			border-radius: 50%;
+			animation:laser 3s cubic-bezier(.55,1.32,.42,-0.39) infinite;
+			transition: all .3s;
+			z-index: 0;
+		}
+		&:hover::before{
+			animation:none;
+			transform:scale(43);
+			border-radius: 50%;
+			bottom:35%;
+			left:50%;
+			
+			background-color: darken($color-primary,10%);
+			@include respond(s){
+				transform:scale(33);
+			}
+			@include respond(xxl){
+				transform:scale(65);
+			}
+			transition: all .6s;
+		}
+		img{
+			height:8rem;
+			position:relative;
+			z-index: 3;
+		}
+	}
+	&__login{
+		display: block;
+		align-self: center;
+		padding:.8rem 2.5rem;
+		border-radius: .3rem;
+		text-decoration: none;
+		background-color: $color-brown;
+		font-family: $font-rajdhani;
+		font-weight: 500;
+		font-size: 2rem;
+		color:$color-secondary-light-2;
+		letter-spacing: .1rem;
+		text-align: center;
+
+		@include btn-shadow;
+		@include respond(s){
+			padding:.2rem 1rem;
+		}
+		
+		&-icon{
+			width:2rem;
+			height:2rem;
+			margin-right: 1rem;
+			fill:$color-secondary-light-2;
+			transform: translateY(.4rem)
+		}
+	}
+}

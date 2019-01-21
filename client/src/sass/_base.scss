@@ -1,0 +1,38 @@
+::-webkit-scrollbar{
+	width:1rem;
+}
+::-webkit-scrollbar-track{
+	background-color: lighten(#000,10%);
+	border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb{
+	background-color: $color-primary;
+	border-radius: .5rem;
+}
+
+*,
+*::before,
+*::after {
+	margin:0;
+	padding:0;
+	box-sizing: inherit;
+}
+
+html{
+	box-sizing: border-box;
+	font-size: 62.5%;
+	line-height: 1.6;
+	max-width:100%;
+	@include respond(s){
+		font-size: 50%;
+	}
+	@include respond(xxl){
+		font-size: 100%;
+	}
+
+}
+
+body{
+	background-color: $color-grey-light;
+	
+}

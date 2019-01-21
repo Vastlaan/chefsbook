@@ -1,0 +1,49 @@
+@mixin btn-shadow{
+	box-shadow: 0 1rem 2rem rgba(0,0,0,.3);
+	transition: transform .2s;
+
+	&:hover{
+		transform:translateY(-.3rem);
+		box-shadow: 0 1.3rem 2.3rem rgba(0,0,0,.2);
+	}
+	&:active{
+		transform:translateY(-.1rem);
+		box-shadow: 0 1.1rem 2.1rem rgba(0,0,0,.2);
+	}
+
+}
+//	xxl = 1600
+// 	xl = 1200
+//	l = 1000
+//	m = 800
+//	s = 600
+//	xs = 400
+//	mh = 500 height
+
+
+@mixin respond($breakpoint){
+	
+	@if $breakpoint=='xl'{ 
+		@media only screen and(max-width: 75em){@content}
+	}
+	@if $breakpoint =='l'{
+		@media only screen and(max-width:62.5em){@content}
+	}
+	@if $breakpoint =='m'{
+		@media only screen and(max-width:50em){@content}
+	}
+	@if $breakpoint =='s'{
+		@media only screen and(max-width:37.5em){@content}
+	}
+	@if $breakpoint =='xs'{
+		@media only screen and(max-width:25em){@content}
+	}
+	
+	@if $breakpoint =='mh'{
+		@media only screen and(max-height:31.25em){@content}
+	}
+
+	@if $breakpoint=='xxl'{ 
+		@media only screen and(min-width: 100em){@content}
+	}
+}

@@ -1,0 +1,49 @@
+.dashboard{
+
+	margin: 2rem 0;
+	display:grid;
+	grid-template-columns: repeat(8, [col-start] 1fr [col-end] );
+	grid-template-rows: repeat(8, [row-start] 17vh [row-end] );
+	grid-gap: 2rem;
+
+	@include respond(mh){
+		grid-template-rows: repeat(8, [row-start] 25vh [row-end] );
+	}
+	
+	//=============================================calendar============================================================================
+
+	//=============================================NEWS============================================================================
+	&__news{
+		grid-column: col-start 1 / -1;
+		grid-row: 5/span 4;
+		background-color: pink;	//test	
+		margin-top: 10rem;
+		@include respond(l){
+			grid-column: col-start 1 / -1;
+			grid-row: 10/span 4;
+		}
+	}
+	//=============================================MENU============================================================================
+	&__menu{
+		grid-column: col-start 1 / -1;
+		grid-row: 10/span 4;;
+		background-color: green;	//test	
+		margin-top: 10rem;
+		@include respond(l){
+			grid-column: col-start 1 / -1;
+			grid-row: 15/span 4;
+		}
+	}
+	
+	//=============================================SCHEDULE============================================================================
+	&__schedule{
+		grid-column: col-start 1 / -1;
+		grid-row: 15/span 4;
+		background-color: orangered;	//test	
+		margin-top: 10rem;
+		@include respond(l){
+			grid-column: col-start 1 / -1;
+			grid-row: 20/span 4;
+		}
+	}
+}
