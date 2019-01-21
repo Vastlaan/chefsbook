@@ -18,7 +18,7 @@ class CalendarComponent extends React.Component {
 	}
 
 	componentWillMount(){
-		fetch('/api/events').then(res=>res.json()).then(events=>{this.setState({events})})
+		fetch('/api/events').then(res=>res.json()).then(events=>{this.setState({events})}).catch(err=>console.log(err))
 	}
 
 	firstDayOfMonth = () =>{
@@ -117,13 +117,13 @@ class CalendarComponent extends React.Component {
 	}
 	render(){
 		const {dateContext, dateEvent, events} = this.state
+
 		const weekdays = moment.weekdaysShort() 			//gives us array ['Sun','Mon','Tue'....]
 		const months = moment.months() 			
 		const year = dateContext.format('Y');
 		const month = dateContext.format('MMMM')
 		const day = dateContext.format('D')
 		const daysInMonth = dateContext.daysInMonth()
-		console.log(events)
 		let blanks = [];
 		for(let i =0 ; i< this.firstDayOfMonth(); i++){
 			blanks.push(<div className='calendar__table__weekday calendar__table__weekday--blank' key={i*0.1798}>&nbsp;</div>)
@@ -131,7 +131,6 @@ class CalendarComponent extends React.Component {
 		let daysNumbers = [];
 		for(let i =1 ; i<= daysInMonth; i++){
 			const sunday = 8-this.firstDayOfMonth()
-
 			if(i===Number(day)){
 				daysNumbers.push(<div className='calendar__table__weekday calendar__table__weekday--green calendar__table__weekday--day ' key={i*2.998} onClick={()=>this.addEvent(i,month,year)}>{i}</div>)
 			}else if(i===sunday||i===sunday+7||i===sunday+14||i===sunday+21||i===sunday+28||(this.firstDayOfMonth()===0 && i===1) ){
@@ -140,7 +139,6 @@ class CalendarComponent extends React.Component {
 			else{
 				daysNumbers.push(<div className='calendar__table__weekday calendar__table__weekday--day' key={i*2.998} onClick={()=>this.addEvent(i,month,year)}>{i}</div>)
 			}
-			
 		}
 		return(
 			<div className='calendar'>
@@ -164,17 +162,53 @@ class CalendarComponent extends React.Component {
 					{blanks.concat(daysNumbers)}
 				</div>
 				
+				<div className='calendar__comming'>
+					<h1 className='calendar__comming--header'>Comming events:</h1>
+					<div className='calendar__comming__box'>
+						{events.map((event,i)=>{
+							if(event.year===year && event.month===month){
+								return(
+									<div className='calendar__comming__box--each' key={i*91.332323}>
+										<h2>{`${event.day} ${event.month} ${event.year} at ${event.time}`}</h2>
+										<p>{event.description}</p>
+									</div>
+								)
+							}
+							return null
+						})}
+					</div>
+				</div>
+
 				<div className='calendar__event' style={{display:dateEvent.display}}>
 					<div className='calendar__event__box'>
 						<svg className='calendar__event__box--icon' onClick={()=>this.closeEvent()}>
 							<use xlinkHref={`${Icons}#icon-close`}></use>
 						</svg>
-						<h1>Event on {dateEvent.day} {dateEvent.month} {dateEvent.year}</h1>
-						<p>Time</p>
-						<input className='calendar__event__box--time' type='time' name='time' id='time' />
-						<p>Description</p>
-						<input className='calendar__event__box--description' type='text' name='description' id='description' required />
-						<button className='calendar__event__box--add' onClick={()=>this.appendEvent()}>Add Event</button>
+						<h1>Events on {dateEvent.day} {dateEvent.month} {dateEvent.year}</h1>
+
+						{events.map((event,i)=>{
+							if(event.year===dateEvent.year && event.month===dateEvent.month && event.day===dateEvent.day){
+								return(
+									<div className='calendar__event__box__current' key={i*77.12}>
+										<svg className='calendar__event__box__current--icon'>
+											<use xlinkHref={`${Icons}#icon-event_available`}></use>
+										</svg>
+										<p key={i*391.891}>At {event.time} {event.description}</p>
+									</div>
+									)
+							}
+							return null
+						})}
+						
+						<div className='calendar__event__box__add'>
+							<h2>Add Event</h2>
+							<p>Time</p>
+							<input className='calendar__event__box__add--time' type='time' name='time' id='time' />
+							<p>Description</p>
+							<textarea className='calendar__event__box__add--description' type='text' name='description' id='description' required></textarea>
+							<button className='calendar__event__box__add--add' onClick={()=>this.appendEvent()}>Add Event</button>
+						</div>
+						
 					</div>
 				</div>
 			</div> 

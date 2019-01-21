@@ -837,7 +837,9 @@ body {
       background-color: rgba(27, 99, 43, 0.9);
       color: snow;
       width: 80vw;
-      height: 90vh; }
+      height: 90vh;
+      overflow-y: scroll;
+      overflow-x: hidden; }
       .calendar__event__box h1 {
         margin-top: 5rem;
         font-family: "Rajdhani", sans-serif;
@@ -849,51 +851,89 @@ body {
         @media only screen and (max-width: 37.5em) {
           .calendar__event__box h1 {
             font-size: 2.5rem; } }
-      .calendar__event__box p {
-        text-align: center;
-        font-family: "Special Elite", cursive;
-        letter-spacing: .1rem;
-        font-size: 2rem;
-        margin-top: 2rem;
-        color: black; }
-      .calendar__event__box input {
-        border: none;
+      .calendar__event__box__current {
         display: block;
+        width: 70%;
         margin: 0 auto;
-        box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
-        border-radius: 2px; }
-        .calendar__event__box input:focus {
-          outline: none; }
-      .calendar__event__box--time {
-        width: 15rem;
-        padding: 0 2rem; }
-      .calendar__event__box--description {
-        width: 80%;
-        padding: 1rem 2rem; }
-      .calendar__event__box--add {
-        border: none;
-        background-color: black;
-        padding: 1rem 2.5rem;
-        width: 20%;
-        display: block;
-        margin: 2rem auto;
-        font-size: 2rem;
-        color: #D9AC0F;
-        font-family: "Rajdhani", sans-serif, sans-serif;
-        letter-spacing: .2rem;
-        cursor: pointer;
-        border-radius: 2px;
-        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-        transition: transform .2s; }
-        .calendar__event__box--add:hover {
-          transform: translateY(-0.3rem);
-          box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
-        .calendar__event__box--add:active {
-          transform: translateY(-0.1rem);
-          box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
-        @media only screen and (max-width: 37.5em) {
-          .calendar__event__box--add {
-            width: 90%; } }
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 2rem 2rem;
+        display: flex; }
+        .calendar__event__box__current--icon {
+          fill: snow;
+          width: 2.5rem;
+          height: 2.5rem;
+          margin-right: 1rem;
+          transform: translateY(0.4rem);
+          flex: 0 0 15%; }
+        .calendar__event__box__current p {
+          flex: 0 0 80%;
+          color: snow;
+          font-size: 2rem;
+          font-family: "Open Sans", sans-serif;
+          font-weight: 300; }
+      .calendar__event__box__add {
+        padding: 2rem;
+        margin: 2rem; }
+        .calendar__event__box__add h2 {
+          font-family: "Rajdhani", sans-serif;
+          font-size: 2.5rem;
+          font-weight: 500;
+          letter-spacing: .1rem;
+          color: black;
+          text-align: center;
+          border-bottom: 1px solid black; }
+        .calendar__event__box__add p {
+          text-align: center;
+          font-family: "Special Elite", cursive;
+          letter-spacing: .1rem;
+          font-size: 2rem;
+          margin-top: 2rem;
+          color: black; }
+        .calendar__event__box__add input {
+          border: none;
+          display: block;
+          margin: 0 auto;
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+          border-radius: 2px; }
+          .calendar__event__box__add input:focus {
+            outline: none; }
+        .calendar__event__box__add--time {
+          width: 15rem;
+          padding: 0 2rem; }
+        .calendar__event__box__add--description {
+          border: none;
+          display: block;
+          margin: 0 auto;
+          box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+          border-radius: 2px;
+          width: 80%;
+          padding: 1rem 2rem; }
+          .calendar__event__box__add--description:focus {
+            outline: none; }
+        .calendar__event__box__add--add {
+          border: none;
+          background-color: black;
+          padding: 1rem 2.5rem;
+          width: 30%;
+          display: block;
+          margin: 2rem auto;
+          font-size: 2rem;
+          color: #D9AC0F;
+          font-family: "Rajdhani", sans-serif, sans-serif;
+          letter-spacing: .2rem;
+          cursor: pointer;
+          border-radius: 2px;
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+          transition: transform .2s; }
+          .calendar__event__box__add--add:hover {
+            transform: translateY(-0.3rem);
+            box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+          .calendar__event__box__add--add:active {
+            transform: translateY(-0.1rem);
+            box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+          @media only screen and (max-width: 50em) {
+            .calendar__event__box__add--add {
+              width: 80%; } }
       .calendar__event__box--icon {
         position: absolute;
         top: 0;
@@ -906,3 +946,46 @@ body {
         .calendar__event__box--icon:hover {
           transform: rotate(360deg);
           fill: black; }
+  .calendar__comming {
+    padding: 1rem 2rem; }
+    .calendar__comming--header {
+      font-size: 5rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 300;
+      color: #73260D;
+      text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin-bottom: 1rem;
+      margin-top: 5rem;
+      border-bottom: 1px solid rgba(115, 38, 13, 0.3); }
+      @media only screen and (max-width: 37.5em) {
+        .calendar__comming--header {
+          font-size: 3rem; } }
+    .calendar__comming__box {
+      display: flex;
+      flex-wrap: wrap; }
+      .calendar__comming__box--each {
+        flex: 0 0 33.3332%;
+        margin: 1rem;
+        padding: 2rem;
+        background-color: #1B632B;
+        color: snow;
+        cursor: pointer; }
+        @media only screen and (max-width: 50em) {
+          .calendar__comming__box--each {
+            flex: 0 0 45%; } }
+        @media only screen and (max-width: 37.5em) {
+          .calendar__comming__box--each {
+            flex: 0 0 90%;
+            margin: 1rem auto; } }
+        .calendar__comming__box--each p {
+          margin-top: 2rem;
+          font-family: "Rajdhani", sans-serif, sans-serif;
+          font-weight: 300;
+          letter-spacing: .2rem;
+          font-size: 1.2rem; }
+        .calendar__comming__box--each h2 {
+          font-family: "Rajdhani", sans-serif;
+          font-weight: 300;
+          font-size: 1.8rem;
+          text-align: center; }
