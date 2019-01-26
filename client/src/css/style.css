@@ -285,33 +285,15 @@ body {
   @media only screen and (max-height: 31.25em) {
     .dashboard {
       grid-template-rows: repeat(8, [row-start] 25vh [row-end]); } }
-  .dashboard__news {
-    grid-column: col-start 1 / -1;
-    grid-row: 5/span 4;
-    background-color: pink;
-    margin-top: 10rem; }
-    @media only screen and (max-width: 62.5em) {
-      .dashboard__news {
-        grid-column: col-start 1 / -1;
-        grid-row: 10/span 4; } }
-  .dashboard__menu {
+  .dashboard__preparation {
     grid-column: col-start 1 / -1;
     grid-row: 10/span 4;
     background-color: green;
     margin-top: 10rem; }
     @media only screen and (max-width: 62.5em) {
-      .dashboard__menu {
+      .dashboard__preparation {
         grid-column: col-start 1 / -1;
         grid-row: 15/span 4; } }
-  .dashboard__schedule {
-    grid-column: col-start 1 / -1;
-    grid-row: 15/span 4;
-    background-color: orangered;
-    margin-top: 10rem; }
-    @media only screen and (max-width: 62.5em) {
-      .dashboard__schedule {
-        grid-column: col-start 1 / -1;
-        grid-row: 20/span 4; } }
 
 .dashboard__calendar {
   grid-column: col-start 1 / span 3;
@@ -370,6 +352,62 @@ body {
     color: snow;
     font-size: 1.5rem;
     font-family: "Courier New",sans-serif; }
+
+.dashboard__schedule {
+  grid-column: col-start 1 / -1;
+  grid-row: 5/span 4;
+  margin-top: 10rem; }
+  @media only screen and (max-width: 62.5em) {
+    .dashboard__schedule {
+      grid-column: col-start 1 / -1;
+      grid-row: 9/span 4; } }
+  .dashboard__schedule__header {
+    font-family: "Rajdhani", sans-serif;
+    font-size: 5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #451708;
+    text-align: center;
+    text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    margin-bottom: 5rem; }
+    @media only screen and (max-width: 50em) {
+      .dashboard__schedule__header {
+        font-size: 4rem; } }
+    @media only screen and (max-width: 25em) {
+      .dashboard__schedule__header {
+        font-size: 3.5rem; } }
+  .dashboard__schedule__graph {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 16% repeat(7, 12%);
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.3); }
+    .dashboard__schedule__graph--name {
+      grid-column: 1/2;
+      background-color: #7CAA5A;
+      font-size: 2rem;
+      font-family: "Rajdhani", sans-serif;
+      letter-spacing: .2rem;
+      text-align: center;
+      padding: 1rem;
+      border: 1px solid #73260D;
+      border-right: none; }
+      @media only screen and (max-width: 50em) {
+        .dashboard__schedule__graph--name {
+          font-size: 1.3rem; } }
+    .dashboard__schedule__graph--day {
+      font-size: 1.7rem;
+      font-family: "Rajdhani", sans-serif;
+      letter-spacing: .2rem;
+      text-align: center;
+      padding: 0rem;
+      border: 1px solid #73260D; }
+      .dashboard__schedule__graph--day:not(:last-child) {
+        border-right: none; }
+      @media only screen and (max-width: 50em) {
+        .dashboard__schedule__graph--day {
+          font-size: 1.2rem; } }
+      .dashboard__schedule__graph--day p > sup {
+        font-size: .4rem; }
 
 .dashboard__recepies {
   grid-column: col-start 4 / -1;
@@ -494,6 +532,18 @@ body {
         .dashboard__recepies__hidden-close-svg {
           fill: #73260D;
           top: 5rem; } }
+    .dashboard__recepies__hidden-close-svg-2 {
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      fill: snow;
+      cursor: pointer; }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard__recepies__hidden-close-svg-2 {
+          fill: #73260D;
+          top: 5.2rem; } }
     .dashboard__recepies__hidden-box {
       width: 20rem;
       height: 20rem;
@@ -963,6 +1013,7 @@ body {
           font-size: 3rem; } }
     .calendar__comming__box {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap; }
       .calendar__comming__box--each {
         flex: 0 0 33.3332%;
@@ -970,7 +1021,7 @@ body {
         padding: 2rem;
         background-color: #1B632B;
         color: snow;
-        cursor: pointer; }
+        position: relative; }
         @media only screen and (max-width: 50em) {
           .calendar__comming__box--each {
             flex: 0 0 45%; } }
@@ -978,6 +1029,18 @@ body {
           .calendar__comming__box--each {
             flex: 0 0 90%;
             margin: 1rem auto; } }
+        .calendar__comming__box--each svg {
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+          fill: #73260D;
+          position: absolute;
+          right: 1rem;
+          bottom: 1rem;
+          transition: all .5s; }
+          .calendar__comming__box--each svg:hover {
+            transform: translateY(-2px);
+            fill: maroon; }
         .calendar__comming__box--each p {
           margin-top: 2rem;
           font-family: "Rajdhani", sans-serif, sans-serif;

@@ -140,6 +140,19 @@
 					top:5rem;
 				}
 			}
+		&-close-svg-2{
+				width:4rem;
+				height:4rem;
+				position:absolute;
+				top:2rem;
+				left:2rem;
+				fill:snow;
+				cursor:pointer;
+				@include respond(s){
+					fill:$color-brown;
+					top:5.2rem;
+				}
+			}
 
 		
 

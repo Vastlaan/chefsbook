@@ -34,9 +34,14 @@ module.exports = (app) =>{
 		.then(user=> res.send(user.recepies))
 		
 	})
+
+	app.post('/api/current_user/file', upload.array("uploadFile", 1), (req,res)=>{
+		res.status(200).json(`https://s3.eu-west-3.amazonaws.com/noirfataletestbucket/${res.req.files[0].key}`)
+	})
+
 	app.post('/api/current_user/recepies', (req,res)=>{
-			const recept = req.body
-			res.status(200)
+
+		const recept = req.body
 
 		User.findOneAndUpdate(
 			{googleId:req.user.googleId},
@@ -52,7 +57,23 @@ module.exports = (app) =>{
 			})
 	})
 
-	app.post('/api/current_user/file', upload.array("uploadFile", 1), (req,res)=>{
-		res.status(200).json(`https://s3.eu-west-3.amazonaws.com/noirfataletestbucket/${res.req.files[0].key}`)
+	app.post('/api/current_user/remove_recepie', (req,res)=>{
+
+		const toRemove = req.body
+		console.log(toRemove)
+		User.findOneAndUpdate(
+			{googleId:req.user.googleId},
+			{$pull: {recepies:toRemove}},
+			{new:true},
+			(err,doc)=>{
+				if(err){
+					console.log(err)
+					res.status(400).json("Something went wrong")
+				}else{
+					res.send(doc)
+				}
+			})
 	})
+
+	
 }

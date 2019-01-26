@@ -278,6 +278,7 @@
 		&__box{
 
 			display:flex;
+			justify-content: center;
 			flex-wrap: wrap;
 
 			&--each{
@@ -286,13 +287,29 @@
 				padding:2rem;
 				background-color:$color-primary-dark;
 				color: snow;
-				cursor:pointer;
+				position:relative;
+
+				
 				@include respond(m){
 					flex:0 0 45%;
 				}
 				@include respond(s){
 					flex:0 0 90%;
 					margin: 1rem auto;
+				}
+				svg{
+					width:2rem;
+					height:2rem;
+					cursor:pointer;
+					fill:$color-brown;
+					position:absolute;
+					right:1rem;
+					bottom:1rem;
+					transition:all .5s;
+					&:hover{
+						transform:translateY(-2px);
+						fill:darken(red,25%);
+					}
 				}
 				p{
 					margin-top: 2rem;

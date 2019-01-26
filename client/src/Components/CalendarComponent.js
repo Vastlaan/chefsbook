@@ -112,8 +112,25 @@ class CalendarComponent extends React.Component {
 			},
 			body: JSON.stringify(event)
 		})
-		.then(data=>data.json()).then(message=>console.log(message))
-		des.style.border="none";
+		.then(data=>data.json()).then(events=>this.setState({events}))
+		this.closeEvent()
+	}
+
+	removeEvent=(year,month,day,time,description)=>{
+		const toDelete = {
+			day,
+			month,
+			year,
+			time,
+			description
+		}
+		fetch('/api/remove_event',{
+			method:"POST",
+			headers:{
+				"Content-Type":"application/json"
+			},
+			body:JSON.stringify(toDelete)
+		}).then(data=>data.json()).then(events=>this.setState({events})).catch(err=>console.log(err))
 	}
 	render(){
 		const {dateContext, dateEvent, events} = this.state
@@ -171,6 +188,9 @@ class CalendarComponent extends React.Component {
 									<div className='calendar__comming__box--each' key={i*91.332323}>
 										<h2>{`${event.day} ${event.month} ${event.year} at ${event.time}`}</h2>
 										<p>{event.description}</p>
+										<svg onClick={()=>this.removeEvent(event.year,event.month,event.day,event.time,event.description)}>
+											<use xlinkHref={`${Icons}#icon-bin`}></use>
+										</svg>
 									</div>
 								)
 							}

@@ -12,7 +12,6 @@ class Landing extends React.Component{
 		//const halfScreen = window.innerHeight/2;
 		const currentPagePosition = window.pageYOffset
 		if(currentPagePosition>=featuresTopPosition){
-			console.log('got ya')
 			features.className = features.className.replace('hide','show');
 		}
 	}

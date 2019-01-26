@@ -29,4 +29,21 @@ module.exports =(app)=>{
 			}
 		)
 	})
+
+	app.post('/api/remove_event',(req,res)=>{
+		console.log(req.body)
+		User.findOneAndUpdate(
+			{_id:req.user._id},
+			{$pull: {events:req.body}},
+			{new:true},
+			(err, user)=>{
+				if(err){
+					console.log(err)
+					res.status(400).json("Something went wrong")
+				}else{
+					res.send(user.events)
+				}
+			}
+		)
+	})
 }

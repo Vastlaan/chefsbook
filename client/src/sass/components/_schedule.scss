@@ -1,0 +1,67 @@
+.dashboard__schedule{
+	grid-column: col-start 1 / -1;
+	grid-row: 5/span 4;
+	margin-top: 10rem;
+	@include respond(l){
+		grid-column: col-start 1 / -1;
+		grid-row: 9/span 4;
+	}
+
+	&__header{
+		font-family: $font-rajdhani;
+		font-size: 5rem;
+		font-weight: 300;
+		text-transform: uppercase;
+		color:$color-brown-dark;
+		text-align: center;
+		text-shadow: .5rem .5rem 1rem rgba(0,0,0,.3);
+		margin-bottom: 5rem;
+
+		@include respond(m){
+			font-size: 4rem;
+		}
+		@include respond(xs){
+			font-size: 3.5rem;
+		}
+	}
+
+	&__graph{
+		margin:1rem;
+		display:grid;
+		grid-template-columns: 16% repeat(7, 12%);
+		box-shadow: 0 3rem 3rem rgba(0,0,0,.3);
+
+		&--name{
+			grid-column: 1/2;
+			background-color: $color-primary;
+			font-size: 2rem;
+			font-family: $font-rajdhani;
+			letter-spacing: .2rem;
+			text-align: center;
+			padding:1rem;
+			border:1px solid $color-brown;
+			border-right: none;
+			@include respond(m){
+				font-size: 1.3rem;
+			}
+		}
+
+		&--day{
+			font-size: 1.7rem;
+			font-family: $font-rajdhani;
+			letter-spacing: .2rem;
+			text-align: center;
+			padding:0rem;
+			border:1px solid $color-brown;
+			&:not(:last-child){
+				border-right: none;
+			}
+			@include respond(m){
+				font-size: 1.2rem;
+			}
+			p>sup{
+				font-size: .4rem;
+			}
+		}
+	}
+}

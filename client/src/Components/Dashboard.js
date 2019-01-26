@@ -1,6 +1,7 @@
 import React from 'react';
 import Calendar from './Calendar';
 import Recepies from './Recepies';
+import Schedule from './Schedule';
 
 class Dashboard extends React.Component {
 
@@ -53,15 +54,10 @@ class Dashboard extends React.Component {
 
 				<Recepies recepies={recepies} />
 
-				<div className='dashboard__news'>
-					News
-				</div>
+				<Schedule />
 
-				<div className='dashboard__menu'>
-					Menu
-				</div>
-				<div className='dashboard__schedule'>
-					Schedule
+				<div className='dashboard__preparation'>
+					Preparation
 				</div>
 			</div>
 			)

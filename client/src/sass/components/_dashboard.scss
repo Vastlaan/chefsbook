@@ -12,19 +12,10 @@
 	
 	//=============================================calendar============================================================================
 
-	//=============================================NEWS============================================================================
-	&__news{
-		grid-column: col-start 1 / -1;
-		grid-row: 5/span 4;
-		background-color: pink;	//test	
-		margin-top: 10rem;
-		@include respond(l){
-			grid-column: col-start 1 / -1;
-			grid-row: 10/span 4;
-		}
-	}
+	//=============================================schedule============================================================================
+	
 	//=============================================MENU============================================================================
-	&__menu{
+	&__preparation{
 		grid-column: col-start 1 / -1;
 		grid-row: 10/span 4;;
 		background-color: green;	//test	
@@ -32,18 +23,6 @@
 		@include respond(l){
 			grid-column: col-start 1 / -1;
 			grid-row: 15/span 4;
-		}
-	}
-	
-	//=============================================SCHEDULE============================================================================
-	&__schedule{
-		grid-column: col-start 1 / -1;
-		grid-row: 15/span 4;
-		background-color: orangered;	//test	
-		margin-top: 10rem;
-		@include respond(l){
-			grid-column: col-start 1 / -1;
-			grid-row: 20/span 4;
 		}
 	}
 }

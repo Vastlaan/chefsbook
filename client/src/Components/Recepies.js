@@ -11,9 +11,26 @@ class Recepies extends React.Component {
 		}
 	}
 
-	openRecepie(index){
+	openRecepie=(index)=>{
 		this.setState({display: 'block'})
 		this.setState({recept: this.props.recepies[index]})
+	}
+
+	removeRecepie=(name,photo,ingridients,preparation )=>{
+		const toRemove={
+			name,
+			photo,
+			ingridients,
+			preparation
+		}
+		fetch('/api/current_user/remove_recepie',{
+			method: "POST",
+			headers: {
+				"Content-Type":"application/json"
+			},
+			body: JSON.stringify(toRemove)
+		}).then(data=>data.json()).then(recept=>window.location.reload()).catch(err=>console.log(err))
+
 	}
 
 	render(){
@@ -47,7 +64,9 @@ class Recepies extends React.Component {
 						<div className='dashboard__recepies__hidden'>
 
 							<div className='dashboard__recepies__hidden-frame'>
-								
+								<svg className='dashboard__recepies__hidden-close-svg-2' onClick={()=>this.removeRecepie(recept.name,recept.photo,recept.ingridients,recept.preparation)}>
+									<use xlinkHref={`${Icons}#icon-bin`} />
+								</svg>
 								<svg className='dashboard__recepies__hidden-close-svg' onClick={()=>this.setState({display:'none'})}>
 									<use xlinkHref={`${Icons}#icon-close`} />
 								</svg>
