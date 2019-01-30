@@ -1,39 +1,82 @@
-.dashboard__schedule{
-	grid-column: col-start 1 / -1;
-	grid-row: 5/span 4;
-	margin-top: 10rem;
-	@include respond(l){
-		grid-column: col-start 1 / -1;
-		grid-row: 9/span 4;
-	}
+.schedule{
+
+	position:relative;
 
 	&__header{
 		font-family: $font-rajdhani;
-		font-size: 5rem;
+		font-size: 4rem;
 		font-weight: 300;
 		text-transform: uppercase;
-		color:$color-brown-dark;
 		text-align: center;
 		text-shadow: .5rem .5rem 1rem rgba(0,0,0,.3);
-		margin-bottom: 5rem;
-
+		margin:5rem;
 		@include respond(m){
-			font-size: 4rem;
+			font-size: 3rem;
 		}
-		@include respond(xs){
-			font-size: 3.5rem;
+		@include respond(s){
+			font-size: 2.5rem;
 		}
 	}
 
-	&__graph{
-		margin:1rem;
+	&__icon{
+		width:5rem;
+		height:5rem;
+		transform:translateY(1.5rem);
+		fill:$color-brown;
+		padding-right: 1rem;
+		border-right: 1px solid $color-brown;
+	}
+	&__icon--2{
+		width:2rem;
+		height:2rem;
+		transform:translate(-1rem ,.5rem);
+		fill:$color-brown-dark;
+
+		@include respond(s){
+			width:1.5rem;
+			height:1.5rem;
+			transform: translate(0,.5rem)
+		}
+	}
+	&__icon--3{
+		position:absolute;
+		top:1rem;
+		right:1rem;
+		width:3rem;
+		height:3rem;
+		fill:snow;
+		cursor:pointer;
+		transition:all 1s;
+		@include respond(s){
+			width:1.5rem;
+			height:1.5rem;
+		}
+
+		&:hover{
+			transform:rotate(360deg);
+			fill:darken(red,25%);
+		}
+	}
+
+	&__weekNumber{
+		font-family: $font-rajdhani;
+		font-size: 2.5rem;
+		font-weight: 300;
+		color:$color-brown;
+		margin:2rem;
+		display:inline-block;
+	}
+
+	&__head{
+		margin:1rem 1rem 0 1rem;
 		display:grid;
 		grid-template-columns: 16% repeat(7, 12%);
-		box-shadow: 0 3rem 3rem rgba(0,0,0,.3);
+		
 
 		&--name{
 			grid-column: 1/2;
-			background-color: $color-primary;
+			background-color: black;
+			color:$color-secondary-light;
 			font-size: 2rem;
 			font-family: $font-rajdhani;
 			letter-spacing: .2rem;
@@ -44,6 +87,7 @@
 			@include respond(m){
 				font-size: 1.3rem;
 			}
+
 		}
 
 		&--day{
@@ -52,7 +96,9 @@
 			letter-spacing: .2rem;
 			text-align: center;
 			padding:0rem;
-			border:1px solid $color-brown;
+			border:1px solid $color-brown-dark;
+			background-color: $color-brown;
+			color:snow;
 			&:not(:last-child){
 				border-right: none;
 			}
@@ -60,8 +106,257 @@
 				font-size: 1.2rem;
 			}
 			p>sup{
-				font-size: .4rem;
+				font-size: .8rem;
 			}
 		}
 	}
+	&__graph{
+		margin:0 1rem;
+		display:grid;
+		grid-template-columns: 16% repeat(7, 12%);
+		
+
+		&--name{
+			grid-column: 1/2;
+			background-color: $color-primary;
+			font-size: 2rem;
+			font-family: $font-rajdhani;
+			letter-spacing: .2rem;
+			text-align: center;
+			padding:1rem;
+			border-left:1px solid $color-brown-dark;
+			border-bottom: 1px solid $color-brown-dark;
+			display:flex;
+			@include respond(m){
+				font-size: 1.3rem;
+			}
+			@include respond(xs){
+				flex-direction: column;
+				padding:0;
+				align-items: center;
+			}
+		}
+
+		&--day{
+			font-size: 1.7rem;
+			font-family: $font-rajdhani;
+			letter-spacing: .2rem;
+			text-align: center;
+			padding:0rem;
+			border-left:1px solid $color-brown-dark;
+			border-bottom: 1px solid $color-brown-dark;
+			cursor:pointer;
+			transition:background-color .3s;
+
+			&:hover{
+				background-color: lighten($color-primary,20%);
+			}
+
+			&:last-child{
+				border-right: 1px solid $color-brown-dark;
+			}
+			@include respond(m){
+				font-size: 1.2rem;
+			}
+			@include respond(s){
+				font-size: 1rem;
+				padding-top: 1rem;
+			}
+		}
+	}
+
+	&__options{
+		
+		margin-top: 5rem;
+		display:flex;
+		flex-direction: column;
+
+		&__btn{
+			border:none;
+			padding:2rem 5rem;
+			margin:0 auto;
+			background-color: $color-primary;
+			font-size: 2.5rem;
+			font-family: $font-rajdhani;
+			font-weight: 300;
+			color:snow;
+			cursor:pointer;
+			border-radius: 3px;
+			@include btn-shadow;
+
+			&:focus{
+				outline:none;
+			}
+
+			@include respond(s){
+				font-size: 2rem;
+				padding: 1rem 3rem;
+			}
+		}
+	}
+
+	&__add{
+		position:fixed;
+		top:5%;
+		left:0;
+		height:90%;
+		width:70%;
+		background-color: rgba($color-primary-dark,1);
+		padding:2rem;
+		animation:comeLeft 1s linear;
+		overflow-y:scroll;
+		z-index: 11;
+
+		@include respond(m){
+			width:90%;
+		}
+		@include respond(s){
+			top:0;
+			width:100%;
+			height:100%;
+		}
+
+		&__person{
+			display:flex;
+			flex-direction: column;
+			justify-content:center;
+
+			&--name{
+
+				text-align: center;
+				font-family: $font-special;
+				text-transform: uppercase;
+				letter-spacing: .2rem;
+				color:$color-brown-dark;
+				
+				&--input{
+					width:50%;
+					margin:1rem auto;
+					border:none;
+					padding:1rem;
+					font-size: 2rem;
+					text-align: center;
+					&:focus{
+						outline:none;
+
+					}
+				}
+			}
+			h2{
+				text-align: center;
+				font-family: $font-special;
+				text-transform: uppercase;
+				letter-spacing: .2rem;
+				color:$color-brown-dark;
+				margin-top: 1rem;
+				border-top: 1px solid $color-brown-dark;
+				padding-top:1rem;
+			}
+			p{
+				font-family: "Courier New", sans-serif;
+				text-align: center;
+				letter-spacing: .1rem;
+				font-size: 1.2rem;
+
+			}
+
+			&--day{
+				display:flex;
+				justify-content: space-between;
+				margin:1rem;
+				
+				&--checkbox{
+					position:relative;
+					cursor:pointer;
+					width:40%;
+					@include respond(s){
+						width:30%;
+					}
+					&:hover &--custom {
+						transform:scale(1.05);
+					}
+					&--input{
+						position:absolute;
+						top:.25rem;
+						left:.25rem;
+						width:0rem;
+						height:0rem;
+						opacity:0;
+						background-color: none;
+						border:none;
+
+						&:checked ~ .schedule__add__person--day--checkbox--custom::after{
+							background-color: $color-brown-dark;
+						}
+					}
+					&--custom{
+						position:absolute;
+						top:0;
+						left:0;
+						width:2.5rem;
+						height:2.5rem;
+						background-color: $color-primary;
+						border-radius: 50%;
+						transition: transfrom .5s;
+
+						&::after{
+							content:'';
+							display:block;
+							position:absolute;
+							top:.4rem;
+							left:.4rem;
+							width:1.7rem;
+							height:1.7rem;
+							border-radius: 50%;
+							background-color: snow;
+						}
+					}
+					&--span{
+						font-family: $font-special;
+						text-transform: uppercase;
+						letter-spacing: .2rem;
+						color:$color-brown-dark;
+						margin-left: 3rem;
+						font-size: 1.8rem;
+						@include respond(s){
+							font-size: 1.3rem;
+						}
+					}
+				}
+				div{
+					@include respond(xs){
+						display:flex;
+						flex-direction: column;
+						justify-content: center;
+					}
+					p{
+						
+					}
+					input{
+						transform:translateY(-.5rem);
+						@include respond(xs){
+							transform:translateY(.5rem);
+						}
+					}
+				}
+				
+			}
+		}
+		&__submit{
+			display:block;
+			width:50%;
+			padding:1rem 2rem;
+			border:none;
+			margin:0 auto;
+			cursor:pointer;
+			font-family: "Courier New", sans-serif;
+			background-color: $color-brown-dark;
+			color:$color-secondary-light;
+			margin-top: 1rem;
+			font-size: 2rem;
+
+			@include btn-shadow;
+		}
+	}
 }
+

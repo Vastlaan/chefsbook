@@ -9,6 +9,7 @@ import Dashboard from './Components/Dashboard';
 import NewRecepie from './Components/NewRecepie';
 import Footer from './Components/Footer';
 import CalendarComponent from './Components/CalendarComponent'
+import Schedule from './Components/Schedule'
 
 
 class App extends React.Component {
@@ -47,6 +48,7 @@ class App extends React.Component {
             }
             <Route path='/new_recepie' component={NewRecepie} />
             <Route path='/calendar' component={CalendarComponent} />
+            <Route path='/schedule' component={Schedule} />
           </div>
         </BrowserRouter>
         <Footer />

@@ -39,7 +39,7 @@ class Landing extends React.Component{
 						<p className="landing__features__text--p">Create and store your recepies digital</p>
 						<p className="landing__features__text--p">Add new or remove canceled events in the Calendar</p>
 						<p className="landing__features__text--p">Manage team schedule</p>
-						<p className="landing__features__text--p">Actualize your menu card</p>
+						<p className="landing__features__text--p">Create your preparation list for a next day</p>
 					</div>
 					<div className="landing__features__mission">
 						<p className="landing__features__mission--p">This service is dedicated to all the chefs who want to manage their kitchen in easy and modern way.</p>

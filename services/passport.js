@@ -25,6 +25,7 @@ passport.use(new GoogleStrategy({
 	clientID : keys.googleClientID,
 	clientSecret: keys.googleSecretKey,
 	callbackURL: '/auth/google/callback',
+	userProfileURL: 'https://www.googleapis.com/oauth2/v3/userinfo',
 	proxy:true						//this allow to trust heroku proxy where we deployed our app
 	},
 	//second part is an arrow function which handles a callback responded code from google and exchanges it with google for actual data about user (profile,email)

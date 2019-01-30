@@ -13,11 +13,75 @@
 	//=============================================calendar============================================================================
 
 	//=============================================schedule============================================================================
-	
+	.dashboard__schedule{
+		grid-column: col-start 1 / -1;
+		grid-row: 5/span 4;
+		margin-top: 10rem;
+		background-image: url(../img/schedule_background.jpg);
+		background-position: center;
+		position:relative;
+
+		@include respond(l){
+			grid-column: col-start 1 / -1;
+			grid-row: 9/span 4;
+			background-image: url(../img/schedule_background.jpg);
+			background-position: center;
+			position:relative;
+			height:50vw;
+		}
+		@include respond(s){
+			grid-column: col-start 1 / -1;
+			grid-row: 9/span 4;
+			background-image: url(../img/schedule_background.jpg);
+			background-position: center;
+			position:relative;
+			height:80vw;
+		}
+		&__header{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			text-decoration: none;
+			font-family: $font-rajdhani;
+			font-size: 4rem;
+			font-weight: 300;
+			text-transform: uppercase;
+			text-align: center;
+			text-shadow: .5rem .5rem 1rem rgba(0,0,0,.3);
+			width:60%;
+			margin:2rem auto;
+			padding:1rem 2rem;
+			color:snow;
+			background-color: $color-primary;
+			border-radius: 3px;
+			box-shadow: 0 2rem 2rem rgba(0,0,0,.3);
+			transition:transform .3s;
+			&:hover{
+				transform:translate(-50%,-55%);
+				box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,.2);
+			}
+
+			@include respond(l){
+				font-size: 3rem;
+				width:70%;
+			}
+			@include respond(m){
+				font-size: 2.5rem;
+			}
+			@include respond(s){
+				width:90%;
+				font-size: 2.5rem;
+			}
+			@include respond(xs){
+				font-size: 2rem;
+			}
+		}
+	}
 	//=============================================MENU============================================================================
 	&__preparation{
 		grid-column: col-start 1 / -1;
-		grid-row: 10/span 4;;
+		grid-row: 9/span 4;;
 		background-color: green;	//test	
 		margin-top: 10rem;
 		@include respond(l){

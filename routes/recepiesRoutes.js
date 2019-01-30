@@ -30,7 +30,7 @@ module.exports = (app) =>{
 	app.use(bodyParser.json());
 	app.get('/api/current_user/recepies', (req,res)=>{
 		// here will come logic to retrive recepies from database, but now we use our dummy  array of objects
-		User.findOne({googleId:req.user.googleId})
+		User.findOne({_id:req.user._id})
 		.then(user=> res.send(user.recepies))
 		
 	})
@@ -44,7 +44,7 @@ module.exports = (app) =>{
 		const recept = req.body
 
 		User.findOneAndUpdate(
-			{googleId:req.user.googleId},
+			{_id:req.user._id},
 			{$push: {recepies:recept}},
 			{new:true},
 			(err,doc)=>{
@@ -62,7 +62,7 @@ module.exports = (app) =>{
 		const toRemove = req.body
 		console.log(toRemove)
 		User.findOneAndUpdate(
-			{googleId:req.user.googleId},
+			{_id:req.user._id},
 			{$pull: {recepies:toRemove}},
 			{new:true},
 			(err,doc)=>{

@@ -1,12 +1,13 @@
 ::-webkit-scrollbar{
-	width:1rem;
+	width:.6rem;
 }
 ::-webkit-scrollbar-track{
-	background-color: lighten(#000,10%);
+	background-color: snow;
 	border-radius: .5rem;
+	
 }
 ::-webkit-scrollbar-thumb{
-	background-color: $color-primary;
+	background-image: linear-gradient(to bottom, $color-primary, $color-primary-dark);
 	border-radius: .5rem;
 }
 
