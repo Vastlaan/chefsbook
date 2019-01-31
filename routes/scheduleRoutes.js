@@ -37,8 +37,9 @@ module.exports = (app) =>{
 						res.send(user.schedules)
 					})
 				}else{
-					user.schedules.find(x=>x.week===req.body.week).data = newData
-					user.markModified('user.schedules')
+					console.log(newData)
+					user.schedules.find(x=>x.week===req.body.week).data = [].concat.apply([],newData)
+					user.markModified('schedules')
 					user.save((err,user)=>{
 						if(err){
 							console.log(err)
