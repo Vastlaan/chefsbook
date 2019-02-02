@@ -3,6 +3,10 @@
 	padding:2rem 5rem;
 	margin-bottom: 2rem;
 	margin-top: 10rem;
+
+	@include respond(s){
+		margin-bottom: 6rem;
+	}
 	&__text{
 		color:snow;
 		font-family: $font-openSans;

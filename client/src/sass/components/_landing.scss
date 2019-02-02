@@ -92,6 +92,10 @@
 				height:100%;
 				border-radius: 0;
 			}
+			@include respond(xxl){
+				width:50vw;
+				height:50vw;
+			}
 			
 			&--p{
 				text-align: center;

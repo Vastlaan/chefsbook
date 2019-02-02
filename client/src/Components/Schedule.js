@@ -104,13 +104,13 @@ class Schedule extends React.Component {
 
 		const { dateContext, schedule, displayS, displayM, displaySA, displayF, displayTH,displayT,displayW } = this.state
 		const currentWeek = dateContext.week()
-		const weekdays = moment.weekdays()
+		
 		const weekdaysShort = moment.weekdaysShort()
-		const day = dateContext.format('dddd')
-		const dayNr = dateContext.format('D');
-		const ind = weekdays.indexOf(day)
-		const daysInMonth = dateContext.daysInMonth()
-		const start = dayNr - ind
+		
+		
+		
+		
+		
 		let displaySu = displayS?'flex':'none'
 		let displayMo = displayM?'flex':'none'
 		let displayTu = displayT?'flex':'none'
@@ -118,7 +118,20 @@ class Schedule extends React.Component {
 		let displayTh = displayTH?'flex':'none'
 		let displayFr = displayF?'flex':'none'
 		let displaySa = displaySA?'flex':'none'
-	
+
+		let startOfWeek = moment().startOf('week');
+		let endOfWeek = moment().endOf('week');
+
+		let days = [];
+		let day = startOfWeek;
+
+		while (day <= endOfWeek) {
+		    days.push(day.date());
+		    day = day.clone().add(1, 'd');
+		}
+
+		//console.log(days[0], startOfWeek, endOfWeek);
+		//console.log(start, dayNr, ind, day)
 		
 		return(
 			<div className='schedule'>
@@ -130,10 +143,7 @@ class Schedule extends React.Component {
 				<div className='schedule__head'>
 					<div className='schedule__head--name'>Name</div>
 					{weekdaysShort.map((day,i)=>{
-						let dn = start+i
-						if(dn>daysInMonth){
-							dn-=daysInMonth
-						}
+						let dn = days[i]
 						let th = 'th'
 						if(dn===1){
 							th='st'

@@ -11,9 +11,36 @@ class Header extends React.Component {
 		//console.log(this.props)
 		return(
 			<div className='header'>
-				<a href="/" className='header__logo'><img src={Logo} alt='logo'/></a>
+				<div className='header__logo'><img src={Logo} alt='logo'/></div>
 				{this.props.logged? 
-					<a href="/api/logout" className='header__login'>Log out</a>
+					<div className='header__asLogged'>
+						<a href='/' className='header__icon--box'>
+							<svg className='header__icon'>
+								<use xlinkHref={`${Icons}#icon-home1`}></use>	
+							</svg>
+							<span>Home</span>
+						</a>
+						<a href='/new_recepie' className='header__icon--box'>
+							<svg className='header__icon'>
+								<use xlinkHref={`${Icons}#icon-book`}></use>	
+							</svg>
+							<span>New Recepie</span>
+						</a>
+						<a href='/calendar' className='header__icon--box'>
+							<svg className='header__icon'>
+								<use xlinkHref={`${Icons}#icon-event_available`}></use>	
+							</svg>
+							<span>Calendar</span>
+						</a>
+						<a href='/schedule' className='header__icon--box'>
+							<svg className='header__icon'>
+								<use xlinkHref={`${Icons}#icon-assignment`}></use>	
+							</svg>
+							<span>Schedule</span>
+						</a>
+						
+						<a href="/api/logout" className='header__login'>Log out</a>
+					</div>
 					:
 					<a href="/auth/google" className='header__login'>
 						<svg className='header__login-icon'>

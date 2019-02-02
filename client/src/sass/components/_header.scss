@@ -6,48 +6,96 @@
 	background-color: $color-grey-light;
 	animation: comeOut .7s ease-out;
 	transition: animation .2s;
+	border-bottom: 1px solid rgba($color-brown-dark,.3);
 	
 	
 	&__logo{
-		cursor:pointer;
 		position:relative;
 		z-index: 3;
 		
-		&::before{
-			content:"";
-			display:block;
-			width:3px;
-			height:3px;
-			background-color: darken($color-primary,10%);
-			position:absolute;
-			bottom:0;
-			left:0;
-			border-radius: 50%;
-			animation:laser 3s cubic-bezier(.55,1.32,.42,-0.39) infinite;
-			transition: all .3s;
-			z-index: 0;
-		}
-		&:hover::before{
-			animation:none;
-			transform:scale(43);
-			border-radius: 50%;
-			bottom:35%;
-			left:50%;
-			
-			background-color: darken($color-primary,10%);
-			@include respond(s){
-				transform:scale(33);
-			}
-			@include respond(xxl){
-				transform:scale(65);
-			}
-			transition: all .6s;
-		}
 		img{
 			height:8rem;
 			position:relative;
 			z-index: 3;
 		}
+		@include respond(s){
+			margin:0 auto;
+		}
+	}
+	&__asLogged{
+		flex:1;
+		display:flex;
+		justify-content: space-between;
+		@include respond(s){
+			position:fixed;
+			bottom:0;
+			left:0;
+			width:100%;
+			background-image:linear-gradient(to right, black,lighten(#051301,5%));
+			padding:1rem;
+			z-index: 99;
+		}
+	}
+	&__icon--box{
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		margin-left: 10rem;
+		text-decoration: none;
+		color:$color-brown-dark;
+		transform:translateY(1rem);
+		transition:all .5s;
+		
+		span{
+			letter-spacing: .1rem;
+			font-family: "Courier New", sans-serif;
+			font-size: 1.6rem;
+			@include respond(m){
+				font-size: 1.2rem;
+			}
+			@include respond(s){
+				color:snow;
+				font-size: 1rem;
+			}
+		}
+		&:hover{
+			transform:translateY(.5rem);
+		}
+		&:hover > .header__icon{
+			fill:$color-primary;
+		}
+
+		@include respond(xl){
+			margin-left: 5rem;
+		}
+		@include respond(l){
+			margin-left: 2.5rem;
+		}
+		@include respond(m){
+			margin-left: .5rem;
+		}
+		@include respond(s){
+			transform:translateY(0);
+		}
+
+	}
+	&__icon{
+		width: 5rem;
+		height:5rem;
+		fill:$color-brown;
+		transition:fill .5s;
+		@include respond(m){
+			width: 3.5rem;
+			height:3.5rem;
+		}
+		@include respond(s){
+			fill:$color-primary;
+		}
+		@include respond(xs){
+			width: 2.5rem;
+			height:2.5rem;
+		}
+		
 	}
 	&__login{
 		display: block;
@@ -66,6 +114,33 @@
 		@include btn-shadow;
 		@include respond(s){
 			padding:.2rem 1rem;
+			background-image:linear-gradient(to right, $color-primary,lighten(#051301,10%));
+			color:snow;
+			position:fixed;
+			top:2rem;
+			right:2rem;
+			z-index: 99;
+			box-shadow: none;
+			border-radius: 0;
+
+			&:hover{
+				transform: none;
+				box-shadow: none;
+			}
+			&:focus{
+				transform: none;
+				box-shadow: none;
+			}
+
+		}
+		@include respond(xs){
+			padding:.2rem 1rem;
+			font-size: 1.4rem;
+			top:0.3rem;
+			right:0.3rem;
+
+
+
 		}
 		
 		&-icon{
@@ -73,7 +148,12 @@
 			height:2rem;
 			margin-right: 1rem;
 			fill:$color-secondary-light-2;
-			transform: translateY(.4rem)
+			transform: translateY(.4rem);
+
+			@include respond(s){
+				display:none;
+
+			}
 		}
 	}
 }
