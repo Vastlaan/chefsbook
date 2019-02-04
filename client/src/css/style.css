@@ -84,12 +84,11 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 1.5rem;
+  margin-top: 1rem;
   background-color: #f9f9f9;
-  animation: comeOut .7s ease-out;
-  transition: animation .2s;
-  border-bottom: 1px solid rgba(69, 23, 8, 0.3); }
+  border-bottom: 1px solid rgba(124, 170, 90, 0.3); }
   .header__logo {
+    padding: 1rem;
     position: relative;
     z-index: 3; }
     .header__logo img {
@@ -100,6 +99,7 @@ body {
       .header__logo {
         margin: 0 auto; } }
   .header__asLogged {
+    padding: 1rem;
     flex: 1;
     display: flex;
     justify-content: space-between; }
@@ -116,47 +116,53 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10rem;
+    justify-content: center;
+    margin-left: 5rem;
     text-decoration: none;
     color: #451708;
     transform: translateY(1rem);
+    width: 100%;
     transition: all .5s; }
     .header__icon--box span {
       letter-spacing: .1rem;
       font-family: "Courier New", sans-serif;
-      font-size: 1.6rem; }
+      font-size: 1.4rem;
+      text-align: center;
+      line-height: 1; }
       @media only screen and (max-width: 50em) {
         .header__icon--box span {
-          font-size: 1.2rem; } }
+          font-size: 1.1rem; } }
       @media only screen and (max-width: 37.5em) {
         .header__icon--box span {
           color: snow;
           font-size: 1rem; } }
-    .header__icon--box:hover {
-      transform: translateY(0.5rem); }
     .header__icon--box:hover > .header__icon {
-      fill: #7CAA5A; }
+      fill: #D9AC0F; }
     @media only screen and (max-width: 75em) {
       .header__icon--box {
-        margin-left: 5rem; } }
+        margin-left: 4rem; } }
     @media only screen and (max-width: 62.5em) {
       .header__icon--box {
-        margin-left: 2.5rem; } }
+        margin-left: 1.5rem; } }
     @media only screen and (max-width: 50em) {
       .header__icon--box {
-        margin-left: .5rem; } }
+        margin-left: 0;
+        border: none; } }
     @media only screen and (max-width: 37.5em) {
       .header__icon--box {
         transform: translateY(0); } }
+    @media only screen and (min-width: 100em) {
+      .header__icon--box {
+        margin-left: 3rem; } }
   .header__icon {
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
     fill: #73260D;
     transition: fill .5s; }
     @media only screen and (max-width: 50em) {
       .header__icon {
-        width: 3.5rem;
-        height: 3.5rem; } }
+        width: 3.2rem;
+        height: 3.2rem; } }
     @media only screen and (max-width: 37.5em) {
       .header__icon {
         fill: #7CAA5A; } }
@@ -179,6 +185,8 @@ body {
     text-align: center;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transition: transform .2s; }
+    .header__login--width {
+      width: 90%; }
     .header__login:hover {
       transform: translateY(-0.3rem);
       box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
@@ -187,6 +195,7 @@ body {
       box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
     @media only screen and (max-width: 37.5em) {
       .header__login {
+        width: initial;
         padding: .2rem 1rem;
         background-image: linear-gradient(to right, #7CAA5A, #124304);
         color: snow;
@@ -537,6 +546,25 @@ body {
     color: #73260D;
     margin: 2rem;
     display: inline-block; }
+  .schedule__buttons {
+    display: flex;
+    margin: 1rem;
+    justify-content: space-between; }
+    .schedule__buttons--btn {
+      padding: 1rem;
+      background-image: linear-gradient(to bottom, #73260D, #451708);
+      font-family: "Courier New", sans-serif;
+      font-weight: 300;
+      font-size: 1.2rem;
+      color: snow;
+      cursor: pointer;
+      box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+      border-radius: 2px;
+      letter-spacing: .1rem;
+      transition: all .3s; }
+      .schedule__buttons--btn:hover {
+        background-image: linear-gradient(to bottom, #451708, #73260D);
+        transform: translateY(-2px); }
   .schedule__head {
     margin: 1rem 1rem 0 1rem;
     display: grid;
@@ -654,7 +682,7 @@ body {
     padding: 2rem;
     animation: comeLeft 1s linear;
     overflow-y: scroll;
-    z-index: 11; }
+    z-index: 100; }
     @media only screen and (max-width: 50em) {
       .schedule__add {
         width: 90%; } }
@@ -1133,11 +1161,15 @@ body {
       text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
 
 .footer {
-  background-color: #451708;
   padding: 2rem 5rem;
   margin-bottom: 2rem;
-  margin-top: 10rem; }
+  margin-top: 10rem;
+  background-image: linear-gradient(to bottom, #73260D, #451708); }
   @media only screen and (max-width: 37.5em) {
+    .footer {
+      margin-bottom: 6rem;
+      box-shadow: 0 1rem 1rem #051301; } }
+  @media only screen and (max-width: 25em) {
     .footer {
       margin-bottom: 6rem; } }
   .footer__text {
@@ -1149,15 +1181,39 @@ body {
     text-align: center; }
     .footer__text span {
       display: inline-block;
-      background-color: #000;
-      color: #D9AC0F;
-      padding: .5rem 1rem;
-      border-radius: 2px;
+      font-size: 1.8rem;
       font-weight: 500;
       cursor: pointer;
       transition: all .2s; }
       .footer__text span:hover {
-        transform: scale(1.05) rotate(3deg); }
+        color: #D9AC0F; }
+  .footer__list {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem; }
+    .footer__list--item {
+      display: inline-block;
+      color: snow;
+      background-image: linear-gradient(to bottom, rgba(115, 38, 13, 0.1), rgba(69, 23, 8, 0.4));
+      padding: .5rem 2.5rem;
+      border-radius: 2px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      font-family: "Courier New", sans-serif;
+      letter-spacing: .2rem;
+      cursor: pointer;
+      transition: all .2s; }
+      @media only screen and (max-width: 37.5em) {
+        .footer__list--item {
+          font-size: 1.2rem; } }
+      .footer__list--item:hover {
+        background-image: linear-gradient(to bottom, black, black);
+        transform: scale(1.2) rotate(5deg);
+        color: #D9AC0F;
+        border-bottom: none; }
+        @media only screen and (max-width: 37.5em) {
+          .footer__list--item:hover {
+            transform: none; } }
 
 .calendar {
   margin-top: 5rem; }

@@ -1,11 +1,17 @@
 .footer{
-	background-color: darken($color-brown,10%);
+	
 	padding:2rem 5rem;
 	margin-bottom: 2rem;
 	margin-top: 10rem;
+	background-image: linear-gradient(to bottom, $color-brown, $color-brown-dark);
 
 	@include respond(s){
 		margin-bottom: 6rem;
+		box-shadow: 0 1rem 1rem lighten(#051301,0%);
+	}
+	@include respond(xs){
+		margin-bottom: 6rem;
+
 	}
 	&__text{
 		color:snow;
@@ -17,18 +23,47 @@
 		
 		span{
 			display:inline-block;
-			background-color:#000;
-			color:$color-secondary-light;
-			padding: .5rem 1rem;
-			border-radius: 2px;
+			font-size: 1.8rem;
 			font-weight: 500;
 			cursor:pointer;
 			transition:all .2s;
 
 			&:hover{
-				transform:scale(1.05) rotate(3deg);
+				color:$color-secondary-light;
+			}
 
-				
+		}
+	}
+	&__list{
+
+		display: flex;
+		justify-content: space-around;
+		margin-top: 1rem;
+		&--item{
+			display:inline-block;
+			color: snow;
+			background-image: linear-gradient(to bottom, rgba($color-brown,.1), rgba($color-brown-dark,.4));
+			padding: .5rem 2.5rem;
+			border-radius: 2px;
+			font-size: 1.4rem;
+			font-weight: 500;
+			font-family: "Courier New", sans-serif;
+			letter-spacing: .2rem;
+			cursor:pointer;
+			transition:all .2s;
+
+			@include respond(s){
+				font-size: 1.2rem;
+			}
+			&:hover{
+				background-image: linear-gradient(to bottom, black, black);
+				transform:scale(1.2) rotate(5deg);
+				color: $color-secondary-light;
+				border-bottom: none;
+				@include respond(s){
+					transform:none;
+				}
+
 			}
 		}
 	}

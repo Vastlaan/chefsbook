@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../img/logo2.png';
 import Icons from '../img/sprite.svg';
+import Icons2 from '../img/sprite2.svg';
 
 class Header extends React.Component {
 	state = {
@@ -16,30 +17,30 @@ class Header extends React.Component {
 					<div className='header__asLogged'>
 						<a href='/' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons}#icon-home1`}></use>	
+								<use xlinkHref={`${Icons2}#internet`}></use>	
 							</svg>
 							<span>Home</span>
 						</a>
 						<a href='/new_recepie' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons}#icon-book`}></use>	
+								<use xlinkHref={`${Icons2}#cook`}></use>	
 							</svg>
-							<span>New Recepie</span>
+							<span>New Recipe</span>
 						</a>
 						<a href='/calendar' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons}#icon-event_available`}></use>	
+								<use xlinkHref={`${Icons2}#calendar`}></use>	
 							</svg>
 							<span>Calendar</span>
 						</a>
 						<a href='/schedule' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons}#icon-assignment`}></use>	
+								<use xlinkHref={`${Icons2}#calendar-1`}></use>	
 							</svg>
 							<span>Schedule</span>
 						</a>
 						
-						<a href="/api/logout" className='header__login'>Log out</a>
+						<a href="/api/logout" className='header__login header__login--width'>Log out</a>
 					</div>
 					:
 					<a href="/auth/google" className='header__login'>

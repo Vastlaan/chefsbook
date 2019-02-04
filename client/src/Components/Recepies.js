@@ -40,11 +40,11 @@ class Recepies extends React.Component {
 		return(
 			<div className='dashboard__recepies'>
 			
-				<h1 className='dashboard__recepies--header'>Recepies</h1>
+				<h1 className='dashboard__recepies--header'>Recipes</h1>
 				<div className='dashboard__recepies--content'>
 					{
 						recepies.length===0 ?
-						<h1 className='dashboard__recepies--content-warning'>You havent created any recepie yet. Click the button below to create a new recepie.</h1>
+						<h1 className='dashboard__recepies--content-warning'>You haven't created any recipes yet. Click the button below to create a new recipe.</h1>
 						:
 						recepies.map((element,i) =>{
 							return (<div key={`${i}@@@`}className='dashboard__recepies--content-item' onClick={()=>this.openRecepie(i)}>
@@ -57,7 +57,7 @@ class Recepies extends React.Component {
 						})
 					}
 				</div>
-				<a className='dashboard__recepies--new' href='/new_recepie'>Create New Recepie</a>
+				<a className='dashboard__recepies--new' href='/new_recepie'>Create New Recipe</a>
 
 				<div style={{display:`${display}`}}>
 					{recept.name?

@@ -67,6 +67,32 @@
 		display:inline-block;
 	}
 
+	&__buttons{
+
+		display:flex;
+		margin:1rem;
+		justify-content: space-between;
+
+		&--btn{
+			padding:1rem;
+			background-image: linear-gradient(to bottom, $color-brown , $color-brown-dark);
+			font-family: "Courier New", sans-serif;
+			font-weight: 300;
+			font-size: 1.2rem;
+			color:snow;
+			cursor:pointer;
+			box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+			border-radius: 2px;
+			letter-spacing: .1rem;
+			transition:all .3s;
+
+			&:hover{
+				background-image: linear-gradient(to bottom, $color-brown-dark , $color-brown);
+				transform: translateY(-2px);
+			}
+		}
+	}
+
 	&__head{
 		margin:1rem 1rem 0 1rem;
 		display:grid;
@@ -127,6 +153,9 @@
 			border-left:1px solid $color-brown-dark;
 			border-bottom: 1px solid $color-brown-dark;
 			display:flex;
+			svg{
+				
+			}
 			@include respond(m){
 				font-size: 1.3rem;
 			}
@@ -205,7 +234,7 @@
 		padding:2rem;
 		animation:comeLeft 1s linear;
 		overflow-y:scroll;
-		z-index: 11;
+		z-index: 100;
 
 		@include respond(m){
 			width:90%;

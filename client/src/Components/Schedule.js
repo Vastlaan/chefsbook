@@ -20,10 +20,43 @@ class Schedule extends React.Component {
 	componentWillMount(){
 		fetch('/api/schedule')
 		.then(data=>data.json())
-		.then(sch=>sch.map(schedule=>schedule.week===(this.state.dateContext.week())?this.setState({schedule:schedule.data}):null))
+		.then(sch=> {
+				const schedule = this.checkWeek(sch)
+				this.setState({schedule:schedule})
+			})
 		.catch(err=>console.log(err))
+		
 	}
 
+	checkWeek = (schedule) =>{
+
+		let selected = []
+		schedule.map(each=>{
+			
+			if(each.week===this.state.dateContext.week()){
+
+				selected = each.data
+			}
+			if(each.week===0 && selected.length<1){
+				selected = each.data
+			}
+		})
+		return selected
+	}
+	changeWeek = async (a) => {
+		const currentWeek = this.state.dateContext.week()
+		await  this.setState({dateContext:moment(moment().week(currentWeek + a))})
+		
+		fetch('/api/schedule')
+		.then(data=>data.json())
+		.then(sch=> {
+				const schedule = this.checkWeek(sch)
+				console.log(schedule)
+				this.setState({schedule:schedule})
+			})
+		.catch(err=>console.log(err))
+		
+	}
 	addMember = () =>{
 		
 		const name = document.querySelector('#name').value
@@ -78,7 +111,7 @@ class Schedule extends React.Component {
 			days.push('free')
 		}
 		const newMemberObject = {
-			week: this.state.dateContext.week(),
+			week: 0,
 			data: [{
 				name,
 				days
@@ -103,14 +136,9 @@ class Schedule extends React.Component {
 	render(){
 
 		const { dateContext, schedule, displayS, displayM, displaySA, displayF, displayTH,displayT,displayW } = this.state
-		const currentWeek = dateContext.week()
-		
+		const currentWeek = dateContext.week()	
 		const weekdaysShort = moment.weekdaysShort()
-		
-		
-		
-		
-		
+
 		let displaySu = displayS?'flex':'none'
 		let displayMo = displayM?'flex':'none'
 		let displayTu = displayT?'flex':'none'
@@ -119,19 +147,16 @@ class Schedule extends React.Component {
 		let displayFr = displayF?'flex':'none'
 		let displaySa = displaySA?'flex':'none'
 
-		let startOfWeek = moment().startOf('week');
-		let endOfWeek = moment().endOf('week');
-
+		let startOfWeek = moment(dateContext).startOf('week');
+		let endOfWeek = moment(dateContext).endOf('week');
 		let days = [];
 		let day = startOfWeek;
 
 		while (day <= endOfWeek) {
 		    days.push(day.date());
 		    day = day.clone().add(1, 'd');
+		    
 		}
-
-		//console.log(days[0], startOfWeek, endOfWeek);
-		//console.log(start, dayNr, ind, day)
 		
 		return(
 			<div className='schedule'>
@@ -140,6 +165,10 @@ class Schedule extends React.Component {
 					<use xlinkHref={`${Icons}#icon-assignment`}></use>
 				</svg>
 				<h2 className='schedule__weekNumber'>This is week nr. {currentWeek}</h2>
+				<div className='schedule__buttons'>
+					<div className='schedule__buttons--btn'  onClick={()=>this.changeWeek(-1)}>&#60; Prev week</div>
+					<div className='schedule__buttons--btn' onClick={()=>this.changeWeek(1)}>Next week &#62;</div>
+				</div>
 				<div className='schedule__head'>
 					<div className='schedule__head--name'>Name</div>
 					{weekdaysShort.map((day,i)=>{

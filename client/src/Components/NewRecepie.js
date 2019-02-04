@@ -99,7 +99,7 @@ class NewRecepie extends React.Component {
 
 		return(
 			<div className='newRecepie'>
-				<h1 className='newRecepie__header'>Create new recepie</h1>
+				<h1 className='newRecepie__header'>Create new recipe</h1>
 				<form className='newRecepie__form' onSubmit={this.submitForm}>
 					<div className='newRecepie__form--area'>
 						<label className='newRecepie__form--label'>Product's name</label>

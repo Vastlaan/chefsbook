@@ -132,6 +132,15 @@ class CalendarComponent extends React.Component {
 			body:JSON.stringify(toDelete)
 		}).then(data=>data.json()).then(events=>this.setState({events})).catch(err=>console.log(err))
 	}
+
+	compare = (a,b) =>{
+		if(a.day<b.day){
+			return -1
+		}else if(a.day>b.day){
+			return 1
+		}
+		return 0
+	}
 	render(){
 		const {dateContext, dateEvent, events} = this.state
 
@@ -141,6 +150,7 @@ class CalendarComponent extends React.Component {
 		const month = dateContext.format('MMMM')
 		const day = dateContext.format('D')
 		const daysInMonth = dateContext.daysInMonth()
+		const eventss = events.sort(this.compare)
 		let blanks = [];
 		for(let i =0 ; i< this.firstDayOfMonth(); i++){
 			blanks.push(<div className='calendar__table__weekday calendar__table__weekday--blank' key={i*0.1798}>&nbsp;</div>)
@@ -182,7 +192,8 @@ class CalendarComponent extends React.Component {
 				<div className='calendar__comming'>
 					<h1 className='calendar__comming--header'>Comming events:</h1>
 					<div className='calendar__comming__box'>
-						{events.map((event,i)=>{
+						{
+							eventss.map((event,i)=>{
 							if(event.year===year && event.month===month){
 								return(
 									<div className='calendar__comming__box--each' key={i*91.332323}>
