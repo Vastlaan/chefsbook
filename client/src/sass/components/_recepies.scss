@@ -110,6 +110,7 @@
 		height:100vh;
 		background-color: rgba(darken($color-brown,20%),.95);
 		overflow-y:scroll;
+		animation: comeRight .5s ease-out;
 		
 		&-frame{
 			border:1px solid snow;
@@ -127,22 +128,24 @@
 		}
 		
 		&-close-svg{
-				width:5rem;
-				height:5rem;
+				width:3rem;
+				height:3rem;
 				border:1px solid snow;
 				position:absolute;
 				top:2rem;
 				right:2rem;
 				fill:snow;
 				cursor:pointer;
+				background-color: yellowgreen;
+				padding: 5rem;
 				@include respond(s){
 					fill:$color-brown;
 					top:5rem;
 				}
 			}
 		&-close-svg-2{
-				width:4rem;
-				height:4rem;
+				width:3rem;
+				height:3rem;
 				position:absolute;
 				top:2rem;
 				left:2rem;

@@ -34,6 +34,6 @@ html{
 }
 
 body{
-	background-color: $color-grey-light;
+	background-image: linear-gradient(to bottom, darken($color-grey-light,20%) 5%,$color-grey-light 10%, $color-grey-light 90%, darken($color-grey-light,20%) 100%  );
 	
 }

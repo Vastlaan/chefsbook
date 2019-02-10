@@ -3,11 +3,7 @@
 	display: flex;
 	justify-content: space-between;
 	margin-top: 1rem;
-	background-color: $color-grey-light;
-	
 	border-bottom: 1px solid rgba($color-primary,.3);
-
-	
 	
 	&__logo{
 		padding: 1rem;
@@ -48,10 +44,8 @@
 		text-decoration: none;
 		color:$color-brown-dark;
 		transform:translateY(1rem);
-		
-		
 		width:100%;
-		transition:all .5s;
+		transition:all .3s;
 
 		
 		span{
@@ -60,6 +54,7 @@
 			font-size: 1.4rem;
 			text-align: center;
 			line-height: 1;
+			transition: all .3s;
 			@include respond(m){
 				font-size: 1.1rem;
 			}
@@ -69,10 +64,14 @@
 			}
 		}
 		&:hover{
-			
+			span{
+				transform: translate(0,-.3rem);
+				text-shadow: 0 .5rem .2rem rgba($color-secondary-light,.29);
+			}
 		}
 		&:hover > .header__icon{
-			fill:$color-secondary-light;
+			transform: translate(0,-.3rem);
+			fill:linear-gradient(to bottom, $color-brown-dark, $color-secondary);
 		}
 
 		@include respond(xl){
@@ -97,7 +96,8 @@
 		width: 4rem;
 		height:4rem;
 		fill:$color-brown;
-		transition:fill .5s;
+		transition:fill .3s;
+		transition:transform .3s;
 		@include respond(m){
 			width: 3.2rem;
 			height:3.2rem;

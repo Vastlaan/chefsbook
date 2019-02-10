@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../img/logo2.png';
 import Icons from '../img/sprite.svg';
-import Icons2 from '../img/sprite2.svg';
+import Icons3 from '../img/sprite3.svg';
 
 class Header extends React.Component {
 	state = {
@@ -17,25 +17,25 @@ class Header extends React.Component {
 					<div className='header__asLogged'>
 						<a href='/' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons2}#internet`}></use>	
+								<use xlinkHref={`${Icons3}#home`}></use>	
 							</svg>
 							<span>Home</span>
 						</a>
 						<a href='/new_recepie' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons2}#cook`}></use>	
+								<use xlinkHref={`${Icons3}#cook`}></use>	
 							</svg>
 							<span>New Recipe</span>
 						</a>
 						<a href='/calendar' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons2}#calendar`}></use>	
+								<use xlinkHref={`${Icons3}#calendar-1`}></use>	
 							</svg>
 							<span>Calendar</span>
 						</a>
 						<a href='/schedule' className='header__icon--box'>
 							<svg className='header__icon'>
-								<use xlinkHref={`${Icons2}#calendar-1`}></use>	
+								<use xlinkHref={`${Icons3}#time-and-date`}></use>	
 							</svg>
 							<span>Schedule</span>
 						</a>

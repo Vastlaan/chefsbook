@@ -3,27 +3,34 @@
 	padding:2rem 5rem;
 	margin-bottom: 2rem;
 	margin-top: 10rem;
-	background-image: linear-gradient(to bottom, $color-brown, $color-brown-dark);
+	margin-left: auto;
+	margin-right: auto;
+	display:grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: repeat(2,1fr);
+	grid-gap: 1rem;
+
 
 	@include respond(s){
 		margin-bottom: 6rem;
-		box-shadow: 0 1rem 1rem lighten(#051301,0%);
+		width:100%;
 	}
 	@include respond(xs){
 		margin-bottom: 6rem;
 
 	}
 	&__text{
-		color:snow;
+		color:black;
 		font-family: $font-openSans;
-		font-size: 1.2rem;
+		font-size: 1rem;
 		font-weight: 300;
-		letter-spacing: .1rem;
+		letter-spacing: .3rem;
 		text-align: center;
+		align-self: center;
 		
 		span{
 			display:inline-block;
-			font-size: 1.8rem;
+			font-size: 1.2rem;
 			font-weight: 500;
 			cursor:pointer;
 			transition:all .2s;
@@ -31,19 +38,33 @@
 			&:hover{
 				color:$color-secondary-light;
 			}
+			@include respond(s){
+				font-size: 1rem;
+			}
 
+		}
+
+		@include respond(s){
+			font-size: 1rem;
 		}
 	}
 	&__list{
 
 		display: flex;
 		justify-content: space-around;
+		flex-wrap: wrap;
 		margin-top: 1rem;
+		padding:1rem 3rem;
+		border-radius: 3px;
+
+		@include respond(s){
+			background-color: transparent;
+		}
+		
 		&--item{
 			display:inline-block;
-			color: snow;
-			background-image: linear-gradient(to bottom, rgba($color-brown,.1), rgba($color-brown-dark,.4));
-			padding: .5rem 2.5rem;
+			color: black;
+			padding: .3rem 1.5rem;
 			border-radius: 2px;
 			font-size: 1.4rem;
 			font-weight: 500;
@@ -51,13 +72,15 @@
 			letter-spacing: .2rem;
 			cursor:pointer;
 			transition:all .2s;
-
+			align-self: center;
+			position:relative;
+			
 			@include respond(s){
 				font-size: 1.2rem;
 			}
 			&:hover{
-				background-image: linear-gradient(to bottom, black, black);
-				transform:scale(1.2) rotate(5deg);
+				background-color: $color-brown-dark;
+				transform:scale(1.05) rotate(3deg);
 				color: $color-secondary-light;
 				border-bottom: none;
 				@include respond(s){

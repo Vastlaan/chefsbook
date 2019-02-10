@@ -39,3 +39,17 @@
 		transform: translateX(0);
 	}
 }
+@keyframes comeRight {
+	0%{
+		opacity:0;
+		transform:translateX(120%);
+	}
+	25%{
+		opacity:0;
+		transform:translateX(120%);
+	}
+	100%{
+		opacity:1;
+		transform: translateX(0);
+	}
+}
