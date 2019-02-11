@@ -162,7 +162,17 @@ class CalendarComponent extends React.Component {
 		const month = dateContext.format("MMMM");
 		const day = dateContext.format("D");
 		const daysInMonth = dateContext.daysInMonth();
-		const eventss = events.sort(this.compare);
+		const eventsSorted = events.sort(this.compare);
+		let arrayOfDays = []
+		eventsSorted.forEach(
+			(each)=>{
+			if(each.year===year && each.month===month){
+				 arrayOfDays.push(each.day) 
+				 return arrayOfDays
+			} 
+			return arrayOfDays
+			})
+		console.log(arrayOfDays)
 		let blanks = [];
 		for (let i = 0; i < this.firstDayOfMonth(); i++) {
 			blanks.push(
@@ -204,7 +214,17 @@ class CalendarComponent extends React.Component {
 						{i}
 					</div>
 				);
-			} else {
+			} else if(arrayOfDays.includes(i)){
+					daysNumbers.push(
+						<div
+							className="calendar__table__weekday calendar__table__weekday--yellow calendar__table__weekday--day "
+							key={i * 2.998}
+							onClick={() => this.addEvent(i, month, year)}
+						>
+							{i}
+						</div>
+					);
+			}else {
 				daysNumbers.push(
 					<div
 						className="calendar__table__weekday calendar__table__weekday--day"
@@ -254,7 +274,7 @@ class CalendarComponent extends React.Component {
 						Comming events:
 					</h1>
 					<div className="calendar__comming__box">
-						{eventss.map((event, i) => {
+						{eventsSorted.map((event, i) => {
 							if (event.year === year && event.month === month) {
 								return (
 									<div

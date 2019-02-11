@@ -67,7 +67,7 @@ class Recepies extends React.Component {
 								<svg className='dashboard__recepies__hidden-close-svg-2' onClick={()=>this.removeRecepie(recept.name,recept.photo,recept.ingridients,recept.preparation)}>
 									<use xlinkHref={`${Icons}#icon-bin`} />
 								</svg>
-								<svg className='dashboard__recepies__hidden-close-svg' onClick={()=>this.setState({display:'none'})}>
+								<svg className='dashboard__recepies__hidden-close-svg' id='close' onClick={()=>this.setState({display:'none'})}>
 									<use xlinkHref={`${Icons}#icon-close`} />
 								</svg>
 								

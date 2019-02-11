@@ -154,13 +154,13 @@ body {
       fill: linear-gradient(to bottom, #451708, #B57D1F); }
     @media only screen and (max-width: 75em) {
       .header__icon--box {
-        margin-left: 4rem; } }
+        margin-left: 0rem; } }
     @media only screen and (max-width: 62.5em) {
       .header__icon--box {
-        margin-left: 1.5rem; } }
+        margin-left: -1rem; } }
     @media only screen and (max-width: 50em) {
       .header__icon--box {
-        margin-left: 0;
+        margin-left: -1.5rem;
         border: none; } }
     @media only screen and (max-width: 37.5em) {
       .header__icon--box {
@@ -823,7 +823,7 @@ body {
 
 .dashboard__recepies {
   grid-column: col-start 4 / -1;
-  grid-row: 1/span 4;
+  grid-row: 1 / span 4;
   display: flex;
   flex-direction: column; }
   @media only screen and (max-width: 62.5em) {
@@ -856,7 +856,7 @@ body {
       align-self: start;
       justify-self: center;
       cursor: pointer;
-      transition: all .2s;
+      transition: all 0.2s;
       border-left: 1px solid rgba(115, 38, 13, 0.3); }
       .dashboard__recepies--content-item:hover {
         border-left: 1px solid #7CAA5A; }
@@ -878,7 +878,7 @@ body {
         font-size: 2rem;
         font-family: "Rajdhani", sans-serif;
         color: #73260D;
-        line-height: .7; }
+        line-height: 0.7; }
         @media only screen and (max-width: 25em) {
           .dashboard__recepies--content-item-name {
             font-size: 1.7rem; } }
@@ -889,7 +889,7 @@ body {
       font-size: 3rem;
       font-family: "Rajdhani", sans-serif;
       font-weight: 400;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
       text-align: center; }
   .dashboard__recepies--new {
     margin: 2rem auto;
@@ -897,7 +897,7 @@ body {
     padding: 1.5rem 4rem;
     cursor: pointer;
     background-color: #7CAA5A;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     color: snow;
     font-family: "Rajdhani", sans-serif;
     font-size: 2rem;
@@ -918,47 +918,61 @@ body {
     height: 100vh;
     background-color: rgba(23, 8, 3, 0.95);
     overflow-y: scroll;
-    animation: comeRight .5s ease-out; }
+    animation: comeRight 0.5s ease-out; }
     .dashboard__recepies__hidden-frame {
-      border: 1px solid snow;
       width: 70%;
       margin: 5rem auto;
-      background-color: #f9f9f9;
+      background-image: linear-gradient(to bottom, #1B632B, #7CAA5A 30%);
       padding: 4rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; }
+      align-items: center;
+      border-radius: 4px; }
       @media only screen and (max-width: 37.5em) {
         .dashboard__recepies__hidden-frame {
-          width: 100%; } }
+          width: 100%;
+          margin-bottom: 17vh; } }
     .dashboard__recepies__hidden-close-svg {
       width: 3rem;
       height: 3rem;
-      border: 1px solid snow;
       position: absolute;
       top: 2rem;
       right: 2rem;
-      fill: snow;
+      fill: #7CAA5A;
+      border: 1px solid #1B632B;
+      border-radius: 2px;
       cursor: pointer;
-      background-color: yellowgreen;
-      padding: 5rem; }
+      transition: all 0.3s;
+      box-shadow: 0 0 1.5rem maroon; }
       @media only screen and (max-width: 37.5em) {
         .dashboard__recepies__hidden-close-svg {
           fill: #73260D;
-          top: 5rem; } }
+          top: 5rem;
+          box-shadow: none;
+          border: none; } }
+      .dashboard__recepies__hidden-close-svg:hover {
+        transform: scale(1.05);
+        border: 1px solid maroon;
+        box-shadow: 0 0 2.5rem maroon; }
     .dashboard__recepies__hidden-close-svg-2 {
-      width: 3rem;
-      height: 3rem;
+      width: 2.9rem;
+      height: 2.9rem;
       position: absolute;
       top: 2rem;
       left: 2rem;
-      fill: snow;
-      cursor: pointer; }
+      fill: #b30000;
+      cursor: pointer;
+      transition: all 0.3s; }
       @media only screen and (max-width: 37.5em) {
         .dashboard__recepies__hidden-close-svg-2 {
           fill: #73260D;
-          top: 5.2rem; } }
+          top: 5.3rem;
+          width: 2.2rem;
+          height: 2.2rem; } }
+      .dashboard__recepies__hidden-close-svg-2:hover {
+        transform: scale(1.1);
+        fill: #ff1a1a; }
     .dashboard__recepies__hidden-box {
       width: 20rem;
       height: 20rem;
@@ -979,7 +993,7 @@ body {
       font-size: 5rem;
       font-family: "Rajdhani", sans-serif;
       font-weight: 300;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       color: #73260D;
       line-height: 1.4; }
       @media only screen and (max-width: 25em) {
@@ -990,7 +1004,7 @@ body {
       margin-top: 2rem; }
       .dashboard__recepies__hidden-ingridients h6 {
         font-size: 2rem;
-        letter-spacing: .1rem;
+        letter-spacing: 0.1rem;
         font-family: "Courgette", cursive;
         font-weight: 300;
         color: #73260D;
@@ -1008,7 +1022,7 @@ body {
       margin-top: 2rem; }
       .dashboard__recepies__hidden-preparation h6 {
         font-size: 2rem;
-        letter-spacing: .1rem;
+        letter-spacing: 0.1rem;
         font-family: "Courgette", cursive;
         font-weight: 300;
         color: #73260D;
@@ -1238,7 +1252,10 @@ body {
       cursor: pointer;
       transition: all .2s;
       align-self: center;
-      position: relative; }
+      position: relative;
+      background-color: #451708;
+      color: #D9AC0F;
+      margin: 1rem; }
       @media only screen and (max-width: 37.5em) {
         .footer__list--item {
           font-size: 1.2rem; } }
@@ -1321,6 +1338,25 @@ body {
         background-color: #1B632B; }
       .calendar__table__weekday--red {
         background-color: #990000; }
+      .calendar__table__weekday--yellow {
+        position: relative; }
+        .calendar__table__weekday--yellow:after {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          content: '';
+          color: #D9AC0F;
+          background-color: #1B632B;
+          display: block;
+          border-radius: 50%;
+          font-size: 1.1rem;
+          font-weight: 900;
+          width: 1.5rem;
+          height: 1.5rem; }
+          @media only screen and (max-width: 37.5em) {
+            .calendar__table__weekday--yellow:after {
+              width: .5rem;
+              height: .5rem; } }
     .calendar__table__weekday-0 {
       grid-column: 1/2;
       background-color: #990000; }

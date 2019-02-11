@@ -74,6 +74,9 @@
 			transition:all .2s;
 			align-self: center;
 			position:relative;
+			background-color: $color-brown-dark;
+			color: $color-secondary-light;
+			margin:1rem;
 			
 			@include respond(s){
 				font-size: 1.2rem;

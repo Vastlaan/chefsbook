@@ -23,7 +23,7 @@ class App extends React.Component {
         return user.json();
       })
       .then(data => {
-        console.log(data);
+        //console.log(data);      //this for tracking bug edge
         if (data._id) {
           //MangoDB ID not googleId, because in the future I could do authorization also with other services like Facebook
 

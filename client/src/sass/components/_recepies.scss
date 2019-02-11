@@ -1,236 +1,243 @@
-.dashboard__recepies{
+.dashboard__recepies {
 	grid-column: col-start 4 / -1;
-	grid-row: 1/span 4;
-	display:flex;
+	grid-row: 1 / span 4;
+	display: flex;
 	flex-direction: column;
-	@include respond(l){
+	@include respond(l) {
 		grid-column: col-start 1 / -1;
-		}
-	
+	}
 
-	&--header{
-		width:100%;
-		color:$color-brown;
+	&--header {
+		width: 100%;
+		color: $color-brown;
 		text-align: center;
 		text-transform: uppercase;
 		font-family: $font-rajdhani;
 		font-weight: 300;
 		font-size: 4rem;
-		text-shadow: .2rem .5rem .5rem rgba($color-brown, .4);
-		border-bottom: .1rem solid rgba($color-brown,.3);
+		text-shadow: 0.2rem 0.5rem 0.5rem rgba($color-brown, 0.4);
+		border-bottom: 0.1rem solid rgba($color-brown, 0.3);
 	}
-	&--content{
-		margin:2rem 0;
-		display:grid;
-		grid-template-columns: repeat(3,1fr);
+	&--content {
+		margin: 2rem 0;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 1rem;
 		height: 40vh;
-		overflow-y:scroll;
-		border-bottom: .1rem solid rgba($color-brown,.3);
-		@include respond(mh){
-			height:100%;
+		overflow-y: scroll;
+		border-bottom: 0.1rem solid rgba($color-brown, 0.3);
+		@include respond(mh) {
+			height: 100%;
 		}
 
-		&-item{
-			width:100%;
-			padding:1rem;
+		&-item {
+			width: 100%;
+			padding: 1rem;
 			align-self: start;
-			justify-self:center;
-			cursor:pointer;
-			transition:all .2s;
-			border-left: 1px solid rgba($color-brown,.3);
+			justify-self: center;
+			cursor: pointer;
+			transition: all 0.2s;
+			border-left: 1px solid rgba($color-brown, 0.3);
 
-			&:hover{
+			&:hover {
 				border-left: 1px solid $color-primary;
 			}
-			&:hover > &-name{
-				color:$color-primary;
+			&:hover > &-name {
+				color: $color-primary;
 			}
-			&-box{
-				width:5rem;
-				height:5rem;
-				margin:0.5rem auto;
+			&-box {
+				width: 5rem;
+				height: 5rem;
+				margin: 0.5rem auto;
 				border-radius: 50%;
-				overflow:hidden;
-				display:flex;
-				justify-content:center;
-				
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
 			}
-			&-photo{
-				display:block;
-				width:7rem;
+			&-photo {
+				display: block;
+				width: 7rem;
 			}
-			&-name{
+			&-name {
 				text-align: center;
 				font-size: 2rem;
 				font-family: $font-rajdhani;
-				color:$color-brown;
-				line-height: .7;
-				@include respond(xs){
+				color: $color-brown;
+				line-height: 0.7;
+				@include respond(xs) {
 					font-size: 1.7rem;
 				}
-				
 			}
-			
 		}
-		&-warning{
+		&-warning {
 			grid-column: 1/-1;
 			padding: 2rem 0;
-			color:$color-brown;
+			color: $color-brown;
 			font-size: 3rem;
 			font-family: $font-rajdhani;
 			font-weight: 400;
-			letter-spacing: .1rem;
+			letter-spacing: 0.1rem;
 			text-align: center;
 		}
-
 	}
-	&--new{
+	&--new {
 		margin: 2rem auto;
 		text-decoration: none;
-		padding:1.5rem 4rem;
-		cursor:pointer;
+		padding: 1.5rem 4rem;
+		cursor: pointer;
 		background-color: $color-primary;
-		border-radius: .5rem;
-		color:snow;
+		border-radius: 0.5rem;
+		color: snow;
 		font-family: $font-rajdhani;
 		font-size: 2rem;
 
 		@include btn-shadow;
-		
 	}
 
-	&__hidden{
-
-		position:fixed;
-		top:0;
-		left:0;
+	&__hidden {
+		position: fixed;
+		top: 0;
+		left: 0;
 		z-index: 9;
-		width:100vw;
-		height:100vh;
-		background-color: rgba(darken($color-brown,20%),.95);
-		overflow-y:scroll;
-		animation: comeRight .5s ease-out;
-		
-		&-frame{
-			border:1px solid snow;
-			width:70%;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(darken($color-brown, 20%), 0.95);
+		overflow-y: scroll;
+		animation: comeRight 0.5s ease-out;
+
+		&-frame {
+			width: 70%;
 			margin: 5rem auto;
-			background-color: $color-grey-light;
-			padding:4rem 2rem;
-			display:flex;
+			background-image: linear-gradient(to bottom, $color-primary-dark, $color-primary 30%);
+			padding: 4rem 2rem;
+			display: flex;
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			@include respond(s){
-				width:100%;
+			border-radius: 4px;
+			@include respond(s) {
+				width: 100%;
+				margin-bottom: 17vh;
 			}
 		}
-		
-		&-close-svg{
-				width:3rem;
-				height:3rem;
-				border:1px solid snow;
-				position:absolute;
-				top:2rem;
-				right:2rem;
-				fill:snow;
-				cursor:pointer;
-				background-color: yellowgreen;
-				padding: 5rem;
-				@include respond(s){
-					fill:$color-brown;
-					top:5rem;
-				}
-			}
-		&-close-svg-2{
-				width:3rem;
-				height:3rem;
-				position:absolute;
-				top:2rem;
-				left:2rem;
-				fill:snow;
-				cursor:pointer;
-				@include respond(s){
-					fill:$color-brown;
-					top:5.2rem;
-				}
+
+		&-close-svg {
+			width: 3rem;
+			height: 3rem;
+			position: absolute;
+			top: 2rem;
+			right: 2rem;
+			fill: $color-primary;
+			border: 1px solid $color-primary-dark;
+			border-radius: 2px;
+			cursor: pointer;
+			transition: all 0.3s;
+			box-shadow: 0 0 1.5rem $color-red-dark;
+
+			@include respond(s) {
+				fill: $color-brown;
+				top: 5rem;
+				box-shadow: none;
+				border:none;
 			}
 
-		
+			&:hover {
+				transform: scale(1.05);
 
-		&-box{
-			width:20rem;
-			height:20rem;
-			margin:0 auto;
+				border: 1px solid $color-red-dark;
+				box-shadow: 0 0 2.5rem $color-red-dark;
+			}
+		}
+		&-close-svg-2 {
+			width: 2.9rem;
+			height: 2.9rem;
+			position: absolute;
+			top: 2rem;
+			left: 2rem;
+			fill: darken(red,15%);
+			cursor: pointer;
+			transition: all 0.3s;
+			@include respond(s) {
+				fill: $color-brown;
+				top: 5.3rem;
+				width: 2.2rem;
+				height: 2.2rem;
+			}
+			&:hover {
+				transform: scale(1.1);
+				fill: lighten(red,5%);
+				
+			}
+		}
+
+		&-box {
+			width: 20rem;
+			height: 20rem;
+			margin: 0 auto;
 			border-radius: 50%;
-			overflow:hidden;
-			display:flex;
-			justify-content:center;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
 
-			@include respond(l){
-				width:15rem;
-				height:15rem;
+			@include respond(l) {
+				width: 15rem;
+				height: 15rem;
 			}
-
-			
 		}
-		&-photo{
-			display:block;
-			width:25rem;
+		&-photo {
+			display: block;
+			width: 25rem;
 		}
-		&-name{
+		&-name {
 			text-align: center;
 			font-size: 5rem;
 			font-family: $font-rajdhani;
 			font-weight: 300;
-			letter-spacing: .2rem;
-			color:$color-brown;
+			letter-spacing: 0.2rem;
+			color: $color-brown;
 			line-height: 1.4;
-			@include respond(xs){
+			@include respond(xs) {
 				font-size: 3rem;
 			}
-			
 		}
-		&-ingridients{
-			width:70%;
+		&-ingridients {
+			width: 70%;
 			margin-top: 2rem;
-			h6{
+			h6 {
 				font-size: 2rem;
-				letter-spacing: .1rem;
+				letter-spacing: 0.1rem;
 				font-family: $font-courgette;
 				font-weight: 300;
-				color:$color-brown;
+				color: $color-brown;
 				text-align: center;
 				margin-bottom: 1rem;
 			}
-			p{
+			p {
 				text-align: center;
-				span{
+				span {
 					font-size: 1.2rem;
 					font-family: "Courier New", sans-serif;
-					color:$color-brown;
+					color: $color-brown;
 					text-align: center;
 				}
 			}
-			
 		}
-		&-preparation{
-			width:70%;
+		&-preparation {
+			width: 70%;
 			margin-top: 2rem;
-			h6{
+			h6 {
 				font-size: 2rem;
-				letter-spacing: .1rem;
+				letter-spacing: 0.1rem;
 				font-family: $font-courgette;
 				font-weight: 300;
-				color:$color-brown;
+				color: $color-brown;
 				text-align: center;
 				margin-bottom: 1rem;
 			}
-			p{
+			p {
 				font-size: 1.2rem;
 				font-family: "Courier New", sans-serif;
-				color:$color-brown;
+				color: $color-brown;
 				text-align: center;
 			}
 		}

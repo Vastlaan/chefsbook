@@ -91,6 +91,29 @@
 			&--red{
 				background-color: darken(red,20%);
 			}
+			&--yellow{
+				position:relative;
+
+				&:after{
+					position:absolute;
+					top:1rem;
+					right:1rem;
+					content:'';
+					color:$color-secondary-light;
+					background-color: $color-primary-dark;
+					display: block;
+					border-radius: 50%;
+					font-size: 1.1rem;
+					font-weight: 900;
+					width:1.5rem;
+					height:1.5rem;
+
+					@include respond(s){
+						width:.5rem;
+						height:.5rem;
+					}
+				}
+			}
 		}
 		&__weekday-0{			
 			grid-column: 1/2;
