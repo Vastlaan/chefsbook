@@ -32,6 +32,7 @@
 			background-image:linear-gradient(to right, black,lighten(#051301,5%));
 			padding:1rem;
 			z-index: 99;
+			height:15vh;
 		}
 
 	}
@@ -103,10 +104,11 @@
 		}
 		@include respond(s){
 			fill:$color-primary;
+			width: 4.5rem;
+			height:4.5rem;
 		}
 		@include respond(xs){
-			width: 2.5rem;
-			height:2.5rem;
+			
 		}
 		
 	}

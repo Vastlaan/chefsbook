@@ -4,9 +4,6 @@ import Icons from '../img/sprite.svg';
 import Icons3 from '../img/sprite3.svg';
 
 class Header extends React.Component {
-	state = {
-		logged: false
-	}
 
 	render(){
 		//console.log(this.props)

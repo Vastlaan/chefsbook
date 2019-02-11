@@ -13,12 +13,11 @@
 
 
 	@include respond(s){
-		margin-bottom: 6rem;
+		margin-bottom: 17vh;
 		width:100%;
 	}
 	@include respond(xs){
-		margin-bottom: 6rem;
-
+		margin-bottom: 17vh;
 	}
 	&__text{
 		color:black;

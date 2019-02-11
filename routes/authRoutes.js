@@ -13,7 +13,7 @@ module.exports = (app) =>{
 																//as long as that part will not be properly solved the rest of the code will not be execute
 	app.get('/api/current_user',(req,res)=>{
 		if(req.user===undefined||req.user===null){
-			return res.status(200).json("")
+			return res.status(200).json("You're not logged in!")
 		}
 		res.send(req.user)
 		

@@ -120,7 +120,8 @@ body {
         width: 100%;
         background-image: linear-gradient(to right, black, #0b2b02);
         padding: 1rem;
-        z-index: 99; } }
+        z-index: 99;
+        height: 15vh; } }
   .header__icon--box {
     display: flex;
     flex-direction: column;
@@ -179,11 +180,9 @@ body {
         height: 3.2rem; } }
     @media only screen and (max-width: 37.5em) {
       .header__icon {
-        fill: #7CAA5A; } }
-    @media only screen and (max-width: 25em) {
-      .header__icon {
-        width: 2.5rem;
-        height: 2.5rem; } }
+        fill: #7CAA5A;
+        width: 4.5rem;
+        height: 4.5rem; } }
   .header__login {
     display: block;
     align-self: center;
@@ -1190,11 +1189,11 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.3); }
   @media only screen and (max-width: 37.5em) {
     .footer {
-      margin-bottom: 6rem;
+      margin-bottom: 17vh;
       width: 100%; } }
   @media only screen and (max-width: 25em) {
     .footer {
-      margin-bottom: 6rem; } }
+      margin-bottom: 17vh; } }
   .footer__text {
     color: black;
     font-family: "Open Sans", sans-serif;
