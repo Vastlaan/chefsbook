@@ -19,13 +19,16 @@ class App extends React.Component {
     profile: {}
   }
 
-  componentDidMount(){
+  componentWillMount(){
+
     fetch('/api/current_user')
     .then(user=>{
       return user.json()
     })
     .then(data =>{
+
       if(data._id){    //MangoDB ID not googleId, because in the future I could do authorization also with other services like Facebook
+        
         this.setState({logged: true, profile: data})
       } else{
         this.setState({logged: false})

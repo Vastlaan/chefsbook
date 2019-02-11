@@ -40,15 +40,15 @@
     transform: translateX(0); } }
 
 ::-webkit-scrollbar {
-  width: .6rem; }
+  width: 0.6rem; }
 
 ::-webkit-scrollbar-track {
   background-color: snow;
-  border-radius: .5rem; }
+  border-radius: 0.5rem; }
 
 ::-webkit-scrollbar-thumb {
   background-image: linear-gradient(to bottom, #7CAA5A, #1B632B);
-  border-radius: .5rem; }
+  border-radius: 0.5rem; }
 
 *,
 *::before,
@@ -147,8 +147,7 @@ body {
           color: snow;
           font-size: 1rem; } }
     .header__icon--box:hover span {
-      transform: translate(0, -0.3rem);
-      text-shadow: 0 0.5rem 0.2rem rgba(217, 172, 15, 0.29); }
+      transform: translate(0, -0.3rem); }
     .header__icon--box:hover > .header__icon {
       transform: translate(0, -0.3rem);
       fill: linear-gradient(to bottom, #451708, #B57D1F); }
@@ -1048,13 +1047,13 @@ body {
       font-size: 2.5rem;
       font-family: "Rajdhani", sans-serif;
       font-weight: 300;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
       color: #73260D;
       text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
     .newRecepie__form--input {
       height: 3rem;
       border: none;
-      background-color: #CFE8BD;
+      background-color: #cfe8bd;
       box-shadow: 0 1rem 1rem rgba(207, 232, 189, 0.2); }
       .newRecepie__form--input:focus {
         outline: none;
@@ -1070,7 +1069,7 @@ body {
       cursor: pointer;
       margin-left: 1rem;
       transform: translateY(0.2rem);
-      transition: all .2s; }
+      transition: all 0.2s; }
       .newRecepie__form--ingridient svg:hover {
         fill: #73260D;
         transform: translateY(0); }
@@ -1079,7 +1078,7 @@ body {
       width: 120%;
       transform: translateX(-8%);
       border: none;
-      background-color: #CFE8BD;
+      background-color: #cfe8bd;
       box-shadow: 0 1rem 1rem rgba(207, 232, 189, 0.2); }
       .newRecepie__form--textarea:focus {
         outline: none;
@@ -1087,8 +1086,8 @@ body {
     .newRecepie__form--photo {
       display: block;
       margin: 0 auto;
-      width: .1px;
-      height: .1px;
+      width: 0.1px;
+      height: 0.1px;
       opacity: 0;
       overflow: hidden;
       cursor: pointer; }
@@ -1102,7 +1101,7 @@ body {
           width: 3.5rem;
           height: 3.5rem;
           fill: #451708;
-          transition: all .2s; }
+          transition: all 0.2s; }
           .newRecepie__form--photo-label svg:hover {
             transform: translateY(-0.2rem);
             fill: #73260D; }
@@ -1110,7 +1109,7 @@ body {
           font-family: "Courier New", sans-serif;
           font-size: 1.2rem;
           color: #73260D;
-          letter-spacing: .1rem; }
+          letter-spacing: 0.1rem; }
     .newRecepie__form--add {
       border: none;
       position: relative; }
@@ -1123,7 +1122,7 @@ body {
         border-radius: 50%;
         fill: #451708;
         cursor: pointer;
-        transition: all .2s; }
+        transition: all 0.2s; }
         .newRecepie__form--add-icon:hover {
           transform: translateY(-0.2rem);
           fill: #73260D; }
@@ -1140,7 +1139,7 @@ body {
       font-size: 2rem;
       font-family: "Rajdhani", sans-serif;
       font-weight: 300;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
       transition: transform .2s; }
       .newRecepie__form--submit:hover {
@@ -1173,7 +1172,7 @@ body {
       font-family: "Rajdhani", sans-serif;
       font-size: 3.5rem;
       font-weight: 400;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       margin-top: 20vh;
       color: #451708;
       text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
@@ -1187,7 +1186,8 @@ body {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem; }
+  grid-gap: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.3); }
   @media only screen and (max-width: 37.5em) {
     .footer {
       margin-bottom: 6rem;
