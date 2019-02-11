@@ -6,7 +6,7 @@ import Icons3 from '../img/sprite3.svg';
 class Header extends React.Component {
 
 	render(){
-		//console.log(this.props)
+		console.log(this.props)
 		return(
 			<div className='header'>
 				<div className='header__logo'><img src={Logo} alt='logo'/></div>
