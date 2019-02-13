@@ -10,6 +10,7 @@ import NewRecepie from "./Components/NewRecepie";
 import Footer from "./Components/Footer";
 import CalendarComponent from "./Components/CalendarComponent";
 import Schedule from "./Components/Schedule";
+import Recepies from './Components/Recepies'
 
 class App extends React.Component {
   state = {
@@ -23,7 +24,6 @@ class App extends React.Component {
         return user.json();
       })
       .then(data => {
-        console.log(data);      //this for tracking bug edge
         if (data._id) {
           //MangoDB ID not googleId, because in the future I could do authorization also with other services like Facebook
 
@@ -38,6 +38,7 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
       <div className="container">
         <Header logged={this.state.logged} />
@@ -48,6 +49,7 @@ class App extends React.Component {
             ) : (
               <Route exact={true} path="/" component={Dashboard} />
             )}
+            <Route path="/recipes" component={Recepies} />
             <Route path="/new_recepie" component={NewRecepie} />
             <Route path="/calendar" component={CalendarComponent} />
             <Route path="/schedule" component={Schedule} />

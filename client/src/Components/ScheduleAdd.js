@@ -83,6 +83,7 @@ class ScheduleAdd extends React.Component {
 
 		fetch('/api/add_member', {
 			method:'POST',
+			credentials:'include',
 			headers: {
 				"Content-type":"application/json"
 			},

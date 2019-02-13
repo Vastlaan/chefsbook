@@ -25,7 +25,8 @@ class Dashboard extends React.Component {
 	componentDidMount(){
 	    this.timer = setInterval(this.toDisplay,1000);
 
-	    fetch('/api/current_user/recepies')
+
+	    fetch('/api/current_user/recepies',{credentials: 'include'})
 	    .then(res =>{
 	    	
 	    	return res.json();
@@ -52,7 +53,7 @@ class Dashboard extends React.Component {
 
 				<a href={'/calendar'} className='dashboard__calendar'><Calendar date={date}/></a>
 
-				<Recepies recepies={recepies} />
+				<Recepies  />
 
 				
 				<div className='dashboard__schedule'>

@@ -18,7 +18,7 @@ class CalendarComponent extends React.Component {
 	}
 
 	componentWillMount() {
-		fetch("/api/events", { credentials: 'include' })
+		fetch("/api/events", { credentials: "include" })
 			.then(res => res.json())
 			.then(events => {
 				this.setState({ events });
@@ -163,16 +163,14 @@ class CalendarComponent extends React.Component {
 		const day = dateContext.format("D");
 		const daysInMonth = dateContext.daysInMonth();
 		const eventsSorted = events.sort(this.compare);
-		let arrayOfDays = []
-		eventsSorted.forEach(
-			(each)=>{
-			if(each.year===year && each.month===month){
-				 arrayOfDays.push(each.day) 
-				 return arrayOfDays
-			} 
-			return arrayOfDays
-			})
-		console.log(arrayOfDays)
+		let arrayOfDays = [];
+		eventsSorted.forEach(each => {
+			if (each.year === year && each.month === month) {
+				arrayOfDays.push(each.day);
+				return arrayOfDays;
+			}
+			return arrayOfDays;
+		});
 		let blanks = [];
 		for (let i = 0; i < this.firstDayOfMonth(); i++) {
 			blanks.push(
@@ -214,17 +212,17 @@ class CalendarComponent extends React.Component {
 						{i}
 					</div>
 				);
-			} else if(arrayOfDays.includes(i)){
-					daysNumbers.push(
-						<div
-							className="calendar__table__weekday calendar__table__weekday--yellow calendar__table__weekday--day "
-							key={i * 2.998}
-							onClick={() => this.addEvent(i, month, year)}
-						>
-							{i}
-						</div>
-					);
-			}else {
+			} else if (arrayOfDays.includes(i)) {
+				daysNumbers.push(
+					<div
+						className="calendar__table__weekday calendar__table__weekday--yellow calendar__table__weekday--day "
+						key={i * 2.998}
+						onClick={() => this.addEvent(i, month, year)}
+					>
+						{i}
+					</div>
+				);
+			} else {
 				daysNumbers.push(
 					<div
 						className="calendar__table__weekday calendar__table__weekday--day"

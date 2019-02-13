@@ -40,6 +40,7 @@ class NewRecepie extends React.Component {
 		data.append('uploadFile',this.state.photo)
 		fetch('/api/current_user/file',{
 			method: 'POST',
+			credentials:'include',
 			body: data
 		})
 		.then(fileName=> fileName.json())
@@ -54,6 +55,7 @@ class NewRecepie extends React.Component {
 			};
 			fetch('/api/current_user/recepies',{
 				method: 'POST',
+				credentials:'include',
 				headers: {
 					'Content-Type': 'application/json'
 				},

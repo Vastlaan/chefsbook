@@ -6,7 +6,7 @@ import Icons3 from '../img/sprite3.svg';
 class Header extends React.Component {
 
 	render(){
-		console.log(this.props)
+		
 		return(
 			<div className='header'>
 				<div className='header__logo'><img src={Logo} alt='logo'/></div>
@@ -18,11 +18,11 @@ class Header extends React.Component {
 							</svg>
 							<span>Home</span>
 						</a>
-						<a href='/new_recepie' className='header__icon--box'>
+						<a href='/recipes' className='header__icon--box'>
 							<svg className='header__icon'>
 								<use xlinkHref={`${Icons3}#cook`}></use>	
 							</svg>
-							<span>New Recipe</span>
+							<span>Recipes</span>
 						</a>
 						<a href='/calendar' className='header__icon--box'>
 							<svg className='header__icon'>
