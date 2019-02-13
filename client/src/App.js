@@ -18,12 +18,12 @@ class App extends React.Component {
   };
 
   componentWillMount() {
-    fetch("/api/current_user")
+    fetch("/api/current_user", { credentials: 'include' })    //credentials: 'include'   this makes sure that cookie is send with request. Fix for edge and ie
       .then(user => {
         return user.json();
       })
       .then(data => {
-        //console.log(data);      //this for tracking bug edge
+        console.log(data);      //this for tracking bug edge
         if (data._id) {
           //MangoDB ID not googleId, because in the future I could do authorization also with other services like Facebook
 

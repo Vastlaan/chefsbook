@@ -15,7 +15,7 @@ class Schedule extends React.Component {
 	}
 
 	componentWillMount(){
-		fetch('/api/schedule')
+		fetch('/api/schedule', { credentials: 'include' })
 		.then(data=>data.json())
 		.then(sch=> {
 				const schedule = this.checkWeek(sch)
@@ -44,7 +44,7 @@ class Schedule extends React.Component {
 		const currentWeek = this.state.dateContext.week()
 		await  this.setState({dateContext:moment(moment().week(currentWeek + a))})
 		
-		fetch('/api/schedule')
+		fetch('/api/schedule', { credentials: 'include' })
 		.then(data=>data.json())
 		.then(sch=> {
 				const schedule = this.checkWeek(sch)

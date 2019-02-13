@@ -18,7 +18,7 @@ class CalendarComponent extends React.Component {
 	}
 
 	componentWillMount() {
-		fetch("/api/events")
+		fetch("/api/events", { credentials: 'include' })
 			.then(res => res.json())
 			.then(events => {
 				this.setState({ events });
