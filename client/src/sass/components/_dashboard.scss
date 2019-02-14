@@ -26,7 +26,10 @@
 		border-radius: 3px;
 		clip-path:polygon(0% 0%, 100% 40%, 100% 100%, 40% 100%);
 		@include respond(l) {
+			background-image: linear-gradient(to bottom, rgba(darken($color-grey-light, 10%),.7), rgba($color-primary-dark,.1) 40%), url(../img/recipes_background.jpg);
 			grid-column: col-start 1 / -1;
+			clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+			filter:contrast(100%) brightness(90%);
 		}
 		
 		&--btn{
@@ -40,17 +43,31 @@
 			padding:.5rem 2.5rem;
 			transition:all .5s;
 			box-shadow: 0 0rem 5rem rgba(0,0,0,.9);
+			z-index: 99;
 			
 
 
 			@include respond(s){
 				padding:.3rem 1.3rem;
 			}
+			@include respond(l) {
+				transform:translate(0,0);
+				text-align: center;
+				background-image: linear-gradient(to right,rgba($color-primary-dark,1),rgba($color-primary,.8) 70%);
+				filter:brightness(120%);
+				padding:1rem 4.5rem;
+				width:80%;
+			}
 			
 
 			&:hover{
 				transform:translate(-13%,30%);
 				background-image: linear-gradient(to right,rgba($color-primary-dark,1),rgba($color-primary,.8) 70%);
+
+				@include respond(l) {
+					transform:translate(0,-5px);
+
+				}
 			}
 
 
@@ -63,9 +80,15 @@
 			color: $color-brown-dark;
 			letter-spacing: .2rem;
 			float:right;
+			text-transform: uppercase;
 
 			@include respond(s){
 				font-size: 2.5rem
+			}
+			@include respond(l) {
+				float:none;
+				color:snow;
+				font-weight: 300;
 			}
 		}
 

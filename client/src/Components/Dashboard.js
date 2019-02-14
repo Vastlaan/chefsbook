@@ -47,12 +47,12 @@ class Dashboard extends React.Component {
 	}
 
 	render(){
-		let { date, recepies } = this.state;
+		let { date } = this.state;
 		return(
 			<div className='dashboard'>
 
 				<a href={'/calendar'} className='dashboard__calendar'><Calendar date={date}/></a>
-
+				
 				<Recipes  />
 
 				

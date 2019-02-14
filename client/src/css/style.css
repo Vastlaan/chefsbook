@@ -94,8 +94,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 1rem;
-  border-bottom: 1px solid rgba(124, 170, 90, 0.3); }
+  margin-top: 1rem; }
   .header__logo {
     padding: 1rem;
     position: relative;
@@ -391,7 +390,10 @@ body {
     clip-path: polygon(0% 0%, 100% 40%, 100% 100%, 40% 100%); }
     @media only screen and (max-width: 62.5em) {
       .dashboard .dashboard__recipes {
-        grid-column: col-start 1 / -1; } }
+        background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0.7), rgba(27, 99, 43, 0.1) 40%), url(../img/recipes_background.jpg);
+        grid-column: col-start 1 / -1;
+        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+        filter: contrast(100%) brightness(90%); } }
     .dashboard .dashboard__recipes--btn {
       display: block;
       text-decoration: none;
@@ -401,23 +403,41 @@ body {
       transform: translate(-15%, 30%);
       padding: .5rem 2.5rem;
       transition: all .5s;
-      box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.9); }
+      box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.9);
+      z-index: 99; }
       @media only screen and (max-width: 37.5em) {
         .dashboard .dashboard__recipes--btn {
           padding: .3rem 1.3rem; } }
+      @media only screen and (max-width: 62.5em) {
+        .dashboard .dashboard__recipes--btn {
+          transform: translate(0, 0);
+          text-align: center;
+          background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%);
+          filter: brightness(120%);
+          padding: 1rem 4.5rem;
+          width: 80%; } }
       .dashboard .dashboard__recipes--btn:hover {
         transform: translate(-13%, 30%);
         background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%); }
+        @media only screen and (max-width: 62.5em) {
+          .dashboard .dashboard__recipes--btn:hover {
+            transform: translate(0, -5px); } }
     .dashboard .dashboard__recipes--span {
       font-size: 4rem;
       font-family: "Rajdhani", sans-serif;
       font-weight: 400;
       color: #451708;
       letter-spacing: .2rem;
-      float: right; }
+      float: right;
+      text-transform: uppercase; }
       @media only screen and (max-width: 37.5em) {
         .dashboard .dashboard__recipes--span {
           font-size: 2.5rem; } }
+      @media only screen and (max-width: 62.5em) {
+        .dashboard .dashboard__recipes--span {
+          float: none;
+          color: snow;
+          font-weight: 300; } }
   .dashboard .dashboard__schedule {
     grid-column: col-start 1 / -1;
     grid-row: 5/span 4;
