@@ -1,0 +1,29 @@
+.privacy{
+
+	margin:2rem;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+
+	h1{
+		font-size: 4.5rem;
+		font-family: $font-rajdhani;
+		font-weight: 300;
+		color:$color-brown;
+		margin:3rem;
+	}
+	h2{
+		font-size: 3rem;
+		font-family: $font-rajdhani;
+		font-weight: 300;
+		color:$color-brown;
+		margin:2rem; 
+	}
+	p{
+		font-size: 1.3rem;
+		font-family: "Courier New", sans-serif;
+		letter-spacing: .1rem;
+	}
+}

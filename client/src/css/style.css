@@ -127,7 +127,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 1rem;
+    margin-left: 0rem;
     text-decoration: none;
     color: #451708;
     transform: translateY(1rem);
@@ -375,6 +375,49 @@ body {
   @media only screen and (max-height: 31.25em) {
     .dashboard {
       grid-template-rows: repeat(8, [row-start] 25vh [row-end]); } }
+  .dashboard .dashboard__recipes {
+    grid-column: col-start 4 / -1;
+    grid-row: 1 / span 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom right, rgba(124, 170, 90, 0.3), rgba(27, 99, 43, 0.1)), url(../img/recipes_background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: contrast(120%) brightness(150%);
+    border-radius: 3px;
+    clip-path: polygon(0% 0%, 100% 40%, 100% 100%, 40% 100%); }
+    @media only screen and (max-width: 62.5em) {
+      .dashboard .dashboard__recipes {
+        grid-column: col-start 1 / -1; } }
+    .dashboard .dashboard__recipes--btn {
+      display: block;
+      text-decoration: none;
+      width: 50%;
+      border-radius: 3px;
+      background-image: linear-gradient(to right, rgba(27, 99, 43, 0.9), rgba(124, 170, 90, 0.6) 70%);
+      transform: translate(-15%, 30%);
+      padding: .5rem 2.5rem;
+      transition: all .5s;
+      box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.9); }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard .dashboard__recipes--btn {
+          padding: .3rem 1.3rem; } }
+      .dashboard .dashboard__recipes--btn:hover {
+        transform: translate(-13%, 30%);
+        background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%); }
+    .dashboard .dashboard__recipes--span {
+      font-size: 4rem;
+      font-family: "Rajdhani", sans-serif;
+      font-weight: 400;
+      color: #451708;
+      letter-spacing: .2rem;
+      float: right; }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard .dashboard__recipes--span {
+          font-size: 2.5rem; } }
   .dashboard .dashboard__schedule {
     grid-column: col-start 1 / -1;
     grid-row: 5/span 4;
@@ -821,15 +864,10 @@ body {
         transform: translateY(-0.1rem);
         box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
 
-.dashboard__recepies {
-  grid-column: col-start 4 / -1;
-  grid-row: 1 / span 4;
+.recepies {
   display: flex;
   flex-direction: column; }
-  @media only screen and (max-width: 62.5em) {
-    .dashboard__recepies {
-      grid-column: col-start 1 / -1; } }
-  .dashboard__recepies--header {
+  .recepies--header {
     width: 100%;
     color: #73260D;
     text-align: center;
@@ -837,32 +875,28 @@ body {
     font-family: "Rajdhani", sans-serif;
     font-weight: 300;
     font-size: 4rem;
-    text-shadow: 0.2rem 0.5rem 0.5rem rgba(115, 38, 13, 0.4);
-    border-bottom: 0.1rem solid rgba(115, 38, 13, 0.3); }
-  .dashboard__recepies--content {
+    text-shadow: 0.2rem 0.5rem 0.5rem rgba(115, 38, 13, 0.4); }
+  .recepies--content {
     margin: 2rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    height: 40vh;
-    overflow-y: scroll;
-    border-bottom: 0.1rem solid rgba(115, 38, 13, 0.3); }
+    grid-gap: 1rem; }
     @media only screen and (max-height: 31.25em) {
-      .dashboard__recepies--content {
+      .recepies--content {
         height: 100%; } }
-    .dashboard__recepies--content-item {
+    .recepies--content-item {
       width: 100%;
       padding: 1rem;
       align-self: start;
       justify-self: center;
       cursor: pointer;
       transition: all 0.2s;
-      border-left: 1px solid rgba(115, 38, 13, 0.3); }
-      .dashboard__recepies--content-item:hover {
+      border-left: 1px solid transparent; }
+      .recepies--content-item:hover {
         border-left: 1px solid #7CAA5A; }
-      .dashboard__recepies--content-item:hover > .dashboard__recepies--content-item-name {
+      .recepies--content-item:hover > .recepies--content-item-name {
         color: #7CAA5A; }
-      .dashboard__recepies--content-item-box {
+      .recepies--content-item-box {
         width: 5rem;
         height: 5rem;
         margin: 0.5rem auto;
@@ -870,19 +904,19 @@ body {
         overflow: hidden;
         display: flex;
         justify-content: center; }
-      .dashboard__recepies--content-item-photo {
+      .recepies--content-item-photo {
         display: block;
         width: 7rem; }
-      .dashboard__recepies--content-item-name {
+      .recepies--content-item-name {
         text-align: center;
         font-size: 2rem;
         font-family: "Rajdhani", sans-serif;
         color: #73260D;
         line-height: 0.7; }
         @media only screen and (max-width: 25em) {
-          .dashboard__recepies--content-item-name {
+          .recepies--content-item-name {
             font-size: 1.7rem; } }
-    .dashboard__recepies--content-warning {
+    .recepies--content-warning {
       grid-column: 1/-1;
       padding: 2rem 0;
       color: #73260D;
@@ -891,7 +925,7 @@ body {
       font-weight: 400;
       letter-spacing: 0.1rem;
       text-align: center; }
-  .dashboard__recepies--new {
+  .recepies--new {
     margin: 2rem auto;
     text-decoration: none;
     padding: 1.5rem 4rem;
@@ -903,13 +937,13 @@ body {
     font-size: 2rem;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transition: transform .2s; }
-    .dashboard__recepies--new:hover {
+    .recepies--new:hover {
       transform: translateY(-0.3rem);
       box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
-    .dashboard__recepies--new:active {
+    .recepies--new:active {
       transform: translateY(-0.1rem);
       box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
-  .dashboard__recepies__hidden {
+  .recepies__hidden {
     position: fixed;
     top: 0;
     left: 0;
@@ -919,7 +953,7 @@ body {
     background-color: rgba(23, 8, 3, 0.95);
     overflow-y: scroll;
     animation: comeRight 0.5s ease-out; }
-    .dashboard__recepies__hidden-frame {
+    .recepies__hidden-frame {
       width: 70%;
       margin: 5rem auto;
       background-image: linear-gradient(to bottom, #1B632B, #7CAA5A 30%);
@@ -930,10 +964,10 @@ body {
       align-items: center;
       border-radius: 4px; }
       @media only screen and (max-width: 37.5em) {
-        .dashboard__recepies__hidden-frame {
+        .recepies__hidden-frame {
           width: 100%;
           margin-bottom: 17vh; } }
-    .dashboard__recepies__hidden-close-svg {
+    .recepies__hidden-close-svg {
       width: 3rem;
       height: 3rem;
       position: absolute;
@@ -943,37 +977,36 @@ body {
       border: 1px solid #1B632B;
       border-radius: 2px;
       cursor: pointer;
-      transition: all 0.3s;
-      box-shadow: 0 0 1.5rem maroon; }
+      transition: all 0.3s; }
       @media only screen and (max-width: 37.5em) {
-        .dashboard__recepies__hidden-close-svg {
+        .recepies__hidden-close-svg {
           fill: #73260D;
           top: 5rem;
           box-shadow: none;
           border: none; } }
-      .dashboard__recepies__hidden-close-svg:hover {
+      .recepies__hidden-close-svg:hover {
         transform: scale(1.05);
         border: 1px solid maroon;
         box-shadow: 0 0 2.5rem maroon; }
-    .dashboard__recepies__hidden-close-svg-2 {
+    .recepies__hidden-close-svg-2 {
       width: 2.9rem;
       height: 2.9rem;
       position: absolute;
       top: 2rem;
       left: 2rem;
-      fill: #b30000;
+      fill: grey;
       cursor: pointer;
       transition: all 0.3s; }
       @media only screen and (max-width: 37.5em) {
-        .dashboard__recepies__hidden-close-svg-2 {
+        .recepies__hidden-close-svg-2 {
           fill: #73260D;
           top: 5.3rem;
           width: 2.2rem;
           height: 2.2rem; } }
-      .dashboard__recepies__hidden-close-svg-2:hover {
+      .recepies__hidden-close-svg-2:hover {
         transform: scale(1.1);
-        fill: #ff1a1a; }
-    .dashboard__recepies__hidden-box {
+        fill: #73260D; }
+    .recepies__hidden-box {
       width: 20rem;
       height: 20rem;
       margin: 0 auto;
@@ -982,13 +1015,13 @@ body {
       display: flex;
       justify-content: center; }
       @media only screen and (max-width: 62.5em) {
-        .dashboard__recepies__hidden-box {
+        .recepies__hidden-box {
           width: 15rem;
           height: 15rem; } }
-    .dashboard__recepies__hidden-photo {
+    .recepies__hidden-photo {
       display: block;
       width: 25rem; }
-    .dashboard__recepies__hidden-name {
+    .recepies__hidden-name {
       text-align: center;
       font-size: 5rem;
       font-family: "Rajdhani", sans-serif;
@@ -997,12 +1030,12 @@ body {
       color: #73260D;
       line-height: 1.4; }
       @media only screen and (max-width: 25em) {
-        .dashboard__recepies__hidden-name {
+        .recepies__hidden-name {
           font-size: 3rem; } }
-    .dashboard__recepies__hidden-ingridients {
+    .recepies__hidden-ingridients {
       width: 70%;
       margin-top: 2rem; }
-      .dashboard__recepies__hidden-ingridients h6 {
+      .recepies__hidden-ingridients h6 {
         font-size: 2rem;
         letter-spacing: 0.1rem;
         font-family: "Courgette", cursive;
@@ -1010,17 +1043,17 @@ body {
         color: #73260D;
         text-align: center;
         margin-bottom: 1rem; }
-      .dashboard__recepies__hidden-ingridients p {
+      .recepies__hidden-ingridients p {
         text-align: center; }
-        .dashboard__recepies__hidden-ingridients p span {
+        .recepies__hidden-ingridients p span {
           font-size: 1.2rem;
           font-family: "Courier New", sans-serif;
           color: #73260D;
           text-align: center; }
-    .dashboard__recepies__hidden-preparation {
+    .recepies__hidden-preparation {
       width: 70%;
       margin-top: 2rem; }
-      .dashboard__recepies__hidden-preparation h6 {
+      .recepies__hidden-preparation h6 {
         font-size: 2rem;
         letter-spacing: 0.1rem;
         font-family: "Courgette", cursive;
@@ -1028,7 +1061,7 @@ body {
         color: #73260D;
         text-align: center;
         margin-bottom: 1rem; }
-      .dashboard__recepies__hidden-preparation p {
+      .recepies__hidden-preparation p {
         font-size: 1.2rem;
         font-family: "Courier New", sans-serif;
         color: #73260D;
@@ -1191,8 +1224,8 @@ body {
       text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
 
 .footer {
-  padding: 2rem 5rem;
-  margin-bottom: 2rem;
+  padding: .1rem 5rem;
+  margin-bottom: 1rem;
   margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
@@ -1242,7 +1275,6 @@ body {
         background-color: transparent; } }
     .footer__list--item {
       display: inline-block;
-      color: black;
       padding: .3rem 1.5rem;
       border-radius: 2px;
       font-size: 1.4rem;
@@ -1253,15 +1285,18 @@ body {
       transition: all .2s;
       align-self: center;
       position: relative;
-      background-color: #451708;
-      color: #D9AC0F;
-      margin: 1rem; }
+      background-image: linear-gradient(to right, rgba(69, 23, 8, 0.9), rgba(115, 38, 13, 0.9));
+      color: snow;
+      margin: 1rem;
+      width: 90%;
+      text-align: center;
+      text-decoration: none; }
       @media only screen and (max-width: 37.5em) {
         .footer__list--item {
           font-size: 1.2rem; } }
       .footer__list--item:hover {
         background-color: #451708;
-        transform: scale(1.05) rotate(3deg);
+        transform: scale(1.05);
         color: #D9AC0F;
         border-bottom: none; }
         @media only screen and (max-width: 37.5em) {
@@ -1554,3 +1589,26 @@ body {
           font-weight: 300;
           font-size: 1.8rem;
           text-align: center; }
+
+.privacy {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .privacy h1 {
+    font-size: 4.5rem;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    color: #73260D;
+    margin: 3rem; }
+  .privacy h2 {
+    font-size: 3rem;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    color: #73260D;
+    margin: 2rem; }
+  .privacy p {
+    font-size: 1.3rem;
+    font-family: "Courier New", sans-serif;
+    letter-spacing: .1rem; }

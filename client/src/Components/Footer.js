@@ -5,7 +5,7 @@ const Footer =()=>{
 		<div className='footer'>
 			
 			<ul className='footer__list'>
-				<li className='footer__list--item'>License</li>
+				<a href='/privacy_policy' className='footer__list--item'>Privacy policy</a>
 				<li className='footer__list--item'>Author</li>
 				<li className='footer__list--item'>Cookies</li>
 				<li className='footer__list--item'>Contact</li>

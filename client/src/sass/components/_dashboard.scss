@@ -10,8 +10,66 @@
 		grid-template-rows: repeat(8, [row-start] 25vh [row-end] );
 	}
 	
-	//=============================================calendar============================================================================
+	//=============================================recipes============================================================================
+	.dashboard__recipes {
+		grid-column: col-start 4 / -1;
+		grid-row: 1 / span 4;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-image: linear-gradient(to bottom right, rgba($color-primary,.3), rgba($color-primary-dark,.1)), url(../img/recipes_background.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		filter:contrast(120%) brightness(150%);
+		border-radius: 3px;
+		clip-path:polygon(0% 0%, 100% 40%, 100% 100%, 40% 100%);
+		@include respond(l) {
+			grid-column: col-start 1 / -1;
+		}
+		
+		&--btn{
+			display: block;
+			text-decoration: none;
+			width:50%;
+			//height:6rem;
+			border-radius:3px;
+			background-image: linear-gradient(to right,rgba($color-primary-dark,.9),rgba($color-primary,.6) 70%);
+			transform:translate(-15%,30%);
+			padding:.5rem 2.5rem;
+			transition:all .5s;
+			box-shadow: 0 0rem 5rem rgba(0,0,0,.9);
+			
 
+
+			@include respond(s){
+				padding:.3rem 1.3rem;
+			}
+			
+
+			&:hover{
+				transform:translate(-13%,30%);
+				background-image: linear-gradient(to right,rgba($color-primary-dark,1),rgba($color-primary,.8) 70%);
+			}
+
+
+		}
+		&--span{
+			font-size: 4rem;
+			font-family: $font-rajdhani;
+
+			font-weight: 400;
+			color: $color-brown-dark;
+			letter-spacing: .2rem;
+			float:right;
+
+			@include respond(s){
+				font-size: 2.5rem
+			}
+		}
+
+	}
 	//=============================================schedule============================================================================
 	.dashboard__schedule{
 		grid-column: col-start 1 / -1;

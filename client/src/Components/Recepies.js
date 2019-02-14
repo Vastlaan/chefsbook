@@ -43,12 +43,12 @@ class Recepies extends React.Component {
 		const { display, recept } = this.state;
 
 		return (
-			<div className="dashboard__recepies">
+			<div className="recepies">
 				
-				<h1 className="dashboard__recepies--header">Recipes</h1>
-				<div className="dashboard__recepies--content">
+				<h1 className="recepies--header">Recipes</h1>
+				<div className="recepies--content">
 					{recepies.length === 0 ? (
-						<h1 className="dashboard__recepies--content-warning">
+						<h1 className="recepies--content-warning">
 							You haven't created any recipes yet. Click the
 							button below to create a new recipe.
 						</h1>
@@ -57,16 +57,16 @@ class Recepies extends React.Component {
 							return (
 								<div
 									key={`${i}@@@`}
-									className="dashboard__recepies--content-item"
+									className="recepies--content-item"
 									onClick={() => this.openRecepie(i)}
 								>
-									<p className="dashboard__recepies--content-item-name">
+									<p className="recepies--content-item-name">
 										{element.name}
 									</p>
-									<div className="dashboard__recepies--content-item-box">
+									<div className="recepies--content-item-box">
 										<img
 											src={element.photo}
-											className="dashboard__recepies--content-item-photo"
+											className="recepies--content-item-photo"
 											alt="food"
 										/>
 									</div>
@@ -75,16 +75,16 @@ class Recepies extends React.Component {
 						})
 					)}
 				</div>
-				<a className="dashboard__recepies--new" href="/new_recepie">
+				<a className="recepies--new" href="/new_recepie">
 					Create New Recipe
 				</a>
 
 				<div style={{ display: `${display}` }}>
 					{recept.name ? (
-						<div className="dashboard__recepies__hidden">
-							<div className="dashboard__recepies__hidden-frame">
+						<div className="recepies__hidden">
+							<div className="recepies__hidden-frame">
 								<svg
-									className="dashboard__recepies__hidden-close-svg-2"
+									className="recepies__hidden-close-svg-2"
 									onClick={() =>
 										this.removeRecepie(
 											recept.name,
@@ -97,7 +97,7 @@ class Recepies extends React.Component {
 									<use xlinkHref={`${Icons}#icon-bin`} />
 								</svg>
 								<svg
-									className="dashboard__recepies__hidden-close-svg"
+									className="recepies__hidden-close-svg"
 									id="close"
 									onClick={() =>
 										this.setState({ display: "none" })
@@ -106,18 +106,18 @@ class Recepies extends React.Component {
 									<use xlinkHref={`${Icons}#icon-close`} />
 								</svg>
 
-								<p className="dashboard__recepies__hidden-name">
+								<p className="recepies__hidden-name">
 									{recept.name}
 								</p>
-								<div className="dashboard__recepies__hidden-box">
+								<div className="recepies__hidden-box">
 									<img
 										src={recept.photo}
-										className="dashboard__recepies__hidden-photo"
+										className="recepies__hidden-photo"
 										alt="food"
 									/>
 								</div>
 
-								<div className="dashboard__recepies__hidden-ingridients">
+								<div className="recepies__hidden-ingridients">
 									<h6>Ingridients:</h6>
 									<p>
 										{recept.ingridients.map((each, i) => {
@@ -130,7 +130,7 @@ class Recepies extends React.Component {
 										})}
 									</p>
 								</div>
-								<div className="dashboard__recepies__hidden-preparation">
+								<div className="recepies__hidden-preparation">
 									<h6>Preparation:</h6>
 									<p>{recept.preparation}</p>
 								</div>
