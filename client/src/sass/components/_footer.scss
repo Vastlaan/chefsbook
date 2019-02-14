@@ -20,17 +20,19 @@
 		margin-bottom: 17vh;
 	}
 	&__text{
-		color:black;
+		color:snow;
 		font-family: $font-openSans;
 		font-size: 1rem;
 		font-weight: 300;
 		letter-spacing: .3rem;
 		text-align: center;
 		align-self: center;
+		background-color: rgba(0,0,0,.6);
+		padding:1rem;
 		
 		span{
 			display:inline-block;
-			font-size: 1.2rem;
+			font-size: 1.4rem;
 			font-weight: 500;
 			cursor:pointer;
 			transition:all .2s;
