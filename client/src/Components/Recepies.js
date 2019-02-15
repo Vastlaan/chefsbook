@@ -14,6 +14,7 @@ class Recepies extends React.Component {
 	}
 
 	openRecepie = index => {
+		console.log(index, this.props.recepies[index])
 		this.setState({ display: "block" });
 		this.setState({ recept: this.props.recepies[index] });
 	};
@@ -80,7 +81,9 @@ class Recepies extends React.Component {
 				</a>
 
 				<div style={{ display: `${display}` }}>
-					{recept.name ? (
+
+
+					{recept.name ||recept.name==='' ? (
 						<div className="recepies__hidden">
 							<div className="recepies__hidden-frame">
 								<svg

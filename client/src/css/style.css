@@ -85,7 +85,7 @@ body {
 .container {
   width: 90vw;
   margin: 0 auto; }
-  @media only screen and (max-width: 50em) {
+  @media only screen and (max-width: 62.5em) {
     .container {
       width: 100vw;
       max-width: 100%; } }
@@ -393,7 +393,8 @@ body {
         background-image: linear-gradient(to bottom, rgba(224, 224, 224, 0.7), rgba(27, 99, 43, 0.1) 40%), url(../img/recipes_background.jpg);
         grid-column: col-start 1 / -1;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        filter: contrast(100%) brightness(90%); } }
+        filter: contrast(100%) brightness(90%);
+        box-shadow: 0 0 8rem 10rem rgba(255, 250, 250, 0.7) inset; } }
     .dashboard .dashboard__recipes--btn {
       display: block;
       text-decoration: none;
@@ -401,7 +402,7 @@ body {
       border-radius: 3px;
       background-image: linear-gradient(to right, rgba(27, 99, 43, 0.9), rgba(124, 170, 90, 0.6) 70%);
       transform: translate(-15%, 30%);
-      padding: .5rem 2.5rem;
+      padding: .5rem 1.5rem;
       transition: all .5s;
       box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.9);
       z-index: 99; }
@@ -416,6 +417,9 @@ body {
           filter: brightness(120%);
           padding: 1rem 4.5rem;
           width: 80%; } }
+      @media only screen and (max-width: 75em) {
+        .dashboard .dashboard__recipes--btn {
+          padding: 1rem .5rem; } }
       .dashboard .dashboard__recipes--btn:hover {
         transform: translate(-13%, 30%);
         background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%); }
@@ -438,6 +442,12 @@ body {
           float: none;
           color: snow;
           font-weight: 300; } }
+    .dashboard .dashboard__recipes h1 {
+      font-size: 5rem;
+      font-weight: 300;
+      font-family: "Rajdhani", sans-serif, sans-serif;
+      color: black;
+      transform: translateY(-20rem); }
   .dashboard .dashboard__schedule {
     grid-column: col-start 1 / -1;
     grid-row: 5/span 4;
@@ -1216,11 +1226,13 @@ body {
         box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
   .newRecepie__success {
     position: fixed;
-    top: 20vh;
-    left: 20vw;
-    width: 60vw;
-    height: 60vh;
-    background-image: linear-gradient(to top, #7caa5a, #1B632B); }
+    top: 25%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 102;
+    animation: comeRight .5s;
+    background-image: linear-gradient(to top, rgba(124, 170, 90, 0.8), #1B632B); }
     .newRecepie__success--icon {
       position: absolute;
       top: 0;
@@ -1237,11 +1249,34 @@ body {
       text-align: center;
       font-family: "Rajdhani", sans-serif;
       font-size: 3.5rem;
-      font-weight: 400;
+      font-weight: 500;
       letter-spacing: 0.2rem;
       margin-top: 20vh;
       color: #451708;
-      text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
+      text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+      text-transform: uppercase;
+      background-image: linear-gradient(to right, #73260D, black);
+      background-clip: text;
+      -webkit-text-fill-color: transparent; }
+
+.blackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999; }
+  .blackout svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 5rem;
+    height: 5rem; }
+
+#output {
+  width: 20rem; }
 
 .footer {
   padding: .1rem 5rem;

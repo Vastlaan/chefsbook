@@ -60,7 +60,7 @@ module.exports = (app) =>{
 	app.post('/api/current_user/remove_recepie', (req,res)=>{
 
 		const toRemove = req.body
-		console.log(toRemove)
+		
 		User.findOneAndUpdate(
 			{_id:req.user._id},
 			{$pull: {recepies:toRemove}},

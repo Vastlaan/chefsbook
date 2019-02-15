@@ -3,7 +3,7 @@
 	margin:0 auto;
 	
 
-	@include respond(m){
+	@include respond(l){
 		width:100vw;
 		max-width: 100%;
 	}
