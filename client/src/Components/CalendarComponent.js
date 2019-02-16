@@ -125,7 +125,15 @@ class CalendarComponent extends React.Component {
 		this.closeEvent();
 	};
 
-	removeEvent = (year, month, day, time, description) => {
+	removeEvent = async (year, month, day, time, description) => {
+
+		const respond = prompt("are You sure? (only typing 'N' will prvent delete event!")
+		console.log(1)
+
+		if(respond=="N"){
+			console.log('fuck')
+			return null
+		}
 		const toDelete = {
 			day,
 			month,
@@ -271,15 +279,16 @@ class CalendarComponent extends React.Component {
 					<h1 className="calendar__comming--header">
 						Comming events:
 					</h1>
-					<div className="calendar__comming__box">
+					<div className="calendar__comming__box" >
 						{eventsSorted.map((event, i) => {
 							if (event.year === year && event.month === month) {
 								return (
 									<div
 										className="calendar__comming__box--each"
 										key={i * 91.332323}
+										
 									>
-										<h2>{`${event.day} ${event.month} ${
+										<h2 onClick={()=>{this.addEvent(event.day, event.month, event.year)}}>{`${event.day} ${event.month} ${
 											event.year
 										} at ${event.time}`}</h2>
 										<p>{event.description}</p>

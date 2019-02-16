@@ -1383,7 +1383,7 @@ body {
       grid-column: 2/-2;
       text-align: center;
       font-family: "Rajdhani", sans-serif;
-      letter-spacing: .1rem;
+      letter-spacing: 0.1rem;
       font-weight: 300;
       font-size: 4rem;
       text-shadow: 0.1rem 0.5rem 1rem rgba(244, 209, 90, 0.2);
@@ -1417,7 +1417,7 @@ body {
       @media only screen and (max-width: 37.5em) {
         .calendar__table__weekday {
           font-size: 2rem;
-          padding: .5rem; } }
+          padding: 0.5rem; } }
       .calendar__table__weekday:not(:last-child) {
         border-right: none; }
       .calendar__table__weekday--blank {
@@ -1436,9 +1436,9 @@ body {
           position: absolute;
           top: 1rem;
           right: 1rem;
-          content: '';
+          content: "";
           color: #D9AC0F;
-          background-color: #1B632B;
+          background-color: yellowgreen;
           display: block;
           border-radius: 50%;
           font-size: 1.1rem;
@@ -1447,8 +1447,8 @@ body {
           height: 1.5rem; }
           @media only screen and (max-width: 37.5em) {
             .calendar__table__weekday--yellow:after {
-              width: .5rem;
-              height: .5rem; } }
+              width: 0.5rem;
+              height: 0.5rem; } }
     .calendar__table__weekday-0 {
       grid-column: 1/2;
       background-color: #990000; }
@@ -1465,8 +1465,8 @@ body {
     .calendar__table__weekday-6 {
       grid-column: 7/8; }
   .calendar__event {
-    animation: comeOut .5s ease-out;
-    transition: animation .5s;
+    animation: comeOut 0.5s ease-out;
+    transition: animation 0.5s;
     position: fixed;
     top: 0;
     left: 0;
@@ -1489,7 +1489,7 @@ body {
         font-family: "Rajdhani", sans-serif;
         font-size: 4rem;
         font-weight: 300;
-        letter-spacing: .2rem;
+        letter-spacing: 0.2rem;
         text-align: center;
         text-shadow: 0.1rem 0.5rem 0.5rem rgba(0, 0, 0, 0.4); }
         @media only screen and (max-width: 37.5em) {
@@ -1522,14 +1522,14 @@ body {
           font-family: "Rajdhani", sans-serif;
           font-size: 2.5rem;
           font-weight: 500;
-          letter-spacing: .1rem;
+          letter-spacing: 0.1rem;
           color: black;
           text-align: center;
           border-bottom: 1px solid black; }
         .calendar__event__box__add p {
           text-align: center;
           font-family: "Special Elite", cursive;
-          letter-spacing: .1rem;
+          letter-spacing: 0.1rem;
           font-size: 2rem;
           margin-top: 2rem;
           color: black; }
@@ -1564,7 +1564,7 @@ body {
           font-size: 2rem;
           color: #D9AC0F;
           font-family: "Rajdhani", sans-serif, sans-serif;
-          letter-spacing: .2rem;
+          letter-spacing: 0.2rem;
           cursor: pointer;
           border-radius: 2px;
           box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
@@ -1624,28 +1624,33 @@ body {
             flex: 0 0 90%;
             margin: 1rem auto; } }
         .calendar__comming__box--each svg {
-          width: 2rem;
-          height: 2rem;
+          width: 2.4rem;
+          height: 2.4rem;
           cursor: pointer;
           fill: #73260D;
           position: absolute;
           right: 1rem;
           bottom: 1rem;
-          transition: all .5s; }
+          transition: all 0.5s;
+          padding: .5rem; }
           .calendar__comming__box--each svg:hover {
+            background-color: black;
             transform: translateY(-2px);
             fill: maroon; }
         .calendar__comming__box--each p {
           margin-top: 2rem;
           font-family: "Rajdhani", sans-serif, sans-serif;
           font-weight: 300;
-          letter-spacing: .2rem;
+          letter-spacing: 0.2rem;
           font-size: 1.2rem; }
         .calendar__comming__box--each h2 {
+          cursor: pointer;
           font-family: "Rajdhani", sans-serif;
           font-weight: 300;
           font-size: 1.8rem;
           text-align: center; }
+          .calendar__comming__box--each h2:hover {
+            background-color: black; }
 
 .privacy {
   margin: 2rem;
