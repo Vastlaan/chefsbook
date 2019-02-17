@@ -1,6 +1,5 @@
 import React from 'react';
 import Logo from '../img/logo2.png';
-import Icons from '../img/sprite.svg';
 import Icons3 from '../img/sprite3.svg';
 
 class Header extends React.Component {
@@ -40,11 +39,8 @@ class Header extends React.Component {
 						<a href="/api/logout" className='header__login header__login--width'>Log out</a>
 					</div>
 					:
-					<a href="/auth/google" className='header__login'>
-						<svg className='header__login-icon'>
-							<use xlinkHref={`${Icons}#icon-google3`} />
-						</svg>
-						Log in with Google
+					<a href="/login" className='header__login'>
+						Log in
 					</a>
 				}
 				

@@ -108,11 +108,21 @@
 		}
 
 		h1{
+
+			display:none;
 			font-size: 5rem;
-			font-weight: 300;
+			font-weight: 500;
 			font-family: $font-rajdhani, sans-serif;
 			color:black;
 			transform:translateY(-20rem);
+			background-color: rgba(snow,.3);
+			width:100%;
+			text-align: center;
+
+			@include respond(m){
+				display:block;
+				margin-top: 5rem;
+			}
 		}
 
 	}
@@ -144,7 +154,7 @@
 		&__header{
 			position:absolute;
 			top:50%;
-			left:50%;
+			left:55%;
 			transform:translate(-50%,-50%);
 			text-decoration: none;
 			font-family: $font-rajdhani;
@@ -162,7 +172,7 @@
 			box-shadow: 0 2rem 2rem rgba(0,0,0,.3);
 			transition:transform .3s;
 			&:hover{
-				transform:translate(-50%,-55%);
+				transform:translate(-50%,-60%);
 				box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,.2);
 			}
 
@@ -182,7 +192,7 @@
 			}
 		}
 	}
-	//=============================================MENU============================================================================
+	//=============================================Preps============================================================================
 	&__preparation{
 		grid-column: col-start 1 / -1;
 		grid-row: 9/span 4;;

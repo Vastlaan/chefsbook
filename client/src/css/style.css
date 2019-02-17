@@ -211,7 +211,7 @@ body {
     @media only screen and (max-width: 37.5em) {
       .header__login {
         width: initial;
-        padding: .2rem 1rem;
+        padding: .8rem 2rem;
         background-image: linear-gradient(to right, #7CAA5A, #124304);
         color: snow;
         position: fixed;
@@ -228,8 +228,7 @@ body {
           box-shadow: none; } }
     @media only screen and (max-width: 25em) {
       .header__login {
-        padding: .2rem 1rem;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         top: 0.3rem;
         right: 0.3rem; } }
     .header__login-icon {
@@ -453,11 +452,19 @@ body {
           color: black;
           font-weight: 300; } }
     .dashboard .dashboard__recipes h1 {
+      display: none;
       font-size: 5rem;
-      font-weight: 300;
+      font-weight: 500;
       font-family: "Rajdhani", sans-serif, sans-serif;
       color: black;
-      transform: translateY(-20rem); }
+      transform: translateY(-20rem);
+      background-color: rgba(255, 250, 250, 0.3);
+      width: 100%;
+      text-align: center; }
+      @media only screen and (max-width: 50em) {
+        .dashboard .dashboard__recipes h1 {
+          display: block;
+          margin-top: 5rem; } }
   .dashboard .dashboard__schedule {
     grid-column: col-start 1 / -1;
     grid-row: 5/span 4;
@@ -484,7 +491,7 @@ body {
     .dashboard .dashboard__schedule__header {
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: 55%;
       transform: translate(-50%, -50%);
       text-decoration: none;
       font-family: "Rajdhani", sans-serif;
@@ -502,7 +509,7 @@ body {
       box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
       transition: transform .3s; }
       .dashboard .dashboard__schedule__header:hover {
-        transform: translate(-50%, -55%);
+        transform: translate(-50%, -60%);
         box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.2); }
       @media only screen and (max-width: 62.5em) {
         .dashboard .dashboard__schedule__header {
@@ -906,7 +913,8 @@ body {
 
 .recepies {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-top: 5rem; }
   .recepies--header {
     width: 100%;
     color: #73260D;
@@ -1699,7 +1707,8 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(255, 250, 250, 0.7);
-  z-index: 1012; }
+  z-index: 1012;
+  animation: comeLeft .3s; }
   .warning__question {
     position: absolute;
     top: 40%;
@@ -1760,3 +1769,84 @@ body {
       .warning__no {
         padding: 1rem 2rem;
         top: 75%; } }
+
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7CAA5A;
+  z-index: 1013;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .login__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .login__form label {
+      font-size: 2.4rem;
+      font-family: "Poiret One", cursive, sans-serif;
+      margin: 1rem; }
+    .login__form input {
+      border: none;
+      padding: 1rem 2.5rem;
+      margin: 1rem;
+      text-align: center; }
+      .login__form input:focus {
+        outline: none; }
+  .login__submit {
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: none;
+    background-color: #73260D;
+    color: snow;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    transition: transform .2s; }
+    .login__submit:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+    .login__submit:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+    .login__submit:focus {
+      outline: none; }
+  .login__or {
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
+    .login__or::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 45%;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.2); }
+    .login__or::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 45%;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.2); }
+  .login__google {
+    display: inline-block;
+    width: 20rem; }
+    .login__google img {
+      width: 100%;
+      transition: all .2s; }
+      .login__google img:hover {
+        transform: translateY(-3px);
+        filter: contrast(120%); }

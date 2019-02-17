@@ -133,7 +133,7 @@
 		@include btn-shadow;
 		@include respond(s){
 			width:initial;
-			padding:.2rem 1rem;
+			padding:.8rem 2rem;
 			background-image:linear-gradient(to right, $color-primary,lighten(#051301,10%));
 			color:snow;
 			position:fixed;
@@ -154,8 +154,8 @@
 
 		}
 		@include respond(xs){
-			padding:.2rem 1rem;
-			font-size: 1.4rem;
+			
+			font-size: 1.8rem;
 			top:0.3rem;
 			right:0.3rem;
 

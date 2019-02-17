@@ -13,6 +13,7 @@ import Schedule from "./Components/Schedule";
 import Recepies from './Components/Recepies'
 import PrivacyPolicy from './Components/PrivacyPolicy'
 import Cookies from './Components/Cookies'
+import Login from './Components/Login'
 
 class App extends React.Component {
   state = {
@@ -57,6 +58,7 @@ class App extends React.Component {
             <Route path="/schedule" component={Schedule} />
             <Route path="/privacy_policy" component={PrivacyPolicy} />
             <Route path="/cookies" component={Cookies} />
+            <Route path="/login" component={Login} />
           </div>
         </BrowserRouter>
         <Footer />
