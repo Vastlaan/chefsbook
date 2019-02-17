@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import Icons from "../img/sprite.svg";
+import Warning from "./Warning";
 
 class CalendarComponent extends React.Component {
 	constructor(props) {
@@ -13,7 +14,8 @@ class CalendarComponent extends React.Component {
 				year: "",
 				display: "none"
 			},
-			events: []
+			events: [],
+			displayWarning: "none"
 		};
 	}
 
@@ -125,15 +127,8 @@ class CalendarComponent extends React.Component {
 		this.closeEvent();
 	};
 
-	removeEvent = async (year, month, day, time, description) => {
-
-		const respond = prompt("are You sure? (only typing 'N' will prvent delete event!")
-		console.log(1)
-
-		if(respond=="N"){
-			console.log('fuck')
-			return null
-		}
+	removeEvent1 = (year, month, day, time, description) => {
+		this.setState({ displayWarning: "block" });
 		const toDelete = {
 			day,
 			month,
@@ -141,16 +136,8 @@ class CalendarComponent extends React.Component {
 			time,
 			description
 		};
-		fetch("/api/remove_event", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(toDelete)
-		})
-			.then(data => data.json())
-			.then(events => this.setState({ events }))
-			.catch(err => console.log(err));
+		this.setState({toDelete})
+
 	};
 
 	compare = (a, b) => {
@@ -163,7 +150,7 @@ class CalendarComponent extends React.Component {
 	};
 	render() {
 		const { dateContext, dateEvent, events } = this.state;
-
+		
 		const weekdays = moment.weekdaysShort(); //gives us array ['Sun','Mon','Tue'....]
 		const months = moment.months();
 		const year = dateContext.format("Y");
@@ -279,22 +266,29 @@ class CalendarComponent extends React.Component {
 					<h1 className="calendar__comming--header">
 						Comming events:
 					</h1>
-					<div className="calendar__comming__box" >
+					<div className="calendar__comming__box">
 						{eventsSorted.map((event, i) => {
 							if (event.year === year && event.month === month) {
 								return (
 									<div
 										className="calendar__comming__box--each"
 										key={i * 91.332323}
-										
 									>
-										<h2 onClick={()=>{this.addEvent(event.day, event.month, event.year)}}>{`${event.day} ${event.month} ${
+										<h2
+											onClick={() => {
+												this.addEvent(
+													event.day,
+													event.month,
+													event.year
+												);
+											}}
+										>{`${event.day} ${event.month} ${
 											event.year
 										} at ${event.time}`}</h2>
 										<p>{event.description}</p>
 										<svg
 											onClick={() =>
-												this.removeEvent(
+												this.removeEvent1(
 													event.year,
 													event.month,
 													event.day,
@@ -382,6 +376,8 @@ class CalendarComponent extends React.Component {
 						</div>
 					</div>
 				</div>
+
+				<Warning display={`${this.state.displayWarning}`} toDelete={this.state.toDelete}/>
 			</div>
 		);
 	}

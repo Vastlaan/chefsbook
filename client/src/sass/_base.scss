@@ -43,4 +43,14 @@ body {
 		$color-grey-light 90%,
 		darken($color-grey-light, 20%) 100%
 	);
+
+	@include respond(s){
+		background-image: linear-gradient(
+		to bottom,
+		$color-grey-light 0%,
+		$color-grey-light 10%,
+		$color-grey-light 90%,
+		darken($color-grey-light, 20%) 100%
+	);
+	}
 }
