@@ -3,7 +3,11 @@ import React from "react";
 class Warning extends React.Component {
 	
 
-	removeEvent = toDelete => {
+	removeEvent = (year,month,day,time,description) => {
+
+		const toDelete = {
+			year,month,day,time,description
+		}
 		fetch("/api/remove_event", {
 			method: "POST",
 			headers: {
@@ -29,11 +33,11 @@ class Warning extends React.Component {
 					className="warning__yes"
 					onClick={() =>
 						this.removeEvent(
-							props.year,
-							props.month,
-							props.day,
-							props.time,
-							props.description
+							props.toDelete.year,
+							props.toDelete.month,
+							props.toDelete.day,
+							props.toDelete.time,
+							props.toDelete.description
 						)
 					}
 				>
