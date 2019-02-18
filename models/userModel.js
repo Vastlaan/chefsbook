@@ -7,6 +7,7 @@ const usersSchema = new Schema({
 	name: String,
 	surname: String,
 	email: String,
+	hash:{type:String, 'default':""},
 	recepies: {type: Array, 'default':[]},
 	events: {type:Array, 'default':[]},
 	schedules: {type:Array, 'default':[]}

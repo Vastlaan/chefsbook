@@ -43,6 +43,26 @@
 		border:none;
 		background-color: $color-brown;
 		color:snow;
+		font-family: $font-openSans;
+		font-size: 1.4rem;
+		letter-spacing: .1rem;
+		@include btn-shadow;
+
+		&:focus{
+			outline:none;
+		}
+	}
+
+	&__signup{
+		padding:1rem 2.5rem;
+		margin-top: 2rem;
+		cursor:pointer;
+		border:none;
+		background-color: $color-secondary;
+		color:snow;
+		font-family: $font-openSans;
+		font-size: 1.4rem;
+		letter-spacing: .1rem;
 		@include btn-shadow;
 
 		&:focus{

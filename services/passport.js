@@ -2,9 +2,10 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;	// Use only the Strategy module from passprt-google-oauth20
 const keys = require('../config/keys');
 const mongoose = require('mongoose');
-
+const LocalStrategy = require('passport-local').Strategy;
 const User = mongoose.model('users');	// when we provide one argument we want to fetch existing model (Collection) and below we create Instance of it
 // to use passport at all in our express app we have to initialize it - we do it in index.js 
+const bcrypt = require('bcrypt-nodejs');
 
 
 passport.serializeUser((user, done) => { //the user is exactly the same user which is created in GoogleStrategy second arrow function
@@ -48,3 +49,33 @@ passport.use(new GoogleStrategy({
 		})		
 	}
 ))
+
+//local strategy
+
+passport.use('local', new LocalStrategy(
+	{
+		usernameField : 'email',
+        passwordField : 'password',
+        passReqToCallback : true
+    },
+
+  function(req, email, password, done){
+    User.findOne({email:email})
+		.then((user)=>{
+			if(user){
+				const isValid = bcrypt.compareSync(password, user.hash);
+				if(isValid){
+					return done(null,user)
+				}else{
+					done(null,false)
+				}
+			}else{
+				done(null,false)
+			}
+		})
+		.catch(err=>{
+			console.log(err)
+		})
+  }
+));
+

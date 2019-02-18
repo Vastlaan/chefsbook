@@ -1805,6 +1805,9 @@ body {
     border: none;
     background-color: #73260D;
     color: snow;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: .1rem;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transition: transform .2s; }
     .login__submit:hover {
@@ -1814,6 +1817,26 @@ body {
       transform: translateY(-0.1rem);
       box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
     .login__submit:focus {
+      outline: none; }
+  .login__signup {
+    padding: 1rem 2.5rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: none;
+    background-color: #B57D1F;
+    color: snow;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: .1rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    transition: transform .2s; }
+    .login__signup:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+    .login__signup:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+    .login__signup:focus {
       outline: none; }
   .login__or {
     display: block;

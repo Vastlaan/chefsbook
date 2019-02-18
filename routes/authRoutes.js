@@ -1,5 +1,10 @@
 const passport = require('passport');
 
+
+
+
+
+
 module.exports = (app) =>{
 	
 	app.get("/auth/google", passport.authenticate('google', {	//the string "google" is automaticly recognized by passport as a GoogleStrategy
@@ -23,6 +28,7 @@ module.exports = (app) =>{
 		req.logout();				//this function is automaticlly attached to our request via passport
 		res.redirect('/')			// after logout we should have no user any more, so we send up empty object
 	})
+
 }
 
 

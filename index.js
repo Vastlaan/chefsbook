@@ -21,6 +21,8 @@ require('./services/passport'); 	// in this file we serve all code related to pa
 									// some of the set up in authRoutes are taken directly from passport (like GoogleStartegy, which is called in passport.authenticate('google')) 
 require('./routes/authRoutes')(app)	// here we have our routs related to google authentication process
 
+require('./routes/registerRoutes')(app)
+
 require('./routes/recepiesRoutes')(app)
 
 require('./routes/eventRoutes')(app)
