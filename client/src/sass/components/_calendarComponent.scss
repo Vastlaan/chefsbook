@@ -177,6 +177,7 @@
 				background-color: rgba(black, 0.7);
 				padding: 2rem 2rem;
 				display: flex;
+				position:relative;
 
 				&--icon {
 					fill: snow;
@@ -185,6 +186,15 @@
 					margin-right: 1rem;
 					transform: translateY(0.4rem);
 					flex: 0 0 15%;
+				}
+					&--icon2 {
+					cursor:pointer;
+					fill: $color-grey-light;
+					width: 2.1rem;
+					height: 2.1rem;
+					position:absolute;
+					bottom:-1.5rem;
+					right:-1.5rem;
 				}
 				p {
 					flex: 0 0 80%;
@@ -274,6 +284,7 @@
 					fill: black;
 				}
 			}
+
 		}
 	}
 	&__comming {
@@ -306,6 +317,7 @@
 				background-color: $color-primary-dark;
 				color: snow;
 				position: relative;
+				cursor:pointer;
 
 				@include respond(m) {
 					flex: 0 0 45%;

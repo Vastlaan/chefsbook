@@ -95,7 +95,7 @@
 	&__icon{
 		width: 4rem;
 		height:4rem;
-		fill:$color-brown;
+		
 		transition:fill .3s;
 		transition:transform .3s;
 		@include respond(m){
@@ -131,7 +131,7 @@
 			width:90%;
 		}
 		@include btn-shadow;
-		@include respond(s){
+		@include respond(m){
 			width:initial;
 			padding:.8rem 2rem;
 			background-image:linear-gradient(to right, $color-primary,lighten(#051301,10%));

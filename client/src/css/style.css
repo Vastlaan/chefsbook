@@ -85,6 +85,34 @@ body {
   opacity: 0;
   visibility: hidden; }
 
+.green {
+  background-color: #1B632B;
+  color: black; }
+
+.brown {
+  background-color: #73260D;
+  color: snow; }
+
+.brown--dark {
+  background-color: #451708;
+  color: snow; }
+
+.yellow {
+  background-color: #B57D1F;
+  color: black; }
+
+.fill__green {
+  fill: #1B632B; }
+
+.fill__brown {
+  fill: #73260D; }
+
+.fill__brown--dark {
+  fill: #451708; }
+
+.fill__yellow {
+  fill: #B57D1F; }
+
 .container {
   width: 90vw;
   margin: 0 auto; }
@@ -173,7 +201,6 @@ body {
   .header__icon {
     width: 4rem;
     height: 4rem;
-    fill: #73260D;
     transition: fill .3s;
     transition: transform .3s; }
     @media only screen and (max-width: 50em) {
@@ -208,7 +235,7 @@ body {
     .header__login:active {
       transform: translateY(-0.1rem);
       box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 50em) {
       .header__login {
         width: initial;
         padding: .8rem 2rem;
@@ -394,7 +421,7 @@ body {
       .dashboard .dashboard__recipes {
         background-image: none;
         grid-column: col-start 1 / -1;
-        grid-row: 9/span 4;
+        grid-row: 10/span 4;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         filter: contrast(120%) brightness(110%); } }
     @media only screen and (max-width: 37.5em) {
@@ -509,7 +536,7 @@ body {
       box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
       transition: transform .3s; }
       .dashboard .dashboard__schedule__header:hover {
-        transform: translate(-50%, -60%);
+        transform: translate(-51%, -55%);
         box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.2); }
       @media only screen and (max-width: 62.5em) {
         .dashboard .dashboard__schedule__header {
@@ -544,7 +571,7 @@ body {
   @media only screen and (max-width: 62.5em) {
     .dashboard__calendar {
       grid-column: col-start 2 / -2;
-      grid-row: 5/span 4;
+      grid-row: 6/span 4;
       margin-bottom: 2rem; } }
   @media only screen and (max-width: 37.5em) {
     .dashboard__calendar {
@@ -998,19 +1025,20 @@ body {
     z-index: 9;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(23, 8, 3, 0.95);
+    background-color: rgba(37, 12, 4, 0.95);
     overflow-y: scroll;
     animation: comeRight 0.5s ease-out; }
     .recepies__hidden-frame {
       width: 70%;
       margin: 5rem auto;
-      background-image: linear-gradient(to bottom, #1B632B, #7CAA5A 30%);
       padding: 4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      border-radius: 4px; }
+      background-image: linear-gradient(to bottom, #aa8439 10%, rgba(170, 132, 57, 0.5) 25%, rgba(170, 132, 57, 0.7) 70%, #aa8439 80%), url(../img/oven.jpg);
+      background-size: cover;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 11rem repeat(3, min-content);
+      border-radius: 4px;
+      grid-gap: 2rem; }
       @media only screen and (max-width: 37.5em) {
         .recepies__hidden-frame {
           width: 100%;
@@ -1061,34 +1089,59 @@ body {
       border-radius: 50%;
       overflow: hidden;
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      grid-column: 1/4;
+      grid-row: 2/3;
+      align-self: center;
+      justify-self: center; }
       @media only screen and (max-width: 62.5em) {
         .recepies__hidden-box {
           width: 15rem;
           height: 15rem; } }
+      @media only screen and (max-width: 50em) {
+        .recepies__hidden-box {
+          grid-column: 1/-1;
+          grid-row: 2/3; } }
     .recepies__hidden-photo {
       display: block;
       width: 25rem; }
     .recepies__hidden-name {
+      grid-column: 1 / -1;
+      grid-row: 1/2;
+      align-self: center;
       text-align: center;
-      font-size: 5rem;
+      font-size: 4.5rem;
       font-family: "Rajdhani", sans-serif;
       font-weight: 300;
       letter-spacing: 0.2rem;
-      color: #73260D;
-      line-height: 1.4; }
-      @media only screen and (max-width: 25em) {
+      color: #f9f9f9;
+      line-height: 1.4;
+      padding: .5rem 2rem;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 2px; }
+      @media only screen and (max-width: 62.5em) {
+        .recepies__hidden-name {
+          font-size: 3.5rem; } }
+      @media only screen and (max-width: 37.5em) {
         .recepies__hidden-name {
           font-size: 3rem; } }
     .recepies__hidden-ingridients {
       width: 70%;
-      margin-top: 2rem; }
+      border-left: 1px solid rgba(0, 0, 0, 0.3);
+      grid-column: 3/-1;
+      grid-row: 2/3;
+      justify-self: center; }
+      @media only screen and (max-width: 50em) {
+        .recepies__hidden-ingridients {
+          grid-column: 1/-1;
+          grid-row: 3/4;
+          border: none; } }
       .recepies__hidden-ingridients h6 {
-        font-size: 2rem;
+        font-size: 2.8rem;
         letter-spacing: 0.1rem;
-        font-family: "Courgette", cursive;
+        font-family: "Poiret One", cursive;
         font-weight: 300;
-        color: #73260D;
+        color: snow;
         text-align: center;
         margin-bottom: 1rem; }
       .recepies__hidden-ingridients p {
@@ -1096,24 +1149,29 @@ body {
         .recepies__hidden-ingridients p span {
           font-size: 1.2rem;
           font-family: "Courier New", sans-serif;
-          color: #73260D;
-          text-align: center; }
+          color: #ececec;
+          text-align: center;
+          letter-spacing: .15rem; }
     .recepies__hidden-preparation {
-      width: 70%;
-      margin-top: 2rem; }
+      width: 100%;
+      grid-column: 1/-1;
+      grid-row: 4/5;
+      justify-self: start;
+      padding: 1rem 3rem; }
       .recepies__hidden-preparation h6 {
-        font-size: 2rem;
+        font-size: 2.8rem;
         letter-spacing: 0.1rem;
-        font-family: "Courgette", cursive;
+        font-family: "Poiret One", cursive;
         font-weight: 300;
-        color: #73260D;
+        color: snow;
         text-align: center;
         margin-bottom: 1rem; }
       .recepies__hidden-preparation p {
         font-size: 1.2rem;
         font-family: "Courier New", sans-serif;
-        color: #73260D;
-        text-align: center; }
+        text-align: center;
+        letter-spacing: .15rem;
+        color: #f9f9f9; }
 
 .newRecepie {
   margin-top: 2rem;
@@ -1339,19 +1397,22 @@ body {
       .footer__text {
         font-size: 1rem; } }
   .footer__list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     margin-top: 1rem;
     padding: 1rem 3rem;
-    border-radius: 3px; }
+    border-radius: 3px;
+    grid-gap: 1rem; }
     @media only screen and (max-width: 37.5em) {
       .footer__list {
-        background-color: transparent; } }
+        background-color: transparent;
+        padding: 0;
+        width: 100%; } }
     .footer__list--item {
-      display: inline-block;
-      padding: .3rem 1.5rem;
-      border-radius: 2px;
+      width: 100%;
+      height: 100%;
+      display: block;
       font-size: 1.4rem;
       font-weight: 500;
       font-family: "Courier New", sans-serif;
@@ -1360,19 +1421,17 @@ body {
       transition: all .2s;
       align-self: center;
       position: relative;
-      background-image: linear-gradient(to right, rgba(69, 23, 8, 0.9), rgba(115, 38, 13, 0.9));
-      color: snow;
       margin: 1rem;
-      width: 90%;
-      text-align: center;
-      text-decoration: none; }
+      text-decoration: none;
+      text-align: center; }
+      .footer__list--item span {
+        display: block;
+        transform: translateY(25%); }
       @media only screen and (max-width: 37.5em) {
         .footer__list--item {
           font-size: 1.2rem; } }
       .footer__list--item:hover {
-        background-color: #451708;
-        transform: scale(1.05);
-        color: #D9AC0F;
+        background-color: #7CAA5A;
         border-bottom: none; }
         @media only screen and (max-width: 37.5em) {
           .footer__list--item:hover {
@@ -1519,7 +1578,8 @@ body {
         margin: 0 auto;
         background-color: rgba(0, 0, 0, 0.7);
         padding: 2rem 2rem;
-        display: flex; }
+        display: flex;
+        position: relative; }
         .calendar__event__box__current--icon {
           fill: snow;
           width: 2.5rem;
@@ -1527,6 +1587,14 @@ body {
           margin-right: 1rem;
           transform: translateY(0.4rem);
           flex: 0 0 15%; }
+        .calendar__event__box__current--icon2 {
+          cursor: pointer;
+          fill: #f9f9f9;
+          width: 2.1rem;
+          height: 2.1rem;
+          position: absolute;
+          bottom: -1.5rem;
+          right: -1.5rem; }
         .calendar__event__box__current p {
           flex: 0 0 80%;
           color: snow;
@@ -1633,7 +1701,8 @@ body {
         padding: 2rem;
         background-color: #1B632B;
         color: snow;
-        position: relative; }
+        position: relative;
+        cursor: pointer; }
         @media only screen and (max-width: 50em) {
           .calendar__comming__box--each {
             flex: 0 0 45%; } }

@@ -8,3 +8,32 @@
 	opacity:0;
 	visibility:hidden;
 }
+
+.green{
+	background-color: $color-primary-dark;
+	color:black;
+}
+.brown{
+	background-color: $color-brown;
+	color:snow;
+}
+.brown--dark{
+	background-color: $color-brown-dark;
+	color:snow;
+}
+.yellow{
+	background-color: $color-secondary;
+	color:black;
+}
+.fill__green{
+	fill:$color-primary-dark;
+}
+.fill__brown{
+	fill:$color-brown;
+}
+.fill__brown--dark{
+	fill:$color-brown-dark;
+}
+.fill__yellow{
+	fill:$color-secondary;
+}

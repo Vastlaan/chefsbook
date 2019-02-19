@@ -28,7 +28,7 @@
 		@include respond(l) {
 			background-image:none;
 			grid-column: col-start 1 / -1;
-			grid-row: 9/span 4;
+			grid-row: 10/span 4;
 			clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 			filter:contrast(120%) brightness(110%);
 
@@ -172,7 +172,7 @@
 			box-shadow: 0 2rem 2rem rgba(0,0,0,.3);
 			transition:transform .3s;
 			&:hover{
-				transform:translate(-50%,-60%);
+				transform:translate(-51%,-55%);
 				box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,.2);
 			}
 

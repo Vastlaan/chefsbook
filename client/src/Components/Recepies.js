@@ -14,7 +14,6 @@ class Recepies extends React.Component {
 	}
 
 	openRecepie = index => {
-		console.log(index, this.props.recepies[index])
 		this.setState({ display: "block" });
 		this.setState({ recept: this.props.recepies[index] });
 	};

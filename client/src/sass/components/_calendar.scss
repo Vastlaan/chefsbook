@@ -7,8 +7,9 @@
 		color:inherit;
 		@include respond(l){
 			grid-column: col-start 2 / -2;
-			grid-row: 5/span 4;
+			grid-row: 6/span 4;
 			margin-bottom: 2rem;
+
 		}
 		@include respond(s){
 			grid-column: col-start 1 / -1;

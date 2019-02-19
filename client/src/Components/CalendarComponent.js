@@ -273,34 +273,21 @@ class CalendarComponent extends React.Component {
 									<div
 										className="calendar__comming__box--each"
 										key={i * 91.332323}
+										onClick={() => {
+											this.addEvent(
+												event.day,
+												event.month,
+												event.year
+											);
+										}}
 									>
 										<h2
-											onClick={() => {
-												this.addEvent(
-													event.day,
-													event.month,
-													event.year
-												);
-											}}
+											
 										>{`${event.day} ${event.month} ${
 											event.year
 										} at ${event.time}`}</h2>
 										<p>{event.description}</p>
-										<svg
-											onClick={() =>
-												this.removeEvent1(
-													event.year,
-													event.month,
-													event.day,
-													event.time,
-													event.description
-												)
-											}
-										>
-											<use
-												xlinkHref={`${Icons}#icon-bin`}
-											/>
-										</svg>
+										
 									</div>
 								);
 							}
@@ -344,6 +331,22 @@ class CalendarComponent extends React.Component {
 										<p key={i * 391.891}>
 											At {event.time} {event.description}
 										</p>
+										<svg
+										className="calendar__event__box__current--icon2"
+											onClick={() =>
+												this.removeEvent1(
+													event.year,
+													event.month,
+													event.day,
+													event.time,
+													event.description
+												)
+											}
+										>
+											<use
+												xlinkHref={`${Icons}#icon-bin`}
+											/>
+										</svg>
 									</div>
 								);
 							}
