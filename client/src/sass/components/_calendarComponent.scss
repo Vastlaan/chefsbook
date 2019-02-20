@@ -171,13 +171,31 @@
 				}
 			}
 			&__current {
-				display: block;
 				width: 70%;
 				margin: 0 auto;
 				background-color: rgba(black, 0.7);
-				padding: 2rem 2rem;
+				padding: 2rem 0;
 				display: flex;
 				position:relative;
+
+				&--doos{
+					position:absolute;
+					bottom:0;
+					right:0rem;
+					display:flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					height:100%;
+					padding:0 2rem;
+					cursor:pointer;
+					background-color: rgba(black,.2);
+					transition: all .2s;
+
+					&:hover{
+						background-color: rgba(black,.5);
+					}
+				}
 
 				&--icon {
 					fill: snow;
@@ -188,13 +206,13 @@
 					flex: 0 0 15%;
 				}
 					&--icon2 {
-					cursor:pointer;
-					fill: $color-grey-light;
-					width: 2.1rem;
-					height: 2.1rem;
-					position:absolute;
-					bottom:-1.5rem;
-					right:-1.5rem;
+
+					fill: $color-secondary;
+					width: 1.8rem;
+					height: 1.8rem;
+					
+					
+
 				}
 				p {
 					flex: 0 0 80%;
@@ -202,6 +220,14 @@
 					font-size: 2rem;
 					font-family: $font-openSans;
 					font-weight: 300;
+				}
+
+				label{
+					font-family: "Courier New", sans-serif;
+					font-size: 1.1rem;
+					letter-spacing: .1rem;
+					color:snow;
+					cursor:pointer;
 				}
 			}
 
@@ -318,6 +344,11 @@
 				color: snow;
 				position: relative;
 				cursor:pointer;
+				transition: all .2s;
+
+				&:hover{
+					background-color: $color-primary;
+				}
 
 				@include respond(m) {
 					flex: 0 0 45%;
@@ -356,9 +387,6 @@
 					font-size: 1.8rem;
 					text-align: center;
 
-					&:hover{
-						background-color: black;
-					}
 				}
 			}
 		}

@@ -17,13 +17,13 @@ class Header extends React.Component {
 							</svg>
 							<span>Home</span>
 						</a>
-						<a href='/recipes' className='header__icon--box fill__brown'>
+						<a href='/recipes' className='header__icon--box fill__yellow'>
 							<svg className='header__icon'>
 								<use xlinkHref={`${Icons3}#cook`}></use>	
 							</svg>
 							<span>Recipes</span>
 						</a>
-						<a href='/calendar' className='header__icon--box fill__yellow'>
+						<a href='/calendar' className='header__icon--box fill__brown'>
 							<svg className='header__icon'>
 								<use xlinkHref={`${Icons3}#calendar-1`}></use>	
 							</svg>

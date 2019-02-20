@@ -941,7 +941,9 @@ body {
 .recepies {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem; }
+  margin-top: 5rem;
+  background-color: rgba(181, 125, 31, 0.1);
+  padding: 2rem 1rem 5rem 1rem; }
   .recepies--header {
     width: 100%;
     color: #73260D;
@@ -950,7 +952,8 @@ body {
     font-family: "Rajdhani", sans-serif;
     font-weight: 300;
     font-size: 4rem;
-    text-shadow: 0.2rem 0.5rem 0.5rem rgba(115, 38, 13, 0.4); }
+    text-shadow: 0.2rem 0.5rem 0.5rem rgba(115, 38, 13, 0.4);
+    margin-bottom: 3rem; }
   .recepies--content {
     margin: 2rem 0;
     display: grid;
@@ -981,7 +984,7 @@ body {
         justify-content: center; }
       .recepies--content-item-photo {
         display: block;
-        width: 7rem; }
+        width: 100%; }
       .recepies--content-item-name {
         text-align: center;
         font-size: 2rem;
@@ -1104,7 +1107,7 @@ body {
           grid-row: 2/3; } }
     .recepies__hidden-photo {
       display: block;
-      width: 25rem; }
+      width: 100%; }
     .recepies__hidden-name {
       grid-column: 1 / -1;
       grid-row: 1/2;
@@ -1177,7 +1180,9 @@ body {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  background-color: rgba(181, 125, 31, 0.1);
+  padding: 2rem 1rem 5rem 1rem; }
   .newRecepie__header {
     font-size: 5rem;
     color: #73260D;
@@ -1292,6 +1297,7 @@ body {
       font-family: "Rajdhani", sans-serif;
       font-weight: 300;
       letter-spacing: 0.1rem;
+      margin-top: 5rem;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
       transition: transform .2s; }
       .newRecepie__form--submit:hover {
@@ -1368,10 +1374,7 @@ body {
   @media only screen and (max-width: 37.5em) {
     .footer {
       margin-bottom: 17vh;
-      width: 100%; } }
-  @media only screen and (max-width: 25em) {
-    .footer {
-      margin-bottom: 17vh; } }
+      grid-column-gap: 2rem; } }
   .footer__text {
     color: snow;
     font-family: "Open Sans", sans-serif;
@@ -1573,13 +1576,27 @@ body {
           .calendar__event__box h1 {
             font-size: 2.5rem; } }
       .calendar__event__box__current {
-        display: block;
         width: 70%;
         margin: 0 auto;
         background-color: rgba(0, 0, 0, 0.7);
-        padding: 2rem 2rem;
+        padding: 2rem 0;
         display: flex;
         position: relative; }
+        .calendar__event__box__current--doos {
+          position: absolute;
+          bottom: 0;
+          right: 0rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+          padding: 0 2rem;
+          cursor: pointer;
+          background-color: rgba(0, 0, 0, 0.2);
+          transition: all .2s; }
+          .calendar__event__box__current--doos:hover {
+            background-color: rgba(0, 0, 0, 0.5); }
         .calendar__event__box__current--icon {
           fill: snow;
           width: 2.5rem;
@@ -1588,19 +1605,21 @@ body {
           transform: translateY(0.4rem);
           flex: 0 0 15%; }
         .calendar__event__box__current--icon2 {
-          cursor: pointer;
-          fill: #f9f9f9;
-          width: 2.1rem;
-          height: 2.1rem;
-          position: absolute;
-          bottom: -1.5rem;
-          right: -1.5rem; }
+          fill: #B57D1F;
+          width: 1.8rem;
+          height: 1.8rem; }
         .calendar__event__box__current p {
           flex: 0 0 80%;
           color: snow;
           font-size: 2rem;
           font-family: "Open Sans", sans-serif;
           font-weight: 300; }
+        .calendar__event__box__current label {
+          font-family: "Courier New", sans-serif;
+          font-size: 1.1rem;
+          letter-spacing: .1rem;
+          color: snow;
+          cursor: pointer; }
       .calendar__event__box__add {
         padding: 2rem;
         margin: 2rem; }
@@ -1702,7 +1721,10 @@ body {
         background-color: #1B632B;
         color: snow;
         position: relative;
-        cursor: pointer; }
+        cursor: pointer;
+        transition: all .2s; }
+        .calendar__comming__box--each:hover {
+          background-color: #7CAA5A; }
         @media only screen and (max-width: 50em) {
           .calendar__comming__box--each {
             flex: 0 0 45%; } }
@@ -1736,8 +1758,6 @@ body {
           font-weight: 300;
           font-size: 1.8rem;
           text-align: center; }
-          .calendar__comming__box--each h2:hover {
-            background-color: black; }
 
 .privacy {
   margin: 2rem;

@@ -136,8 +136,7 @@ class CalendarComponent extends React.Component {
 			time,
 			description
 		};
-		this.setState({toDelete})
-
+		this.setState({ toDelete });
 	};
 
 	compare = (a, b) => {
@@ -150,7 +149,7 @@ class CalendarComponent extends React.Component {
 	};
 	render() {
 		const { dateContext, dateEvent, events } = this.state;
-		
+
 		const weekdays = moment.weekdaysShort(); //gives us array ['Sun','Mon','Tue'....]
 		const months = moment.months();
 		const year = dateContext.format("Y");
@@ -281,13 +280,10 @@ class CalendarComponent extends React.Component {
 											);
 										}}
 									>
-										<h2
-											
-										>{`${event.day} ${event.month} ${
+										<h2>{`${event.day} ${event.month} ${
 											event.year
 										} at ${event.time}`}</h2>
 										<p>{event.description}</p>
-										
 									</div>
 								);
 							}
@@ -331,8 +327,8 @@ class CalendarComponent extends React.Component {
 										<p key={i * 391.891}>
 											At {event.time} {event.description}
 										</p>
-										<svg
-										className="calendar__event__box__current--icon2"
+										<div
+											className="calendar__event__box__current--doos"
 											onClick={() =>
 												this.removeEvent1(
 													event.year,
@@ -343,10 +339,13 @@ class CalendarComponent extends React.Component {
 												)
 											}
 										>
-											<use
-												xlinkHref={`${Icons}#icon-bin`}
-											/>
-										</svg>
+											<svg className="calendar__event__box__current--icon2">
+												<use
+													xlinkHref={`${Icons}#icon-bin`}
+												/>
+											</svg>
+											<label>Delete</label>
+										</div>
 									</div>
 								);
 							}
@@ -380,7 +379,10 @@ class CalendarComponent extends React.Component {
 					</div>
 				</div>
 
-				<Warning display={`${this.state.displayWarning}`} toDelete={this.state.toDelete}/>
+				<Warning
+					display={`${this.state.displayWarning}`}
+					toDelete={this.state.toDelete}
+				/>
 			</div>
 		);
 	}

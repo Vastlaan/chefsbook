@@ -14,11 +14,9 @@
 
 	@include respond(s){
 		margin-bottom: 17vh;
-		width:100%;
+		grid-column-gap: 2rem;
 	}
-	@include respond(xs){
-		margin-bottom: 17vh;
-	}
+	
 	&__text{
 		color:snow;
 		font-family: $font-openSans;
