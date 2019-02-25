@@ -154,7 +154,7 @@
 		&__header{
 			position:absolute;
 			top:50%;
-			left:55%;
+			left:50%;
 			transform:translate(-50%,-50%);
 			text-decoration: none;
 			font-family: $font-rajdhani;
@@ -172,7 +172,7 @@
 			box-shadow: 0 2rem 2rem rgba(0,0,0,.3);
 			transition:transform .3s;
 			&:hover{
-				transform:translate(-51%,-55%);
+				transform:translate(-50%,-55%);
 				box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,.2);
 			}
 

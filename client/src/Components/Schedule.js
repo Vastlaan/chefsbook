@@ -4,12 +4,17 @@ import { connect } from "react-redux";
 import Icons from "../img/sprite.svg";
 import ScheduleAdd from "./ScheduleAdd";
 import { openWindowAction } from "../actions";
+import { openMemberAction } from "../actions";
+import Member from './Member'
 
 class Schedule extends React.Component {
 	state = {
 		dateContext: moment(),
 		schedule: [],
-		popup: "none"
+		popup: "none",
+		member:'',
+		displayMember:'none',
+		scheduleMember:[]
 	};
 
 	componentWillMount() {
@@ -48,6 +53,33 @@ class Schedule extends React.Component {
 			})
 			.catch(err => console.log(err));
 	};
+
+	member = (name) =>{
+
+		this.props.openMemberAction()
+		this.setState({
+			member: name
+		})
+		
+		if (name) {
+			const nameObj = { name: name };
+			fetch("/api/member_fetch", {
+				method: "POST",
+				credentials: "include",
+				headers: {
+					"Content-type": "application/json"
+				},
+				body: JSON.stringify(nameObj)
+			})
+				.then(data => data.json())
+				.then(res =>
+					this.setState({
+						scheduleMember: res
+					})
+				)
+				.catch(err => console.log(err));
+		}
+	}
 
 	render() {
 		const { dateContext, schedule } = this.state;
@@ -115,7 +147,7 @@ class Schedule extends React.Component {
 						<div key={i * 0.249} className="schedule__graph">
 							<div
 								className="schedule__graph--name"
-								onClick={() => console.log(each.name)}
+								onClick={() => this.member(each.name)}
 							>
 								<svg className="schedule__icon--2">
 									<use xlinkHref={`${Icons}#icon-user-tie`} />
@@ -156,15 +188,17 @@ class Schedule extends React.Component {
 				</div>
 
 				<ScheduleAdd popup={this.state.popup} />
+				<Member member={this.state.member}  displayMember={this.state.displayMember} scheduleMember={this.state.scheduleMember}/>
 			</div>
 		);
 	}
 }
 
 const mapStateToProps = state => ({
-	addMember: state.addMember.display
+	addMember: state.addMember.display,
+	openMember: state.openMember.displayMember
 });
 export default connect(
 	mapStateToProps,
-	{ openWindowAction }
+	{ openWindowAction, openMemberAction }
 )(Schedule);

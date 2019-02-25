@@ -95,7 +95,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 9;
+		z-index: 999;
 		width: 100vw;
 		height: 100vh;
 		background-color: rgba(darken($color-brown, 17%), 0.95);
@@ -112,7 +112,6 @@
 			display: grid;
 			grid-template-columns: repeat(8,1fr);
 			grid-template-rows: 11rem repeat(3,min-content);
-			border-radius: 4px;
 			grid-gap: 2rem;
 			@include respond(s) {
 				width: 100%;

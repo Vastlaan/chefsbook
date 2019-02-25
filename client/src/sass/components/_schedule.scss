@@ -153,16 +153,23 @@
 			border-left:1px solid $color-brown-dark;
 			border-bottom: 1px solid $color-brown-dark;
 			display:flex;
+			flex-direction: column;
+			cursor:pointer;
+			transition:all .2s;
 			svg{
-				
+				margin:0 auto;
 			}
 			@include respond(m){
 				font-size: 1.3rem;
 			}
 			@include respond(xs){
-				flex-direction: column;
+				
 				padding:0;
 				align-items: center;
+			}
+
+			&:hover{
+				background-color: $color-primary-dark;
 			}
 		}
 
@@ -232,7 +239,7 @@
 		width:70%;
 		background-color: rgba($color-primary-dark,1);
 		padding:2rem;
-		animation:comeLeft 1s linear;
+		animation:comeLeft .4s linear;
 		overflow-y:scroll;
 		z-index: 100;
 

@@ -146,7 +146,7 @@
 		background-color: rgba(darken($color-brown, 20%), 0.9);
 		width: 100vw;
 		height: 100vh;
-		z-index: 9;
+		z-index: 999;
 		&__box {
 			position: absolute;
 			top: 5vh;
@@ -177,6 +177,10 @@
 				padding: 2rem 0;
 				display: flex;
 				position:relative;
+				@include respond(s){
+					margin-right:0;
+
+				}
 
 				&--doos{
 					position:absolute;
@@ -192,6 +196,10 @@
 					background-color: rgba(black,.2);
 					transition: all .2s;
 
+					@include respond(l){
+						bottom:0;
+						right:100%;
+					}
 					&:hover{
 						background-color: rgba(black,.5);
 					}

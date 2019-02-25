@@ -1,4 +1,5 @@
 import { ADD_MEMBER } from "./types";
+import { OPEN_MEMBER } from "./types";
 import { FETCH_RECEPIES } from "./types";
 
 export const openWindowAction = () => dispatch => {
@@ -11,6 +12,20 @@ export const openWindowAction = () => dispatch => {
 export const closeWindowAction = () => dispatch => {
 	dispatch({
 		type: ADD_MEMBER,
+		payload: "none"
+	});
+};
+
+export const openMemberAction = () => dispatch => {
+	dispatch({
+		type: OPEN_MEMBER,
+		payload: "block"
+	});
+};
+
+export const closeMemberAction = () => dispatch => {
+	dispatch({
+		type: OPEN_MEMBER,
 		payload: "none"
 	});
 };
