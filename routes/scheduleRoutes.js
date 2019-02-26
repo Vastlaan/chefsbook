@@ -56,7 +56,7 @@ module.exports = (app) =>{
 	})
 
 	app.post('/api/add_member', (req,res)=>{
-		console.log(req.body)
+		
 		User.findOne({_id:req.user._id})
 		.then(user=>{ 
 			if(user.schedules.length>0){
@@ -68,7 +68,7 @@ module.exports = (app) =>{
 						newData = each.data.concat(req.body.data)
 					}
 				})
-				console.log(1,newData)
+				
 				if(!newData[0]){
 					user.schedules.push(req.body)
 					user.save((err,user)=>{
@@ -79,7 +79,7 @@ module.exports = (app) =>{
 						res.send(user.schedules)
 					})
 				}else{
-					console.log(2,newData)
+					
 					user.schedules.find(x=>x.week===req.body.week).data = [].concat.apply([],newData)
 					user.markModified('schedules')
 					user.save((err,user)=>{

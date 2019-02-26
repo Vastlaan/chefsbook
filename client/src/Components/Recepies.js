@@ -2,11 +2,14 @@ import React from "react";
 import Icons from "../img/sprite.svg";
 import { connect } from "react-redux";
 import { fetchRecepies } from "../actions";
+import WarningRecepies from "./WarningRecepies";
 
 class Recepies extends React.Component {
 	state = {
 		display: "none",
-		recept: {}
+		recept: {},
+		displayWarning: "none",
+		toRemove:{}
 	};
 
 	componentWillMount() {
@@ -25,17 +28,8 @@ class Recepies extends React.Component {
 			ingridients,
 			preparation
 		};
-		fetch("/api/current_user/remove_recepie", {
-			method: "POST",
-			credentials: "include",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: JSON.stringify(toRemove)
-		})
-			.then(data => data.json())
-			.then(recept => window.location.reload())
-			.catch(err => console.log(err));
+		this.setState({toRemove})
+		this.setState({ displayWarning: "block" });		
 	};
 
 	render() {
@@ -140,13 +134,18 @@ class Recepies extends React.Component {
 						</div>
 					) : null}
 				</div>
+					<WarningRecepies
+						display={`${this.state.displayWarning}`}
+						toRemove={this.state.toRemove}
+					/>
 			</div>
 		);
 	}
 }
 
 const mapStateToProps = state => ({
-	recepies: state.fetchRecepies.recepies
+	recepies: state.fetchRecepies.recepies,
+
 });
 
 export default connect(
