@@ -421,14 +421,14 @@ body {
       .dashboard .dashboard__recipes {
         background-image: none;
         grid-column: col-start 1 / -1;
-        grid-row: 10/span 4;
+        grid-row: 9 / span 4;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         filter: contrast(120%) brightness(110%); } }
     @media only screen and (max-width: 37.5em) {
       .dashboard .dashboard__recipes {
         background-image: linear-gradient(to bottom, rgba(124, 170, 90, 0.1), rgba(124, 170, 90, 0.6) 40%), url(../img/recipes_background.jpg);
         grid-column: col-start 1 / -1;
-        grid-row: 1/span 4;
+        grid-row: 1 / span 4;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         filter: contrast(120%) brightness(110%); } }
     .dashboard .dashboard__recipes--btn {
@@ -438,13 +438,13 @@ body {
       border-radius: 3px;
       background-image: linear-gradient(to right, rgba(27, 99, 43, 0.9), rgba(124, 170, 90, 0.6) 70%);
       transform: translate(-15%, 30%);
-      padding: .5rem 1.5rem;
-      transition: all .5s;
+      padding: 0.5rem 1.5rem;
+      transition: all 0.5s;
       box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.9);
       z-index: 99; }
       @media only screen and (max-width: 37.5em) {
         .dashboard .dashboard__recipes--btn {
-          padding: .3rem 1.3rem; } }
+          padding: 0.3rem 1.3rem; } }
       @media only screen and (max-width: 62.5em) {
         .dashboard .dashboard__recipes--btn {
           transform: translate(0, 0);
@@ -455,7 +455,7 @@ body {
           width: 80%; } }
       @media only screen and (max-width: 75em) {
         .dashboard .dashboard__recipes--btn {
-          padding: 1rem .5rem; } }
+          padding: 1rem 0.5rem; } }
       .dashboard .dashboard__recipes--btn:hover {
         transform: translate(-13%, 30%);
         background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%); }
@@ -467,7 +467,7 @@ body {
       font-family: "Rajdhani", sans-serif;
       font-weight: 400;
       color: #451708;
-      letter-spacing: .2rem;
+      letter-spacing: 0.2rem;
       float: right;
       text-transform: uppercase; }
       @media only screen and (max-width: 37.5em) {
@@ -494,7 +494,7 @@ body {
           margin-top: 5rem; } }
   .dashboard .dashboard__schedule {
     grid-column: col-start 1 / -1;
-    grid-row: 5/span 4;
+    grid-row: 5 / span 4;
     margin-top: 10rem;
     background-image: url(../img/schedule_background.jpg);
     background-position: center;
@@ -502,15 +502,14 @@ body {
     @media only screen and (max-width: 62.5em) {
       .dashboard .dashboard__schedule {
         grid-column: col-start 1 / -1;
-        grid-row: 1 / span 1;
+        grid-row: 1 / span 4;
         background-image: url(../img/schedule_background.jpg);
         background-position: center;
-        position: relative;
-        height: 50vw; } }
+        position: relative; } }
     @media only screen and (max-width: 37.5em) {
       .dashboard .dashboard__schedule {
         grid-column: col-start 1 / -1;
-        grid-row: 9/span 4;
+        grid-row: 9 / span 4;
         background-image: url(../img/schedule_background.jpg);
         background-position: center;
         position: relative;
@@ -534,7 +533,7 @@ body {
       background-color: #7CAA5A;
       border-radius: 3px;
       box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
-      transition: transform .3s; }
+      transition: transform 0.3s; }
       .dashboard .dashboard__schedule__header:hover {
         transform: translate(-50%, -55%);
         box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.2); }
@@ -554,48 +553,109 @@ body {
           font-size: 2rem; } }
   .dashboard__preparation {
     grid-column: col-start 1 / -1;
-    grid-row: 9/span 4;
-    background-color: green;
-    margin-top: 10rem; }
+    grid-row: 9 / span 4;
+    margin-top: 10rem;
+    height: 40rem;
+    perspective: 30rem;
+    display: flex;
+    justify-content: space-between; }
     @media only screen and (max-width: 62.5em) {
       .dashboard__preparation {
         grid-column: col-start 1 / -1;
-        grid-row: 15/span 4; } }
+        grid-row: 15 / span 4;
+        flex-direction: column; } }
+    .dashboard__preparation--inputs {
+      margin: 0 auto;
+      width: 30rem;
+      align-self: center; }
+      @media only screen and (max-width: 62.5em) {
+        .dashboard__preparation--inputs {
+          margin-bottom: 5rem; } }
+      .dashboard__preparation--inputs p {
+        font-size: 1.8rem;
+        font-family: "Poiret One", cursive;
+        letter-spacing: 0.2rem;
+        text-align: center;
+        color: #451708;
+        margin-bottom: 2rem; }
+      .dashboard__preparation--inputs input {
+        width: 100%;
+        padding: 2rem;
+        border: none;
+        background-color: #e3e3e3;
+        text-align: center;
+        font-size: 2rem; }
+        .dashboard__preparation--inputs input:focus {
+          outline: none; }
+      .dashboard__preparation--inputs button {
+        display: block;
+        margin: 2rem auto;
+        padding: 1rem 5rem;
+        border-radius: 3px;
+        background-color: #7CAA5A;
+        font-size: 2rem;
+        border: none;
+        cursor: pointer; }
+        .dashboard__preparation--inputs button:focus {
+          outline: none; }
+    .dashboard__preparation--card {
+      width: 50%;
+      height: 100%;
+      background-image: linear-gradient(to right, #73260D, #451708);
+      border: 3px solid black;
+      transform: rotateY(-5deg);
+      margin: 0 auto;
+      transition: all 0.2s;
+      box-shadow: 3rem -0.3rem 5rem rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .dashboard__preparation--card ul > li {
+        list-style: none;
+        text-transform: uppercase;
+        color: snow;
+        font-size: 2rem; }
+      @media only screen and (max-width: 62.5em) {
+        .dashboard__preparation--card {
+          width: 70%;
+          transform: rotateY(0); } }
 
 .dashboard__calendar {
   grid-column: col-start 1 / span 3;
-  grid-row: 1/span 4;
+  grid-row: 1 / span 4;
   display: flex;
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  align-self: center; }
   @media only screen and (max-width: 62.5em) {
     .dashboard__calendar {
       grid-column: col-start 2 / -2;
-      grid-row: 6/span 4;
+      grid-row: 6 / span 4;
       margin-bottom: 2rem; } }
   @media only screen and (max-width: 37.5em) {
     .dashboard__calendar {
       grid-column: col-start 1 / -1;
-      grid-row: 5/span 4; } }
+      grid-row: 5 / span 4; } }
   .dashboard__calendar--flex {
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
     width: 70%;
     cursor: pointer;
-    transition: all .3s; }
+    transition: all 0.3s; }
     .dashboard__calendar--flex:hover {
       transform: scale(1.05); }
   .dashboard__calendar--year {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     font-size: 5rem;
     font-family: "Rajdhani", sans-serif;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     text-align: center;
     background-color: #7CAA5A; }
   .dashboard__calendar--month {
     text-align: center;
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     background-color: #000;
     color: snow;
     font-size: 2.5rem;
@@ -607,7 +667,7 @@ body {
     font-family: "Courgette", cursive;
     background-color: #f0f0f0; }
   .dashboard__calendar--dayname {
-    padding: .5rem 0;
+    padding: 0.5rem 0;
     text-align: center;
     background-color: #7CAA5A;
     font-size: 2.5rem;
@@ -618,7 +678,7 @@ body {
     background-color: #000;
     color: snow;
     font-size: 1.5rem;
-    font-family: "Courier New",sans-serif; }
+    font-family: "Courier New", sans-serif; }
 
 .schedule {
   position: relative; }
@@ -766,10 +826,10 @@ body {
       padding: 0rem;
       border-left: 1px solid #451708;
       border-bottom: 1px solid #451708;
-      cursor: pointer;
-      transition: background-color .3s; }
-      .schedule__graph--day:hover {
-        background-color: #b1cd9d; }
+      transition: background-color .3s;
+      /*&:hover{
+				background-color: lighten($color-primary,20%);
+			}*/ }
       .schedule__graph--day:last-child {
         border-right: 1px solid #451708; }
       @media only screen and (max-width: 50em) {
@@ -2007,7 +2067,7 @@ body {
     transform: translate(-50%, -50%);
     background-color: #7CAA5A;
     width: 80%;
-    height: 70%; }
+    height: 75%; }
     .member__box--name {
       background-color: black;
       color: snow;
@@ -2026,7 +2086,8 @@ body {
         font-family: "Rajdhani", sans-serif;
         font-weight: 300;
         font-size: 2rem;
-        width: 100%; }
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.3); }
       .member__box--cell p {
         text-align: center;
         background-color: #73260D;
@@ -2035,13 +2096,14 @@ body {
         font-weight: 300;
         font-size: 2rem;
         width: 100%;
-        cursor: pointer; }
+        cursor: pointer;
+        border: 1px solid rgba(0, 0, 0, 0.3); }
         .member__box--cell p:hover {
           background-color: #a13512; }
     .member__box button {
       display: block;
       width: 50%;
-      margin: 5rem auto 1rem auto;
+      margin: 5rem auto;
       border: none;
       background-color: #B57D1F;
       padding: 2rem;

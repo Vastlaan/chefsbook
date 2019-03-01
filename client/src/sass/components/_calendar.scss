@@ -1,69 +1,70 @@
 //=============================================CALENDAR============================================================================
-.dashboard__calendar{
-		grid-column: col-start 1 / span 3;
-		grid-row: 1/span 4;
+.dashboard__calendar {
+	grid-column: col-start 1 / span 3;
+	grid-row: 1 / span 4;
+	display: flex;
+	text-decoration: none;
+	color: inherit;
+	align-self: center;
+
+	@include respond(l) {
+		grid-column: col-start 2 / -2;
+		grid-row: 6 / span 4;
+		margin-bottom: 2rem;
+	}
+	@include respond(s) {
+		grid-column: col-start 1 / -1;
+		grid-row: 5 / span 4;
+	}
+
+	&--flex {
+		margin: 2rem auto;
 		display: flex;
-		text-decoration: none;
-		color:inherit;
-		@include respond(l){
-			grid-column: col-start 2 / -2;
-			grid-row: 6/span 4;
-			margin-bottom: 2rem;
+		flex-direction: column;
+		width: 70%;
+		cursor: pointer;
+		transition: all 0.3s;
 
-		}
-		@include respond(s){
-			grid-column: col-start 1 / -1;
-			grid-row: 5/span 4;
-		}
-
-		&--flex{
-			margin: 2rem auto;
-			display:flex;
-			flex-direction: column;
-			width:70%;
-			cursor:pointer;
-			transition:all .3s;
-
-			&:hover{
-				transform:scale(1.05);
-			}
-		}
-		&--year{
-			padding: .5rem 0;
-			font-size: 5rem;
-			font-family: $font-rajdhani;
-			letter-spacing: .1rem;
-			text-align: center;
-			background-color: $color-primary;
-		}
-		&--month{
-			text-align: center;
-			padding:.5rem 0;
-			background-color: #000;
-			color:snow;
-			font-size: 2.5rem;
-			font-family: $font-special;
-		}
-		&--day{
-			text-align: center;
-			padding:3rem 0;
-			font-size: 10rem;
-			font-family: $font-courgette;
-			background-color: #f0f0f0;
-		}
-		&--dayname{
-			padding:.5rem 0;
-			text-align: center;
-			background-color: $color-primary;
-			font-size: 2.5rem;
-			font-family: $font-special;
-		}
-		&--time{
-			padding:1rem 0;
-			text-align: center;
-			background-color: #000;
-			color:snow;
-			font-size: 1.5rem;
-			font-family: "Courier New",sans-serif;
+		&:hover {
+			transform: scale(1.05);
 		}
 	}
+	&--year {
+		padding: 0.5rem 0;
+		font-size: 5rem;
+		font-family: $font-rajdhani;
+		letter-spacing: 0.1rem;
+		text-align: center;
+		background-color: $color-primary;
+	}
+	&--month {
+		text-align: center;
+		padding: 0.5rem 0;
+		background-color: #000;
+		color: snow;
+		font-size: 2.5rem;
+		font-family: $font-special;
+	}
+	&--day {
+		text-align: center;
+		padding: 3rem 0;
+		font-size: 10rem;
+		font-family: $font-courgette;
+		background-color: #f0f0f0;
+	}
+	&--dayname {
+		padding: 0.5rem 0;
+		text-align: center;
+		background-color: $color-primary;
+		font-size: 2.5rem;
+		font-family: $font-special;
+	}
+	&--time {
+		padding: 1rem 0;
+		text-align: center;
+		background-color: #000;
+		color: snow;
+		font-size: 1.5rem;
+		font-family: "Courier New", sans-serif;
+	}
+}

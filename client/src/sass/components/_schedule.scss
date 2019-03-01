@@ -181,12 +181,12 @@
 			padding:0rem;
 			border-left:1px solid $color-brown-dark;
 			border-bottom: 1px solid $color-brown-dark;
-			cursor:pointer;
+			//cursor:pointer;
 			transition:background-color .3s;
 
-			&:hover{
+			/*&:hover{
 				background-color: lighten($color-primary,20%);
-			}
+			}*/
 
 			&:last-child{
 				border-right: 1px solid $color-brown-dark;

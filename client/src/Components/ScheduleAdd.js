@@ -93,6 +93,7 @@ class ScheduleAdd extends React.Component {
 		.catch(err=>console.log(err))
 
 		this.props.closeWindowAction()
+		window.location.reload()
 	}
 
 	render(){

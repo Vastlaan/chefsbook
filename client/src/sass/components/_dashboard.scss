@@ -1,15 +1,14 @@
-.dashboard{
-
+.dashboard {
 	margin: 2rem 0;
-	display:grid;
-	grid-template-columns: repeat(8, [col-start] 1fr [col-end] );
-	grid-template-rows: repeat(8, [row-start] 17vh [row-end] );
+	display: grid;
+	grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+	grid-template-rows: repeat(8, [row-start] 17vh [row-end]);
 	grid-gap: 2rem;
 
-	@include respond(mh){
-		grid-template-rows: repeat(8, [row-start] 25vh [row-end] );
+	@include respond(mh) {
+		grid-template-rows: repeat(8, [row-start] 25vh [row-end]);
 	}
-	
+
 	//=============================================recipes============================================================================
 	.dashboard__recipes {
 		grid-column: col-start 4 / -1;
@@ -18,189 +17,281 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-image: linear-gradient(to bottom right, rgba($color-primary,.3), rgba($color-primary-dark,.1)), url(../img/recipes_background.jpg);
+		background-image: linear-gradient(
+				to bottom right,
+				rgba($color-primary, 0.3),
+				rgba($color-primary-dark, 0.1)
+			),
+			url(../img/recipes_background.jpg);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		filter:contrast(120%) brightness(150%);
+		filter: contrast(120%) brightness(150%);
 		border-radius: 3px;
-		clip-path:polygon(0% 0%, 100% 40%, 100% 100%, 40% 100%);
+		clip-path: polygon(0% 0%, 100% 40%, 100% 100%, 40% 100%);
 		@include respond(l) {
-			background-image:none;
+			background-image: none;
 			grid-column: col-start 1 / -1;
-			grid-row: 10/span 4;
-			clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-			filter:contrast(120%) brightness(110%);
-
-			
-		}@include respond(s) {
-			background-image: linear-gradient(to bottom, rgba($color-primary,.1), rgba($color-primary,.6) 40%), url(../img/recipes_background.jpg);
-			grid-column: col-start 1 / -1;
-			grid-row: 1/span 4;
-			clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-			filter:contrast(120%) brightness(110%);
-			
+			grid-row: 9 / span 4;
+			clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+			filter: contrast(120%) brightness(110%);
 		}
-		
-		&--btn{
+		@include respond(s) {
+			background-image: linear-gradient(
+					to bottom,
+					rgba($color-primary, 0.1),
+					rgba($color-primary, 0.6) 40%
+				),
+				url(../img/recipes_background.jpg);
+			grid-column: col-start 1 / -1;
+			grid-row: 1 / span 4;
+			clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+			filter: contrast(120%) brightness(110%);
+		}
+
+		&--btn {
 			display: block;
 			text-decoration: none;
-			width:50%;
+			width: 50%;
 			//height:6rem;
-			border-radius:3px;
-			background-image: linear-gradient(to right,rgba($color-primary-dark,.9),rgba($color-primary,.6) 70%);
-			transform:translate(-15%,30%);
-			padding:.5rem 1.5rem;
-			transition:all .5s;
-			box-shadow: 0 0rem 5rem rgba(0,0,0,.9);
+			border-radius: 3px;
+			background-image: linear-gradient(
+				to right,
+				rgba($color-primary-dark, 0.9),
+				rgba($color-primary, 0.6) 70%
+			);
+			transform: translate(-15%, 30%);
+			padding: 0.5rem 1.5rem;
+			transition: all 0.5s;
+			box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.9);
 			z-index: 99;
-			
 
-
-			@include respond(s){
-				padding:.3rem 1.3rem;
+			@include respond(s) {
+				padding: 0.3rem 1.3rem;
 			}
 			@include respond(l) {
-				transform:translate(0,0);
+				transform: translate(0, 0);
 				text-align: center;
-				background-image: linear-gradient(to right,rgba($color-primary-dark,1),rgba($color-primary,.8) 70%);
-				filter:brightness(120%);
-				padding:1rem 4.5rem;
-				width:80%;
+				background-image: linear-gradient(
+					to right,
+					rgba($color-primary-dark, 1),
+					rgba($color-primary, 0.8) 70%
+				);
+				filter: brightness(120%);
+				padding: 1rem 4.5rem;
+				width: 80%;
 			}
 			@include respond(xl) {
-			
-				padding:1rem .5rem;
-			
+				padding: 1rem 0.5rem;
 			}
-			
 
-			&:hover{
-				transform:translate(-13%,30%);
-				background-image: linear-gradient(to right,rgba($color-primary-dark,1),rgba($color-primary,.8) 70%);
+			&:hover {
+				transform: translate(-13%, 30%);
+				background-image: linear-gradient(
+					to right,
+					rgba($color-primary-dark, 1),
+					rgba($color-primary, 0.8) 70%
+				);
 
 				@include respond(l) {
-					transform:translate(0,-5px);
-
+					transform: translate(0, -5px);
 				}
 			}
-
-
 		}
-		&--span{
+		&--span {
 			font-size: 4rem;
 			font-family: $font-rajdhani;
 
 			font-weight: 400;
 			color: $color-brown-dark;
-			letter-spacing: .2rem;
-			float:right;
+			letter-spacing: 0.2rem;
+			float: right;
 			text-transform: uppercase;
 
-			@include respond(s){
-				font-size: 2.5rem
+			@include respond(s) {
+				font-size: 2.5rem;
 			}
 			@include respond(l) {
-				float:none;
-				color:black;
+				float: none;
+				color: black;
 				font-weight: 300;
 			}
 		}
 
-		h1{
-
-			display:none;
+		h1 {
+			display: none;
 			font-size: 5rem;
 			font-weight: 500;
 			font-family: $font-rajdhani, sans-serif;
-			color:black;
-			transform:translateY(-20rem);
-			background-color: rgba(snow,.3);
-			width:100%;
+			color: black;
+			transform: translateY(-20rem);
+			background-color: rgba(snow, 0.3);
+			width: 100%;
 			text-align: center;
 
-			@include respond(m){
-				display:block;
+			@include respond(m) {
+				display: block;
 				margin-top: 5rem;
 			}
 		}
-
 	}
 	//=============================================schedule============================================================================
-	.dashboard__schedule{
+	.dashboard__schedule {
 		grid-column: col-start 1 / -1;
-		grid-row: 5/span 4;
+		grid-row: 5 / span 4;
 		margin-top: 10rem;
 		background-image: url(../img/schedule_background.jpg);
 		background-position: center;
-		position:relative;
+		position: relative;
 
-		@include respond(l){
+		@include respond(l) {
 			grid-column: col-start 1 / -1;
-			grid-row: 1 / span 1;
+			grid-row: 1 / span 4;
 			background-image: url(../img/schedule_background.jpg);
 			background-position: center;
-			position:relative;
-			height:50vw;
+			position: relative;
 		}
-		@include respond(s){
+		@include respond(s) {
 			grid-column: col-start 1 / -1;
-			grid-row: 9/span 4;
+			grid-row: 9 / span 4;
 			background-image: url(../img/schedule_background.jpg);
 			background-position: center;
-			position:relative;
-			height:80vw;
+			position: relative;
+			height: 80vw;
 		}
-		&__header{
-			position:absolute;
-			top:50%;
-			left:50%;
-			transform:translate(-50%,-50%);
+		&__header {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 			text-decoration: none;
 			font-family: $font-rajdhani;
 			font-size: 4rem;
 			font-weight: 300;
 			text-transform: uppercase;
 			text-align: center;
-			text-shadow: .5rem .5rem 1rem rgba(0,0,0,.3);
-			width:60%;
-			margin:2rem auto;
-			padding:1rem 2rem;
-			color:snow;
+			text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+			width: 60%;
+			margin: 2rem auto;
+			padding: 1rem 2rem;
+			color: snow;
 			background-color: $color-primary;
 			border-radius: 3px;
-			box-shadow: 0 2rem 2rem rgba(0,0,0,.3);
-			transition:transform .3s;
-			&:hover{
-				transform:translate(-50%,-55%);
-				box-shadow: 0 2.5rem 2.5rem rgba(0,0,0,.2);
+			box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+			transition: transform 0.3s;
+			&:hover {
+				transform: translate(-50%, -55%);
+				box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.2);
 			}
 
-			@include respond(l){
+			@include respond(l) {
 				font-size: 3rem;
-				width:70%;
+				width: 70%;
 			}
-			@include respond(m){
+			@include respond(m) {
 				font-size: 2.5rem;
 			}
-			@include respond(s){
-				width:90%;
+			@include respond(s) {
+				width: 90%;
 				font-size: 2.5rem;
 			}
-			@include respond(xs){
+			@include respond(xs) {
 				font-size: 2rem;
 			}
 		}
 	}
 	//=============================================Preps============================================================================
-	&__preparation{
+	&__preparation {
 		grid-column: col-start 1 / -1;
-		grid-row: 9/span 4;;
-		background-color: green;	//test	
+		grid-row: 9 / span 4;
+
 		margin-top: 10rem;
-		@include respond(l){
+		height: 40rem;
+		perspective: 30rem;
+		display: flex;
+		justify-content: space-between;
+
+
+		@include respond(l) {
 			grid-column: col-start 1 / -1;
-			grid-row: 15/span 4;
+			grid-row: 15 / span 4;
+			flex-direction: column;
+		}
+
+		&--inputs {
+			margin: 0 auto;
+			width:30rem;
+			align-self:center;
+
+			@include respond(l) {
+				margin-bottom: 5rem;
+			}
+			
+			p {
+				font-size: 1.8rem;
+				font-family: $font-portrait;
+				letter-spacing: 0.2rem;
+				text-align: center;
+				color: $color-brown-dark;
+				margin-bottom: 2rem;
+			}
+
+			input{
+				width:100%;
+				padding:2rem;
+				border:none;
+				background-color: darken(#f0f0f0,5%);
+				text-align: center;
+				font-size: 2rem;
+
+				&:focus{
+					outline:none;
+				}
+			}
+			button{
+				display:block;
+				margin:2rem auto;
+				padding:1rem 5rem;
+				border-radius: 3px;
+				background-color: $color-primary;
+				font-size: 2rem;
+				border:none;
+				cursor:pointer;
+				&:focus{
+					outline:none;
+				}
+			}
+		}
+
+		&--card {
+			width: 50%;
+			height: 100%;
+			background-image: linear-gradient(
+				to right,
+				$color-brown,
+				$color-brown-dark
+			);
+			border: 3px solid black;
+			transform: rotateY(-5deg);
+			margin: 0 auto;
+			transition: all 0.2s;
+			box-shadow: 3rem -0.3rem 5rem rgba(0, 0, 0, 0.3);
+			display:flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			ul>li{
+				list-style: none;
+				text-transform: uppercase;
+				color:snow;
+				font-size: 2rem;
+			}
+
+			@include respond(l) {
+				width: 70%;
+				transform: rotateY(0);
+			}
 		}
 	}
 }
