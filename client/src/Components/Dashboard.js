@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "./Calendar";
 import Recipes from "./Recipes";
-import Camera from "../img/video-camera.svg";
+
 
 class Dashboard extends React.Component {
 	constructor(props) {

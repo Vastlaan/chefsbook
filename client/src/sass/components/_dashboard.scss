@@ -214,7 +214,7 @@
 
 		@include respond(l) {
 			grid-column: col-start 1 / -1;
-			grid-row: 15 / span 4;
+			grid-row: 15 / span 5;
 			flex-direction: column;
 		}
 
@@ -224,7 +224,7 @@
 			align-self:center;
 
 			@include respond(l) {
-				margin-bottom: 5rem;
+				margin-bottom: 1rem;
 			}
 			
 			p {
@@ -289,8 +289,16 @@
 			}
 
 			@include respond(l) {
-				width: 70%;
+				width: 90%;
 				transform: rotateY(0);
+				box-shadow: none;
+				border:none;
+				display: block;
+				overflow-y:scroll;
+				text-align: center;
+				background-image:none;
+				background-color: $color-primary-dark;
+
 			}
 		}
 	}

@@ -562,7 +562,7 @@ body {
     @media only screen and (max-width: 62.5em) {
       .dashboard__preparation {
         grid-column: col-start 1 / -1;
-        grid-row: 15 / span 4;
+        grid-row: 15 / span 5;
         flex-direction: column; } }
     .dashboard__preparation--inputs {
       margin: 0 auto;
@@ -570,7 +570,7 @@ body {
       align-self: center; }
       @media only screen and (max-width: 62.5em) {
         .dashboard__preparation--inputs {
-          margin-bottom: 5rem; } }
+          margin-bottom: 1rem; } }
       .dashboard__preparation--inputs p {
         font-size: 1.8rem;
         font-family: "Poiret One", cursive;
@@ -618,8 +618,15 @@ body {
         font-size: 2rem; }
       @media only screen and (max-width: 62.5em) {
         .dashboard__preparation--card {
-          width: 70%;
-          transform: rotateY(0); } }
+          width: 90%;
+          transform: rotateY(0);
+          box-shadow: none;
+          border: none;
+          display: block;
+          overflow-y: scroll;
+          text-align: center;
+          background-image: none;
+          background-color: #1B632B; } }
 
 .dashboard__calendar {
   grid-column: col-start 1 / span 3;
@@ -1056,7 +1063,7 @@ body {
         font-size: 2rem;
         font-family: "Rajdhani", sans-serif;
         color: #73260D;
-        line-height: 0.7; }
+        line-height: 1.2; }
         @media only screen and (max-width: 25em) {
           .recepies--content-item-name {
             font-size: 1.7rem; } }

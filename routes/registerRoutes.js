@@ -16,8 +16,6 @@ module.exports = (app) =>{
 
 		const hash = bcrypt.hashSync(password)
 
-		console.log(email,hash)
-
 		new User({			// otherwise we create a new Instance of our Collection (user inside of collection) with appropriate
 			googleId: "",		// with appropriate already defined in our Schema key:value pairs
 			name: "",

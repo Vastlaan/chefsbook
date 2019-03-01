@@ -27,11 +27,18 @@ class Login extends React.Component{
 		})
 		.catch(err=>console.log(err))
 	}
-
+	validate =(email)=>{
+		const re =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+		return re.test(email)
+	}
+	
 	register = () =>{
 		const email = document.querySelector('.login__email').value
 		const password = document.querySelector('.login__password').value
 
+		if(!this.validate(email)){
+			return console.log('no')
+		}
 		fetch('/api/register', {
 			method:'POST',
 			headers:{
