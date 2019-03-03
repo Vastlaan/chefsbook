@@ -32,7 +32,7 @@
 		@include respond(l) {
 			background-image: none;
 			grid-column: col-start 1 / -1;
-			grid-row: 9 / span 4;
+			grid-row: 10 / span 4;
 			clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 			filter: contrast(120%) brightness(110%);
 		}
@@ -94,7 +94,7 @@
 				);
 
 				@include respond(l) {
-					transform: translate(0, -5px);
+					transform: translate(0, 0);
 				}
 			}
 		}

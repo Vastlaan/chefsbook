@@ -421,7 +421,7 @@ body {
       .dashboard .dashboard__recipes {
         background-image: none;
         grid-column: col-start 1 / -1;
-        grid-row: 9 / span 4;
+        grid-row: 10 / span 4;
         clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
         filter: contrast(120%) brightness(110%); } }
     @media only screen and (max-width: 37.5em) {
@@ -461,7 +461,7 @@ body {
         background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%); }
         @media only screen and (max-width: 62.5em) {
           .dashboard .dashboard__recipes--btn:hover {
-            transform: translate(0, -5px); } }
+            transform: translate(0, 0); } }
     .dashboard .dashboard__recipes--span {
       font-size: 4rem;
       font-family: "Rajdhani", sans-serif;
@@ -1063,7 +1063,7 @@ body {
         font-size: 2rem;
         font-family: "Rajdhani", sans-serif;
         color: #73260D;
-        line-height: 1.2; }
+        line-height: 1; }
         @media only screen and (max-width: 25em) {
           .recepies--content-item-name {
             font-size: 1.7rem; } }
@@ -1953,6 +1953,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
+  .login__registerConfirmation {
+    background-color: #1B632B;
+    padding: .5rem 5rem;
+    font-size: 1.2rem;
+    font-family: "Open Sans", sans-serif; }
   .login__form {
     display: flex;
     flex-direction: column;

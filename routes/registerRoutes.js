@@ -14,19 +14,26 @@ module.exports = (app) =>{
 
 		const { email, password } = req.body;
 
-		const hash = bcrypt.hashSync(password)
+		User.findOne({email:req.body.email})
+		.then((user)=>{
+			if(user){
+				return res.status(409).json('User Email already exist!')
+			}else{
+				const hash = bcrypt.hashSync(password)
 
-		new User({			// otherwise we create a new Instance of our Collection (user inside of collection) with appropriate
-			googleId: "",		// with appropriate already defined in our Schema key:value pairs
-			name: "",
-			surname: "",
-			email: email,
-			hash: hash
-		})
-		.save()
-		.then(user=>{
-			console.log(user)
-			return res.status(200).json(user)
+				new User({			// otherwise we create a new Instance of our Collection (user inside of collection) with appropriate
+					googleId: "",		// with appropriate already defined in our Schema key:value pairs
+					name: "",
+					surname: "",
+					email: email,
+					hash: hash
+				})
+				.save()
+				.then(user=>{
+					console.log(user)
+					return res.status(200).json(`You succesfully created new account! Welkom ${user.email}!`)
+				})
+			}
 		})
 	})
 
@@ -35,18 +42,20 @@ module.exports = (app) =>{
 		User.findOne({email:req.body.email})
 		.then((user)=>{
 			if(user){
+				
 				const isValid = bcrypt.compareSync(req.body.password, user.hash);
 				if(isValid){
-					res.status(200).json("yes")
+					return res.status(200).json("yes")
 				}else{
-					res.status(200).json(false)
+					return res.status(400).json('Wrong password!')
 				}
 			}else{
-				res.status(200).json("noo")
+				
+				return res.status(400).json("Ups, something went wrong!")
 			}
 		})
 		.catch(err=>{
-			console.log(err)
+			return res.status(400).json("Ups, something went wrong!")
 		})
 
 		

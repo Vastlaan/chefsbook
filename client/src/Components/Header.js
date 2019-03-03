@@ -1,21 +1,21 @@
 import React from 'react';
 import Logo from '../img/logo2.png';
 import Icons3 from '../img/sprite3.svg';
-
+import Icons from '../img/sprite.svg';
 class Header extends React.Component {
 
 	render(){
 		
 		return(
 			<div className='header'>
-				<div className='header__logo'><img src={Logo} alt='logo'/></div>
+				<a href='/' className='header__logo'><img src={Logo} alt='logo'/></a>
 				{this.props.logged? 
 					<div className='header__asLogged'>
-						<a href='/' className='header__icon--box'>
+						<a href='/#preparations' className='header__icon--box'>
 							<svg className='header__icon fill__green'>
-								<use xlinkHref={`${Icons3}#home`}></use>	
+								<use xlinkHref={`${Icons}#icon-text-document`}></use>	
 							</svg>
-							<span>Home</span>
+							<span>Preparations</span>
 						</a>
 						<a href='/recipes' className='header__icon--box fill__yellow'>
 							<svg className='header__icon'>
