@@ -5,4 +5,6 @@ module.exports = {
 	cookieKey: process.env.COOKIE_KEY,
 	AWSAccessKeyId:process.env.AWS_ACCESS_KEY,
 	AWSSecretKey:process.env.AWS_SECRET_KEY,
+	gmail: process.env.GMAIL,
+	gmailSecrtet: process.env.GMAIL_SECRET
 }
