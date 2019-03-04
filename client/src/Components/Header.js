@@ -11,7 +11,7 @@ class Header extends React.Component {
 				<a href='/' className='header__logo'><img src={Logo} alt='logo'/></a>
 				{this.props.logged? 
 					<div className='header__asLogged'>
-						<a href='/#preparations' className='header__icon--box'>
+						<a href='/preparations' className='header__icon--box'>
 							<svg className='header__icon fill__green'>
 								<use xlinkHref={`${Icons}#icon-text-document`}></use>	
 							</svg>

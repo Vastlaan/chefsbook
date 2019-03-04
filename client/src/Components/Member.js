@@ -27,7 +27,7 @@ class Member extends React.Component {
 
 	render() {
 
-		const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+		const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 		return (
 			<div
 				className="member"

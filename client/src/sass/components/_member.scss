@@ -96,6 +96,10 @@
 
 			@include btn-shadow;
 
+			@include respond(l){
+				font-size: 1.5rem;
+			}
+
 			&:focus{
 				outline:none;
 			}

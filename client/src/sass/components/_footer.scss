@@ -25,7 +25,7 @@
 		letter-spacing: .3rem;
 		text-align: center;
 		align-self: center;
-		background-color: rgba(0,0,0,.6);
+		background-color: rgba($color-brown,.6);
 		padding:1rem;
 		
 		span{
@@ -34,6 +34,7 @@
 			font-weight: 500;
 			cursor:pointer;
 			transition:all .2s;
+			color:black;
 
 			&:hover{
 				color:$color-secondary-light;

@@ -10,6 +10,7 @@ class Warning extends React.Component {
 		}
 		fetch("/api/remove_event", {
 			method: "POST",
+			credentials: "include",
 			headers: {
 				"Content-Type": "application/json"
 			},

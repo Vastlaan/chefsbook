@@ -159,14 +159,6 @@ class Schedule extends React.Component {
 									<div
 										className="schedule__graph--day"
 										key={`!#$${i * 3.332}`}
-										onClick={() => {
-											console.log(
-												each.name,
-												day,
-												currentWeek,
-												i
-											);
-										}}
 									>
 										{day}
 									</div>

@@ -14,7 +14,6 @@ class Dashboard extends React.Component {
 
 			recepies: [],
 
-			preps: []
 		};
 		this.timer = null;
 	}
@@ -24,12 +23,6 @@ class Dashboard extends React.Component {
 		return this.setState({ date });
 	};
 
-	addToPreps=()=>{
-		const value = document.querySelector('#prep_item').value
-		this.state.preps.push(value)
-
-		document.querySelector('#prep_item').value =''
-	}
 	componentDidMount() {
 		this.timer = setInterval(this.toDisplay, 1000);
 
@@ -46,10 +39,6 @@ class Dashboard extends React.Component {
 	}
 	componentWillUnmount() {
 		clearInterval(this.timer);
-	}
-	openRecepie(index) {
-		this.setState({ display: "block" });
-		this.setState({ recept: this.state.recepies[index] });
 	}
 
 	render() {
@@ -68,26 +57,8 @@ class Dashboard extends React.Component {
 					</a>
 				</div>
 
-				<div className="dashboard__preparation" id="preparations">
-					
-					<div className="dashboard__preparation--inputs">
-						<p>This is the card of preparations.
-							Here you can make a list of items, which have to be
-							done next day.
-						</p>
-						<input type='text' id='prep_item' onKeyDown={(e)=>e.keyCode===13?this.addToPreps():null} />
-						<button onClick={()=>this.addToPreps()}>Add</button>
-					</div>
-
-					<div className="dashboard__preparation--card">
-						<ul>
-						{this.state.preps.map((each,i)=>{
-							return(
-								<li key={i*0.3987}>{each}</li>
-								)
-						})}
-						</ul>
-					</div>
+				<div className="dashboard__preparations" id="preparations">
+					<a href='/preparations'>Preparations</a>	
 				</div>
 			</div>
 		);

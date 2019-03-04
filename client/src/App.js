@@ -14,6 +14,7 @@ import Recepies from './Components/Recepies'
 import PrivacyPolicy from './Components/PrivacyPolicy'
 import Cookies from './Components/Cookies'
 import Login from './Components/Login'
+import Preparations from './Components/Preparations'
 
 class App extends React.Component {
   state = {
@@ -59,6 +60,7 @@ class App extends React.Component {
             <Route path="/privacy_policy" component={PrivacyPolicy} />
             <Route path="/cookies" component={Cookies} />
             <Route path="/login" component={Login} />
+            <Route path="/preparations" component={Preparations} />
           </div>
         </BrowserRouter>
         <Footer />
