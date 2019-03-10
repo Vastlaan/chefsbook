@@ -36,7 +36,12 @@ class Header extends React.Component {
 							<span>Schedule</span>
 						</a>
 						
-						<a href="/api/logout" className='header__login header__login--width'>Log out</a>
+						<a href="/api/logout" className='header__login header__login--width'>
+							<svg>
+								<use xlinkHref={`${Icons}#icon-power_settings_new`}></use>
+							</svg>
+							
+						</a>
 					</div>
 					:
 					<a href="/login" className='header__login'>

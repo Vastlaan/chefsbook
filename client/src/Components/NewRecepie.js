@@ -118,7 +118,8 @@ class NewRecepie extends React.Component {
 			<div className="newRecepie">
 				<h1 className="newRecepie__header">Create new recipe</h1>
 				<form className="newRecepie__form" onSubmit={this.submitForm}>
-					<div className="newRecepie__form--area">
+				{/*areaName*/}
+					<div id='areaName' className="newRecepie__form--area">
 						<label className="newRecepie__form--label">
 							Product's name
 						</label>
@@ -126,12 +127,15 @@ class NewRecepie extends React.Component {
 							name="name"
 							type="text"
 							className="newRecepie__form--input"
+							id='name'
 							value={this.state.name}
 							onChange={this.inputChange}
 							required
 						/>
+						<p className="newRecepie__form--next" id='next_area--1' onClick={()=>document.querySelector('#name').checkValidity()?document.querySelector('#areaName').style.display="none":null }>Next</p>
 					</div>
-					<div className="newRecepie__form--area">
+				{/*areaPhoto*/}
+					<div id='areaPhoto' className="newRecepie__form--area">
 						<label className="newRecepie__form--label">Photo</label>
 						<div>
 							<input
@@ -165,8 +169,11 @@ class NewRecepie extends React.Component {
 								)}
 							</label>
 						</div>
+						<p className="newRecepie__form--next" id='next_area--2' onClick={()=>this.state.photo === null ||
+								this.state.photo === undefined?null :document.querySelector('#areaPhoto').style.display="none" }>Next</p>
 					</div>
-					<div className="newRecepie__form--area">
+				{/*areaIngridients*/}
+					<div id='areaIngridients' className="newRecepie__form--area">
 						<label className="newRecepie__form--label">
 							Ingidients
 						</label>
@@ -203,21 +210,25 @@ class NewRecepie extends React.Component {
 							className="newRecepie__form--input"
 							id="ingridient"
 						/>
+						<p className="newRecepie__form--next" id='next_area--3' onClick={()=>document.querySelector('#areaIngridients').style.display="none" }>Next</p>
 					</div>
-					<div className="newRecepie__form--area">
+				{/*areaPreparation*/}
+					<div id='areaPreparation' className="newRecepie__form--area">
 						<label className="newRecepie__form--label">
 							Preparation
 						</label>
 						<textarea
 							name="preparation"
 							type="text"
+							id='prep'
 							className="newRecepie__form--textarea"
 							value={this.state.preparation}
 							onChange={this.inputChange}
 							required
 						/>
+						<p className="newRecepie__form--next" id='next_area--4' onClick={()=>document.querySelector('#prep').checkValidity()?document.querySelector('#areaPreparation').style.display="none":null }>Next</p>
 					</div>
-					
+				{/*end of shuffle*/}
 					<button type="submit" className="newRecepie__form--submit">
 						{" "}
 						Submit{" "}

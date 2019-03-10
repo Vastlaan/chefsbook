@@ -18,7 +18,7 @@ const upload = multer({
 		s3: s3,
 		bucket: "noirfataletestbucket",
 		key: function(req, file, cb) {
-			cb(null, `${req.user.googleId}/${Date.now().toString()}.jpeg`);
+			cb(null, `${req.user._id}/${Date.now().toString()}.jpeg`);
 		}
 	}),
 	contentType: "image/jpeg"

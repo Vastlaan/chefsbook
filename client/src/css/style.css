@@ -148,7 +148,7 @@ body {
         bottom: 0;
         left: 0;
         width: 100%;
-        background-image: linear-gradient(to right, black, #0b2b02);
+        background-image: linear-gradient(to right, #000a00, #000a00);
         padding: 1rem;
         z-index: 99;
         height: 15vh; } }
@@ -213,22 +213,26 @@ body {
         width: 4.5rem;
         height: 4.5rem; } }
   .header__login {
-    display: block;
     align-self: center;
-    padding: .8rem 2.5rem;
+    padding: .8rem 1.5rem;
     border-radius: .3rem;
     text-decoration: none;
-    background-color: #73260D;
+    background-color: #451708;
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
     font-size: 2rem;
-    color: #f4d15a;
+    color: snow;
     letter-spacing: .1rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transition: transform .2s; }
-    .header__login--width {
-      width: 90%; }
+    .header__login svg {
+      width: 1.8rem;
+      height: 1.8rem;
+      fill: snow; }
     .header__login:hover {
       transform: translateY(-0.3rem);
       box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
@@ -238,8 +242,7 @@ body {
     @media only screen and (max-width: 50em) {
       .header__login {
         width: initial;
-        padding: .8rem 2rem;
-        background-image: linear-gradient(to right, #7CAA5A, #124304);
+        padding: .3rem .8rem;
         color: snow;
         position: fixed;
         top: 2rem;
@@ -1233,14 +1236,26 @@ body {
     font-weight: 300; }
   .newRecepie__form {
     margin: 1rem 1rem 5rem 1rem;
-    width: 40%; }
+    width: 70%;
+    height: 50vh;
+    position: relative; }
     @media only screen and (max-width: 50em) {
       .newRecepie__form {
-        width: 60%; } }
+        width: 100%;
+        height: 40vh; } }
     .newRecepie__form--area {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
-      margin: 2rem 0; }
+      margin: 2rem 0;
+      background-color: snow;
+      padding: 1rem;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll; }
     .newRecepie__form--label {
       text-align: center;
       font-size: 2.5rem;
@@ -1248,9 +1263,26 @@ body {
       font-weight: 300;
       letter-spacing: 0.1rem;
       color: #73260D;
-      text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3); }
+      text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+      margin-top: 2rem; }
+    .newRecepie__form--next {
+      background-color: #73260D;
+      display: inline-block;
+      width: 10rem;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 1.6rem;
+      border-radius: 3px;
+      font-family: "Poiret One", cursive;
+      color: snow;
+      margin-top: 2rem;
+      position: fixed;
+      right: 3rem;
+      bottom: 3rem; }
     .newRecepie__form--input {
       height: 3rem;
+      width: 50%;
+      margin: 2rem auto;
       border: none;
       background-color: #cfe8bd;
       box-shadow: 0 1rem 1rem rgba(207, 232, 189, 0.2); }
@@ -1274,7 +1306,8 @@ body {
         transform: translateY(0); }
     .newRecepie__form--textarea {
       height: 10rem;
-      width: 120%;
+      width: 70%;
+      margin: 0 auto;
       transform: translateX(-8%);
       border: none;
       background-color: #cfe8bd;
@@ -1316,8 +1349,8 @@ body {
         width: 3.5rem;
         height: 3.5rem;
         position: absolute;
-        right: -3.5rem;
-        top: -2rem;
+        right: 3.5rem;
+        top: 0rem;
         border-radius: 50%;
         fill: #451708;
         cursor: pointer;
@@ -1327,7 +1360,7 @@ body {
           fill: #73260D; }
     .newRecepie__form--submit {
       display: block;
-      width: 100%;
+      width: 80%;
       margin: 0 auto;
       border: none;
       background-color: #451708;
@@ -1340,6 +1373,8 @@ body {
       font-weight: 300;
       letter-spacing: 0.1rem;
       margin-top: 5rem;
+      position: relative;
+      z-index: 10;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
       transition: transform .2s; }
       .newRecepie__form--submit:hover {
@@ -1401,6 +1436,18 @@ body {
 
 #output {
   width: 20rem; }
+
+#areaName {
+  z-index: 200; }
+
+#areaPhoto {
+  z-index: 180; }
+
+#areaIngridients {
+  z-index: 160; }
+
+#areaPreparation {
+  z-index: 140; }
 
 .footer {
   padding: .1rem 5rem;
@@ -1492,7 +1539,7 @@ body {
   display: flex;
   padding-top: 7rem;
   position: relative; }
-  @media only screen and (max-width: 62.5em) {
+  @media only screen and (max-width: 75em) {
     .calendar {
       flex-direction: column; } }
   .calendar__header {
@@ -1622,10 +1669,10 @@ body {
     .calendar__event__box {
       position: absolute;
       top: 5vh;
-      left: 10vw;
+      left: 0;
       background-color: rgba(27, 99, 43, 0.9);
       color: snow;
-      width: 80vw;
+      width: 100vw;
       height: 90vh;
       overflow-y: scroll;
       overflow-x: hidden; }
@@ -1641,15 +1688,16 @@ body {
           .calendar__event__box h1 {
             font-size: 2.5rem; } }
       .calendar__event__box__current {
-        width: 70%;
-        margin: 0 auto;
+        width: 80%;
+        margin: 0 10rem;
         background-color: rgba(0, 0, 0, 0.7);
         padding: 2rem 0;
         display: flex;
         position: relative; }
         @media only screen and (max-width: 37.5em) {
           .calendar__event__box__current {
-            margin-right: 0; } }
+            margin-right: 1rem;
+            margin-left: 8rem; } }
         .calendar__event__box__current--doos {
           position: absolute;
           bottom: 0;
@@ -1727,7 +1775,7 @@ body {
           margin: 0 auto;
           box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
           border-radius: 2px;
-          width: 80%;
+          width: 50%;
           padding: 1rem 2rem; }
           .calendar__event__box__add--description:focus {
             outline: none; }
@@ -1770,7 +1818,8 @@ body {
   .calendar__comming {
     padding: 1rem 2rem;
     border-left: 1px solid rgba(115, 38, 13, 0.3);
-    margin-top: 2rem; }
+    margin-top: 2rem;
+    min-width: 40rem; }
     .calendar__comming--header {
       font-size: 2.5rem;
       font-family: "Rajdhani", sans-serif;
@@ -1779,7 +1828,7 @@ body {
       text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.2);
       text-align: center;
       margin-bottom: 1rem;
-      margin-top: 5rem; }
+      margin-top: 1rem; }
       @media only screen and (max-width: 37.5em) {
         .calendar__comming--header {
           font-size: 1.8rem; } }
@@ -1790,7 +1839,7 @@ body {
       height: 65%;
       overflow-y: scroll; }
       .calendar__comming__box--each {
-        flex: 0 0 33.3332%;
+        flex: 0 0 60%;
         margin: 1rem;
         padding: 2rem;
         background-color: #7CAA5A;
@@ -2108,7 +2157,7 @@ body {
     .member__box button {
       display: block;
       width: 50%;
-      margin: 5rem auto;
+      margin: 2.5rem auto;
       border: none;
       background-color: #B57D1F;
       padding: 2rem;

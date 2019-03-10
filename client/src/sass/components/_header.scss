@@ -29,7 +29,7 @@
 			bottom:0;
 			left:0;
 			width:100%;
-			background-image:linear-gradient(to right, black,lighten(#051301,5%));
+			background-image:linear-gradient(to right, rgb(0,10,0),rgb(0,10,0));
 			padding:1rem;
 			z-index: 99;
 			height:15vh;
@@ -113,28 +113,40 @@
 		
 	}
 	&__login{
-		display: block;
+		//display: block;
 		
 		align-self: center;
-		padding:.8rem 2.5rem;
+		padding:.8rem 1.5rem;
 		border-radius: .3rem;
 		text-decoration: none;
-		background-color: $color-brown;
+		background-color:$color-brown-dark;
 		font-family: $font-rajdhani;
 		font-weight: 500;
 		font-size: 2rem;
-		color:$color-secondary-light-2;
+		color:snow;
 		letter-spacing: .1rem;
 		text-align: center;
+		display:flex;
+		align-items: center;
+		justify-content: center;
+
+
+		svg{
+			width:1.8rem;
+			height:1.8rem;
+			fill:snow;
+			
+
+		}
 		
 		&--width{
-			width:90%;
+			//width:90%;
 		}
 		@include btn-shadow;
 		@include respond(m){
 			width:initial;
-			padding:.8rem 2rem;
-			background-image:linear-gradient(to right, $color-primary,lighten(#051301,10%));
+			padding:.3rem .8rem;
+			
 			color:snow;
 			position:fixed;
 			top:2rem;

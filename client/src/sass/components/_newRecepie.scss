@@ -6,6 +6,7 @@
 	background-color: rgba($color-secondary,.1);
 	padding:2rem 1rem 5rem 1rem;
 
+
 	&__header {
 		font-size: 5rem;
 		color: $color-brown;
@@ -16,16 +17,28 @@
 
 	&__form {
 		margin: 1rem 1rem 5rem 1rem;
-		width: 40%;
-
+		width: 70%;
+		height:50vh;
+		position:relative;
+		
 		@include respond(m) {
-			width: 60%;
+			width: 100%;
+			height:40vh;
 		}
 
 		&--area {
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
 			display: flex;
 			flex-direction: column;
 			margin: 2rem 0;
+			background-color: snow;
+			padding:1rem;
+			width: 100%;
+			height:100%;
+			overflow-y:scroll;
 		}
 
 		&--label {
@@ -36,10 +49,29 @@
 			letter-spacing: 0.1rem;
 			color: $color-brown;
 			text-shadow: 0.2rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
+			margin-top: 2rem;
+		}
+		&--next{
+			background-color: $color-brown;
+			display: inline-block;
+			width:10rem;
+			padding:1rem 0;
+			text-align: center;
+			font-size: 1.6rem;
+			border-radius: 3px;
+			font-family: $font-portrait;
+			color:snow;
+			margin-top: 2rem;
+			position:fixed;
+			right:3rem;
+			bottom: 3rem;
+
 		}
 
 		&--input {
 			height: 3rem;
+			width:50%;
+			margin:2rem auto;
 			border: none;
 			background-color: #cfe8bd;
 			box-shadow: 0 1rem 1rem rgba(#cfe8bd, 0.2);
@@ -72,7 +104,8 @@
 		}
 		&--textarea {
 			height: 10rem;
-			width: 120%;
+			width: 70%;
+			margin:0 auto;
 			transform: translateX(-8%);
 			border: none;
 			background-color: #cfe8bd;
@@ -125,8 +158,8 @@
 				width: 3.5rem;
 				height: 3.5rem;
 				position: absolute;
-				right: -3.5rem;
-				top: -2rem;
+				right: 3.5rem;
+				top: 0rem;
 				border-radius: 50%;
 				fill: $color-brown-dark;
 				cursor: pointer;
@@ -140,7 +173,7 @@
 		}
 		&--submit {
 			display: block;
-			width: 100%;
+			width: 80%;
 			margin: 0 auto;
 			border: none;
 			background-color: $color-brown-dark;
@@ -153,6 +186,8 @@
 			font-weight: 300;
 			letter-spacing: 0.1rem;
 			margin-top: 5rem;
+			position:relative;
+			z-index: 10;
 			@include btn-shadow;
 		}
 	}
@@ -232,4 +267,20 @@
 #output{
 	width:20rem;
 
+}
+
+
+//==========================Layout NewRecepie
+
+#areaName{
+	z-index: 200;
+}
+#areaPhoto{
+	z-index: 180;
+}
+#areaIngridients{
+	z-index: 160;
+}
+#areaPreparation{
+	z-index: 140;
 }
