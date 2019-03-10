@@ -89,12 +89,17 @@
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-
+			
+			ul{
+				max-height:100%;
+				overflow-y: scroll;
+			}
 			ul>li{
 				list-style: none;
 				text-transform: uppercase;
 				color:snow;
 				font-size: 2rem;
+				object-position: top;
 			}
 
 			@include respond(l) {

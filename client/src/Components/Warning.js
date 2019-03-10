@@ -3,12 +3,11 @@ import React from "react";
 class Warning extends React.Component {
 	
 
-	removeEvent = (year,month,day,time,description) => {
-
+	removeEvent = async (year,month,day,time,description) => {
 		const toDelete = {
 			year,month,day,time,description
 		}
-		fetch("/api/remove_event", {
+		await fetch("/api/remove_event", {
 			method: "POST",
 			credentials: "include",
 			headers: {

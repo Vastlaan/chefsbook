@@ -10,8 +10,8 @@ class NewRecepie extends React.Component {
 		preparation: "",
 		url: "",
 		display: "none",
-		displayPhoto:'none',
-		blackout:'none'
+		displayPhoto: "none",
+		blackout: "none"
 	};
 
 	inputChange(event) {
@@ -35,11 +35,11 @@ class NewRecepie extends React.Component {
 		});
 	}
 
-	submitForm = async (event) => {
+	submitForm = async event => {
 		event.preventDefault();
 		this.setState({
-			blackout:'block'
-		})
+			blackout: "block"
+		});
 		//console.log(this.state.name, this.state.ingridients, this.state.preparation)
 		const data = new FormData();
 		data.append("uploadFile", this.state.photo);
@@ -47,9 +47,9 @@ class NewRecepie extends React.Component {
 			method: "POST",
 			credentials: "include",
 			body: data
-		})
-		const fileURL = await fileName.json()
-		
+		});
+		const fileURL = await fileName.json();
+
 		await this.setState({ url: fileURL });
 
 		const recept = {
@@ -78,25 +78,23 @@ class NewRecepie extends React.Component {
 				});
 				console.log(document.querySelectorAll("input"));
 			})
-		.catch(err => console.log(err));
-			
+			.catch(err => console.log(err));
 
 		this.setState({
-			blackout:'none'
-		})
+			blackout: "none"
+		});
 	};
 
 	addPhoto(event) {
 		const image = document.querySelector("#file").files[0];
-		var output = document.querySelector('#output')
-		if(image instanceof File){
+		var output = document.querySelector("#output");
+		if (image instanceof File) {
 			this.setState({
-				displayPhoto:'block'
-			})
+				displayPhoto: "block"
+			});
 			output.src = URL.createObjectURL(image);
-
 		}
-   		
+
 		this.setState({
 			photo: image
 		});
@@ -106,6 +104,7 @@ class NewRecepie extends React.Component {
 		this.setState({
 			display: "none"
 		});
+		window.location.reload();
 	};
 	render() {
 		this.inputChange = this.inputChange.bind(this);
@@ -118,8 +117,10 @@ class NewRecepie extends React.Component {
 			<div className="newRecepie">
 				<h1 className="newRecepie__header">Create new recipe</h1>
 				<form className="newRecepie__form" onSubmit={this.submitForm}>
-				{/*areaName*/}
-					<div id='areaName' className="newRecepie__form--area">
+					{/*areaName*/}
+					<div id="areaName" className="newRecepie__form--area">
+						<h1>Step 1.</h1>
+						<h3>Enter a product's name.</h3>
 						<label className="newRecepie__form--label">
 							Product's name
 						</label>
@@ -127,15 +128,29 @@ class NewRecepie extends React.Component {
 							name="name"
 							type="text"
 							className="newRecepie__form--input"
-							id='name'
+							id="name"
 							value={this.state.name}
 							onChange={this.inputChange}
 							required
 						/>
-						<p className="newRecepie__form--next" id='next_area--1' onClick={()=>document.querySelector('#name').checkValidity()?document.querySelector('#areaName').style.display="none":null }>Next</p>
+						<p
+							className="newRecepie__form--next"
+							id="next_area--1"
+							onClick={() =>
+								document.querySelector("#name").checkValidity()
+									? (document.querySelector(
+											"#areaName"
+									  ).style.display = "none")
+									: null
+							}
+						>
+							Next
+						</p>
 					</div>
-				{/*areaPhoto*/}
-					<div id='areaPhoto' className="newRecepie__form--area">
+					{/*areaPhoto*/}
+					<div id="areaPhoto" className="newRecepie__form--area">
+						<h1>Step 2.</h1>
+						<h3>Add a photo of your dish.</h3>
 						<label className="newRecepie__form--label">Photo</label>
 						<div>
 							<input
@@ -155,11 +170,16 @@ class NewRecepie extends React.Component {
 								</svg>
 								<span>Choose file to upload</span>
 								<span>Only format JPG/JPEG allowed</span>
-								<img id="output" alt='food' style={{display: `${this.state.displayPhoto}`}}/>
+								<img
+									id="output"
+									alt="food"
+									style={{
+										display: `${this.state.displayPhoto}`
+									}}
+								/>
 								{this.state.photo === null ||
 								this.state.photo === undefined ? null : (
 									<div>
-										
 										<span>
 											{" "}
 											You added a photo:{" "}
@@ -169,14 +189,56 @@ class NewRecepie extends React.Component {
 								)}
 							</label>
 						</div>
-						<p className="newRecepie__form--next" id='next_area--2' onClick={()=>this.state.photo === null ||
-								this.state.photo === undefined?null :document.querySelector('#areaPhoto').style.display="none" }>Next</p>
+						<p
+							className="newRecepie__form--next"
+							id="next_area--2"
+							onClick={() =>
+								this.state.photo === null ||
+								this.state.photo === undefined
+									? null
+									: (document.querySelector(
+											"#areaPhoto"
+									  ).style.display = "none")
+							}
+						>
+							Next
+						</p>
 					</div>
-				{/*areaIngridients*/}
-					<div id='areaIngridients' className="newRecepie__form--area">
+					{/*areaIngridients*/}
+					<div
+						id="areaIngridients"
+						className="newRecepie__form--area"
+					>
+						<h1>Step 3.</h1>
+						<h3>Add the necessary ingredients.</h3>
 						<label className="newRecepie__form--label">
-							Ingidients
+							Ingredients
 						</label>
+						<div
+							className="newRecepie__form--add"
+							onClick={this.appendIngridient}
+						>
+							<svg className="newRecepie__form--add-icon">
+								<use xlinkHref={`${Icons}#icon-add_circle`} />
+							</svg>
+						</div>
+						<input
+							name="ingridients"
+							type="text"
+							className="newRecepie__form--input"
+							id="ingridient"
+						/>
+						<p
+							className="newRecepie__form--next"
+							id="next_area--3"
+							onClick={() =>
+								(document.querySelector(
+									"#areaIngridients"
+								).style.display = "none")
+							}
+						>
+							Next
+						</p>
 						{this.state.ingridients.map((element, i) => {
 							return (
 								<div
@@ -196,43 +258,62 @@ class NewRecepie extends React.Component {
 								</div>
 							);
 						})}
-						<div
-							className="newRecepie__form--add"
-							onClick={this.appendIngridient}
-						>
-							<svg className="newRecepie__form--add-icon">
-								<use xlinkHref={`${Icons}#icon-add_circle`} />
-							</svg>
-						</div>
-						<input
-							name="ingridients"
-							type="text"
-							className="newRecepie__form--input"
-							id="ingridient"
-						/>
-						<p className="newRecepie__form--next" id='next_area--3' onClick={()=>document.querySelector('#areaIngridients').style.display="none" }>Next</p>
 					</div>
-				{/*areaPreparation*/}
-					<div id='areaPreparation' className="newRecepie__form--area">
+					{/*areaPreparation*/}
+					<div
+						id="areaPreparation"
+						className="newRecepie__form--area"
+					>
+						<h1>Step 4.</h1>
+						<h3>Describe the preparation process.</h3>
 						<label className="newRecepie__form--label">
 							Preparation
 						</label>
 						<textarea
 							name="preparation"
 							type="text"
-							id='prep'
+							id="prep"
 							className="newRecepie__form--textarea"
 							value={this.state.preparation}
 							onChange={this.inputChange}
 							required
 						/>
-						<p className="newRecepie__form--next" id='next_area--4' onClick={()=>document.querySelector('#prep').checkValidity()?document.querySelector('#areaPreparation').style.display="none":null }>Next</p>
+						<p
+							className="newRecepie__form--next"
+							id="next_area--4"
+							onClick={() =>
+								document.querySelector("#prep").checkValidity()
+									? (document.querySelector(
+											"#areaPreparation"
+									  ).style.display = "none")
+									: null
+							}
+						>
+							Next
+						</p>
 					</div>
-				{/*end of shuffle*/}
-					<button type="submit" className="newRecepie__form--submit">
-						{" "}
-						Submit{" "}
-					</button>
+					{/*end of shuffle*/}
+					<div id="areaSubmit" className="newRecepie__form--area">
+						<h2>Name: {this.state.name}</h2>
+						<h2>
+							Ingredients:{" "}
+							{this.state.ingridients.map(each => {
+								return <span>{each}</span>;
+							})}
+						</h2>
+						<h2>Preparation: {this.state.preparation}</h2>
+						<h2>
+							Photo:{" "}
+							{this.state.photo ? this.state.photo.name : null}
+						</h2>
+						<button
+							type="submit"
+							className="newRecepie__form--submit"
+						>
+							{" "}
+							Submit{" "}
+						</button>
+					</div>
 				</form>
 
 				<div
@@ -249,10 +330,12 @@ class NewRecepie extends React.Component {
 						You sucessfully updated new Recipe!
 					</h1>
 				</div>
-				<div className='blackout' style={{display:`${this.state.blackout}`}}>
-					
+				<div
+					className="blackout"
+					style={{ display: `${this.state.blackout}` }}
+				>
 					<svg>
-						<use xlinkHref={`${Icons2}#refresh`}></use>
+						<use xlinkHref={`${Icons2}#refresh`} />
 					</svg>
 				</div>
 			</div>

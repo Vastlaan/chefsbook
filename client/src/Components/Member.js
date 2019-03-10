@@ -4,11 +4,11 @@ import { closeMemberAction } from "../actions";
 
 class Member extends React.Component {
 
-	deleteMember = (name) =>{
+	deleteMember = async (name) =>{
 
 		const nameObj = {name:name}
 
-		fetch('/api/delete_member',{
+		await fetch('/api/delete_member',{
 			method: "POST",
 			credentials: "include",
 			headers: {
