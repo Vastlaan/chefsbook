@@ -178,9 +178,15 @@ class NewRecepie extends React.Component {
 									}}
 								/>
 								{this.state.photo === null ||
-								this.state.photo === undefined ? null : (
+								this.state.photo === undefined ? (
 									<div>
-										<span>
+										<span style={{color: 'red'}}>
+											You didn't add a photo yet!
+										</span>
+									</div>
+									) : (
+									<div>
+										<span style={{color: 'green'}}>
 											{" "}
 											You added a photo:{" "}
 											{this.state.photo.name}
@@ -228,17 +234,7 @@ class NewRecepie extends React.Component {
 							className="newRecepie__form--input"
 							id="ingridient"
 						/>
-						<p
-							className="newRecepie__form--next"
-							id="next_area--3"
-							onClick={() =>
-								(document.querySelector(
-									"#areaIngridients"
-								).style.display = "none")
-							}
-						>
-							Next
-						</p>
+						
 						{this.state.ingridients.map((element, i) => {
 							return (
 								<div
@@ -252,12 +248,24 @@ class NewRecepie extends React.Component {
 										}
 									>
 										<use
-											xlinkHref={`${Icons}#icon-delete`}
+											xlinkHref={`${Icons}#icon-close`}
 										/>
 									</svg>
 								</div>
 							);
 						})}
+
+						<p
+							className="newRecepie__form--next"
+							id="next_area--3"
+							onClick={() =>
+								(document.querySelector(
+									"#areaIngridients"
+								).style.display = "none")
+							}
+						>
+							Next
+						</p>
 					</div>
 					{/*areaPreparation*/}
 					<div
@@ -297,8 +305,8 @@ class NewRecepie extends React.Component {
 						<h2>Name: {this.state.name}</h2>
 						<h2>
 							Ingredients:{" "}
-							{this.state.ingridients.map(each => {
-								return <span>{each}</span>;
+							{this.state.ingridients.map((each,i) => {
+								return <span key={i+99*0.121333}>{each}, </span>;
 							})}
 						</h2>
 						<h2>Preparation: {this.state.preparation}</h2>

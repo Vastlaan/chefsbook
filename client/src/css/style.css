@@ -853,10 +853,10 @@ body {
           padding: 1rem 3rem; } }
   .schedule__add {
     position: fixed;
-    top: 5%;
+    top: 0;
     left: 0;
-    height: 90%;
-    width: 70%;
+    height: 100%;
+    width: 100%;
     background-color: #1b632b;
     padding: 2rem;
     animation: comeLeft .4s linear;
@@ -1240,7 +1240,7 @@ body {
   .newRecepie__form {
     margin: 1rem 1rem 5rem 1rem;
     width: 70%;
-    height: 50vh;
+    height: 70vh;
     position: relative; }
     @media only screen and (max-width: 50em) {
       .newRecepie__form {
@@ -1253,7 +1253,7 @@ body {
       transform: translate(-50%, -50%);
       display: flex;
       flex-direction: column;
-      margin: 2rem 0;
+      margin: 1rem 0;
       background-color: #f0f0f0;
       padding: 1rem;
       width: 100%;
@@ -1286,16 +1286,14 @@ body {
       background-color: #73260D;
       display: inline-block;
       width: 10rem;
+      margin-left: auto;
+      margin-top: 1rem;
       padding: 1rem 0;
       text-align: center;
       font-size: 1.6rem;
       border-radius: 3px;
       font-family: "Poiret One", cursive;
       color: snow;
-      margin-top: 2rem;
-      position: fixed;
-      right: 3rem;
-      bottom: 3rem;
       cursor: pointer; }
     .newRecepie__form--input {
       min-height: 3rem;
@@ -1323,7 +1321,7 @@ body {
         fill: #73260D;
         transform: translateY(0); }
     .newRecepie__form--textarea {
-      height: 10rem;
+      min-height: 10rem;
       width: 70%;
       margin: 2rem auto;
       border: none;
@@ -1366,8 +1364,8 @@ body {
         width: 3.5rem;
         height: 3.5rem;
         position: absolute;
-        right: 3.5rem;
-        top: 0rem;
+        right: 10rem;
+        top: 1.5rem;
         border-radius: 50%;
         fill: #451708;
         cursor: pointer;
@@ -1375,6 +1373,9 @@ body {
         .newRecepie__form--add-icon:hover {
           transform: translateY(-0.2rem);
           fill: #73260D; }
+        @media only screen and (max-width: 62.5em) {
+          .newRecepie__form--add-icon {
+            right: 5rem; } }
     .newRecepie__form--submit {
       display: block;
       width: 80%;
@@ -1402,13 +1403,13 @@ body {
         box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
   .newRecepie__success {
     position: fixed;
-    top: 25%;
+    top: 20%;
     left: 0;
     width: 100%;
-    height: 50%;
+    height: 60%;
     z-index: 1002;
     animation: comeRight .5s;
-    background-image: linear-gradient(to top, rgba(124, 170, 90, 0.8), #1B632B); }
+    background-image: linear-gradient(to top, #7caa5a, #1B632B); }
     .newRecepie__success--icon {
       position: absolute;
       top: 0;

@@ -233,10 +233,10 @@
 
 	&__add{
 		position:fixed;
-		top:5%;
+		top:0;
 		left:0;
-		height:90%;
-		width:70%;
+		height:100%;
+		width:100%;
 		background-color: rgba($color-primary-dark,1);
 		padding:2rem;
 		animation:comeLeft .4s linear;
