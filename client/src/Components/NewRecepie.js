@@ -104,7 +104,7 @@ class NewRecepie extends React.Component {
 		this.setState({
 			display: "none"
 		});
-		window.location.reload();
+		window.location.href='/recipes';
 	};
 	render() {
 		this.inputChange = this.inputChange.bind(this);
@@ -181,7 +181,7 @@ class NewRecepie extends React.Component {
 								this.state.photo === undefined ? (
 									<div>
 										<span style={{color: 'red'}}>
-											You didn't add a photo yet!
+											You haven't added a photo yet!
 										</span>
 									</div>
 									) : (
@@ -302,16 +302,16 @@ class NewRecepie extends React.Component {
 					</div>
 					{/*end of shuffle*/}
 					<div id="areaSubmit" className="newRecepie__form--area">
-						<h2>Name: {this.state.name}</h2>
+						<h2><span className='newRecepie__form--area--summary'>Name: </span><br/>{this.state.name}</h2>
 						<h2>
-							Ingredients:{" "}
+							<span className='newRecepie__form--area--summary'>Ingredients: </span><br/> {" "}
 							{this.state.ingridients.map((each,i) => {
 								return <span key={i+99*0.121333}>{each}, </span>;
 							})}
 						</h2>
-						<h2>Preparation: {this.state.preparation}</h2>
+						<h2><span className='newRecepie__form--area--summary'>Preparation: </span><br/>{this.state.preparation}</h2>
 						<h2>
-							Photo:{" "}
+							<span className='newRecepie__form--area--summary'>Photo:</span><br/>{" "}
 							{this.state.photo ? this.state.photo.name : null}
 						</h2>
 						<button

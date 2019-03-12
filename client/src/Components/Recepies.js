@@ -3,6 +3,7 @@ import Icons from "../img/sprite.svg";
 import { connect } from "react-redux";
 import { fetchRecepies } from "../actions";
 import WarningRecepies from "./WarningRecepies";
+import Delete from "../img/delete.svg";
 
 class Recepies extends React.Component {
 	state = {
@@ -79,7 +80,7 @@ class Recepies extends React.Component {
 					{recept.name ||recept.name==='' ? (
 						<div className="recepies__hidden">
 							<div className="recepies__hidden-frame">
-								<svg
+								<div
 									className="recepies__hidden-close-svg-2"
 									onClick={() =>
 										this.removeRecepie(
@@ -90,17 +91,24 @@ class Recepies extends React.Component {
 										)
 									}
 								>
-									<use xlinkHref={`${Icons}#icon-bin`} />
-								</svg>
-								<svg
+									<svg>
+										<use xlinkHref={`${Delete}#Capa_1`} />
+									</svg>
+									<span>Delete</span>
+								</div>
+								
+								<div
 									className="recepies__hidden-close-svg"
 									id="close"
 									onClick={() =>
 										this.setState({ display: "none" })
 									}
 								>
-									<use xlinkHref={`${Icons}#icon-close`} />
-								</svg>
+									<svg>
+										<use xlinkHref={`${Icons}#icon-close`} />
+									</svg>
+									<span>Close</span>
+								</div>
 
 								<p className="recepies__hidden-name">
 									{recept.name}

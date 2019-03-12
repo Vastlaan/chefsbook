@@ -4,6 +4,7 @@ import { closeMemberAction } from "../actions";
 
 class Member extends React.Component {
 
+
 	deleteMember = async (name) =>{
 
 		const nameObj = {name:name}
@@ -23,6 +24,9 @@ class Member extends React.Component {
 		.catch(err => console.log(err))
 
 		window.location.reload()
+	}
+	viewSchedule = ( weekday,hours ) => {
+		console.log(weekday,hours)
 	}
 
 	render() {
@@ -45,7 +49,7 @@ class Member extends React.Component {
 						return(
 							<div key={i*25.33} className="member__box--cell">
 								<h3>{weekdays[i]}</h3>
-								<p>{each}</p>
+								<p onClick={()=>this.viewSchedule(weekdays[i],each)}>{each}</p>
 							</div>
 							)
 					})}
