@@ -246,7 +246,6 @@ body {
       .header__login {
         width: initial;
         padding: .3rem .8rem;
-        color: snow;
         position: fixed;
         top: 2rem;
         right: 2rem;
@@ -1677,7 +1676,7 @@ body {
         background-color: #990000; }
       .calendar__table__weekday--yellow {
         position: relative; }
-        .calendar__table__weekday--yellow:after {
+        .calendar__table__weekday--yellow::after {
           position: absolute;
           top: 1rem;
           right: 1rem;
@@ -1691,7 +1690,7 @@ body {
           width: 1.5rem;
           height: 1.5rem; }
           @media only screen and (max-width: 37.5em) {
-            .calendar__table__weekday--yellow:after {
+            .calendar__table__weekday--yellow::after {
               width: 0.5rem;
               height: 0.5rem; } }
     .calendar__table__weekday-0 {
@@ -2324,3 +2323,125 @@ body {
         background-image: none;
         background-color: #a4a4a4;
         height: 30rem; } }
+
+.change {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #73260D;
+  width: 80%;
+  height: 75%;
+  overflow-y: scroll; }
+  .change__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: snow;
+    padding: 0 1rem;
+    border-radius: 3px;
+    font-size: 1.8rem;
+    font-family: "Poiret One", cursive, sans-serif;
+    letter-spacing: .2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all .2s; }
+    .change__close:hover {
+      background-color: #ffe1e1; }
+    .change__close svg {
+      width: 3rem;
+      height: 3rem;
+      fill: black;
+      transform: translateY(0.3rem); }
+  .change__member {
+    font-size: 3.2rem;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    color: snow;
+    text-align: center;
+    margin-top: 3.5rem; }
+  .change__week {
+    color: #7CAA5A;
+    font-family: "Poiret One", cursive;
+    font-size: 2.5rem;
+    text-align: center; }
+    @media only screen and (max-width: 50em) {
+      .change__week {
+        font-size: 2rem; } }
+    .change__week span {
+      color: snow; }
+  .change__hours {
+    color: #7CAA5A;
+    font-family: "Poiret One", cursive;
+    font-size: 2.5rem;
+    text-align: center; }
+    @media only screen and (max-width: 50em) {
+      .change__hours {
+        font-size: 2rem; } }
+    .change__hours span {
+      color: snow; }
+  .change__question {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #7CAA5A;
+    text-align: center;
+    font-family: "Poiret One", cursive;
+    font-size: 2.5rem;
+    color: #7CAA5A; }
+    @media only screen and (max-width: 50em) {
+      .change__question {
+        font-size: 2rem; } }
+  .change__answer {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    margin: 0 auto; }
+    @media only screen and (max-width: 50em) {
+      .change__answer {
+        width: 100%; } }
+    .change__answer label {
+      font-family: "Poiret One", cursive;
+      font-size: 1.5rem;
+      color: snow; }
+  .change__new {
+    margin-top: 1rem;
+    text-align: center;
+    font-family: "Poiret One", cursive;
+    font-size: 2rem;
+    color: #7CAA5A; }
+    .change__new span {
+      display: block;
+      margin-top: 1rem; }
+    .change__new input {
+      border: none;
+      margin-left: 1rem; }
+      .change__new input:focus {
+        outline: none; }
+    .change__new label {
+      color: snow; }
+  .change__submit {
+    display: inline-block;
+    margin-top: 1rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2.5rem;
+    background-color: #7CAA5A;
+    font-size: 2.2rem;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    letter-spacing: .1rem;
+    color: snow;
+    text-align: center;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 3px; }
+    .change__submit:hover {
+      transform: translate(-50%, -3px); }
+    @media only screen and (max-width: 50em) {
+      .change__submit {
+        padding: 1rem;
+        font-size: 1.8rem; } }

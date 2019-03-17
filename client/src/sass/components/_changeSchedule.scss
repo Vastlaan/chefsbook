@@ -1,0 +1,182 @@
+.change{
+	display:block;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	background-color: $color-brown;
+	width:80%;
+	height:75%;
+	overflow-y:scroll;
+
+
+
+	&__close{
+		position:absolute;
+		top:1rem;
+		right:1rem;
+		background-color: snow;
+		padding: 0 1rem;
+	    border-radius: 3px;
+	    font-size: 1.8rem;
+	    font-family: $font-portrait, sans-serif;
+	    letter-spacing: .2rem;
+	    font-weight: 800;
+	    cursor: pointer;
+	    transition:all .2s;
+
+	    &:hover{
+	    	background-color: darken(snow,5%);
+	    }
+
+	    svg{
+	    	width:3rem;
+	    	height:3rem;
+	    	fill:black;
+	    	transform:translateY(.3rem);
+	    }
+	}
+
+	&__member{
+		font-size: 3.2rem;
+		font-family: $font-rajdhani;
+		font-weight: 300;
+		letter-spacing: .1rem;
+		color:snow;
+		text-align: center;
+		margin-top: 3.5rem;
+	}
+
+	&__week{
+		color:$color-primary;
+		font-family: $font-portrait;
+		font-size: 2.5rem;
+		text-align: center;
+		@include respond(m){
+			font-size: 2rem;
+		}
+
+		span{
+			color:snow;
+		}
+	}
+
+	&__weekday{
+
+	}
+
+	&__hours{
+		color:$color-primary;
+		font-family: $font-portrait;
+		font-size: 2.5rem;
+		text-align: center;
+		@include respond(m){
+			font-size: 2rem;
+		}
+		span{
+			color:snow;
+		}
+	}
+	
+	&__question{
+		margin-top: 2rem;
+		padding-top: 1rem;
+		border-top: 1px solid $color-primary;
+		text-align: center;
+		font-family: $font-portrait;
+		font-size: 2.5rem;
+		color:$color-primary;
+
+		@include respond(m){
+			font-size: 2rem;
+		}
+	}
+
+	&__answer{
+
+		display:flex;
+		justify-content: space-between;
+		width:30%;
+		margin:0 auto;
+
+		@include respond(m){
+			width:100%;
+		}
+
+		label{
+			font-family: $font-portrait;
+			font-size: 1.5rem;
+			color:snow;
+		}
+
+		input{
+
+		}
+	}
+
+	&__new{
+		margin-top: 1rem;
+		text-align: center;
+		font-family: $font-portrait;
+		font-size: 2rem;
+		color:$color-primary;
+
+		p{
+			
+
+		}
+
+		span{
+			display:block;
+			margin-top: 1rem;
+		}
+
+		input{
+			border:none;
+			margin-left: 1rem;
+
+			&:focus{
+				outline:none;
+			}
+
+		}
+
+		label{
+			color:snow;
+		}
+
+	}
+
+	&__submit{
+		display:inline-block;
+		margin-top: 1rem;
+		position:absolute;
+		left:50%;
+		transform:translateX(-50%);
+		padding:1rem 2.5rem;
+		background-color: $color-primary;
+		font-size: 2.2rem;
+		font-family: $font-rajdhani;
+		font-weight: 300;
+		letter-spacing: .1rem;
+		color:snow;
+		text-align: center;
+		box-shadow: 0 1rem 1rem rgba(0,0,0,.3);
+		cursor:pointer;
+		transition: all .2s;
+		border-radius: 3px;
+
+		&:hover{
+			transform:translate(-50%, -3px);
+		}
+
+		@include respond(m){
+			padding:1rem;
+			font-size: 1.8rem;
+		}
+
+
+
+	}
+
+}

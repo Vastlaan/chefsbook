@@ -62,6 +62,10 @@ passport.use('local', new LocalStrategy(
   function(req, email, password, done){
     User.findOne({email:email})
 		.then((user)=>{
+
+			if(user.googleId){
+				return done(null,false, 'Google User')
+			}
 			if(user){
 				const isValid = bcrypt.compareSync(password, user.hash);
 				if(isValid){

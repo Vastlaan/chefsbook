@@ -90,6 +90,7 @@ module.exports = app => {
 	app.post("/api/login", passport.authenticate("local"), (req, res) => {
 		User.findOne({ email: req.body.email })
 			.then(user => {
+
 				if (user) {
 					const isValid = bcrypt.compareSync(
 						req.body.password,
@@ -101,7 +102,7 @@ module.exports = app => {
 						return res.status(400).json("Wrong password!");
 					}
 				} else {
-					return res.status(400).json("Ups, something went wrong!");
+					return res.status(400).json("Ups, something went wrong!!");
 				}
 			})
 			.catch(err => {

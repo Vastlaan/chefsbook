@@ -5,16 +5,16 @@ import Icons from "../img/sprite.svg";
 import ScheduleAdd from "./ScheduleAdd";
 import { openWindowAction } from "../actions";
 import { openMemberAction } from "../actions";
-import Member from './Member'
+import Member from "./Member";
 
 class Schedule extends React.Component {
 	state = {
 		dateContext: moment(),
 		schedule: [],
 		popup: "none",
-		member:'',
-		displayMember:'none',
-		scheduleMember:[]
+		member: "",
+		displayMember: "none",
+		scheduleMember: []
 	};
 
 	componentWillMount() {
@@ -54,13 +54,12 @@ class Schedule extends React.Component {
 			.catch(err => console.log(err));
 	};
 
-	member = (name) =>{
-
-		this.props.openMemberAction()
+	member = name => {
+		this.props.openMemberAction();
 		this.setState({
 			member: name
-		})
-		
+		});
+
 		if (name) {
 			const nameObj = { name: name };
 			fetch("/api/member_fetch", {
@@ -79,7 +78,7 @@ class Schedule extends React.Component {
 				)
 				.catch(err => console.log(err));
 		}
-	}
+	};
 
 	render() {
 		const { dateContext, schedule } = this.state;
@@ -180,7 +179,12 @@ class Schedule extends React.Component {
 				</div>
 
 				<ScheduleAdd popup={this.state.popup} />
-				<Member member={this.state.member}  displayMember={this.state.displayMember} scheduleMember={this.state.scheduleMember}/>
+				<Member
+					member={this.state.member}
+					displayMember={this.state.displayMember}
+					scheduleMember={this.state.scheduleMember}
+					week={currentWeek}
+				/>
 			</div>
 		);
 	}
