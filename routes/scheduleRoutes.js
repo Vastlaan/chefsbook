@@ -107,14 +107,13 @@ module.exports = (app) =>{
 	})	
 
 	app.post('/api/change_schedule', (req, res)=>{
-		
 		let weekExist = false
-
 		User.findOne({_id: req.user._id})
 		.then(user=>{ 
 			user.schedules.map(each=>{
+							//we check of schedule for weekend exist assuming it doesn't
 				if(each.week===req.body.week){
-					weekExist=true
+					weekExist=true				// it exist
 					each.data.map(particular=>{
 						if(particular.name===req.body.member){
 							particular.days[req.body.weekday]=req.body.hours
@@ -133,29 +132,35 @@ module.exports = (app) =>{
 			})
 		})
 
-		/*if(!weekExist){
+		if(!weekExist){
 
 			User.findOne({_id: req.user._id})
 				.then(user=>{
-					const newWeek={
-						week:req.body.week,
-						data:[
-							{
-								name: req.body.member,
-								days: user.schedules.map(each=>{
-									if(each.week===0){
-										const tempDays = each.days
-										tempDays[req.body.weekday]=req.body.hours
-										return tempDays
-									}
-								})
-									
-								
-							}
-						]
+					let defaultWeek = user.schedules.find((each)=>{
+						return each.week===0
+					})
+					const newData = defaultWeek.data.map(each=>{
+						if(each.name===req.body.member){
+							each.days[req.body.weekday]=req.body.hours
+						}
+						return each
+					})
+
+					const newWeek = {
+						week: req.body.week,
+						data: newData
 					}
+		
 					user.schedules.push(newWeek)
-				}
-		}*/
+					user.markModified('schedules')
+					user.save((err,user)=>{
+						if(err){
+							console.log(err)
+							return res.status(404).json('Couldn\'t save changes')
+						}
+						return res.send(user.schedules)
+					})
+				})
+		}
 	})
 }

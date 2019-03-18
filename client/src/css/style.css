@@ -2289,7 +2289,7 @@ body {
       cursor: pointer; }
       .preparations--inputs button:focus {
         outline: none; }
-  .preparations--card {
+  .preparations__card {
     width: 50%;
     height: 100%;
     background-image: linear-gradient(to right, #73260D, #451708);
@@ -2298,21 +2298,54 @@ body {
     margin: 0 auto;
     transition: all 0.2s;
     box-shadow: 3rem -0.3rem 5rem rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; }
-    .preparations--card ul {
+    display: flex; }
+    .preparations__card ul {
+      width: 70%;
+      height: 100%;
       max-height: 100%;
-      overflow-y: scroll; }
-    .preparations--card ul > li {
+      overflow-y: scroll;
+      border-right: 1px solid black;
+      text-align: center; }
+    .preparations__card ul > li {
+      font-family: "Poiret One", cursive;
       list-style: none;
       text-transform: uppercase;
-      color: snow;
+      color: #D9AC0F;
       font-size: 2rem;
       object-position: top; }
+      @media only screen and (max-width: 62.5em) {
+        .preparations__card ul > li {
+          color: #451708; } }
+    .preparations__card--lists {
+      font-family: "Poiret One", cursive;
+      font-size: 2rem;
+      margin-left: .5rem;
+      max-height: 100%; }
+      .preparations__card--lists a {
+        color: #D9AC0F;
+        text-decoration: none;
+        transition: color .2s; }
+        @media only screen and (max-width: 62.5em) {
+          .preparations__card--lists a {
+            color: #73260D; } }
+        .preparations__card--lists a:hover {
+          color: #7CAA5A; }
+      .preparations__card--lists h3 {
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: snow;
+        text-align: center;
+        border-bottom: 1px solid black;
+        font-weight: 500; }
+      @media only screen and (max-width: 62.5em) {
+        .preparations__card--lists {
+          position: absolute;
+          top: 0;
+          right: 0;
+          max-width: 30%;
+          width: 30%; } }
     @media only screen and (max-width: 62.5em) {
-      .preparations--card {
+      .preparations__card {
         width: 90%;
         transform: rotateY(0);
         box-shadow: none;
@@ -2322,7 +2355,8 @@ body {
         text-align: center;
         background-image: none;
         background-color: #a4a4a4;
-        height: 30rem; } }
+        height: 30rem;
+        position: relative; } }
 
 .change {
   display: block;

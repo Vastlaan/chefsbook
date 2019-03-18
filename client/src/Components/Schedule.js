@@ -36,6 +36,7 @@ class Schedule extends React.Component {
 			if (each.week === 0 && selected.length < 1) {
 				selected = each.data;
 			}
+			return null
 		});
 		return selected;
 	};

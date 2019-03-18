@@ -117,7 +117,7 @@ class CalendarComponent extends React.Component {
 		};
 		fetch("api/new_event", {
 			method: "POST",
-			credentials: "include" ,
+			credentials: "include",
 			headers: {
 				"Content-Type": "application/json"
 			},
