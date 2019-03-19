@@ -106,9 +106,11 @@ module.exports = (app) =>{
 		.catch(err=>res.send(err))
 	})	
 
-	app.post('/api/change_schedule', (req, res)=>{
+	app.post('/api/change_schedule', async (req, res)=>{
+		
 		let weekExist = false
-		User.findOne({_id: req.user._id})
+
+		await User.findOne({_id: req.user._id})
 		.then(user=>{ 
 			user.schedules.map(each=>{
 							//we check of schedule for weekend exist assuming it doesn't

@@ -60,7 +60,7 @@ passport.use('local', new LocalStrategy(
     },
 
   function(req, email, password, done){
-    User.findOne({email:email})
+    User.findOne({email:email, googleId:""})
 		.then((user)=>{
 
 			if(user.googleId){

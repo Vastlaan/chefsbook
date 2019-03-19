@@ -88,7 +88,7 @@ module.exports = app => {
 	});
 
 	app.post("/api/login", passport.authenticate("local"), (req, res) => {
-		User.findOne({ email: req.body.email })
+		User.findOne({ email: req.body.email, googleId:"" })
 			.then(user => {
 
 				if (user) {
