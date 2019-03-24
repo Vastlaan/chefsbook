@@ -29,6 +29,8 @@ require('./routes/eventRoutes')(app)
 
 require('./routes/scheduleRoutes')(app)
 
+require('./routes/prepsRoutes')(app)
+
 if(process.env.NODE_ENV === "production"){
 	
 	app.use(express.static("client/build"));
