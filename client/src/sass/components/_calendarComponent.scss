@@ -8,8 +8,11 @@
 	@include respond(xl){
 		flex-direction: column;
 	}
+	@include respond(s){
+		margin-top: 1rem;
+	}
 
-
+	//dead
 	&__header {
 		position:absolute;
 		top:0;

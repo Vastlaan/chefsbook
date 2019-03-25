@@ -64,6 +64,28 @@ class Preparations extends React.Component {
 		})
 	}
 
+	deletePrep = () =>{
+
+		const {date, preps} = this.state.prepsToDispaly
+		const prepToDelete = {
+			date,
+			preps
+		}
+		fetch('/api/deletePrep',{
+			method:"POST",
+			credentials: "include",
+			headers: {
+				"Content-Type" : "application/json"
+			},
+			body: JSON.stringify(prepToDelete)
+		})
+			.then(res => res.json())
+			.then(data=> {
+				return window.location.reload()
+			})
+			.catch(err=> console.log(err))
+	}
+
 	render() {
 		const {dateContext} = this.state
 		let day = dateContext.format('D')
@@ -71,7 +93,6 @@ class Preparations extends React.Component {
 		const date = moment(dateContext).set("date", day).format('DD-MM-YYYY')
 		return (
 			<div>
-				<h1 className="preparations__header">Preparations</h1>
 				<div className="preparations">
 					<div className="preparations--inputs">
 						<p>
@@ -105,15 +126,20 @@ class Preparations extends React.Component {
 						</div>
 					</div>
 				</div>
+			{/*Hidden preparation list element*/}
 				{this.state.displayPreps?
 					<div className="preparations__preps">
 					<svg onClick={()=>this.setState({displayPreps:false})}>
 						<use xlinkHref={`${Icons}#icon-close`}></use>
 					</svg>
-					{this.state.prepsToDispaly.date}
+
+					<p>{this.state.prepsToDispaly.date}</p>
+
 					{this.state.prepsToDispaly.preps.map((each,i)=>{
 						return <p key={i*12.228877}>{each}</p>
 					})}
+
+					<button onClick={()=>this.deletePrep()}>Delete</button>
 					</div>
 					:null
 				}

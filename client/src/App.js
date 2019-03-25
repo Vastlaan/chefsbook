@@ -10,11 +10,11 @@ import NewRecepie from "./Components/NewRecepie";
 import Footer from "./Components/Footer";
 import CalendarComponent from "./Components/CalendarComponent";
 import Schedule from "./Components/Schedule";
-import Recepies from './Components/Recepies'
-import PrivacyPolicy from './Components/PrivacyPolicy'
-import Cookies from './Components/Cookies'
-import Login from './Components/Login'
-import Preparations from './Components/Preparations'
+import Recepies from "./Components/Recepies";
+import PrivacyPolicy from "./Components/PrivacyPolicy";
+import Cookies from "./Components/Cookies";
+import Login from "./Components/Login";
+import Preparations from "./Components/Preparations";
 
 class App extends React.Component {
   state = {
@@ -23,7 +23,7 @@ class App extends React.Component {
   };
 
   componentWillMount() {
-    fetch("/api/current_user", { credentials: 'include' })    //credentials: 'include'   this makes sure that cookie is send with request. Fix for edge and ie
+    fetch("/api/current_user", { credentials: "include" }) //credentials: 'include'   this makes sure that cookie is send with request. Fix for edge and ie
       .then(user => {
         return user.json();
       })
@@ -42,9 +42,9 @@ class App extends React.Component {
   }
 
   render() {
-
     return (
       <div className="container">
+      
         <Header logged={this.state.logged} />
         <BrowserRouter>
           <div>

@@ -2,7 +2,7 @@
 	
 	padding:.1rem 5rem;
 	margin-bottom: 1rem;
-	margin-top: 5rem;
+	margin-top: 3rem;
 	margin-left: auto;
 	margin-right: auto;
 	display:grid;
@@ -13,7 +13,7 @@
 
 
 	@include respond(s){
-		margin-bottom: 17vh;
+		margin-bottom: 12vh;
 		grid-column-gap: 2rem;
 	}
 	

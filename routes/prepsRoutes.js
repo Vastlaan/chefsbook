@@ -29,6 +29,29 @@ module.exports = (app) =>{
 		
 	})
 
+	app.post('/api/deletePrep', (req,res)=>{
+		console.log(req.body)
+		User.findOne({_id:req.user._id})
+			.then(user=>{
+
+				const newPreps = user.preps.filter(prep=>{
+					console.log(prep.date===req.body.date)
+					console.log(prep.preps[0]===req.body.preps[0])
+					return prep.date===req.body.date && prep.preps[0]!==req.body.preps[0]
+				})
+
+				user.preps = newPreps
+				user.markModified('preps')
+				user.save((err,user)=>{
+					if(err){
+						console.log(err)
+						res.status(404).json('Couldn\'t save changes')
+					}
+					res.send(user.preps)
+				})
+			})
+	})
+
 	app.get('/api/getPreps',(req,res)=>{
 		User.findOne({_id:req.user._id})
 		.then(user=>{

@@ -2,18 +2,11 @@ import React from "react";
 import Calendar from "./Calendar";
 import Recipes from "./Recipes";
 
-
 class Dashboard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			date: "", //this goes to Calendar
-
-			display: "none",
-			recept: {},
-
-			recepies: [],
-
+			date: "" //this goes to Calendar
 		};
 		this.timer = null;
 	}
@@ -25,17 +18,6 @@ class Dashboard extends React.Component {
 
 	componentDidMount() {
 		this.timer = setInterval(this.toDisplay, 1000);
-
-		fetch("/api/current_user/recepies", { credentials: "include" })
-			.then(res => {
-				return res.json();
-			})
-			.then(data => {
-				this.setState({ recepies: data });
-			})
-			.catch(err => {
-				console.log(err);
-			});
 	}
 	componentWillUnmount() {
 		clearInterval(this.timer);
@@ -49,16 +31,21 @@ class Dashboard extends React.Component {
 					<Calendar date={date} />
 				</a>
 
-				<Recipes />
-
-				<div className="dashboard__schedule">
-					<a href="/schedule" className="dashboard__schedule__header">
-						Manage team schedule
-					</a>
+				<div className="dashboard__news">
+					<h1>News Feed</h1>
 				</div>
 
-				<div className="dashboard__preparations" id="preparations">
-					<a href='/preparations'>Preparations</a>	
+				<div className="dashboard__extra">
+					<h1>Extra</h1>
+					<h1>Extra</h1>
+					<h1>Extra</h1>
+					<h1>Extra</h1>
+				</div>
+				<div className="dashboard__extra">
+					<h1>Extra</h1>
+					<h1>Extra</h1>
+					<h1>Extra</h1>
+					<h1>Extra</h1>
 				</div>
 			</div>
 		);

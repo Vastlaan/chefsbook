@@ -154,7 +154,7 @@ body {
         background-image: linear-gradient(to right, #000a00, #000a00);
         padding: 1rem;
         z-index: 99;
-        height: 15vh; } }
+        min-height: 10vh; } }
   .header__icon--box {
     display: flex;
     flex-direction: column;
@@ -400,230 +400,34 @@ body {
             font-size: 2rem; } }
 
 .dashboard {
-  margin: 2rem 0;
-  display: grid;
-  grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
-  grid-template-rows: repeat(8, [row-start] 17vh [row-end]);
-  grid-gap: 2rem; }
-  @media only screen and (max-height: 31.25em) {
+  margin: 3rem 0;
+  display: flex;
+  flex-wrap: wrap; }
+  @media only screen and (max-width: 37.5em) {
     .dashboard {
-      grid-template-rows: repeat(8, [row-start] 25vh [row-end]); } }
-  .dashboard .dashboard__recipes {
-    grid-column: col-start 4 / -1;
-    grid-row: 1 / span 4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to bottom right, rgba(124, 170, 90, 0.3), rgba(27, 99, 43, 0.1)), url(../img/recipes_background.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: contrast(120%) brightness(150%);
-    border-radius: 3px;
-    clip-path: polygon(0% 0%, 100% 40%, 100% 100%, 40% 100%); }
-    @media only screen and (max-width: 62.5em) {
-      .dashboard .dashboard__recipes {
-        background-image: none;
-        grid-column: col-start 1 / -1;
-        grid-row: 10 / span 4;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        filter: contrast(120%) brightness(110%); } }
-    @media only screen and (max-width: 37.5em) {
-      .dashboard .dashboard__recipes {
-        background-image: linear-gradient(to bottom, rgba(124, 170, 90, 0.1), rgba(124, 170, 90, 0.6) 40%), url(../img/recipes_background.jpg);
-        grid-column: col-start 1 / -1;
-        grid-row: 1 / span 4;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        filter: contrast(120%) brightness(110%); } }
-    .dashboard .dashboard__recipes--btn {
-      display: block;
-      text-decoration: none;
-      width: 50%;
-      border-radius: 3px;
-      background-image: linear-gradient(to right, rgba(27, 99, 43, 0.9), rgba(124, 170, 90, 0.6) 70%);
-      transform: translate(-15%, 30%);
-      padding: 0.5rem 1.5rem;
-      transition: all 0.5s;
-      box-shadow: 0 0rem 5rem rgba(0, 0, 0, 0.9);
-      z-index: 99; }
-      @media only screen and (max-width: 37.5em) {
-        .dashboard .dashboard__recipes--btn {
-          padding: 0.3rem 1.3rem; } }
-      @media only screen and (max-width: 62.5em) {
-        .dashboard .dashboard__recipes--btn {
-          transform: translate(0, 0);
-          text-align: center;
-          background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%);
-          filter: brightness(120%);
-          padding: 1rem 4.5rem;
-          width: 80%; } }
-      @media only screen and (max-width: 75em) {
-        .dashboard .dashboard__recipes--btn {
-          padding: 1rem 0.5rem; } }
-      .dashboard .dashboard__recipes--btn:hover {
-        transform: translate(-13%, 30%);
-        background-image: linear-gradient(to right, #1b632b, rgba(124, 170, 90, 0.8) 70%); }
-        @media only screen and (max-width: 62.5em) {
-          .dashboard .dashboard__recipes--btn:hover {
-            transform: translate(0, 0); } }
-    .dashboard .dashboard__recipes--span {
-      font-size: 4rem;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 400;
-      color: #451708;
-      letter-spacing: 0.2rem;
-      float: right;
-      text-transform: uppercase; }
-      @media only screen and (max-width: 37.5em) {
-        .dashboard .dashboard__recipes--span {
-          font-size: 2.5rem; } }
-      @media only screen and (max-width: 62.5em) {
-        .dashboard .dashboard__recipes--span {
-          float: none;
-          color: black;
-          font-weight: 300; } }
-    .dashboard .dashboard__recipes h1 {
-      display: none;
-      font-size: 5rem;
-      font-weight: 500;
-      font-family: "Rajdhani", sans-serif, sans-serif;
-      color: black;
-      transform: translateY(-20rem);
-      background-color: rgba(255, 250, 250, 0.3);
-      width: 100%;
-      text-align: center; }
-      @media only screen and (max-width: 50em) {
-        .dashboard .dashboard__recipes h1 {
-          display: block;
-          margin-top: 5rem; } }
-  .dashboard .dashboard__schedule {
-    grid-column: col-start 1 / -1;
-    grid-row: 5 / span 4;
-    margin-top: 10rem;
-    background-image: url(../img/schedule_background.jpg);
-    background-position: center;
-    position: relative; }
-    @media only screen and (max-width: 62.5em) {
-      .dashboard .dashboard__schedule {
-        grid-column: col-start 1 / -1;
-        grid-row: 1 / span 4;
-        background-image: url(../img/schedule_background.jpg);
-        background-position: center;
-        position: relative; } }
-    @media only screen and (max-width: 37.5em) {
-      .dashboard .dashboard__schedule {
-        grid-column: col-start 1 / -1;
-        grid-row: 9 / span 4;
-        background-image: url(../img/schedule_background.jpg);
-        background-position: center;
-        position: relative;
-        height: 80vw; } }
-    .dashboard .dashboard__schedule__header {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-decoration: none;
-      font-family: "Rajdhani", sans-serif;
-      font-size: 4rem;
-      font-weight: 300;
-      text-transform: uppercase;
-      text-align: center;
-      text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
-      width: 60%;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-      color: snow;
-      background-color: #7CAA5A;
-      border-radius: 3px;
-      box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s; }
-      .dashboard .dashboard__schedule__header:hover {
-        transform: translate(-50%, -55%);
-        box-shadow: 0 2.5rem 2.5rem rgba(0, 0, 0, 0.2); }
-      @media only screen and (max-width: 62.5em) {
-        .dashboard .dashboard__schedule__header {
-          font-size: 3rem;
-          width: 70%; } }
-      @media only screen and (max-width: 50em) {
-        .dashboard .dashboard__schedule__header {
-          font-size: 2.5rem; } }
-      @media only screen and (max-width: 37.5em) {
-        .dashboard .dashboard__schedule__header {
-          width: 90%;
-          font-size: 2.5rem; } }
-      @media only screen and (max-width: 25em) {
-        .dashboard .dashboard__schedule__header {
-          font-size: 2rem; } }
-  .dashboard__preparations {
-    grid-column: col-start 1 / -1;
-    grid-row: 9 / span 4;
-    background-color: rgba(124, 170, 90, 0.2);
-    padding: 5rem 10rem; }
-    .dashboard__preparations a {
-      text-decoration: none;
-      padding: 1rem 4rem;
-      background-color: #73260D;
-      color: snow;
-      display: block;
-      width: 60%;
-      margin: 0 auto;
-      font-family: "Rajdhani", sans-serif;
-      font-size: 4rem;
-      font-weight: 300;
-      text-transform: uppercase;
-      text-align: center;
-      text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.3);
-      border-radius: 4px;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
-      transition: transform .2s; }
-      .dashboard__preparations a:hover {
-        transform: translateY(-0.3rem);
-        box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
-      .dashboard__preparations a:active {
-        transform: translateY(-0.1rem);
-        box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
-      @media only screen and (max-width: 62.5em) {
-        .dashboard__preparations a {
-          font-size: 3rem;
-          width: 70%; } }
-      @media only screen and (max-width: 50em) {
-        .dashboard__preparations a {
-          font-size: 2.5rem; } }
-      @media only screen and (max-width: 37.5em) {
-        .dashboard__preparations a {
-          width: 90%;
-          font-size: 2.5rem; } }
-      @media only screen and (max-width: 25em) {
-        .dashboard__preparations a {
-          font-size: 2rem; } }
-    @media only screen and (max-width: 62.5em) {
-      .dashboard__preparations {
-        grid-column: col-start 1 / -1;
-        grid-row: 15 / span 5; } }
+      margin: 0rem 0; } }
+  .dashboard__news {
+    flex: 0 0 67%;
+    margin: 2rem 1rem;
+    background-color: rgba(124, 170, 90, 0.1); }
+  .dashboard__extra {
+    flex: 0 0 96%;
+    margin: 2rem 1rem;
+    margin-top: 5rem;
+    background-color: rgba(124, 170, 90, 0.1); }
 
 .dashboard__calendar {
-  grid-column: col-start 1 / span 3;
-  grid-row: 1 / span 4;
-  display: flex;
+  display: inline-block;
   text-decoration: none;
   color: inherit;
-  align-self: center; }
-  @media only screen and (max-width: 62.5em) {
-    .dashboard__calendar {
-      grid-column: col-start 2 / -2;
-      grid-row: 6 / span 4;
-      margin-bottom: 2rem; } }
+  flex: 0 0 29%; }
   @media only screen and (max-width: 37.5em) {
     .dashboard__calendar {
-      grid-column: col-start 1 / -1;
-      grid-row: 5 / span 4; } }
+      flex: 1; } }
   .dashboard__calendar--flex {
-    margin: 2rem auto;
+    margin: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    width: 70%;
     cursor: pointer;
     transition: all 0.3s; }
     .dashboard__calendar--flex:hover {
@@ -635,6 +439,10 @@ body {
     letter-spacing: 0.1rem;
     text-align: center;
     background-color: #7CAA5A; }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard__calendar--year {
+        padding: 0 0;
+        font-size: 2.5rem; } }
   .dashboard__calendar--month {
     text-align: center;
     padding: 0.5rem 0;
@@ -642,18 +450,30 @@ body {
     color: snow;
     font-size: 2.5rem;
     font-family: "Special Elite", cursive; }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard__calendar--month {
+        font-size: 1.6rem;
+        padding: 0 0; } }
   .dashboard__calendar--day {
     text-align: center;
     padding: 3rem 0;
     font-size: 10rem;
     font-family: "Courgette", cursive;
     background-color: #f0f0f0; }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard__calendar--day {
+        padding: 0 0;
+        font-size: 5rem; } }
   .dashboard__calendar--dayname {
     padding: 0.5rem 0;
     text-align: center;
     background-color: #7CAA5A;
     font-size: 2.5rem;
     font-family: "Special Elite", cursive; }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard__calendar--dayname {
+        padding: 0 0;
+        font-size: 1.8rem; } }
   .dashboard__calendar--time {
     padding: 1rem 0;
     text-align: center;
@@ -661,6 +481,9 @@ body {
     color: snow;
     font-size: 1.5rem;
     font-family: "Courier New", sans-serif; }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard__calendar--time {
+        padding: 0 0; } }
 
 .schedule {
   position: relative; }
@@ -992,6 +815,9 @@ body {
   margin-top: 5rem;
   background-color: rgba(181, 125, 31, 0.1);
   padding: 2rem 1rem 5rem 1rem; }
+  @media only screen and (max-width: 37.5em) {
+    .recepies {
+      margin-top: 1rem; } }
   .recepies--header {
     width: 100%;
     color: #73260D;
@@ -1504,7 +1330,7 @@ body {
 .footer {
   padding: .1rem 5rem;
   margin-bottom: 1rem;
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -1514,7 +1340,7 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.3); }
   @media only screen and (max-width: 37.5em) {
     .footer {
-      margin-bottom: 17vh;
+      margin-bottom: 12vh;
       grid-column-gap: 2rem; } }
   .footer__text {
     color: snow;
@@ -1594,6 +1420,9 @@ body {
   @media only screen and (max-width: 75em) {
     .calendar {
       flex-direction: column; } }
+  @media only screen and (max-width: 37.5em) {
+    .calendar {
+      margin-top: 1rem; } }
   .calendar__header {
     position: absolute;
     top: 0;

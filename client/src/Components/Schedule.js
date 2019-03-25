@@ -98,7 +98,7 @@ class Schedule extends React.Component {
 
 		return (
 			<div className="schedule">
-				<h1 className="schedule__header">Team schedule</h1>
+				
 				<svg className="schedule__icon">
 					<use xlinkHref={`${Icons}#icon-assignment`} />
 				</svg>

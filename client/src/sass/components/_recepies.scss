@@ -5,6 +5,10 @@
 	background-color: rgba($color-secondary,.1);
 	padding:2rem 1rem 5rem 1rem;
 
+	@include respond(s){
+		margin-top: 1rem;
+	}
+
 	&--header {
 		width: 100%;
 		color: $color-brown;
