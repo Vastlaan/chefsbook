@@ -27,7 +27,7 @@
 		font-family: $font-rajdhani;
 		letter-spacing: 0.1rem;
 		text-align: center;
-		background-color: $color-primary;
+		background-color:lighten(#D4916A,5%);
 		@include respond(s) {
 			padding: 0 0;
 			font-size: 2.5rem;
@@ -59,7 +59,7 @@
 	&--dayname {
 		padding: 0.5rem 0;
 		text-align: center;
-		background-color: $color-primary;
+		background-color: lighten(#D4916A,5%);
 		font-size: 2.5rem;
 		font-family: $font-special;
 		@include respond(s) {

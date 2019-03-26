@@ -1,8 +1,9 @@
 .dashboard {
+
 	margin: 3rem 0;
 	display: flex;
 	flex-wrap: wrap;
-	
+	border-radius: 20px;
 
 	@include respond(mh) {
 		
@@ -10,15 +11,126 @@
 
 	@include respond(s) {
 		margin:0rem 0;
-
 	}
 
 	&__news{
 		flex: 0 0 67%;
 		margin: 2rem 1rem;
-		background-color: rgba($color-primary,.1);
+		
+		display:flex;
+		flex-direction: column;
+		position:relative;
 
+		h1{
+			align-self: center;
+		}
+		
+		&--quote{
+			
+
+
+			&-1{
+				display:block;
+				position:absolute;
+				top:50%;
+				left:0;
+				width:40%;
+				background-color: rgba($color-secondary,.7);
+				padding: 3rem 5rem;
+				border-top-left-radius: 120px;
+				-moz-border-radius-topleft: 120px;
+				-webkit-border-top-left-radius: 120px;
+				border-bottom-left-radius: 120px;
+				-moz-border-radius-bottomleft: 120px;
+				-webkit-border-bottom-left-radius: 120px;
+				border-bottom-right-radius: 120px;
+				-moz-border-radius-bottomright: 120px;
+				-webkit-border-bottom-right-radius: 120px;
+				z-index: 9;
+
+				box-shadow: 1rem -1rem rgba($color-reddish,1);
+				transition: all .3s;
+				cursor:pointer;
+
+				&:hover{
+					top:52%;
+					left:-1%;
+					box-shadow: 1.8rem -1.8rem 0 rgba($color-reddish,.3);
+
+					&::after{
+						top:-20%;
+						left:10%;
+						opacity:.3;
+					}
+				}
+				
+
+				&::after{
+					display:block;
+					content:" ";
+					position:absolute;
+					top:-2rem;
+					right:-2rem;
+					width:100%;
+					height:100%;
+					background-color: rgba($color-reddish-dark,.3);
+					border: 1px solid rgba($color-reddish,.6);
+					
+					border-top-left-radius: 120px;
+					-moz-border-radius-topleft: 120px;
+					-webkit-border-top-left-radius: 120px;
+					border-bottom-left-radius: 120px;
+					-moz-border-radius-bottomleft: 120px;
+					-webkit-border-bottom-left-radius: 120px;
+					border-bottom-right-radius: 120px;
+					-moz-border-radius-bottomright: 120px;
+					-webkit-border-bottom-right-radius: 120px;
+					z-index: -1;
+					transition: all .3s;
+				}
+
+			}
+
+			&-2{
+				position:absolute;
+				top:10%;
+				right:0;
+				width:40%;
+
+			}
+
+
+		}
+
+		&--image{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			z-index:-1;
+			overflow:hidden;
+			
+			display:flex;
+			justify-content: center;
+
+			img{
+				transform:translateY(-10rem);
+
+				@include respond(m){
+					transform:translateX(-10rem);
+				}
+				@include respond(s){
+					display:none;
+				}
+
+				@include respond(xxl){
+					transform:scale(2);
+				}
+			}
+		}
 	}
+
+	
 
 	&__extra{
 		flex: 0 0 96%;
