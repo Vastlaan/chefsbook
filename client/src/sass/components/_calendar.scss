@@ -7,6 +7,7 @@
 	flex:0 0 29%;
 	@include respond(s) {
 		flex:1;
+		
 	}
 
 	&--flex {
@@ -29,8 +30,8 @@
 		text-align: center;
 		background-color:lighten(#D4916A,5%);
 		@include respond(s) {
-			padding: 0 0;
-			font-size: 2.5rem;
+			//padding:0 2rem;
+			//font-size: 2.1rem;
 		}
 	}
 	&--month {
@@ -41,8 +42,8 @@
 		font-size: 2.5rem;
 		font-family: $font-special;
 		@include respond(s) {
-			font-size: 1.6rem;
-			padding: 0 0;
+			//font-size: 1.5rem;
+			//padding: 0 2rem;
 		}
 	}
 	&--day {
@@ -52,8 +53,8 @@
 		font-family: $font-courgette;
 		background-color: #f0f0f0;
 		@include respond(s) {
-			padding: 0 0;
-			font-size: 5rem;
+			//padding: 0 2rem;
+			//font-size: 4rem;
 		}
 	}
 	&--dayname {
@@ -63,8 +64,8 @@
 		font-size: 2.5rem;
 		font-family: $font-special;
 		@include respond(s) {
-			padding: 0 0;
-			font-size: 1.8rem;
+			//padding: 0 2rem;
+			//font-size: 1.6rem;
 		}
 	}
 	&--time {
@@ -75,7 +76,8 @@
 		font-size: 1.5rem;
 		font-family: "Courier New", sans-serif;
 		@include respond(s) {
-			padding: 0 0;
+			//padding: 0 2rem;
+			//font-size: 1.2rem;
 		}
 	}
 }

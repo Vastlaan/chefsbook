@@ -415,6 +415,9 @@ body {
     position: relative; }
     .dashboard__news h1 {
       align-self: center; }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard__news {
+        align-items: center; } }
     .dashboard__news--quote-1 {
       display: block;
       position: absolute;
@@ -434,7 +437,7 @@ body {
       -webkit-border-bottom-right-radius: 120px;
       z-index: 9;
       box-shadow: 1rem -1rem #daa07e;
-      transition: all .3s;
+      transition: all 0.3s;
       cursor: pointer; }
       .dashboard__news--quote-1:hover {
         top: 52%;
@@ -443,7 +446,7 @@ body {
         .dashboard__news--quote-1:hover::after {
           top: -20%;
           left: 10%;
-          opacity: .3; }
+          opacity: 0.3; }
       .dashboard__news--quote-1::after {
         display: block;
         content: " ";
@@ -464,12 +467,45 @@ body {
         -moz-border-radius-bottomright: 120px;
         -webkit-border-bottom-right-radius: 120px;
         z-index: -1;
-        transition: all .3s; }
+        transition: all 0.3s; }
+      @media only screen and (max-width: 62.5em) {
+        .dashboard__news--quote-1 {
+          position: static;
+          border-radius: 3px;
+          width: 100%;
+          margin-top: 2rem;
+          box-shadow: none; }
+          .dashboard__news--quote-1::after {
+            position: static;
+            border-radius: 3px; }
+          .dashboard__news--quote-1:hover {
+            transform: translate(0, 0); } }
     .dashboard__news--quote-2 {
       position: absolute;
       top: 10%;
       right: 0;
-      width: 40%; }
+      width: 40%;
+      background-color: rgba(181, 125, 31, 0.7);
+      padding: 3rem 5rem;
+      border-top-left-radius: 120px;
+      -moz-border-radius-topleft: 120px;
+      -webkit-border-top-left-radius: 120px;
+      border-top-right-radius: 120px;
+      -moz-border-radius-topright: 120px;
+      -webkit-border-top-right-radius: 120px;
+      border-bottom-right-radius: 120px;
+      -moz-border-radius-bottomright: 120px;
+      -webkit-border-bottom-right-radius: 120px; }
+      @media only screen and (max-width: 62.5em) {
+        .dashboard__news--quote-2 {
+          position: static;
+          border-radius: 3px;
+          margin-top: 2rem;
+          width: 100%; }
+          .dashboard__news--quote-2::after {
+            border-radius: 3px; }
+          .dashboard__news--quote-2:hover {
+            transform: translate(0, 0); } }
     .dashboard__news--image {
       position: absolute;
       top: 0;
@@ -481,10 +517,7 @@ body {
       justify-content: center; }
       .dashboard__news--image img {
         transform: translateY(-10rem); }
-        @media only screen and (max-width: 50em) {
-          .dashboard__news--image img {
-            transform: translateX(-10rem); } }
-        @media only screen and (max-width: 37.5em) {
+        @media only screen and (max-width: 62.5em) {
           .dashboard__news--image img {
             display: none; } }
         @media only screen and (min-width: 100em) {
@@ -519,10 +552,6 @@ body {
     letter-spacing: 0.1rem;
     text-align: center;
     background-color: #daa07e; }
-    @media only screen and (max-width: 37.5em) {
-      .dashboard__calendar--year {
-        padding: 0 0;
-        font-size: 2.5rem; } }
   .dashboard__calendar--month {
     text-align: center;
     padding: 0.5rem 0;
@@ -530,30 +559,18 @@ body {
     color: snow;
     font-size: 2.5rem;
     font-family: "Special Elite", cursive; }
-    @media only screen and (max-width: 37.5em) {
-      .dashboard__calendar--month {
-        font-size: 1.6rem;
-        padding: 0 0; } }
   .dashboard__calendar--day {
     text-align: center;
     padding: 3rem 0;
     font-size: 10rem;
     font-family: "Courgette", cursive;
     background-color: #f0f0f0; }
-    @media only screen and (max-width: 37.5em) {
-      .dashboard__calendar--day {
-        padding: 0 0;
-        font-size: 5rem; } }
   .dashboard__calendar--dayname {
     padding: 0.5rem 0;
     text-align: center;
     background-color: #daa07e;
     font-size: 2.5rem;
     font-family: "Special Elite", cursive; }
-    @media only screen and (max-width: 37.5em) {
-      .dashboard__calendar--dayname {
-        padding: 0 0;
-        font-size: 1.8rem; } }
   .dashboard__calendar--time {
     padding: 1rem 0;
     text-align: center;
@@ -561,9 +578,6 @@ body {
     color: snow;
     font-size: 1.5rem;
     font-family: "Courier New", sans-serif; }
-    @media only screen and (max-width: 37.5em) {
-      .dashboard__calendar--time {
-        padding: 0 0; } }
 
 .schedule {
   position: relative; }
