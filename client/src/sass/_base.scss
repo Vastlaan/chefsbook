@@ -41,19 +41,23 @@ html {
 body {
 	background-image: linear-gradient(
 		to bottom,
-		darken($color-grey-light, 20%) 5%,
-		$color-grey-light 10%,
-		$color-grey-light 90%,
-		darken($color-grey-light, 20%) 100%
+			rgba($color-primary,.9) 5%,
+		rgba($color-reddish,.6) 10%,
+		rgba($color-reddish,.6) 90%,
+		rgba($color-primary,.9) 100%
 	);
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 
 	@include respond(s) {
 		background-image: linear-gradient(
 			to bottom,
-			$color-grey-light 0%,
-			$color-grey-light 10%,
-			$color-grey-light 90%,
-			darken($color-grey-light, 20%) 100%
-		);
+			rgba($color-primary,.9) 5%,
+		rgba($color-reddish,.6) 10%,
+		rgba($color-reddish,.6) 90%,
+		rgba($color-primary,.9) 100%
+	);
 	}
 }
