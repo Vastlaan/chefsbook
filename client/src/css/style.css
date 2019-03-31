@@ -156,7 +156,7 @@ html {
         bottom: 0;
         left: 0;
         width: 100%;
-        background-image: linear-gradient(to right, #000a00, #000a00);
+        background-image: linear-gradient(to right, #140000, #140000);
         padding: 1rem;
         z-index: 99;
         min-height: 10vh; } }
@@ -416,7 +416,7 @@ html {
     min-height: 50rem;
     max-height: 50rem;
     overflow: hidden;
-    background-image: linear-gradient(to bottom right, rgba(217, 172, 15, 0.6), rgba(217, 172, 15, 0.6) 50%, transparent 50%);
+    background-image: linear-gradient(to bottom right, rgba(69, 23, 8, 0.6), rgba(69, 23, 8, 0.6) 50%, transparent 50%);
     max-width: 100%;
     position: relative; }
     .dashboard__landing img {
@@ -428,8 +428,46 @@ html {
       margin-top: -30rem;
       animation: comeRightToHalf 1s;
       transform: translateX(50%) scale(2); }
-  .dashboard__second {
-    margin-top: 10rem; }
+    .dashboard__landing h1 {
+      display: block;
+      margin: 2rem 1rem;
+      text-transform: uppercase;
+      font-family: "Rajdhani", sans-serif, "Poiret One", cursive, sans-serif;
+      font-size: 3.5rem;
+      text-align: center;
+      font-weight: 300;
+      color: #451708;
+      letter-spacing: .2rem;
+      width: 100%;
+      position: absolute;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999; }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard__landing h1 {
+          top: 0;
+          left: 47%;
+          margin: 2rem 0; } }
+    .dashboard__landing div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 99;
+      transform: translate(-75%, -50%);
+      font-family: "Poiret One", cursive, sans-serif;
+      font-size: 2rem;
+      color: black; }
+      @media only screen and (max-width: 50em) {
+        .dashboard__landing div {
+          font-size: 1.6rem; } }
+      @media only screen and (max-width: 37.5em) {
+        .dashboard__landing div {
+          font-size: 1.2rem;
+          transform: translate(-90%, -50%); } }
+  .dashboard__third {
+    margin-top: 10rem;
+    display: flex; }
 
 .dashboard__calendar {
   display: inline-block;
@@ -456,7 +494,7 @@ html {
     font-family: "Rajdhani", sans-serif;
     letter-spacing: 0.1rem;
     text-align: center;
-    background-color: #daa07e; }
+    background-color: rgba(69, 23, 8, 0.6); }
   .dashboard__calendar--month {
     text-align: center;
     padding: 0.5rem 0;
@@ -473,7 +511,7 @@ html {
   .dashboard__calendar--dayname {
     padding: 0.5rem 0;
     text-align: center;
-    background-color: #daa07e;
+    background-color: rgba(69, 23, 8, 0.6);
     font-size: 2.5rem;
     font-family: "Special Elite", cursive; }
   .dashboard__calendar--time {
@@ -1769,7 +1807,9 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background-color: rgba(181, 125, 31, 0.1);
+  padding: 1rem; }
   .privacy h1 {
     font-size: 4.5rem;
     font-family: "Rajdhani", sans-serif;

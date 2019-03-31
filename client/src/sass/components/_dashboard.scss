@@ -14,7 +14,7 @@
 		min-height:50rem;
 		max-height:50rem;
 		overflow:hidden;
-		background-image: linear-gradient(to bottom right, rgba($color-secondary-light,.6) , rgba($color-secondary-light,.6)  50%, transparent 50%);
+		background-image: linear-gradient(to bottom right, rgba($color-brown-dark,.6) , rgba($color-brown-dark,.6)  50%, transparent 50%);
 		max-width: 100%;
 		position:relative;
 
@@ -28,10 +28,56 @@
 			animation:comeRightToHalf 1s;
 			transform: translateX(50%) scale(2);
 		}
+
+		h1{
+			display: block;
+			margin:2rem 1rem;
+			text-transform: uppercase;
+			font-family: $font-rajdhani, $font-portrait, sans-serif;
+			font-size: 3.5rem;
+			text-align: center;
+			font-weight: 300;
+			color:$color-brown-dark;
+			letter-spacing: .2rem;
+			width:100%;
+			position:absolute;
+			top:2rem;
+			left:50%;
+			transform:translateX(-50%);
+			z-index: 999;
+
+			@include respond(s){
+				top:0;
+				left:47%;
+				margin:2rem 0;
+			}
+		}
+
+		div{
+			position:absolute;
+			top:50%;
+			left:50%;
+			z-index: 99;
+			transform:translate(-75%, -50%);
+			font-family: $font-portrait, sans-serif;
+			font-size: 2rem;
+			color:black;
+
+			@include respond(m){
+				font-size: 1.6rem;
+				
+			}
+
+			@include respond(s){
+				font-size: 1.2rem;
+				transform:translate(-90%, -50%);
+			}
+		}
 	}
 
-	&__second{
+	&__third{
 		margin-top: 10rem;
+		display: flex;
 	}
 
 }
