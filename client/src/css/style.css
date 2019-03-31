@@ -39,6 +39,17 @@
     opacity: 1;
     transform: translateX(0); } }
 
+@keyframes comeRightToHalf {
+  0% {
+    opacity: 0;
+    transform: translateX(120%) scale(2); }
+  25% {
+    opacity: 0;
+    transform: translateX(120%) scale(2); }
+  100% {
+    opacity: 1;
+    transform: translateX(50%) scale(2); } }
+
 ::-webkit-scrollbar {
   width: 0.6rem; }
 
@@ -71,15 +82,6 @@ html {
   @media only screen and (min-width: 100em) {
     html {
       font-size: 100%; } }
-
-body {
-  background-image: linear-gradient(to bottom, rgba(124, 170, 90, 0.9) 5%, rgba(218, 160, 126, 0.6) 10%, rgba(218, 160, 126, 0.6) 90%, rgba(124, 170, 90, 0.9) 100%);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
-  @media only screen and (max-width: 37.5em) {
-    body {
-      background-image: linear-gradient(to bottom, rgba(124, 170, 90, 0.9) 5%, rgba(218, 160, 126, 0.6) 10%, rgba(218, 160, 126, 0.6) 90%, rgba(124, 170, 90, 0.9) 100%); } }
 
 .show {
   opacity: 1;
@@ -405,17 +407,41 @@ body {
 .dashboard {
   margin: 3rem 0;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  border-radius: 20px; }
+  border-radius: 20px;
+  background-color: rgba(218, 160, 126, 0.1);
+  min-height: 100rem; }
+  .dashboard__landing {
+    min-height: 50rem;
+    max-height: 50rem;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, rgba(217, 172, 15, 0.6), rgba(217, 172, 15, 0.6) 50%, transparent 50%);
+    max-width: 100%;
+    position: relative; }
+    .dashboard__landing img {
+      min-height: 100%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      margin-top: -30rem;
+      animation: comeRightToHalf 1s;
+      transform: translateX(50%) scale(2); }
+  .dashboard__second {
+    margin-top: 10rem; }
 
 .dashboard__calendar {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  flex: 0 0 29%; }
+  width: 30%; }
+  @media only screen and (max-width: 50em) {
+    .dashboard__calendar {
+      width: 50%; } }
   @media only screen and (max-width: 37.5em) {
     .dashboard__calendar {
-      flex: 0 0 50%; } }
+      width: 100%; } }
   .dashboard__calendar--flex {
     margin: 2rem 1rem;
     display: flex;
@@ -423,7 +449,7 @@ body {
     cursor: pointer;
     transition: all 0.3s; }
     .dashboard__calendar--flex:hover {
-      transform: scale(1.05); }
+      transform: scale(1.02); }
   .dashboard__calendar--year {
     padding: 0.5rem 0;
     font-size: 5rem;
@@ -2213,6 +2239,25 @@ body {
       font-size: 2.5rem;
       font-family: "Rajdhani", sans-serif, sans-serif;
       text-transform: uppercase; }
+    .preparations__preps--date {
+      color: #7CAA5A !important;
+      font-size: 3.5rem !important; }
+    .preparations__preps button {
+      border: none;
+      padding: 1.5rem 3rem;
+      background-color: #73260D;
+      margin-top: 2rem;
+      border-radius: 3px;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+      transition: transform .2s; }
+      .preparations__preps button:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+      .preparations__preps button:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+      .preparations__preps button:focus {
+        outline: none; }
 
 .change {
   display: block;

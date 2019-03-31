@@ -222,5 +222,24 @@
 
 				text-transform: uppercase;
 			}
+
+			&--date{
+				color:$color-primary !important; 
+				font-size: 3.5rem !important;
+			}
+
+			button{
+				border:none;
+				padding: 1.5rem 3rem;
+				background-color: $color-brown;
+				margin-top: 2rem;
+				border-radius: 3px;
+
+				@include btn-shadow;
+
+				&:focus{
+					outline:none;
+				}
+			}
 		}
 	}

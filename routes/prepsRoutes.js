@@ -34,11 +34,14 @@ module.exports = (app) =>{
 		User.findOne({_id:req.user._id})
 			.then(user=>{
 
-				const newPreps = user.preps.filter(prep=>{
-					console.log(prep.date===req.body.date)
-					console.log(prep.preps[0]===req.body.preps[0])
-					return prep.date===req.body.date && prep.preps[0]!==req.body.preps[0]
-				})
+				const newPreps = user.preps.reduce((acc, prep)=>{
+					if(prep.date===req.body.date && prep.preps[0]===req.body.preps[0]){
+						return acc
+					}else{
+						 acc.push(prep)
+						 return acc
+					}
+				}, [])
 
 				user.preps = newPreps
 				user.markModified('preps')

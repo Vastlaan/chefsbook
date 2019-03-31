@@ -2,6 +2,8 @@ import React from "react";
 import Calendar from "./Calendar";
 import Recipes from "./Recipes";
 
+import Chef from '../img/little_chef.svg'
+
 class Dashboard extends React.Component {
 	constructor(props) {
 		super(props);
@@ -29,10 +31,15 @@ class Dashboard extends React.Component {
 
 		return (
 			<div className="dashboard">
-			
-				<a href={"/calendar"} className="dashboard__calendar">
-					<Calendar date={date} />
-				</a>
+				<div className="dashboard__landing">
+					Jakis Landing wyjebany
+					<img src={Chef} alt="chef"/>
+				</div>
+				<div className="dashboard__second">
+					<a href={"/calendar"} className="dashboard__calendar">
+						<Calendar date={date} />
+					</a>
+				</div>
 			</div>
 		);
 	}

@@ -25,11 +25,16 @@ class Preparations extends React.Component {
 
 	addToPreps = async () => {
 		const value = document.querySelector("#prep_item").value;
-		await this.setState(prevState => {
-			preps: prevState.preps.push(value);
-		});
-		document.querySelector("#prep_item").value = "";
-		this.forceUpdate();
+		if(value===""){
+			return null
+		}else{
+			await this.setState(prevState => {
+				preps: prevState.preps.push(value);
+			});
+			document.querySelector("#prep_item").value = "";
+			this.forceUpdate();
+		}
+		
 	};
 
 	submitPreps=(date)=>{
@@ -133,7 +138,7 @@ class Preparations extends React.Component {
 						<use xlinkHref={`${Icons}#icon-close`}></use>
 					</svg>
 
-					<p>{this.state.prepsToDispaly.date}</p>
+					<p className="preparations__preps--date">{this.state.prepsToDispaly.date}</p>
 
 					{this.state.prepsToDispaly.preps.map((each,i)=>{
 						return <p key={i*12.228877}>{each}</p>

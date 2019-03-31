@@ -4,9 +4,13 @@
 	display: inline-block;
 	text-decoration: none;
 	color: inherit;
-	flex:0 0 29%;
+	width:30%;
+	@include respond(m) {
+		width:50%;
+		
+	}
 	@include respond(s) {
-		flex:0 0 50%;
+		width:100%;
 		
 	}
 
@@ -19,7 +23,7 @@
 		transition: all 0.3s;
 
 		&:hover {
-			transform: scale(1.05);
+			transform: scale(1.02);
 		}
 	}
 	&--year {

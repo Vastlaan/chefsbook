@@ -1,7 +1,37 @@
 .dashboard {
 	margin: 3rem 0;
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
 	border-radius: 20px;
+	background-color: rgba($color-reddish,.1);
+	min-height:100rem;
+
+	
+
+	&__landing{
+
+		min-height:50rem;
+		max-height:50rem;
+		overflow:hidden;
+		background-image: linear-gradient(to bottom right, rgba($color-secondary-light,.6) , rgba($color-secondary-light,.6)  50%, transparent 50%);
+		max-width: 100%;
+		position:relative;
+
+		img{
+			min-height:100%;
+			position:absolute;
+			bottom:0;
+			right:0;
+			height:100%;
+			margin-top: -30rem;
+			animation:comeRightToHalf 1s;
+			transform: translateX(50%) scale(2);
+		}
+	}
+
+	&__second{
+		margin-top: 10rem;
+	}
 
 }
