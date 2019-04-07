@@ -1,6 +1,10 @@
 import React from "react";
+import { connect } from 'react-redux' 
+import { fetchProfile } from "../actions";
+
+
 import Calendar from "./Calendar";
-import Recipes from "./Recipes";
+
 
 import Chef from '../img/little_chef.svg'
 
@@ -18,6 +22,10 @@ class Dashboard extends React.Component {
 		return this.setState({ date });
 	};
 
+	componentWillMount(){
+		this.props.fetchProfile()
+	}
+
 	componentDidMount() {
 		this.timer = setInterval(this.toDisplay, 1000);
 	}
@@ -33,13 +41,40 @@ class Dashboard extends React.Component {
 			<div className="dashboard">
 				<div className="dashboard__landing">
 					<h1>Welcome, Chef!</h1>
-					<div>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					<div className="dashboard__landing--wall">
+						
+						<div className="dashboard__landing--wall-1" onClick={()=>window.location.href="/calendar#events"}>
+							<h3>Comming events</h3>
+							{
+								this.props.prof.events?
+								<div>
+									{this.props.prof.events.map((event,i)=>{
+										return <p key={`${i} $frrr`}><span>{event.day} {event.month} {event.year}: </span>{event.description}</p>
+									})}
+
+								</div>
+								:<p key={`00$frrr`}><span>No events in Calendar. </span>You haven't created any events yet. Click to navigate to the calendar</p>
+							}
+
+						</div>
+
+						<div className="dashboard__landing--wall-2"  onClick={()=>window.location.href="/preparations"}>
+							<h3>Preparation</h3>
+							{
+								this.props.prof.preps?
+								this.props.prof.preps.length>0?
+								<div>
+									{this.props.prof.preps.map((prep,i)=>{
+										return <p key={`${i} $f4443r`}><span>{prep.date}: </span>{prep.preps.map((p,i)=>{
+											return <i key={`iooe${i}`}>{p}, </i>
+										})}</p>
+									})}
+
+								</div>
+								:<p key={`00$frrr`}><span>No preparation list. </span>You haven't created any preparations yet. Click to navigate to the preparations section.</p>
+								:null
+							}
+						</div>
 					</div>
 					<img src={Chef} alt="chef"/>
 				</div>
@@ -47,10 +82,29 @@ class Dashboard extends React.Component {
 					<a href={"/calendar"} className="dashboard__calendar">
 						<Calendar date={date} />
 					</a>
+					<div className="dashboard__third--recipes">
+						<h3>recent recipes</h3>
+						{
+							this.props.prof.recepies?
+							
+							<div>
+								{this.props.prof.recepies.map((recep,i)=>{
+									return <p key={`${i} $f4443r`} onClick={()=>window.location.href="/recipes"}><i>{recep.name}</i><span><img src={recep.photo} alt='food'/></span></p>
+								})}
+
+							</div>
+							:<p key={`00$frrr`}><span>No recipes has been created yet. </span>Click to navigate to the recipes section.</p>
+							
+						}
+					</div>
 				</div>
 			</div>
 		);
 	}
 }
 
-export default Dashboard;
+const mapStateToProps= (state)=>({
+  prof: state.fetchProfile.profile
+})
+
+export default connect( mapStateToProps, { fetchProfile } )(Dashboard);

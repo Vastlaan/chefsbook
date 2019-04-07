@@ -262,7 +262,7 @@ class CalendarComponent extends React.Component {
 					{blanks.concat(daysNumbers)}
 				</div>
 
-				<div className="calendar__comming">
+				<div className="calendar__comming" id="events">
 					<h1 className="calendar__comming--header">
 						Comming events:
 					</h1>

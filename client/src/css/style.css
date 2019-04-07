@@ -430,7 +430,7 @@ html {
       transform: translateX(50%) scale(2); }
     .dashboard__landing h1 {
       display: block;
-      margin: 2rem 1rem;
+      margin: 0rem 1rem;
       text-transform: uppercase;
       font-family: "Rajdhani", sans-serif, "Poiret One", cursive, sans-serif;
       font-size: 3.5rem;
@@ -449,7 +449,7 @@ html {
           top: 0;
           left: 47%;
           margin: 2rem 0; } }
-    .dashboard__landing div {
+    .dashboard__landing--wall {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -457,17 +457,92 @@ html {
       transform: translate(-75%, -50%);
       font-family: "Poiret One", cursive, sans-serif;
       font-size: 2rem;
-      color: black; }
+      color: black;
+      max-height: 70%;
+      min-height: 70%;
+      overflow-y: scroll; }
       @media only screen and (max-width: 50em) {
-        .dashboard__landing div {
+        .dashboard__landing--wall {
           font-size: 1.6rem; } }
       @media only screen and (max-width: 37.5em) {
-        .dashboard__landing div {
+        .dashboard__landing--wall {
           font-size: 1.2rem;
           transform: translate(-90%, -50%); } }
+      .dashboard__landing--wall-1 {
+        margin: 1rem;
+        padding: 1rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+        cursor: pointer; }
+        .dashboard__landing--wall-1 h3 {
+          text-align: center;
+          font-weight: 500;
+          text-transform: uppercase;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          margin-bottom: 1rem; }
+        .dashboard__landing--wall-1 div > p span {
+          color: #73260D; }
+      .dashboard__landing--wall-2 {
+        display: inline-block;
+        margin: 1rem;
+        padding: 1rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+        cursor: pointer; }
+        .dashboard__landing--wall-2 h3 {
+          text-align: center;
+          font-weight: 500;
+          text-transform: uppercase;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          margin-bottom: 1rem; }
+        .dashboard__landing--wall-2 div > p span {
+          color: #73260D; }
   .dashboard__third {
     margin-top: 10rem;
-    display: flex; }
+    display: flex;
+    background-image: linear-gradient(to top left, rgba(69, 23, 8, 0.6), rgba(69, 23, 8, 0.6) 50%, transparent 50%); }
+    @media only screen and (max-width: 37.5em) {
+      .dashboard__third {
+        flex-direction: column; } }
+    .dashboard__third--recipes {
+      flex: 1;
+      margin: 0 1rem;
+      height: 90vh;
+      max-height: 90vh;
+      overflow-y: scroll; }
+      .dashboard__third--recipes h3 {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "Poiret One", cursive, sans-serif;
+        font-size: 2rem;
+        color: black;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 2rem; }
+      .dashboard__third--recipes div > p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        cursor: pointer;
+        padding: 1rem;
+        transition: all .3s; }
+        .dashboard__third--recipes div > p:hover {
+          background-color: #D4916A; }
+        .dashboard__third--recipes div > p i {
+          font-size: 1.8rem;
+          font-family: "Poiret One", cursive, sans-serif; }
+        .dashboard__third--recipes div > p span {
+          border-radius: 50%;
+          height: 5rem;
+          width: 5rem;
+          overflow: hidden;
+          display: flex;
+          justify-content: center; }
+          .dashboard__third--recipes div > p span img {
+            margin: 0rem;
+            width: auto;
+            height: 5rem; }
 
 .dashboard__calendar {
   display: inline-block;
@@ -494,7 +569,7 @@ html {
     font-family: "Rajdhani", sans-serif;
     letter-spacing: 0.1rem;
     text-align: center;
-    background-color: rgba(69, 23, 8, 0.6); }
+    background-color: #ca765b; }
   .dashboard__calendar--month {
     text-align: center;
     padding: 0.5rem 0;
@@ -511,7 +586,7 @@ html {
   .dashboard__calendar--dayname {
     padding: 0.5rem 0;
     text-align: center;
-    background-color: rgba(69, 23, 8, 0.6);
+    background-color: #ca765b;
     font-size: 2.5rem;
     font-family: "Special Elite", cursive; }
   .dashboard__calendar--time {
@@ -2151,7 +2226,10 @@ html {
       margin: 2rem auto;
       padding: 1rem 5rem;
       border-radius: 3px;
-      background-color: #7CAA5A;
+      background-color: #1B632B;
+      color: snow;
+      font-family: "Poiret One", cursive;
+      letter-spacing: .1rem;
       font-size: 2rem;
       border: none;
       cursor: pointer; }
@@ -2187,7 +2265,7 @@ html {
         font-size: 2rem;
         border: none;
         border-radius: 3px;
-        background-color: #7CAA5A;
+        background-color: #1B632B;
         color: snow;
         padding: 1rem 2.5rem;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
@@ -2204,10 +2282,13 @@ html {
       text-transform: uppercase;
       color: #D9AC0F;
       font-size: 2rem;
-      object-position: top; }
+      object-position: top;
+      border-bottom: 1px solid black;
+      color: "#fff"; }
       @media only screen and (max-width: 62.5em) {
         .preparations__card ul > li {
-          color: #451708; } }
+          color: #451708;
+          border-bottom: 1px solid #d3d3d3; } }
     .preparations__card--lists {
       font-family: "Poiret One", cursive;
       font-size: 2rem;
@@ -2273,7 +2354,8 @@ html {
       top: 2rem;
       right: 2rem;
       width: 5rem;
-      height: 5rem; }
+      height: 5rem;
+      cursor: pointer; }
     .preparations__preps p {
       color: snow;
       font-size: 2.5rem;
@@ -2288,6 +2370,7 @@ html {
       background-color: #73260D;
       margin-top: 2rem;
       border-radius: 3px;
+      cursor: pointer;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
       transition: transform .2s; }
       .preparations__preps button:hover {

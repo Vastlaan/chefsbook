@@ -1,6 +1,7 @@
 import { ADD_MEMBER } from "./types";
 import { OPEN_MEMBER } from "./types";
 import { FETCH_RECEPIES } from "./types";
+import { FETCH_PROFILE } from "./types";
 
 export const openWindowAction = () => dispatch => {
 	dispatch({
@@ -37,6 +38,18 @@ export const fetchRecepies = () => async dispatch =>{
 
 	dispatch({
 		type: FETCH_RECEPIES,
+		payload: content
+	})
+}
+
+export const fetchProfile = () => async dispatch =>{
+
+	const res = await fetch('/api/current_user',{credentials: 'include'});
+	const content = await res.json()
+	console.log(content)
+
+	dispatch({
+		type: FETCH_PROFILE,
 		payload: content
 	})
 }

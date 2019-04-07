@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-
 import "./css/style.css";
 
 import Header from "./Components/Header";
@@ -15,6 +14,7 @@ import PrivacyPolicy from "./Components/PrivacyPolicy";
 import Cookies from "./Components/Cookies";
 import Login from "./Components/Login";
 import Preparations from "./Components/Preparations";
+
 
 class App extends React.Component {
   state = {

@@ -116,7 +116,7 @@ class Preparations extends React.Component {
 
 					<div className="preparations__card">
 						<ul>
-							<li style={{ borderBottom: "1px solid #d3d3d3", color: "#fff" }} >Prep list for: {date}</li>
+							<li style={{color:"snow"}}>Prep list for: {date}</li>
 							{this.state.preps.map((each, i) => {
 								return <li key={i * 0.3987}>{each}</li>;
 							})}
