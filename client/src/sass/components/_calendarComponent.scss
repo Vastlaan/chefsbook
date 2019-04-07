@@ -255,6 +255,7 @@
 					font-family: $font-openSans;
 					font-weight: 300;
 					overflow-x:scroll;
+					scrollbar-width:none;
 				}
 
 				label{
@@ -376,6 +377,7 @@
 			flex-wrap: wrap;
 			max-height:65%;
 			overflow-y:scroll;
+			scrollbar-width:none;
 
 
 			&--each {

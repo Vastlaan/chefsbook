@@ -7,6 +7,7 @@
 	padding:2rem 1rem 5rem 1rem;
 
 
+
 	&__header {
 		font-size: 5rem;
 		color: $color-brown;
@@ -20,6 +21,7 @@
 		width: 70%;
 		height:70vh;
 		position:relative;
+		
 		
 		@include respond(m) {
 			width: 100%;
@@ -40,6 +42,7 @@
 			height:100%;
 
 			overflow-y:scroll;
+			scrollbar-width:none;
 
 			h1{
 				font-family: $font-courgette;

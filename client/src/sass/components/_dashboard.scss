@@ -65,6 +65,7 @@
 			max-height: 70%;
 			min-height: 70%;
 			overflow-y:scroll;
+			scrollbar-width:none;
 
 			@include respond(m){
 				font-size: 1.6rem;
