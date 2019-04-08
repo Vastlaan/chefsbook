@@ -241,6 +241,7 @@
 		padding:2rem;
 		animation:comeLeft .4s linear;
 		overflow-y:scroll;
+		scrollbar-width:none;
 		z-index: 100;
 
 		@include respond(m){
