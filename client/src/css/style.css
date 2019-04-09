@@ -50,6 +50,44 @@
     opacity: 1;
     transform: translateX(50%) scale(2); } }
 
+@keyframes changeOpacity {
+  0% {
+    opacity: 1; }
+  10% {
+    opacity: 1; }
+  20% {
+    opacity: 1; }
+  30% {
+    opacity: 1; }
+  40% {
+    opacity: 1; }
+  50% {
+    opacity: 0; }
+  60% {
+    opacity: 0; }
+  70% {
+    opacity: 0; }
+  80% {
+    opacity: 0; }
+  90% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes changeOpacity2 {
+  0% {
+    opacity: 0; }
+  10% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  30% {
+    opacity: 1; }
+  40% {
+    opacity: 1; }
+  50% {
+    opacity: 0; } }
+
 ::-webkit-scrollbar {
   width: 0.6rem; }
 
@@ -456,7 +494,7 @@ html {
       z-index: 99;
       transform: translate(-75%, -50%);
       font-family: "Poiret One", cursive, sans-serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: black;
       max-height: 70%;
       min-height: 70%;
@@ -470,10 +508,19 @@ html {
           font-size: 1.2rem;
           transform: translate(-90%, -50%); } }
       .dashboard__landing--wall-1 {
+        background-color: rgba(218, 160, 126, 0.3);
         margin: 1rem;
         padding: 1rem;
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-        cursor: pointer; }
+        cursor: pointer;
+        transition: all .2s ease-out;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: changeOpacity linear 10s infinite; }
+        .dashboard__landing--wall-1:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1); }
         .dashboard__landing--wall-1 h3 {
           text-align: center;
           font-weight: 500;
@@ -483,11 +530,18 @@ html {
         .dashboard__landing--wall-1 div > p span {
           color: #73260D; }
       .dashboard__landing--wall-2 {
+        background-color: rgba(218, 160, 126, 0.3);
         display: inline-block;
         margin: 1rem;
         padding: 1rem;
         box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
-        cursor: pointer; }
+        cursor: pointer;
+        transition: all .2s ease-out;
+        opacity: 0;
+        animation: changeOpacity linear 10s 5s infinite; }
+        .dashboard__landing--wall-2:hover {
+          transform: scale(1.05);
+          box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1); }
         .dashboard__landing--wall-2 h3 {
           text-align: center;
           font-weight: 500;
@@ -506,7 +560,6 @@ html {
     .dashboard__third--recipes {
       flex: 1;
       margin: 0 1rem;
-      height: 90vh;
       max-height: 90vh;
       overflow-y: scroll;
       scrollbar-width: none; }
@@ -533,7 +586,7 @@ html {
         padding: 1rem;
         transition: all .3s; }
         .dashboard__third--recipes div > p:hover {
-          background-color: #D4916A; }
+          background-color: rgba(212, 145, 106, 0.1); }
         .dashboard__third--recipes div > p i {
           font-size: 1.8rem;
           font-family: "Poiret One", cursive, sans-serif; }

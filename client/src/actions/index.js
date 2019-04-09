@@ -46,7 +46,6 @@ export const fetchProfile = () => async dispatch =>{
 
 	const res = await fetch('/api/current_user',{credentials: 'include'});
 	const content = await res.json()
-	console.log(content)
 
 	dispatch({
 		type: FETCH_PROFILE,
