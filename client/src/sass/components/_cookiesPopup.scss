@@ -1,0 +1,42 @@
+.cookiesPopup{
+	position:fixed;
+	bottom: 0;
+	left:0;
+	width:100%;
+	background-color: orangered;
+	z-index: 9999;
+
+	p{
+		margin:1rem;
+		padding:1rem 0;
+		font-family: $font-portrait, $font-rajdhani, sans-serif;
+		font-size: 1.9rem;
+		letter-spacing: .2rem;
+		color:#B7ECF8;
+
+		a{
+			text-decoration: none;
+			color:snow;
+			background-color: black;
+			padding:.1rem 1rem;
+			border-radius: 5px;
+		}
+
+	}
+	button{
+		display: block;
+		width:50%;
+		margin:1rem auto;
+		padding:1rem;
+		border:none;
+		background-color: $color-primary;
+		color:snow;
+		border-radius: 3px;
+		font-family: $font-openSans, $font-rajdhani, sans-serif;
+		font-size: 2.5rem;
+		font-weight: 300;
+		cursor:pointer;
+
+		@include btn-shadow
+	}
+}

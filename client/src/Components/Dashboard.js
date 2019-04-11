@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux' 
 import { fetchProfile } from "../actions";
+import CookiesPopup from './CookiesPopup'
 
 
 import Calendar from "./Calendar";
@@ -98,6 +99,8 @@ class Dashboard extends React.Component {
 						}
 					</div>
 				</div>
+
+				<CookiesPopup />
 			</div>
 		);
 	}

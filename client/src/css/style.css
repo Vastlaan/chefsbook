@@ -2567,3 +2567,45 @@ html {
       .change__submit {
         padding: 1rem;
         font-size: 1.8rem; } }
+
+.cookiesPopup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: orangered;
+  z-index: 9999; }
+  .cookiesPopup p {
+    margin: 1rem;
+    padding: 1rem 0;
+    font-family: "Poiret One", cursive, "Rajdhani", sans-serif, sans-serif;
+    font-size: 1.9rem;
+    letter-spacing: .2rem;
+    color: #B7ECF8; }
+    .cookiesPopup p a {
+      text-decoration: none;
+      color: snow;
+      background-color: black;
+      padding: .1rem 1rem;
+      border-radius: 5px; }
+  .cookiesPopup button {
+    display: block;
+    width: 50%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border: none;
+    background-color: #7CAA5A;
+    color: snow;
+    border-radius: 3px;
+    font-family: "Open Sans", sans-serif, "Rajdhani", sans-serif, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    cursor: pointer;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+    transition: transform .2s; }
+    .cookiesPopup button:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
+    .cookiesPopup button:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
