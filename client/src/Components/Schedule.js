@@ -55,14 +55,15 @@ class Schedule extends React.Component {
 			.catch(err => console.log(err));
 	};
 
-	member = name => {
+	member = (name) => {
 		this.props.openMemberAction();
 		this.setState({
 			member: name
 		});
 
 		if (name) {
-			const nameObj = { name: name };
+			const nameObj = { name: name, week: this.state.dateContext.week() };
+			
 			fetch("/api/member_fetch", {
 				method: "POST",
 				credentials: "include",

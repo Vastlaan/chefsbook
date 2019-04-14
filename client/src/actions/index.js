@@ -2,6 +2,7 @@ import { ADD_MEMBER } from "./types";
 import { OPEN_MEMBER } from "./types";
 import { FETCH_RECEPIES } from "./types";
 import { FETCH_PROFILE } from "./types";
+import { HIDE_POPUP } from "./types";
 
 export const openWindowAction = () => dispatch => {
 	dispatch({
@@ -52,3 +53,10 @@ export const fetchProfile = () => async dispatch =>{
 		payload: content
 	})
 }
+
+export const hidePopup = () => dispatch => {
+	dispatch({
+		type: HIDE_POPUP,
+		payload: "none"
+	});
+};

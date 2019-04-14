@@ -120,7 +120,7 @@ class Preparations extends React.Component {
 							{this.state.preps.map((each, i) => {
 								return <li key={i * 0.3987}>{each}</li>;
 							})}
-							<button onClick={()=>this.submitPreps(date)}>Submit</button>
+							<button onClick={()=>this.submitPreps(date)}>Create new</button>
 						</ul>
 						<div className="preparations__card--lists">
 							<h3>Preps history:</h3>

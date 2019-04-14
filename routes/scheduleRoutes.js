@@ -19,15 +19,26 @@ module.exports = (app) =>{
 		
 		User.findOne({_id:req.user._id})
 		.then(user=>{
-			user.schedules.map(each=>{
-				if(each.week === 0){
-					each.data.map(person=>{
-						if(person.name===req.body.name){
-							res.send(person.days)
-						}
-					})
-				}
-			})
+			const scheduleToSend = user.schedules.find(each => each.week===req.body.week)
+
+			if(scheduleToSend) {
+				scheduleToSend.data.map(person=>{
+					if(person.name===req.body.name){
+						return res.send(person.days)
+					}
+				})
+			}else{
+				user.schedules.map(each=>{		
+					if(each.week === 0){
+						each.data.map(person=>{
+							if(person.name===req.body.name){
+								return res.send(person.days)
+							}
+						})
+					}
+				})	
+			}
+		
 		})
 		.catch(err=>res.send(err))
 	})

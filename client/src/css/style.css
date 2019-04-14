@@ -1502,14 +1502,40 @@ html {
 .footer {
   padding: .1rem 5rem;
   margin-bottom: 1rem;
-  margin-top: 3rem;
+  margin-top: 15rem;
   margin-left: auto;
   margin-right: auto;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.3); }
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  background-color: rgba(115, 38, 13, 0.3);
+  transition: all 1s;
+  height: 3rem;
+  position: relative; }
+  .footer:before {
+    content: "About us";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Poiret One", cursive, sans-serif;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+    font-weight: 500; }
+  .footer > * {
+    transition: all 1s;
+    opacity: 0;
+    visibility: hidden; }
+  .footer:hover {
+    height: 10rem; }
+    .footer:hover > * {
+      opacity: 1;
+      visibility: visible; }
+    .footer:hover:before {
+      display: none; }
   @media only screen and (max-width: 37.5em) {
     .footer {
       margin-bottom: 12vh;
