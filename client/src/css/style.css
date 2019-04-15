@@ -52,33 +52,57 @@
 
 @keyframes changeOpacity {
   0% {
-    opacity: 1; }
+    opacity: 1;
+    visibility: visible;
+    z-index: 99; }
   10% {
-    opacity: 1; }
+    opacity: 1;
+    visibility: visible;
+    z-index: 99; }
   20% {
-    opacity: 1; }
+    opacity: 1;
+    visibility: visible;
+    z-index: 99; }
   30% {
-    opacity: 1; }
+    opacity: 1;
+    visibility: visible;
+    z-index: 99; }
   40% {
-    opacity: 1; }
+    opacity: 1;
+    visibility: visible;
+    z-index: 99; }
   50% {
-    opacity: 0; }
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden; }
   60% {
-    opacity: 0; }
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden; }
   70% {
-    opacity: 0; }
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden; }
   80% {
-    opacity: 0; }
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden; }
   90% {
-    opacity: 0; }
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden; }
   100% {
-    opacity: 1; } }
+    z-index: 99;
+    opacity: 1;
+    visibility: visible; } }
 
 @keyframes changeOpacity2 {
   0% {
-    opacity: 0; }
+    opacity: 0;
+    visibility: hidden; }
   10% {
-    opacity: 0; }
+    opacity: 0;
+    visibility: hidden; }
   20% {
     opacity: 1; }
   30% {
@@ -86,7 +110,8 @@
   40% {
     opacity: 1; }
   50% {
-    opacity: 0; } }
+    opacity: 0;
+    visibility: hidden; } }
 
 ::-webkit-scrollbar {
   width: 0.6rem; }

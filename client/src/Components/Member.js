@@ -2,12 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import { closeMemberAction } from "../actions";
 import ChangeSchedule from "./ChangeSchedule";
+import WarningDeleteMember from "./WarningDeleteMember";
 
 class Member extends React.Component {
 	state = {
 		weekday: "",
 		hours: "",
-		displayChange: "none"
+		displayChange: "none",
+		displayWarning:"none"
 	};
 	deleteMember = async name => {
 		const nameObj = { name: name };
@@ -74,7 +76,9 @@ class Member extends React.Component {
 						);
 					})}
 					<button
-						onClick={() => this.deleteMember(this.props.member)}
+						onClick={() => this.setState({
+							displayWarning:"block"
+						})}
 					>
 						Delete member
 					</button>
@@ -86,6 +90,10 @@ class Member extends React.Component {
 					hours={this.state.hours}
 					display={this.state.displayChange}
 				/>
+				<WarningDeleteMember
+						display={`${this.state.displayWarning}`}
+						name={this.props.member}
+					/>
 			</div>
 		);
 	}

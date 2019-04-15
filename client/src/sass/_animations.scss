@@ -72,45 +72,69 @@
 @keyframes changeOpacity {
 	0%{
 		opacity:1;
+		visibility: visible;
+		z-index: 99;
 	}
 	10%{
 		opacity:1;
+		visibility: visible;
+		z-index: 99;
 	}
 	20%{
 		opacity:1;
+		visibility: visible;
+		z-index: 99;
 	}
 	30%{
 		opacity:1;
+		visibility: visible;
+		z-index: 99;
 	}
 	40%{
 		opacity:1;
+		visibility: visible;
+		z-index: 99;
 	}
 	50%{
+		z-index: 1;
 		opacity:0;
+		visibility: hidden;
 	}
 	60%{
+		z-index: 1;
 		opacity:0;
+		visibility: hidden;
 	}
 	70%{
+		z-index: 1;
 		opacity:0;
+		visibility: hidden;
 	}
 	80%{
+		z-index: 1;
 		opacity:0;
+		visibility: hidden;
 	}
 	90%{
+		z-index: 1;
 		opacity:0;
+		visibility: hidden;
 	}
 	100%{
+		z-index: 99;
 		opacity:1;
+		visibility: visible;
 	}
 }
 
 @keyframes changeOpacity2 {
 	0%{
 		opacity:0;
+		visibility: hidden;
 	}
 	10%{
 		opacity:0;
+		visibility: hidden;
 	}
 	20%{
 		opacity:1;
@@ -123,5 +147,6 @@
 	}
 	50%{
 		opacity:0;
+		visibility: hidden;
 	}
 }
