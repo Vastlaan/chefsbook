@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			date: "" //this goes to Calendar
+			date: "", //this goes to Calendar
 		};
 		this.timer = null;
 	}
@@ -34,10 +34,42 @@ class Dashboard extends React.Component {
 		clearInterval(this.timer);
 	}
 
+	filterEvents=(month)=>{
+		switch(month){
+			case "January":
+				return 0;
+			case "February":
+				return 1;
+			case "March":
+				return 2;
+			case "April":
+				return 3;
+			case "May":
+				return 4;
+			case "June":
+				return 5;
+			case "July":
+				return 6;
+			case "August":
+				return 7;
+			case "September":
+				return 8;
+			case "October":
+				return 9;
+			case "November":
+				return 10;
+			case "December":
+				return 11;
+			default: 
+				return 11
+		}
+
+	}
+
 	render() {
 
 		let { date } = this.state;
-
+		
 		return (
 			<div className="dashboard">
 				<div className="dashboard__landing">
@@ -49,7 +81,7 @@ class Dashboard extends React.Component {
 							{
 								this.props.prof.events?
 								<div>
-									{this.props.prof.events.map((event,i)=>{
+									{this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).map((event,i)=>{
 										return <p key={`${i} $frrr`}><span>{event.day} {event.month} {event.year}: </span>{event.description}</p>
 									})}
 
@@ -89,12 +121,14 @@ class Dashboard extends React.Component {
 							this.props.prof.recepies?
 							
 							<div>
-								{this.props.prof.recepies.map((recep,i)=>{
+								{	
+									this.props.prof.recepies.slice().reverse().map((recep,i)=>{
 									return <p key={`${i} $f4443r`} onClick={()=>window.location.href="/recipes"}><i>{recep.name}</i><span><img src={recep.photo} alt='food'/></span></p>
-								})}
+									})
+								}
 
 							</div>
-							:<p key={`00$frrr`}><span>No recipes has been created yet. </span>Click to navigate to the recipes section.</p>
+							:<p key={`00$frrr`} onClick={()=>window.location.href="/recipes"}><span>No recipes has been created yet. </span>Click to navigate to the recipes section.</p>
 							
 						}
 					</div>
