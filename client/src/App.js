@@ -14,6 +14,7 @@ import PrivacyPolicy from "./Components/PrivacyPolicy";
 import Cookies from "./Components/Cookies";
 import Login from "./Components/Login";
 import Preparations from "./Components/Preparations";
+import Author from "./Components/Author";
 
 
 class App extends React.Component {
@@ -61,6 +62,7 @@ class App extends React.Component {
             <Route path="/cookies" component={Cookies} />
             <Route path="/login" component={Login} />
             <Route path="/preparations" component={Preparations} />
+            <Route path="/author" component={Author} />
           </div>
         </BrowserRouter>
         <Footer />

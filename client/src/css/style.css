@@ -113,6 +113,40 @@
     opacity: 0;
     visibility: hidden; } }
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    fill: #73260D; }
+  25% {
+    transform: rotate(90deg);
+    fill: #7CAA5A; }
+  50% {
+    transform: rotate(180deg);
+    fill: #B57D1F; }
+  75% {
+    transform: rotate(270deg);
+    fill: #D4916A; }
+  100% {
+    transform: rotate(360deg);
+    fill: #73260D; } }
+
+@keyframes rotateReverse {
+  0% {
+    transform: rotate(0deg);
+    fill: #73260D; }
+  25% {
+    transform: rotate(-90deg);
+    fill: #7CAA5A; }
+  50% {
+    transform: rotate(-180deg);
+    fill: #B57D1F; }
+  75% {
+    transform: rotate(-270deg);
+    fill: #D4916A; }
+  100% {
+    transform: rotate(-360deg);
+    fill: #73260D; } }
+
 ::-webkit-scrollbar {
   width: 0.6rem; }
 
@@ -2660,3 +2694,30 @@ html {
     .cookiesPopup button:active {
       transform: translateY(-0.1rem);
       box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
+
+.author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; }
+  .author__globe {
+    display: inline-block;
+    height: 90vh;
+    width: 100%;
+    fill: #73260D;
+    animation: rotate linear infinite  60s; }
+  .author__btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #daa07e;
+    padding: .5rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    font-family: "Poiret One", cursive, sans-serif;
+    font-size: 2rem;
+    letter-spacing: .1rem; }

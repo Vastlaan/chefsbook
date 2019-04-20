@@ -150,3 +150,48 @@
 		visibility: hidden;
 	}
 }
+
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+		fill:$color-brown;
+	}
+	25%{
+		transform: rotate(90deg);
+		fill:$color-primary;
+	}
+	50%{
+		transform: rotate(180deg);
+		fill:$color-secondary;
+	}
+	75%{
+		transform: rotate(270deg);
+		fill:$color-reddish-dark;
+	}
+	100%{
+		transform: rotate(360deg);
+		fill:$color-brown;
+	}
+}
+@keyframes rotateReverse{
+	0%{
+		transform: rotate(0deg);
+		fill:$color-brown;
+	}
+	25%{
+		transform: rotate(-90deg);
+		fill:$color-primary;
+	}
+	50%{
+		transform: rotate(-180deg);
+		fill:$color-secondary;
+	}
+	75%{
+		transform: rotate(-270deg);
+		fill:$color-reddish-dark;
+	}
+	100%{
+		transform: rotate(-360deg);
+		fill:$color-brown;
+	}
+}
