@@ -13,6 +13,8 @@
 		@include respond(l) {
 			height: auto;
 			flex-direction: column;
+			align-items: center;
+			padding:5rem 0;
 		}
 
 
@@ -90,6 +92,25 @@
 			box-shadow: 3rem -0.3rem 5rem rgba(0, 0, 0, 0.3);
 			display:flex;
 			
+			@include respond(l) {
+				width: 90%;
+				transform: rotateY(0);
+				box-shadow: none;
+				border:none;
+				display: block;
+				overflow-y:scroll;
+				text-align: center;
+				background-image:none;
+				background-color: darken(#f0f0f0,30%);
+				height:30rem;
+				position:relative;
+
+			}
+
+			@include respond(s){
+				margin:0;
+				width:100%;
+			}
 			
 			ul{
 				width:70%;
@@ -105,7 +126,8 @@
 				button{
 					position:absolute;
 					bottom:1rem;
-					left:25%;
+					left:10%;
+					width:50%;
 					//transform:translateX(-75%);
 					cursor:pointer;
 					font-family: $font-portrait;
@@ -118,6 +140,11 @@
 					padding:1rem 2.5rem;
 
 					@include btn-shadow
+
+					@include respond(s){
+						left:10%;
+						width:50%;
+					}
 				}
 				
 			}
@@ -134,6 +161,17 @@
 				@include respond(l) {
 					color:$color-brown-dark;
 					border-bottom: 1px solid #d3d3d3;
+				}
+
+				span{
+					float:right;
+					margin-right: 1rem;
+
+					svg{
+						width:2.5rem;
+						height:2.5rem;
+						fill:$color-reddish-dark;
+					}
 				}
 
 
@@ -182,22 +220,6 @@
 					width:30%;
 					font-size: 1.5rem;
 				}
-			}
-
-
-			@include respond(l) {
-				width: 90%;
-				transform: rotateY(0);
-				box-shadow: none;
-				border:none;
-				display: block;
-				overflow-y:scroll;
-				text-align: center;
-				background-image:none;
-				background-color: darken(#f0f0f0,30%);
-				height:30rem;
-				position:relative;
-
 			}
 		}
 

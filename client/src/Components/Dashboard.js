@@ -66,6 +66,23 @@ class Dashboard extends React.Component {
 
 	}
 
+	compare = (a, b) => {
+		if ( this.filterEvents(a.month) <=  this.filterEvents(b.month) ) {
+			if(a.month === b.month){
+				if(a.day< b.day){
+					return -1
+				}else{
+					return 1
+				}
+			}else{
+				return -1;
+			}	
+		} else if (a.day > b.day || a.month> b.month) {
+			return 1;
+		}
+		return 0;
+	};
+
 	render() {
 
 		let { date } = this.state;
@@ -81,7 +98,7 @@ class Dashboard extends React.Component {
 							{
 								this.props.prof.events?
 								<div>
-									{this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).map((event,i)=>{
+									{this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).sort(this.compare).map((event,i)=>{
 										return <p key={`${i} $frrr`}><span>{event.day} {event.month} {event.year}: </span>{event.description}</p>
 									})}
 

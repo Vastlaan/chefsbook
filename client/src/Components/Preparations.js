@@ -37,6 +37,17 @@ class Preparations extends React.Component {
 		
 	};
 
+	deleteFromPreps = async (prep) =>{
+	
+		const newPrep = this.state.preps.filter(each=>{
+			return each !== prep
+		})
+
+		await this.setState( {
+			preps: newPrep
+		})
+	}
+
 	submitPreps=(date)=>{
 
 		const data = {
@@ -118,7 +129,14 @@ class Preparations extends React.Component {
 						<ul>
 							<li style={{color:"snow"}}>Prep list for: {date}</li>
 							{this.state.preps.map((each, i) => {
-								return <li key={i * 0.3987}>{each}</li>;
+								return <li key={i * 0.3987}>
+									{each}	
+									<span onClick={()=>this.deleteFromPreps(each)}>
+										<svg>
+											<use xlinkHref={`${Icons}#icon-delete`}></use>
+										</svg>
+									</span>
+								</li>;
 							})}
 							<button onClick={()=>this.submitPreps(date)}>Create new</button>
 						</ul>

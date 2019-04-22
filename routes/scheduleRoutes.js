@@ -126,7 +126,7 @@ module.exports = (app) =>{
 			user.schedules.map(each=>{
 							//we check of schedule for weekend exist assuming it doesn't
 				if(each.week===req.body.week){
-					weekExist=true				// it exist
+					weekExist=true				// it exists
 					each.data.map(particular=>{
 						if(particular.name===req.body.member){
 							particular.days[req.body.weekday]=req.body.hours
