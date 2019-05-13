@@ -97,13 +97,15 @@ class Dashboard extends React.Component {
 							<h3>Comming events</h3>
 							{
 								this.props.prof.events?
+								this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).sort(this.compare)>0?
 								<div>
 									{this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).sort(this.compare).map((event,i)=>{
 										return <p key={`${i} $frrr`}><span>{event.day} {event.month} {event.year}: </span>{event.description}</p>
 									})}
 
 								</div>
-								:<p key={`00$frrr`}><span>No events in Calendar. </span>You haven't created any events yet. Click to navigate to the calendar</p>
+								:<p key={`00$frrr`}><span>No events in Calendar for future dates. </span>You haven't created any events for future yet. Click to navigate to the calendar</p>
+								:null
 							}
 
 						</div>
@@ -136,7 +138,7 @@ class Dashboard extends React.Component {
 						<h3>recent recipes</h3>
 						{
 							this.props.prof.recepies?
-							
+							this.props.prof.recepies.length>0?
 							<div>
 								{	
 									this.props.prof.recepies.slice().reverse().map((recep,i)=>{
@@ -146,12 +148,13 @@ class Dashboard extends React.Component {
 
 							</div>
 							:<p key={`00$frrr`} onClick={()=>window.location.href="/recipes"}><span>No recipes has been created yet. </span>Click to navigate to the recipes section.</p>
+							:null
 							
 						}
 					</div>
 				</div>
-
-				<CookiesPopup />
+				{this.props.prof.showPopup?<CookiesPopup />:null}
+				
 			</div>
 		);
 	}

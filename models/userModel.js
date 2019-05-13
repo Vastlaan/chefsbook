@@ -11,7 +11,8 @@ const usersSchema = new Schema({
 	recepies: {type: Array, 'default':[]},
 	events: {type:Array, 'default':[]},
 	schedules: {type:Array, 'default':[]},
-	preps: {type:Array, 'default':[]}
+	preps: {type:Array, 'default':[]},
+	showPopup: {type:Boolean, 'default':true}
 })
 
 mongoose.model("users", usersSchema)	// when we provide two arguments to mongoose.model, we inform mongoose that we want to create a new Collection

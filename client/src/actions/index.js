@@ -54,9 +54,16 @@ export const fetchProfile = () => async dispatch =>{
 	})
 }
 
-export const hidePopup = () => dispatch => {
+export const hidePopup = () => async dispatch => {
+
+	const res = await fetch('/api/hidePopup',{credentials: 'include'});
+	const content = await res.json()
+	let payload = 'none'
+	 if(content){
+	 	payload = 'block'
+	 }
 	dispatch({
 		type: HIDE_POPUP,
-		payload: "none"
+		payload
 	});
 };

@@ -635,6 +635,15 @@ html {
         text-transform: uppercase;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         margin: 2rem; }
+      .dashboard__third--recipes p {
+        font-family: "Poiret One", cursive, sans-serif;
+        font-size: 2.5rem;
+        color: black;
+        font-weight: 500;
+        margin: 2rem;
+        cursor: pointer; }
+        .dashboard__third--recipes p:hover {
+          color: rgba(0, 0, 0, 0.7); }
       .dashboard__third--recipes div > p {
         display: flex;
         flex-direction: column;

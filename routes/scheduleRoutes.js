@@ -98,7 +98,7 @@ module.exports = (app) =>{
 							console.log(err)
 							res.status(404).json('Couldn\'t save changes')
 						}
-						//console.log('saved', user.schedules)
+						
 						res.send(user.schedules)
 					})
 				}
@@ -138,7 +138,7 @@ module.exports = (app) =>{
 								}
 								return res.send(user.schedules)
 							})
-							//res.status(200).json('Ok')
+							
 						}
 					})
 				}

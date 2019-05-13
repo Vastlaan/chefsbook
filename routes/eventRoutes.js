@@ -13,6 +13,25 @@ module.exports =(app)=>{
 		.catch(err=>{console.log(err)})
 		
 	})
+
+	app.get('/api/hidePopup', (req,res)=>{
+		User.findOne({_id:req.user._id})
+		.then(existingUser=>{
+			existingUser.showPopup=false
+			existingUser.markModified('showPopup')
+			existingUser.save((err,user)=>{
+				if(err){
+					console.log(err)
+					res.status(404).json('Couldn\'t save changes')
+				}
+				//console.log('saved', user.schedules)
+				res.send(existingUser.showPopup)
+			})
+			
+		})
+		.catch(err=>{console.log(err)})
+		
+	})
 	
 	app.post('/api/new_event',(req,res)=>{
 		User.findOneAndUpdate(

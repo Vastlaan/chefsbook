@@ -30,7 +30,7 @@ module.exports = (app) =>{
 	})
 
 	app.post('/api/deletePrep', (req,res)=>{
-		console.log(req.body)
+		
 		User.findOne({_id:req.user._id})
 			.then(user=>{
 
