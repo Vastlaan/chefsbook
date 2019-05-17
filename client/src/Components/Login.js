@@ -18,6 +18,7 @@ class Login extends React.Component{
 
 		fetch('/api/login', {
 			method:'POST',
+			credentials: "include",
 			headers:{
 				"Content-Type":"application/json"
 			},
@@ -63,6 +64,7 @@ class Login extends React.Component{
 		}else{
 			fetch('/api/register', {
 				method:'POST',
+				credentials: "include",
 				headers:{
 					"Content-Type":"application/json"
 				},
