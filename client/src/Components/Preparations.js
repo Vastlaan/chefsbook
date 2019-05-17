@@ -13,7 +13,7 @@ class Preparations extends React.Component {
 	};
 
 	componentWillMount(){
-		fetch('/api/getPreps')
+		fetch('/api/getPreps',{credentials:"include"})
 		.then(data=>data.json())
 		.then(listOfPreps=>{
 			return this.setState({
