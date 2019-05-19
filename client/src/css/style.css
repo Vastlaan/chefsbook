@@ -220,7 +220,8 @@ html {
 
 .container {
   width: 90vw;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-bottom: 6rem; }
   @media only screen and (max-width: 62.5em) {
     .container {
       width: 100vw;
@@ -1598,7 +1599,7 @@ html {
     opacity: 0;
     visibility: hidden; }
   .footer:hover {
-    height: 10rem; }
+    height: 8rem; }
     .footer:hover > * {
       opacity: 1;
       visibility: visible; }

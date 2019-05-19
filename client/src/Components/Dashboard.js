@@ -97,7 +97,7 @@ class Dashboard extends React.Component {
 							<h3>Comming events</h3>
 							{
 								this.props.prof.events?
-								this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).sort(this.compare)>0?
+								this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).sort(this.compare).length>0?
 								<div>
 									{this.props.prof.events.filter(event=>this.filterEvents(event.month)>=new Date().getMonth()).sort(this.compare).map((event,i)=>{
 										return <p key={`${i} $frrr`}><span>{event.day} {event.month} {event.year}: </span>{event.description}</p>
