@@ -157,6 +157,10 @@
 				object-position: top;
 				border-bottom: 1px solid black;
 				color: "#fff";
+				display:flex;
+				align-items: center;
+				justify-content: space-between;
+				padding:0 1rem;
 
 				@include respond(l) {
 					color:$color-brown-dark;
@@ -164,13 +168,13 @@
 				}
 
 				span{
-					float:right;
-					margin-right: 1rem;
+					display: flex;
+					align-items: center;
 
 					svg{
-						width:2.5rem;
-						height:2.5rem;
-						fill:$color-reddish-dark;
+						width:1.8rem;
+						height:1.8rem;
+						fill:darken(red,10%);
 					}
 				}
 

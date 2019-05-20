@@ -133,7 +133,7 @@ class Preparations extends React.Component {
 									{each}	
 									<span onClick={()=>this.deleteFromPreps(each)}>
 										<svg>
-											<use xlinkHref={`${Icons}#icon-delete`}></use>
+											<use xlinkHref={`${Icons}#icon-cancel`}></use>
 										</svg>
 									</span>
 								</li>;

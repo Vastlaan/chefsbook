@@ -221,7 +221,7 @@ html {
 .container {
   width: 90vw;
   margin: 0 auto;
-  padding-bottom: 6rem; }
+  padding-bottom: 1rem; }
   @media only screen and (max-width: 62.5em) {
     .container {
       width: 100vw;
@@ -321,13 +321,13 @@ html {
   .header__login {
     align-self: center;
     padding: .8rem 1.5rem;
-    border-radius: .3rem;
+    border-radius: 3px;
     text-decoration: none;
     background-color: #451708;
     font-family: "Rajdhani", sans-serif;
     font-weight: 500;
     font-size: 2rem;
-    color: #D9AC0F;
+    color: #f4d15a;
     letter-spacing: .1rem;
     text-align: center;
     display: flex;
@@ -1569,7 +1569,7 @@ html {
   z-index: 120; }
 
 .footer {
-  padding: .1rem 5rem;
+  padding: .1rem 5rem 1rem 5rem;
   margin-bottom: 1rem;
   margin-top: 15rem;
   margin-left: auto;
@@ -1578,7 +1578,6 @@ html {
   grid-template-rows: 1fr;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.3);
   background-color: rgba(115, 38, 13, 0.3);
   transition: all 1s;
   height: 3rem;
@@ -1600,6 +1599,9 @@ html {
     visibility: hidden; }
   .footer:hover {
     height: 8rem; }
+    @media only screen and (max-width: 37.5em) {
+      .footer:hover {
+        height: 10rem; } }
     .footer:hover > * {
       opacity: 1;
       visibility: visible; }
@@ -1607,7 +1609,6 @@ html {
       display: none; }
   @media only screen and (max-width: 37.5em) {
     .footer {
-      margin-bottom: 12vh;
       grid-column-gap: 2rem; } }
   .footer__text {
     color: snow;
@@ -1618,7 +1619,9 @@ html {
     text-align: center;
     align-self: center;
     background-color: rgba(115, 38, 13, 0.6);
-    padding: 1rem; }
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 3px; }
     .footer__text span {
       display: inline-block;
       font-size: 1.4rem;
@@ -1661,7 +1664,8 @@ html {
       position: relative;
       margin: 1rem;
       text-decoration: none;
-      text-align: center; }
+      text-align: center;
+      border-radius: 3px; }
       .footer__list--item span {
         display: block;
         position: absolute;
@@ -2466,18 +2470,22 @@ html {
       font-size: 2rem;
       object-position: top;
       border-bottom: 1px solid black;
-      color: "#fff"; }
+      color: "#fff";
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem; }
       @media only screen and (max-width: 62.5em) {
         .preparations__card ul > li {
           color: #451708;
           border-bottom: 1px solid #d3d3d3; } }
       .preparations__card ul > li span {
-        float: right;
-        margin-right: 1rem; }
+        display: flex;
+        align-items: center; }
         .preparations__card ul > li span svg {
-          width: 2.5rem;
-          height: 2.5rem;
-          fill: #D4916A; }
+          width: 1.8rem;
+          height: 1.8rem;
+          fill: #cc0000; }
     .preparations__card--lists {
       font-family: "Poiret One", cursive;
       font-size: 2rem;

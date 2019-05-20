@@ -135,14 +135,14 @@ class Dashboard extends React.Component {
 						<Calendar date={date} />
 					</a>
 					<div className="dashboard__third--recipes">
-						<h3>recent recipes</h3>
+						<h3>recently added recipes</h3>
 						{
 							this.props.prof.recepies?
 							this.props.prof.recepies.length>0?
 							<div>
 								{	
 									this.props.prof.recepies.slice().reverse().map((recep,i)=>{
-									return <p key={`${i} $f4443r`} onClick={()=>window.location.href="/recipes"}><i>{recep.name}</i><span><img src={recep.photo} alt='food'/></span></p>
+										return i<=2?<p key={`${i} $f4443r`} onClick={()=>window.location.href="/recipes"}><i>{recep.name}</i><span><img src={recep.photo} alt='food'/></span></p>:null
 									})
 								}
 

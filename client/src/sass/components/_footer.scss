@@ -1,6 +1,6 @@
 .footer{
 	
-	padding:.1rem 5rem;
+	padding:.1rem 5rem 1rem 5rem;
 	margin-bottom: 1rem;
 	margin-top: 15rem;
 	margin-left: auto;
@@ -9,7 +9,7 @@
 	grid-template-rows: 1fr;
 	grid-template-columns: repeat(2,1fr);
 	grid-gap: 1rem;
-	border-top: 1px solid rgba(0,0,0,.3);
+	//border-top: 1px solid rgba(0,0,0,.3);
 	background-color: rgba($color-brown,.3);
 	transition:all 1s;
 	height:3rem;
@@ -40,6 +40,10 @@
 
 		height:8rem;
 
+		@include respond(s){
+			height:10rem;
+		}
+
 		&>*{
 			opacity:1;
 			visibility: visible;
@@ -52,7 +56,7 @@
 
 
 	@include respond(s){
-		margin-bottom: 12vh;
+		//margin-bottom: 12vh;
 		grid-column-gap: 2rem;
 	}
 	
@@ -66,6 +70,8 @@
 		align-self: center;
 		background-color: rgba($color-brown,.6);
 		padding:1rem;
+		margin-bottom: 1rem;
+		border-radius: 3px;
 		
 		span{
 			display:inline-block;
@@ -122,6 +128,7 @@
 			margin:1rem;
 			text-decoration: none;
 			text-align: center;
+			border-radius: 3px;
 
 			span{
 				display:block;

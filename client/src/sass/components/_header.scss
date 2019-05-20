@@ -117,13 +117,13 @@
 		
 		align-self: center;
 		padding:.8rem 1.5rem;
-		border-radius: .3rem;
+		border-radius: 3px;
 		text-decoration: none;
 		background-color:$color-brown-dark;
 		font-family: $font-rajdhani;
 		font-weight: 500;
 		font-size: 2rem;
-		color: $color-secondary-light;
+		color: lighten($color-secondary-light,20%);
 		letter-spacing: .1rem;
 		text-align: center;
 		display:flex;
