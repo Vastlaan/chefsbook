@@ -335,7 +335,7 @@ class NewRecepie extends React.Component {
 						<use xlinkHref={`${Icons}#icon-close`} />
 					</svg>
 					<h1 className="newRecepie__success--header">
-						You sucessfully updated new Recipe!
+						You successfully updated new Recipe!
 					</h1>
 				</div>
 				<div

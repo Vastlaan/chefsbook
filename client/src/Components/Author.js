@@ -9,7 +9,7 @@ const Author = () => {
 			<svg className='author__globe'>
 				<use xlinkHref={`${Globe}#globe`}></use>
 			</svg>
-			<a href='https://www.noirfatale.com' className='author__btn'>Visit my website</a>
+			<a href='https://www.michalantczak.com' className='author__btn'>Visit my website</a>
 		</div>
 		)
 		
