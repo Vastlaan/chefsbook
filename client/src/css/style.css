@@ -226,6 +226,9 @@ html {
     .container {
       width: 100vw;
       max-width: 100%; } }
+  @media only screen and (max-width: 50em) {
+    .container {
+      padding-bottom: 8rem; } }
 
 .header {
   width: 100%;
@@ -1580,33 +1583,8 @@ html {
   grid-gap: 1rem;
   background-color: rgba(115, 38, 13, 0.3);
   transition: all 1s;
-  height: 3rem;
+  height: auto;
   position: relative; }
-  .footer:before {
-    content: "About us";
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: "Poiret One", cursive, sans-serif;
-    font-size: 2rem;
-    letter-spacing: .2rem;
-    font-weight: 500; }
-  .footer > * {
-    transition: all 1s;
-    opacity: 0;
-    visibility: hidden; }
-  .footer:hover {
-    height: 8rem; }
-    @media only screen and (max-width: 37.5em) {
-      .footer:hover {
-        height: 10rem; } }
-    .footer:hover > * {
-      opacity: 1;
-      visibility: visible; }
-    .footer:hover:before {
-      display: none; }
   @media only screen and (max-width: 37.5em) {
     .footer {
       grid-column-gap: 2rem; } }
@@ -1621,7 +1599,11 @@ html {
     background-color: rgba(115, 38, 13, 0.6);
     padding: 1rem;
     margin-bottom: 1rem;
+    margin-top: 2rem;
     border-radius: 3px; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__text {
+        margin-top: 1rem; } }
     .footer__text span {
       display: inline-block;
       font-size: 1.4rem;
@@ -2531,7 +2513,10 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    padding: 1rem 0; }
     .preparations__preps svg {
       fill: snow;
       position: absolute;
@@ -2547,7 +2532,8 @@ html {
       text-transform: uppercase; }
     .preparations__preps--date {
       color: #7CAA5A !important;
-      font-size: 3.5rem !important; }
+      font-size: 3.5rem !important;
+      margin-top: 1rem; }
     .preparations__preps button {
       border: none;
       padding: 1.5rem 3rem;

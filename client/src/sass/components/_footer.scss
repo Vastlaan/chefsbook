@@ -12,51 +12,10 @@
 	//border-top: 1px solid rgba(0,0,0,.3);
 	background-color: rgba($color-brown,.3);
 	transition:all 1s;
-	height:3rem;
+	height:auto;
 	position:relative;
 
-	&:before{
-		content:"About us";
-		display:block;
-		position:absolute;
-		top:50%;
-		left:50%;
-		transform: translate(-50%, -50%);
-		font-family: $font-portrait, sans-serif;
-		font-size: 2rem;
-		letter-spacing: .2rem;
-		font-weight: 500;
-	}
-
-
-	&>*{
-		transition:all 1s;
-		opacity:0;
-		visibility: hidden;
-		
-	}
-
-	&:hover{
-
-		height:8rem;
-
-		@include respond(s){
-			height:10rem;
-		}
-
-		&>*{
-			opacity:1;
-			visibility: visible;
-		}
-
-		&:before{
-			display: none;
-		}
-	}
-
-
 	@include respond(s){
-		//margin-bottom: 12vh;
 		grid-column-gap: 2rem;
 	}
 	
@@ -71,7 +30,12 @@
 		background-color: rgba($color-brown,.6);
 		padding:1rem;
 		margin-bottom: 1rem;
+		margin-top: 2rem;
 		border-radius: 3px;
+
+		@include respond(s){
+			margin-top: 1rem;
+		}
 		
 		span{
 			display:inline-block;

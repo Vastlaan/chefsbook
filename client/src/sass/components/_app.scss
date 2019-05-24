@@ -7,6 +7,10 @@
 	@include respond(l){
 		width:100vw;
 		max-width: 100%;
+
+	}
+	@include respond(m){
+		padding-bottom: 8rem;
 	}
 }
 

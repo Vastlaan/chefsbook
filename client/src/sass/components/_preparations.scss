@@ -239,6 +239,9 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
+			overflow-y:scroll;
+			scrollbar-width: none;
+			padding:1rem 0;
 
 
 			svg{
@@ -262,6 +265,7 @@
 			&--date{
 				color:$color-primary !important; 
 				font-size: 3.5rem !important;
+				margin-top: 1rem;
 			}
 
 			button{
