@@ -49,14 +49,14 @@ module.exports = app => {
 							// setup email data with unicode symbols
 							let mailOptions = {
 								from: '"Chefsbook" <no-reply@chefsbook.com>', // sender address
-								replyTo: 'no-reply@chefsbook.com',
+								replyTo: 'no-reply@chefsbook.org',
 								to: `${user.email}`, // list of receivers
 								subject:
 									"Confirmation of new account registration.", // Subject line
 								html: `	<div>
 											<h1 style="text-align:center">Welcome to Chefsbook ${user.email}!</h1>
 											<p style="text-align:center">We are very happy you joined our service.</p>
-											<p style="text-align:center">If you have any questions or you need a help with using our website. Please <a href='https://chefsbook.herokuapp.com/contact'>contact us</a>.</p>
+											<p style="text-align:center">If you have any questions or you need a help with using our website. Please <a href='https://www.chefsbook.org/author'>contact us</a>.</p>
 										</div>` // html body
 							};
 
