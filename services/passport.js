@@ -62,7 +62,10 @@ passport.use('local', new LocalStrategy(
   function(req, email, password, done){
     User.findOne({email:email, googleId:""})
 		.then((user)=>{
-
+			console.log(user)
+				if(!user){
+					return done(null,false, 'User doesn\'t exist!')
+				}
 			if(user.googleId){
 				return done(null,false, 'Google User')
 			}

@@ -2127,23 +2127,29 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #7CAA5A;
   z-index: 1013;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  overflow-y: scroll;
+  scrollbar-width: none; }
   .login__registerConfirmation {
     background-color: #1B632B;
     padding: .5rem 5rem;
     font-size: 1.2rem;
     font-family: "Open Sans", sans-serif; }
   .login__form {
+    max-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+    @media only screen and (max-height: 30em) and (min-width: 25em) {
+      .login__form {
+        margin-top: 10rem; } }
     .login__form label {
       font-size: 2.4rem;
       font-family: "Poiret One", cursive, sans-serif;

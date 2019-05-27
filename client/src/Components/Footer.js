@@ -10,7 +10,7 @@ const Footer =()=>{
 				<a href='/cookies' className='footer__list--item brown--dark'><span>Cookies</span></a>
 				<a href='/author' className='footer__list--item green'><span>Contact</span></a>
 			</ul>
-			<p className='footer__text'>&copy; This website has been created by <span>Michał Antczak</span>. All rights reserved.</p>
+			<p className='footer__text'>&copy; This website has been created by <span onClick={()=>window.location.href="https://www.michalantczak.com"}>Michał Antczak</span>. All rights reserved.</p>
 		</div>
 		)
 }

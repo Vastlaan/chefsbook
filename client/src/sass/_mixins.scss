@@ -46,4 +46,8 @@
 	@if $breakpoint=='xxl'{ 
 		@media only screen and(min-width: 100em){@content}
 	}
+
+	@if $breakpoint == 'rotated'{ 
+		@media only screen and(max-height:30em) and (min-width:25em){@content}
+	}
 }
