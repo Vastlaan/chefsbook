@@ -48,7 +48,7 @@ module.exports = app => {
 
 							// setup email data with unicode symbols
 							let mailOptions = {
-								from: '"Chefsbook" <no-reply@chefsbook.com>', // sender address
+								from: '"Chefsbook" <no-reply@chefsbook.org>', // sender address
 								replyTo: 'no-reply@chefsbook.org',
 								to: `${user.email}`, // list of receivers
 								subject:
