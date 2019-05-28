@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt-nodejs");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const sgTransport = require('nodemailer-sendgrid-transport');
 const keys = require("../config/keys");
 
 const User = mongoose.model("users");
@@ -29,58 +30,40 @@ module.exports = app => {
 				})
 					.save()
 					.then(user => {
-						
-						async function main() {
-							// Generate test SMTP service account from ethereal.email
-							// Only needed if you don't have a real mail account for testing
-							//let account = await nodemailer.createTestAccount();
 
-							// create reusable transporter object using the default SMTP transport
-							let transporter = nodemailer.createTransport({
-								service: "gmail",
-								port: 587,
-								secure: false, // true for 465, false for other ports
-								auth: {
-									user: keys.gmail, // generated ethereal user
-									pass: keys.gmailSecret // generated ethereal password
-								}
-							});
-
-							// setup email data with unicode symbols
-							let mailOptions = {
-								from: '"Chefsbook" <no-reply@chefsbook.org>', // sender address
-								replyTo: 'no-reply@chefsbook.org',
-								to: `${user.email}`, // list of receivers
-								subject:
-									"Confirmation of new account registration.", // Subject line
-								html: `	<div>
-											<h1 style="text-align:center">Welcome to Chefsbook ${user.email}!</h1>
-											<p style="text-align:center">We are very happy you joined our service.</p>
-											<p style="text-align:center">If you have any questions or you need a help with using our website. Please <a href='https://www.chefsbook.org/author'>contact us</a>.</p>
-										</div>` // html body
-							};
-
-							// send mail with defined transport object
-							let info = await transporter.sendMail(mailOptions);
-
-							console.log("Message sent: %s", info.messageId);
-							// Preview only available when sending through an Ethereal account
-							console.log(
-								"Preview URL: %s",
-								nodemailer.getTestMessageUrl(info)
-							);
-
-							// Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-							// Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+						const options = {
+						    auth: {
+						        api_key: keys.sendgridApiKey
+						    }
 						}
-						main().catch(console.error);
+
+						const mailer = nodemailer.createTransport(sgTransport(options));
+				
+						const mail = {
+							from: 'no-reply@chefsbook.org', // sender address
+							to: `${user.email}`, // list of receivers
+							subject: "Confirmation of new account registration.", // Subject line
+							text: "Thank you for registration!",
+							html: `	<div>
+										<h1 style="text-align:center">Welcome to Chefsbook ${user.email}!</h1>
+										<p style="text-align:center">We are very happy you joined our service.</p>
+										<p style="text-align:center">If you have any questions or you need a help with using our website. Please <a href='https://www.chefsbook.org/author'>contact us</a>.</p>
+									</div>` // html body
+						};
+
+						mailer.sendMail(mail, function(err, res) {
+						    if (err) { 
+						        console.log(err) 
+						    }
+						    console.log(`Message sent: ${res}`);
+						});
 
 						return res
 							.status(200)
 							.json(
 								`You succesfully created new account! Welcome ${
 									user.email
-								}!`
+								}! Click Log in to start using our services.`
 							);
 					});
 			}

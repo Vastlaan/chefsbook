@@ -6,5 +6,6 @@ module.exports = {
 	AWSAccessKeyId:process.env.AWS_ACCESS_KEY,
 	AWSSecretKey:process.env.AWS_SECRET_KEY,
 	gmail: process.env.GMAIL,
-	gmailSecret: process.env.GMAIL_SECRET
+	gmailSecret: process.env.GMAIL_SECRET,
+	sendgridApiKey: process.env.SENDGRID_API_KEY
 }
