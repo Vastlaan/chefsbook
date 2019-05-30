@@ -89,6 +89,14 @@ class NewRecepie extends React.Component {
 	};
 
 	addPhoto(event) {
+		const imageInput = document.querySelector("#file")
+		const filePath = imageInput.value;
+	    const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+	    if(!allowedExtensions.exec(filePath)){
+	        alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+	        imageInput.value = '';
+	        return false;
+	    }
 		const image = document.querySelector("#file").files[0];
 		var output = document.querySelector("#output");
 		if (image instanceof File) {
@@ -172,7 +180,7 @@ class NewRecepie extends React.Component {
 									<use xlinkHref={`${Icons}#icon-upload`} />
 								</svg>
 								<span>Choose file to upload</span>
-								<span>Only format JPG/JPEG allowed</span>
+								<span>Only format JPG/JPEG/PNG/GIF allowed</span>
 								<img
 									id="output"
 									alt="food"
