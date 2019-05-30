@@ -30,10 +30,14 @@ class Landing extends React.Component{
 				<div className='landing__header'>
 					<h1 className="landing__header--slogan">Be creative...</h1>
 					<h1 className="landing__header--slogan">...be professional</h1>
+
 				</div>
 				<h1 className="landing__chapter">
 					<span>All of that for free</span>
 				</h1>
+				<div className="landing__btn">
+					<div className="landing__btn--btn" onClick={()=>window.location.href='/login'}>Start now!</div>
+				</div>
 				<div className="landing__features hide">
 					<div className="landing__features__text">
 						<p className="landing__features__text--p">Create and store your recepies digital</p>

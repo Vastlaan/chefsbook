@@ -23,7 +23,21 @@
 		}
 
 	}
-	button{
+
+	div{
+		display:flex;
+		justify-content: center;
+
+		input{
+			margin-right: 1rem;
+		}
+		label{
+			color:black;
+		}
+
+	}
+
+	&__dismiss{
 		display: block;
 		width:50%;
 		margin:1rem auto;

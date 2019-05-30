@@ -390,7 +390,11 @@ html {
     height: 70vh;
     padding: 10vh 5vw 0 5vw;
     animation: comeLeft 1s ease-out;
-    transition: animation .5s; }
+    transition: animation .5s;
+    position: relative; }
+    @media only screen and (max-height: 30em) and (min-width: 25em) {
+      .landing__header {
+        height: 100vh; } }
     .landing__header--slogan {
       font-size: 5rem;
       font-family: "Rajdhani", sans-serif;
@@ -430,9 +434,28 @@ html {
       .landing__chapter span:hover {
         transform: skew(-20deg);
         text-shadow: 0.5rem 1rem 0.5rem rgba(115, 38, 13, 0.8); }
+  .landing__btn {
+    display: flex;
+    justify-content: center; }
+    .landing__btn--btn {
+      display: inline-block;
+      margin: 2.5rem auto;
+      background-color: #451708;
+      border-radius: 3px;
+      padding: .2rem 3rem;
+      font-family: "Rajdhani", sans-serif;
+      font-size: 3.5rem;
+      font-weight: 300;
+      color: #f4d15a;
+      letter-spacing: .2rem;
+      cursor: pointer;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+      transition: all .2s; }
+      .landing__btn--btn:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.5); }
   .landing__features {
-    margin: 10rem 0;
-    padding-bottom: 5rem;
+    margin: 5rem 0;
     display: grid;
     grid-template-columns: 50vw 1fr;
     grid-column-gap: 2rem;
@@ -1426,7 +1449,8 @@ html {
       margin: 2rem auto;
       border: none;
       background-color: white;
-      box-shadow: 0 1rem 1rem rgba(207, 232, 189, 0.2); }
+      box-shadow: 0 1rem 1rem rgba(207, 232, 189, 0.2);
+      padding: 1rem; }
       .newRecepie__form--textarea:focus {
         outline: none;
         border-bottom: 1px solid #7CAA5A; }
@@ -2140,7 +2164,8 @@ html {
     background-color: #1B632B;
     padding: .5rem 5rem;
     font-size: 1.2rem;
-    font-family: "Open Sans", sans-serif; }
+    font-family: "Open Sans", sans-serif;
+    color: white; }
   .login__form {
     max-height: 100%;
     display: flex;
@@ -2149,7 +2174,7 @@ html {
     align-items: center; }
     @media only screen and (max-height: 30em) and (min-width: 25em) {
       .login__form {
-        margin-top: 10rem; } }
+        margin-top: 13rem; } }
     .login__form label {
       font-size: 2.4rem;
       font-family: "Poiret One", cursive, sans-serif;
@@ -2158,7 +2183,8 @@ html {
       border: none;
       padding: 1rem 2.5rem;
       margin: 1rem;
-      text-align: center; }
+      text-align: center;
+      border-radius: 3px; }
       .login__form input:focus {
         outline: none; }
   .login__submit {
@@ -2171,6 +2197,7 @@ html {
     font-family: "Open Sans", sans-serif;
     font-size: 1.4rem;
     letter-spacing: .1rem;
+    border-radius: 3px;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transition: transform .2s; }
     .login__submit:hover {
@@ -2191,6 +2218,7 @@ html {
     font-family: "Open Sans", sans-serif;
     font-size: 1.4rem;
     letter-spacing: .1rem;
+    border-radius: 3px;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transition: transform .2s; }
     .login__signup:hover {
@@ -2229,7 +2257,8 @@ html {
       background-color: rgba(0, 0, 0, 0.2); }
   .login__google {
     display: inline-block;
-    width: 20rem; }
+    width: 20rem;
+    border-radius: 3px; }
     .login__google img {
       width: 100%;
       transition: all .2s; }
@@ -2701,7 +2730,14 @@ html {
       background-color: black;
       padding: .1rem 1rem;
       border-radius: 5px; }
-  .cookiesPopup button {
+  .cookiesPopup div {
+    display: flex;
+    justify-content: center; }
+    .cookiesPopup div input {
+      margin-right: 1rem; }
+    .cookiesPopup div label {
+      color: black; }
+  .cookiesPopup__dismiss {
     display: block;
     width: 50%;
     margin: 1rem auto;
@@ -2716,10 +2752,10 @@ html {
     cursor: pointer;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
     transition: transform .2s; }
-    .cookiesPopup button:hover {
+    .cookiesPopup__dismiss:hover {
       transform: translateY(-0.3rem);
       box-shadow: 0 1.3rem 2.3rem rgba(0, 0, 0, 0.2); }
-    .cookiesPopup button:active {
+    .cookiesPopup__dismiss:active {
       transform: translateY(-0.1rem);
       box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.2); }
 

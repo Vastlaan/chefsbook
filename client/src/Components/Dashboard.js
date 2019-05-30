@@ -93,7 +93,7 @@ class Dashboard extends React.Component {
 					<h1>Welcome, Chef!</h1>
 					<div className="dashboard__landing--wall">
 						
-						<div className="dashboard__landing--wall-1" onClick={()=>window.location.href="/calendar#events"}>
+						<div className="dashboard__landing--wall-1" onClick={()=>window.location.href="/calendar"}>
 							<h3>Comming events</h3>
 							{
 								this.props.prof.events?
