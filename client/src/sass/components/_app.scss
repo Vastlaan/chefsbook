@@ -1,7 +1,9 @@
 .container{
 	width:90vw;
+	min-height:100vh;
 	margin:0 auto;
 	padding-bottom: 1rem;
+	position:relative;
 	
 
 	@include respond(l){
@@ -9,7 +11,7 @@
 		max-width: 100%;
 
 	}
-	@include respond(m){
+	@include respond(s){
 		padding-bottom: 8rem;
 	}
 }

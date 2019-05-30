@@ -21,10 +21,13 @@ class NewRecepie extends React.Component {
 	}
 	async appendIngridient() {
 		const ingridient = document.querySelector("#ingridient");
-		await this.setState(prevState => ({
-			ingridients: [...prevState.ingridients, ingridient.value]
-		}));
-		ingridient.value = "";
+		if(ingridient.value){
+			await this.setState(prevState => ({
+				ingridients: [...prevState.ingridients, ingridient.value]
+			}));
+			ingridient.value = "";
+		}
+		
 	}
 	removeIngridient(element) {
 		const newArray = this.state.ingridients.filter(el => {

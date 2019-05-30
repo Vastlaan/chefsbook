@@ -89,10 +89,10 @@ class Login extends React.Component{
 					{this.state.confirmationVisibility?<div className='login__registerConfirmation'>{this.state.confirmation}</div>:null}
 					
 					<label>E-mail</label>
-					<input className='login__email' type='email' name='email'></input>
+					<input className='login__email' type='email' name='email' autoComplete='email'></input>
 
 					<label>Password</label>
-					<input className='login__password' type='password' name='password'></input>
+					<input className='login__password' type='password' name='password' autoComplete='password'></input>
 
 					<button className='login__submit' type='submit'>Log in</button>
 					<div className='login__signup' onClick={()=>this.register()}>Register new account</div>

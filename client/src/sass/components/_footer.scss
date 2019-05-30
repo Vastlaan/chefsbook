@@ -2,7 +2,7 @@
 	
 	padding:.1rem 5rem 1rem 5rem;
 	margin-bottom: 1rem;
-	margin-top: 15rem;
+	//margin-top: 15rem;
 	margin-left: auto;
 	margin-right: auto;
 	display:grid;
@@ -13,10 +13,13 @@
 	background-color: rgba($color-brown,.3);
 	transition:all 1s;
 	height:auto;
-	position:relative;
+	position:absolute;
+	bottom:0;
+	transform:translateY(15rem);
 
 	@include respond(s){
 		grid-column-gap: 2rem;
+		margin-bottom: 8.5rem;
 	}
 	
 	&__text{
