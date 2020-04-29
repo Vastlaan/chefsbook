@@ -1598,14 +1598,10 @@ html {
   z-index: 120; }
 
 .footer {
+  width: 100%;
   padding: .1rem 5rem 1rem 5rem;
-  margin-bottom: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(115, 38, 13, 0.3);
   transition: all 1s;
   height: auto;
@@ -1615,32 +1611,33 @@ html {
   @media only screen and (max-width: 37.5em) {
     .footer {
       grid-column-gap: 2rem;
-      margin-bottom: 8.5rem; } }
+      margin-bottom: 8.5rem;
+      padding: 1rem; } }
   .footer__text {
-    color: snow;
+    color: black;
     font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
+    font-size: 1.4rem;
     font-weight: 300;
     letter-spacing: .3rem;
     text-align: center;
-    align-self: center;
-    background-color: rgba(115, 38, 13, 0.6);
     padding: 1rem;
     margin-bottom: 1rem;
-    margin-top: 2rem;
     border-radius: 3px; }
     @media only screen and (max-width: 37.5em) {
       .footer__text {
-        margin-top: 1rem; } }
+        margin-top: 1rem;
+        padding: 0; } }
     .footer__text span {
       display: inline-block;
       font-size: 1.4rem;
       font-weight: 500;
       cursor: pointer;
       transition: all .2s;
-      color: black; }
+      color: #D9AC0F;
+      padding: .3rem 1rem;
+      background-color: black; }
       .footer__text span:hover {
-        color: #D9AC0F; }
+        transform: rotate(2deg) scale(1.1); }
       @media only screen and (max-width: 37.5em) {
         .footer__text span {
           font-size: 1rem; } }
@@ -1648,13 +1645,10 @@ html {
       .footer__text {
         font-size: 1rem; } }
   .footer__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
     margin-top: 1rem;
     padding: 1rem 3rem;
-    border-radius: 3px;
-    grid-gap: 1rem; }
+    border-radius: 3px; }
     @media only screen and (max-width: 37.5em) {
       .footer__list {
         background-color: transparent;
@@ -1662,26 +1656,21 @@ html {
         width: 100%; } }
     .footer__list--item {
       width: 100%;
-      height: 100%;
-      display: block;
+      display: flex;
+      justify-content: center;
       font-size: 1.4rem;
       font-weight: 500;
       font-family: "Courier New", sans-serif;
       letter-spacing: .2rem;
       cursor: pointer;
       transition: all .2s;
-      align-self: center;
-      position: relative;
       margin: 1rem;
       text-decoration: none;
       text-align: center;
       border-radius: 3px; }
       .footer__list--item span {
         display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); }
+        padding: .3rem 1rem; }
       @media only screen and (max-width: 37.5em) {
         .footer__list--item {
           font-size: 1.2rem; } }

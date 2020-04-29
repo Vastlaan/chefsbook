@@ -65,7 +65,7 @@ class App extends React.Component {
             <Route path="/author" component={Author} />
           </div>
         </BrowserRouter>
-        <Footer />
+        <Footer logged={this.state.logged} />
       </div>
     );
   }
