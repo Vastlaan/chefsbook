@@ -59,7 +59,7 @@ SSH: \$ git remote add upstream git@github.com:Vastlaan/chefsbook.git
 
 4. this project requires third party services to run all features properly:
 
-**NOTE: if you dont want to work on specific funcionality, feel free to skip configuration of the third service. For example if you dont want to touch anything related to passport Google strategy, you dont have to create your OAuth API, however you must put in place of that data some dummy data in /config/dev.js to not have any errors**
+**NOTE: if you dont want to work on specific funcionality, feel free to skip configuration some of the third party services. For example if you dont want to touch anything related to passport Google strategy, you dont have to create your OAuth API, however you must put in place of that data some dummy data in /config/dev.js to avoid any errors**
 
 ###### **MongoDB** (required to store recipes, appointments, preparations and calendar events)
 
